@@ -152,8 +152,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
 .slider-lbl-bar{display:flex;justify-content:space-between;align-items:center;padding:10px 0}
 .sl-title{font-size:9px;font-weight:400;letter-spacing:.14em;text-transform:uppercase;color:var(--mid)}
 .sl-hint{font-size:10px;font-weight:300;color:var(--pale)}
-.slider-outer{position:relative;width:100%;aspect-ratio:16/6;overflow:hidden;
-  cursor:col-resize;user-select:none;max-height:380px}
+.slider-outer{position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;
+  cursor:col-resize;user-select:none;max-height:540px}
 /* ══ SLIDER ANTES: img/render-antes.jpg | 1920×720px, render Twinmotion sin editar */
 /* ══ SLIDER DESPUÉS: img/render-despues.jpg | 1920×720px, post-prod IA, mismo ángulo */
 .sl-after{position:absolute;inset:0;background:url('img/despues.jpg') center/cover no-repeat}
@@ -513,24 +513,24 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
     </div></div>
     <div class="param-grid">
       <div class="param-cell big">
-        <img src="img/modelado-complejo.jpg" alt="Modelo 3D" loading="lazy">
+        <img src="img/modelado-complejo.jpg" alt="Modelo 3D" loading="lazy" decoding="async">
         <div class="param-lbl" data-es="Modelo 3D" data-en="3D Model">Modelo 3D</div>
       </div>
       <div class="param-cell big">
-        <img src="img/grass.jpg" alt="Grasshopper" loading="lazy">
+        <img src="img/grass.jpg" alt="Grasshopper" loading="lazy" decoding="async">
         <div class="param-lbl">Grasshopper</div>
       </div>
       <div class="param-row3">
         <div class="param-cell sm3">
-          <img src="img/proceso-4.jpg" alt="Referencia" loading="lazy">
+          <img src="img/proceso-4.jpg" alt="Referencia" loading="lazy" decoding="async">
           <div class="param-lbl" data-es="Referencia" data-en="Reference">Referencia</div>
         </div>
         <div class="param-cell sm3">
-          <img src="img/proceso2.jpg" alt="Análisis" loading="lazy">
+          <img src="img/proceso2.jpg" alt="Análisis" loading="lazy" decoding="async">
           <div class="param-lbl" data-es="Análisis" data-en="Analysis">Análisis</div>
         </div>
         <div class="param-cell sm3">
-          <img src="img/proceso3.jpg" alt="Proceso" loading="lazy">
+          <img src="img/proceso3.jpg" alt="Proceso" loading="lazy" decoding="async">
           <div class="param-lbl" data-es="Proceso" data-en="Process">Proceso</div>
         </div>
       </div>
@@ -543,10 +543,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
       <span class="sh-link" onclick="go('proceso')" data-es="Ver todo →" data-en="See all →">Ver todo →</span>
     </div></div>
     <div class="proc-prev-grid">
-      <div class="proc-prev-cell"><img src="img/croquis-biblioteca.jpg" alt="Proceso" loading="lazy"></div>
-      <div class="proc-prev-cell"><img src="img/diagrama-biblioteca.jpg" alt="Proceso" loading="lazy"></div>
-      <div class="proc-prev-cell"><img src="img/diagrama-planta.jpg" alt="Proceso" loading="lazy"></div>
-      <div class="proc-prev-cell"><img src="img/planta-biblioteca.jpg" alt="Proceso" loading="lazy"></div>
+      <div class="proc-prev-cell"><img src="img/croquis-biblioteca.jpg" alt="Proceso" loading="lazy" decoding="async"></div>
+      <div class="proc-prev-cell"><img src="img/diagrama-biblioteca.jpg" alt="Proceso" loading="lazy" decoding="async"></div>
+      <div class="proc-prev-cell"><img src="img/diagrama-planta.jpg" alt="Proceso" loading="lazy" decoding="async"></div>
+      <div class="proc-prev-cell"><img src="img/planta-biblioteca.jpg" alt="Proceso" loading="lazy" decoding="async"></div>
     </div>
     <hr class="hr">
 
@@ -604,7 +604,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
   <div class="w">
     <div class="croquis-wrap">
       <div class="croquis-box">
-        <img src="img/croquis1.jpg" alt="Croquis" loading="lazy">
+        <img src="img/croquis1.jpg" alt="Croquis" loading="lazy" decoding="async">
       </div>
     </div>
   </div>
@@ -646,7 +646,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
   <div class="w">
     <div class="croquis-wrap" style="background:#f9f9f9">
       <div class="croquis-box">
-        <img src="img/croquis2.jpg" alt="Croquis" loading="lazy">
+        <img src="img/croquis2.jpg" alt="Croquis" loading="lazy" decoding="async">
       </div>
     </div>
   </div>
@@ -768,7 +768,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
 <!-- ════════ PROYECTO 01 ════════ -->
 <div class="view" id="view-proj-01">
   <div class="proj-hero">
-    <img src="img/vivienda/casa1.jpg" alt="" loading="eager">
+    <img src="img/vivienda/casa1.jpg" alt="" loading="eager" fetchpriority="high">
     <div class="proj-hero-fade"></div>
   </div>
   <div class="w">
@@ -798,10 +798,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
     </div>
     <div class="laminas-stack" id="lam-grid-01" data-bg="lam-bg-01">
       <div class="lamina" onclick="lbOpen(this,'lam-grid-01')">
-        <img src="img/vivienda/casa1.jpg" alt="Lámina" loading="lazy">
+        <img src="img/vivienda/casa1.jpg" alt="Lámina" loading="lazy" decoding="async">
       </div>
       <div class="lamina" onclick="lbOpen(this,'lam-grid-01')">
-        <img src="img/vivienda/casa2.jpg" alt="Lámina" loading="lazy">
+        <img src="img/vivienda/casa2.jpg" alt="Lámina" loading="lazy" decoding="async">
       </div>
     </div>
 
@@ -816,7 +816,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
 <!-- ════════ PROYECTO 02 ════════ -->
 <div class="view" id="view-proj-02">
   <div class="proj-hero">
-    <img src="img/biblioteca/biblioteca.jpg" alt="" loading="eager">
+    <img src="img/biblioteca/biblioteca.jpg" alt="" loading="eager" fetchpriority="high">
     <div class="proj-hero-fade"></div>
   </div>
   <div class="w">
@@ -846,40 +846,40 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
     </div>
     <div class="laminas-stack" id="lam-grid-02" data-bg="lam-bg-02">
       <div class="lamina" onclick="lbOpen(this,'lam-grid-02')">
-        <img src="img/biblioteca/biblioteca.jpg" alt="Lámina" loading="lazy">
+        <img src="img/biblioteca/biblioteca.jpg" alt="Lámina" loading="lazy" decoding="async">
       </div>
       <div class="lam-row lam-row-2">
       <div class="lamina" onclick="lbOpen(this,'lam-grid-02')">
-        <img src="img/biblioteca/biblioteca1.jpg" alt="Lámina" loading="lazy">
+        <img src="img/biblioteca/biblioteca1.jpg" alt="Lámina" loading="lazy" decoding="async">
       </div>
       <div class="lamina" onclick="lbOpen(this,'lam-grid-02')">
-        <img src="img/biblioteca/biblioteca2.jpg" alt="Lámina" loading="lazy">
+        <img src="img/biblioteca/biblioteca2.jpg" alt="Lámina" loading="lazy" decoding="async">
       </div>
       </div>
       <div class="lamina" onclick="lbOpen(this,'lam-grid-02')">
-        <img src="img/biblioteca/biblioteca3.jpg" alt="Lámina" loading="lazy">
+        <img src="img/biblioteca/biblioteca3.jpg" alt="Lámina" loading="lazy" decoding="async">
       </div>
       <div class="lamina" onclick="lbOpen(this,'lam-grid-02')">
-        <img src="img/biblioteca/biblioteca4.jpg" alt="Lámina" loading="lazy">
+        <img src="img/biblioteca/biblioteca4.jpg" alt="Lámina" loading="lazy" decoding="async">
       </div>
       <div class="lamina" onclick="lbOpen(this,'lam-grid-02')">
-        <img src="img/biblioteca/biblioteca5.jpg" alt="Lámina" loading="lazy">
+        <img src="img/biblioteca/biblioteca5.jpg" alt="Lámina" loading="lazy" decoding="async">
       </div>
       <div class="lamina" onclick="lbOpen(this,'lam-grid-02')">
-        <img src="img/biblioteca/biblioteca6.jpg" alt="Lámina" loading="lazy">
+        <img src="img/biblioteca/biblioteca6.jpg" alt="Lámina" loading="lazy" decoding="async">
       </div>
       <div class="lamina" onclick="lbOpen(this,'lam-grid-02')">
-        <img src="img/biblioteca/biblioteca7.jpg" alt="Lámina" loading="lazy">
+        <img src="img/biblioteca/biblioteca7.jpg" alt="Lámina" loading="lazy" decoding="async">
       </div>
       <div class="lamina" onclick="lbOpen(this,'lam-grid-02')">
-        <img src="img/biblioteca/biblioteca8.jpg" alt="Lámina" loading="lazy">
+        <img src="img/biblioteca/biblioteca8.jpg" alt="Lámina" loading="lazy" decoding="async">
       </div>
     </div>
     <div class="maqueta-section">
       <div class="sh"><div class="sh-row"><span class="sh-label" data-es="Maqueta" data-en="Model">Maqueta</span></div></div>
       <div class="maqueta-grid" id="maq-grid-02">
         <div class="maqueta-img" onclick="lbOpen(this,'maq-grid-02')">
-          <img src="img/biblioteca/maqueta-biblioteca.jpg" alt="Maqueta" loading="lazy">
+          <img src="img/biblioteca/maqueta-biblioteca.jpg" alt="Maqueta" loading="lazy" decoding="async">
         </div>
       </div>
     </div>
@@ -894,7 +894,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
 <!-- ════════ PROYECTO 03 ════════ -->
 <div class="view" id="view-proj-03">
   <div class="proj-hero">
-    <img src="img/plano/plano.jpg" alt="" loading="eager">
+    <img src="img/plano/plano.jpg" alt="" loading="eager" fetchpriority="high">
     <div class="proj-hero-fade"></div>
   </div>
   <div class="w">
@@ -924,7 +924,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
     </div>
     <div class="laminas-stack" id="lam-grid-03" data-bg="lam-bg-03">
       <div class="lamina" onclick="lbOpen(this,'lam-grid-03')">
-        <img src="img/plano/plano.jpg" alt="Lámina" loading="lazy">
+        <img src="img/plano/plano.jpg" alt="Lámina" loading="lazy" decoding="async">
       </div>
     </div>
 
@@ -939,7 +939,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
 <!-- ════════ PROYECTO 04 ════════ -->
 <div class="view" id="view-proj-04">
   <div class="proj-hero">
-    <img src="img/intervencion/intervencion9.jpg" alt="" loading="eager">
+    <img src="img/intervencion/intervencion9.jpg" alt="" loading="eager" fetchpriority="high">
     <div class="proj-hero-fade"></div>
   </div>
   <div class="w">
@@ -969,40 +969,40 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
     </div>
     <div class="laminas-stack" id="lam-grid-04" data-bg="lam-bg-04">
       <div class="lamina" onclick="lbOpen(this,'lam-grid-04')">
-        <img src="img/intervencion/intervencion.jpg" alt="Lámina" loading="lazy">
+        <img src="img/intervencion/intervencion.jpg" alt="Lámina" loading="lazy" decoding="async">
       </div>
       <div class="lam-row lam-row-4">
       <div class="lamina" onclick="lbOpen(this,'lam-grid-04')">
-        <img src="img/intervencion/intervencion1.jpg" alt="Lámina" loading="lazy">
+        <img src="img/intervencion/intervencion1.jpg" alt="Lámina" loading="lazy" decoding="async">
       </div>
       <div class="lamina" onclick="lbOpen(this,'lam-grid-04')">
-        <img src="img/intervencion/intervencion2.jpg" alt="Lámina" loading="lazy">
+        <img src="img/intervencion/intervencion2.jpg" alt="Lámina" loading="lazy" decoding="async">
       </div>
       <div class="lamina" onclick="lbOpen(this,'lam-grid-04')">
-        <img src="img/intervencion/intervencion3.jpg" alt="Lámina" loading="lazy">
+        <img src="img/intervencion/intervencion3.jpg" alt="Lámina" loading="lazy" decoding="async">
       </div>
       <div class="lamina" onclick="lbOpen(this,'lam-grid-04')">
-        <img src="img/intervencion/intervencion4.jpg" alt="Lámina" loading="lazy">
+        <img src="img/intervencion/intervencion4.jpg" alt="Lámina" loading="lazy" decoding="async">
       </div>
       </div>
       <div class="lamina" onclick="lbOpen(this,'lam-grid-04')">
-        <img src="img/intervencion/intervencion5.jpg" alt="Lámina" loading="lazy">
+        <img src="img/intervencion/intervencion5.jpg" alt="Lámina" loading="lazy" decoding="async">
       </div>
       <div class="lamina" onclick="lbOpen(this,'lam-grid-04')">
-        <img src="img/intervencion/intervencion6.jpg" alt="Lámina" loading="lazy">
+        <img src="img/intervencion/intervencion6.jpg" alt="Lámina" loading="lazy" decoding="async">
       </div>
       <div class="lam-row lam-row-4">
       <div class="lamina" onclick="lbOpen(this,'lam-grid-04')">
-        <img src="img/intervencion/intervencion7.jpg" alt="Lámina" loading="lazy">
+        <img src="img/intervencion/intervencion7.jpg" alt="Lámina" loading="lazy" decoding="async">
       </div>
       <div class="lamina" onclick="lbOpen(this,'lam-grid-04')">
-        <img src="img/intervencion/intervencion8.jpg" alt="Lámina" loading="lazy">
+        <img src="img/intervencion/intervencion8.jpg" alt="Lámina" loading="lazy" decoding="async">
       </div>
       <div class="lamina" onclick="lbOpen(this,'lam-grid-04')">
-        <img src="img/intervencion/intervencion9.jpg" alt="Lámina" loading="lazy">
+        <img src="img/intervencion/intervencion9.jpg" alt="Lámina" loading="lazy" decoding="async">
       </div>
       <div class="lamina" onclick="lbOpen(this,'lam-grid-04')">
-        <img src="img/intervencion/intervencion10.jpg" alt="Lámina" loading="lazy">
+        <img src="img/intervencion/intervencion10.jpg" alt="Lámina" loading="lazy" decoding="async">
       </div>
       </div>
     </div>
@@ -1018,7 +1018,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
 <!-- ════════ PROYECTO 05 ════════ -->
 <div class="view" id="view-proj-05">
   <div class="proj-hero">
-    <img src="img/conjunto/conjuntogrande.jpg" alt="" loading="eager">
+    <img src="img/conjunto/conjuntogrande.jpg" alt="" loading="eager" fetchpriority="high">
     <div class="proj-hero-fade"></div>
   </div>
   <div class="w">
@@ -1048,37 +1048,37 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
     </div>
     <div class="laminas-stack" id="lam-grid-05" data-bg="lam-bg-05">
       <div class="lamina" onclick="lbOpen(this,'lam-grid-05')">
-        <img src="img/conjunto/conjuntogrande.jpg" alt="Lámina" loading="lazy">
+        <img src="img/conjunto/conjuntogrande.jpg" alt="Lámina" loading="lazy" decoding="async">
       </div>
       <div class="lam-row lam-row-2">
       <div class="lamina" onclick="lbOpen(this,'lam-grid-05')">
-        <img src="img/conjunto/conjunto1.jpg" alt="Lámina" loading="lazy">
+        <img src="img/conjunto/conjunto1.jpg" alt="Lámina" loading="lazy" decoding="async">
       </div>
       <div class="lamina" onclick="lbOpen(this,'lam-grid-05')">
-        <img src="img/conjunto/conjunto2.jpg" alt="Lámina" loading="lazy">
+        <img src="img/conjunto/conjunto2.jpg" alt="Lámina" loading="lazy" decoding="async">
       </div>
       </div>
       <div class="lamina" onclick="lbOpen(this,'lam-grid-05')">
-        <img src="img/conjunto/conjunto3.jpg" alt="Lámina" loading="lazy">
+        <img src="img/conjunto/conjunto3.jpg" alt="Lámina" loading="lazy" decoding="async">
       </div>
       <div class="lamina" onclick="lbOpen(this,'lam-grid-05')">
-        <img src="img/conjunto/conjunto4.jpg" alt="Lámina" loading="lazy">
+        <img src="img/conjunto/conjunto4.jpg" alt="Lámina" loading="lazy" decoding="async">
       </div>
       <div class="lamina" onclick="lbOpen(this,'lam-grid-05')">
-        <img src="img/conjunto/conjunto5.jpg" alt="Lámina" loading="lazy">
+        <img src="img/conjunto/conjunto5.jpg" alt="Lámina" loading="lazy" decoding="async">
       </div>
       <div class="lamina" onclick="lbOpen(this,'lam-grid-05')">
-        <img src="img/conjunto/conjunto5.jpg" alt="Lámina" loading="lazy">
+        <img src="img/conjunto/conjunto5.jpg" alt="Lámina" loading="lazy" decoding="async">
       </div>
       <div class="lamina" onclick="lbOpen(this,'lam-grid-05')">
-        <img src="img/conjunto/conjunto5.jpg" alt="Lámina" loading="lazy">
+        <img src="img/conjunto/conjunto5.jpg" alt="Lámina" loading="lazy" decoding="async">
       </div>
     </div>
     <div class="maqueta-section">
       <div class="sh"><div class="sh-row"><span class="sh-label" data-es="Maqueta" data-en="Model">Maqueta</span></div></div>
       <div class="maqueta-grid" id="maq-grid-05">
         <div class="maqueta-img" onclick="lbOpen(this,'maq-grid-05')">
-          <img src="img/conjunto/maqueta-conjunto.jpg" alt="Maqueta" loading="lazy">
+          <img src="img/conjunto/maqueta-conjunto.jpg" alt="Maqueta" loading="lazy" decoding="async">
         </div>
       </div>
     </div>
@@ -1093,7 +1093,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
 <!-- ════════ PROYECTO 06 ════════ -->
 <div class="view" id="view-proj-06">
   <div class="proj-hero">
-    <img src="img/iglesia/iglesia1.jpg" alt="" loading="eager">
+    <img src="img/iglesia/iglesia1.jpg" alt="" loading="eager" fetchpriority="high">
     <div class="proj-hero-fade"></div>
   </div>
   <div class="w">
@@ -1123,10 +1123,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
     </div>
     <div class="laminas-stack" id="lam-grid-06" data-bg="lam-bg-06">
       <div class="lamina" onclick="lbOpen(this,'lam-grid-06')">
-        <img src="img/iglesia/iglesia1.jpg" alt="Lámina" loading="lazy">
+        <img src="img/iglesia/iglesia1.jpg" alt="Lámina" loading="lazy" decoding="async">
       </div>
       <div class="lamina" onclick="lbOpen(this,'lam-grid-06')">
-        <img src="img/iglesia/iglesia2.jpg" alt="Lámina" loading="lazy">
+        <img src="img/iglesia/iglesia2.jpg" alt="Lámina" loading="lazy" decoding="async">
       </div>
     </div>
 
@@ -1141,7 +1141,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
 <!-- ════════ PROYECTO 07 ════════ -->
 <div class="view" id="view-proj-07">
   <div class="proj-hero">
-    <img src="img/parametrico/hero.jpg" alt="" loading="eager">
+    <img src="img/parametrico/hero.jpg" alt="" loading="eager" fetchpriority="high">
     <div class="proj-hero-fade"></div>
   </div>
   <div class="w">
@@ -1166,10 +1166,74 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
     </div>
     <hr class="hr">
     <div class="sh"><div class="sh-row"><span class="sh-label" data-es="Láminas" data-en="Sheets">Láminas</span></div></div>
-    <div class="laminas-bg" id="lam-bg-07"><img src="img/parametrico/hero.jpg" alt=""></div>
+        <div class="laminas-bg" id="lam-bg-07"><img src="img/parametrico/hero.jpg" alt=""></div>
     <div class="laminas-stack" id="lam-grid-07" data-bg="lam-bg-07">
-      <div class="lamina" onclick="lbOpen(this,'lam-grid-07')"><img src="img/parametrico/lam-01.jpg" alt="" loading="lazy"></div>
-      <div class="lamina" onclick="lbOpen(this,'lam-grid-07')"><img src="img/parametrico/lam-02.jpg" alt="" loading="lazy"></div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-07')">
+        <img src="img/parametrico/lam-01.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-07')">
+        <img src="img/parametrico/lam-02.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-07')">
+        <img src="img/parametrico/lam-03.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-07')">
+        <img src="img/parametrico/lam-04.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-07')">
+        <img src="img/parametrico/lam-05.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-07')">
+        <img src="img/parametrico/lam-06.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-07')">
+        <img src="img/parametrico/lam-07.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-07')">
+        <img src="img/parametrico/lam-08.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-07')">
+        <img src="img/parametrico/lam-09.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-07')">
+        <img src="img/parametrico/lam-10.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-07')">
+        <img src="img/parametrico/lam-11.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-07')">
+        <img src="img/parametrico/lam-12.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-07')">
+        <img src="img/parametrico/lam-13.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-07')">
+        <img src="img/parametrico/lam-14.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-07')">
+        <img src="img/parametrico/lam-15.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-07')">
+        <img src="img/parametrico/lam-16.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-07')">
+        <img src="img/parametrico/lam-17.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-07')">
+        <img src="img/parametrico/lam-18.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-07')">
+        <img src="img/parametrico/lam-19.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-07')">
+        <img src="img/parametrico/lam-20.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-07')">
+        <img src="img/parametrico/lam-21.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-07')">
+        <img src="img/parametrico/lam-22.jpg" alt="" loading="lazy" decoding="async">
+      </div>
     </div>
 
     <div class="footer" style="margin-top:2px"><div class="footer-row">
@@ -1183,7 +1247,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
 <!-- ════════ PROYECTO 08 ════════ -->
 <div class="view" id="view-proj-08">
   <div class="proj-hero">
-    <img src="img/reversion/hero.jpg" alt="" loading="eager">
+    <img src="img/reversion/hero.jpg" alt="" loading="eager" fetchpriority="high">
     <div class="proj-hero-fade"></div>
   </div>
   <div class="w">
@@ -1208,10 +1272,59 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
     </div>
     <hr class="hr">
     <div class="sh"><div class="sh-row"><span class="sh-label" data-es="Láminas" data-en="Sheets">Láminas</span></div></div>
-    <div class="laminas-bg" id="lam-bg-08"><img src="img/reversion/hero.jpg" alt=""></div>
+        <div class="laminas-bg" id="lam-bg-08"><img src="img/reversion/hero.jpg" alt=""></div>
     <div class="laminas-stack" id="lam-grid-08" data-bg="lam-bg-08">
-      <div class="lamina" onclick="lbOpen(this,'lam-grid-08')"><img src="img/reversion/lam-01.jpg" alt="" loading="lazy"></div>
-      <div class="lamina" onclick="lbOpen(this,'lam-grid-08')"><img src="img/reversion/lam-02.jpg" alt="" loading="lazy"></div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-08')">
+        <img src="img/reversion/lam-01.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-08')">
+        <img src="img/reversion/lam-02.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-08')">
+        <img src="img/reversion/lam-03.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-08')">
+        <img src="img/reversion/lam-04.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-08')">
+        <img src="img/reversion/lam-05.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-08')">
+        <img src="img/reversion/lam-06.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-08')">
+        <img src="img/reversion/lam-07.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-08')">
+        <img src="img/reversion/lam-08.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-08')">
+        <img src="img/reversion/lam-09.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-08')">
+        <img src="img/reversion/lam-10.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-08')">
+        <img src="img/reversion/lam-11.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-08')">
+        <img src="img/reversion/lam-12.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-08')">
+        <img src="img/reversion/lam-13.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-08')">
+        <img src="img/reversion/lam-14.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-08')">
+        <img src="img/reversion/lam-15.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-08')">
+        <img src="img/reversion/lam-16.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-08')">
+        <img src="img/reversion/lam-17.jpg" alt="" loading="lazy" decoding="async">
+      </div>
     </div>
 
     <div class="footer" style="margin-top:2px"><div class="footer-row">
@@ -1229,12 +1342,12 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
       <span class="sh-right" data-es="Croquis · diagramas · modelos · algoritmos" data-en="Sketches · diagrams · models · algorithms">Croquis · diagramas · modelos · algoritmos</span>
     </div></div>
     <div class="proc-grid">
-      <div class="proc-card"><img src="img/croquis-biblioteca.jpg" alt="Proceso" loading="lazy"></div>
-      <div class="proc-card"><img src="img/diagrama-biblioteca.jpg" alt="Proceso" loading="lazy"></div>
-      <div class="proc-card"><img src="img/diagrama-planta.jpg" alt="Proceso" loading="lazy"></div>
-      <div class="proc-card"><img src="img/planta-biblioteca.jpg" alt="Proceso" loading="lazy"></div>
-      <div class="proc-card"><img src="img/maqueta-biblioteca.jpg" alt="Proceso" loading="lazy"></div>
-      <div class="proc-card"><img src="img/planta-biblioteca.jpg" alt="Proceso" loading="lazy"></div>
+      <div class="proc-card"><img src="img/croquis-biblioteca.jpg" alt="Proceso" loading="lazy" decoding="async"></div>
+      <div class="proc-card"><img src="img/diagrama-biblioteca.jpg" alt="Proceso" loading="lazy" decoding="async"></div>
+      <div class="proc-card"><img src="img/diagrama-planta.jpg" alt="Proceso" loading="lazy" decoding="async"></div>
+      <div class="proc-card"><img src="img/planta-biblioteca.jpg" alt="Proceso" loading="lazy" decoding="async"></div>
+      <div class="proc-card"><img src="img/maqueta-biblioteca.jpg" alt="Proceso" loading="lazy" decoding="async"></div>
+      <div class="proc-card"><img src="img/planta-biblioteca.jpg" alt="Proceso" loading="lazy" decoding="async"></div>
     </div>
     <hr class="hr">
     <div class="ai-strip">
@@ -1283,10 +1396,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
     </div>
     <hr class="hr">
     <div class="efele-gal">
-      <div class="efele-img"><img src="img/efele1.jpg" alt="EFELE" loading="lazy"></div>
-      <div class="efele-img"><img src="img/efele2.jpg" alt="EFELE" loading="lazy"></div>
-      <div class="efele-img"><img src="img/efele3.jpg" alt="EFELE" loading="lazy"></div>
-      <div class="efele-img"><img src="img/efele4.jpg" alt="EFELE" loading="lazy"></div>
+      <div class="efele-img"><img src="img/efele1.jpg" alt="EFELE" loading="lazy" decoding="async"></div>
+      <div class="efele-img"><img src="img/efele2.jpg" alt="EFELE" loading="lazy" decoding="async"></div>
+      <div class="efele-img"><img src="img/efele3.jpg" alt="EFELE" loading="lazy" decoding="async"></div>
+      <div class="efele-img"><img src="img/efele4.jpg" alt="EFELE" loading="lazy" decoding="async"></div>
     </div>
     <hr class="hr">
     <div class="footer"><div class="footer-row">
@@ -1303,7 +1416,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
     </div></div>
     <div class="about-grid">
       <div class="about-img-col">
-        <img src="img/foto-facundo.jpg" alt="Facundo Luna" loading="lazy">
+        <img src="img/foto-facundo.jpg" alt="Facundo Luna" loading="lazy" decoding="async">
       </div>
       <div class="about-txt">
         <div class="about-lbl" data-es="Facundo Luna — Arquitectura + IA" data-en="Facundo Luna — Architecture + AI">Facundo Luna — Arquitectura + IA</div>
@@ -1313,7 +1426,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
           Soy <strong>Facundo Luna</strong>, estudiante de arquitectura en <strong>FADU UBA</strong>, Buenos Aires. Mi práctica combina el rigor de la documentación técnica con el diseño paramétrico y la inteligencia artificial — dos herramientas que no uso por moda, sino porque me permiten pensar proyectos que de otra forma no existirían.<br><br>Fundé <strong>EFELE.ARQ</strong> como espacio de investigación personal donde exploro los límites entre algoritmo, imagen y arquitectura.
         </p>
         <div class="about-links">
-          <a class="about-link" href="mailto:facundoluna182@gmail.com">Email</a>
+          <a class="about-link" href="/cdn-cgi/l/email-protection#bed8dfddcbd0dad1d2cbd0df8f868cfed9d3dfd7d290ddd1d3">Email</a>
           <a class="about-link" href="https://instagram.com/efele.arq" target="_blank" rel="noopener">Instagram</a>
           <a class="about-link" href="https://www.behance.net/facundoluna182" target="_blank" rel="noopener">Behance</a>
         </div>
@@ -1336,7 +1449,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
       <div class="contact-l">
         <div class="contact-big" data-es="CONTACTAME" data-en="CONTACT ME">CONTACTAME</div>
         <div class="contact-items">
-          <div class="ci"><span class="ci-k">Email</span><a class="ci-v" href="mailto:facundoluna182@gmail.com">facundoluna182@gmail.com</a></div>
+          <div class="ci"><span class="ci-k">Email</span><a class="ci-v" href="/cdn-cgi/l/email-protection#9ef8fffdebf0faf1f2ebf0ffafa6acdef9f3fff7f2b0fdf1f3"><span class="__cf_email__" data-cfemail="b0d6d1d3c5ded4dfdcc5ded1818882f0d7ddd1d9dc9ed3dfdd">[email&#160;protected]</span></a></div>
           <div class="ci"><span class="ci-k">Instagram</span><a class="ci-v" href="https://instagram.com/efele.arq" target="_blank" rel="noopener">@efele.arq</a></div>
           <div class="ci"><span class="ci-k" data-es="Ubicación" data-en="Location">Ubicación</span><span class="ci-v">Buenos Aires, Argentina</span></div>
         </div>
@@ -1363,7 +1476,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
   </div>
 </div>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 
 'use strict';
 
@@ -1375,8 +1488,7 @@ const scrollPos = {};
 let currentView = 'inicio';
 
 function go(name, restoreScroll) {
-  /* Guardar scroll de la vista actual antes de salir */
-  scrollPos[currentView] = window.scrollY;
+  scrollPos[currentView] = window.scrollY || document.documentElement.scrollTop;
 
   document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
   const navKey = name.startsWith('proj-') ? 'proyectos' : name;
@@ -1388,9 +1500,13 @@ function go(name, restoreScroll) {
   if (t) {
     t.classList.add('active');
     const savedY = restoreScroll && scrollPos[name] != null ? scrollPos[name] : 0;
-    /* scrollTo en el mismo frame — display:block ya se aplicó */
     document.documentElement.scrollTop = savedY;
     document.body.scrollTop = savedY;
+    /* fallback con timeout para browsers lentos */
+    if (savedY > 0) setTimeout(() => {
+      document.documentElement.scrollTop = savedY;
+      document.body.scrollTop = savedY;
+    }, 50);
   }
   currentView = name;
   history.pushState({v: name}, '', '#' + name);
