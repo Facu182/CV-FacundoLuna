@@ -1710,4 +1710,19 @@ function setLang(l){
   document.getElementById('btn-es').classList.toggle('on',l==='es');
   document.getElementById('btn-en').classList.toggle('on',l==='en');
   document.querySelectorAll('[data-es]').forEach(el=>{
-    const val=l==
+    const val=l=='es'?el.dataset.es:el.dataset.en;
+    if(val!==undefined)el.innerHTML=val;
+  });
+}
+
+/* FORMULARIO */
+function handleForm(e){
+  e.preventDefault();
+  const btn=e.target.querySelector('.fsub');
+  btn.textContent='Enviado ✓';
+  btn.style.opacity='.5';
+  btn.disabled=true;
+}
+</script>
+</body>
+</html>
