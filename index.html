@@ -3,120 +3,106 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Facundo Luna — Arquitectura, Diseño Paramétrico e Inteligencia Artificial. FADU UBA, Buenos Aires.">
+<meta name="description" content="Facundo Luna — Arquitectura, Diseño Paramétrico e IA. FADU UBA, Buenos Aires.">
 <title>Facundo Luna — Arquitectura + IA</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,700;12..96,800&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+<!--
+  ANALYTICS — Umami (gratis, sin cookies)
+  1. Creá cuenta en umami.is
+  2. Agregá tu sitio: facu182.github.io
+  3. Reemplazá TU-ID-AQUI con el data-website-id que te dan
+-->
+<script defer src="https://cloud.umami.is/script.js" data-website-id="TU-ID-AQUI"></script>
 <style>
-/* ══════════════════════════════════════════
-   RESET & VARIABLES
-══════════════════════════════════════════ */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --bg:#f5f5f5;
-  --white:#fff;
-  --ink:#0d0d0d;
-  --ink2:#222;
-  --mid:#555;
-  --muted:#888;
-  --pale:#bbb;
-  --line:#e0e0e0;
-  --hover:#ebebeb;
-  --dark:#0e0e0c;
-  --max:1080px;
-  --pad:32px;
-  --nav:52px;
-  --f:'Bricolage Grotesque',sans-serif;
-  --ui:'Inter',sans-serif;
+  --bg:#f5f5f5;--white:#fff;--ink:#0d0d0d;--ink2:#222;
+  --mid:#555;--muted:#888;--pale:#bbb;--line:#e0e0e0;
+  --hover:#ebebeb;--dark:#0e0e0c;
+  --max:1080px;--pad:32px;--nav:52px;
+  --f:'Bricolage Grotesque',sans-serif;--ui:'Inter',sans-serif;
 }
 html{-webkit-tap-highlight-color:transparent}
-body{background:var(--bg);color:var(--ink);font-family:var(--ui);font-size:14px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body{background:var(--bg);color:var(--ink);font-family:var(--ui);font-size:14px;
+  line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 img{display:block;max-width:100%}
 a{color:inherit;text-decoration:none}
 button{font-family:var(--ui);cursor:pointer;border:none;background:none}
 
-/* ══════════════════════════════════════════
-   CONTENEDOR CENTRADO
-══════════════════════════════════════════ */
+/* CONTAINER */
 .w{width:100%;max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
 
-/* ══════════════════════════════════════════
-   CURSOR
-══════════════════════════════════════════ */
+/* CURSOR */
 @media(pointer:fine){
-  #cur{width:8px;height:8px;border-radius:50%;background:var(--ink);position:fixed;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .18s,height .18s,background .18s,border .18s;mix-blend-mode:multiply}
+  #cur{width:8px;height:8px;border-radius:50%;background:var(--ink);position:fixed;
+    pointer-events:none;z-index:9999;transform:translate(-50%,-50%);
+    transition:width .18s,height .18s,background .18s,border .18s;mix-blend-mode:multiply}
 }
 
-/* ══════════════════════════════════════════
-   NAV
-══════════════════════════════════════════ */
-nav{
-  position:fixed;top:0;left:0;right:0;z-index:200;
-  height:var(--nav);
-  background:rgba(245,245,245,.96);
-  backdrop-filter:blur(10px);
-  border-bottom:0.5px solid var(--line);
-}
-.nav-w{max-width:var(--max);margin:0 auto;padding:0 var(--pad);height:100%;display:flex;justify-content:space-between;align-items:center;gap:16px}
-.nav-logo{font-family:var(--f);font-size:14px;font-weight:800;letter-spacing:-.02em;cursor:pointer;white-space:nowrap;flex-shrink:0}
-.nav-links{display:flex;gap:0;list-style:none;overflow-x:auto}
-.nav-links a{font-size:10px;font-weight:400;letter-spacing:.1em;text-transform:uppercase;color:var(--pale);padding:0 13px;height:var(--nav);display:flex;align-items:center;transition:color .15s,background .15s;cursor:pointer;white-space:nowrap}
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
+  background:rgba(245,245,245,.96);backdrop-filter:blur(10px);
+  border-bottom:0.5px solid var(--line)}
+.nav-w{max-width:var(--max);margin:0 auto;padding:0 var(--pad);
+  height:100%;display:flex;justify-content:space-between;align-items:center;gap:16px}
+.nav-logo{font-family:var(--f);font-size:14px;font-weight:800;
+  letter-spacing:-.02em;cursor:pointer;white-space:nowrap;flex-shrink:0}
+.nav-links{display:flex;list-style:none;overflow-x:auto}
+.nav-links a{font-size:10px;font-weight:400;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--pale);padding:0 13px;height:var(--nav);display:flex;align-items:center;
+  transition:color .15s,background .15s;cursor:pointer;white-space:nowrap}
 .nav-links a:hover{color:var(--ink);background:var(--hover)}
 .nav-links a.active{color:var(--ink);background:var(--white)}
 .nav-right{display:flex;align-items:center;gap:10px;flex-shrink:0}
-.lang-btn{font-size:10px;font-weight:400;letter-spacing:.08em;color:var(--pale);cursor:pointer;transition:color .2s;padding:4px 7px;background:none;border:none;font-family:var(--ui)}
-.lang-btn.on{color:var(--ink);font-weight:400}
+.lang-btn{font-size:10px;font-weight:400;letter-spacing:.08em;color:var(--pale);
+  cursor:pointer;transition:color .2s;padding:4px 7px;font-family:var(--ui)}
+.lang-btn.on{color:var(--ink)}
 .lang-sep{color:var(--line);font-size:10px;pointer-events:none}
 .nav-tog{display:none;flex-direction:column;gap:5px;padding:6px;cursor:pointer}
 .nav-tog span{display:block;width:20px;height:1.5px;background:var(--ink);transition:all .2s}
 .nav-tog.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
 .nav-tog.open span:nth-child(2){opacity:0}
 .nav-tog.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
-.nav-mob{display:none;position:fixed;top:var(--nav);left:0;right:0;z-index:199;background:rgba(245,245,245,.98);border-bottom:0.5px solid var(--line);flex-direction:column}
+.nav-mob{display:none;position:fixed;top:var(--nav);left:0;right:0;z-index:199;
+  background:rgba(245,245,245,.98);border-bottom:0.5px solid var(--line);flex-direction:column}
 .nav-mob.open{display:flex}
-.nav-mob a{font-size:12px;font-weight:400;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);padding:14px var(--pad);border-bottom:0.5px solid var(--line);cursor:pointer;transition:background .15s}
+.nav-mob a{font-size:12px;font-weight:400;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--mid);padding:14px var(--pad);border-bottom:0.5px solid var(--line);
+  cursor:pointer;transition:background .15s}
 .nav-mob a:hover,.nav-mob a.active{color:var(--ink);background:var(--white)}
 
-/* ══════════════════════════════════════════
-   SISTEMA DE VISTAS
-══════════════════════════════════════════ */
+/* VIEWS */
 .view{display:none;padding-top:var(--nav);min-height:100vh}
 .view.active{display:block;animation:vin .2s ease forwards}
 @keyframes vin{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:translateY(0)}}
 
-/* ══════════════════════════════════════════
-   DIVISORES INTERNOS (no tocan los bordes)
-══════════════════════════════════════════ */
+/* DIVIDERS & SECTION HEADERS */
 .hr{border:none;border-top:0.5px solid var(--line);margin:0}
-
-/* ══════════════════════════════════════════
-   HEADER DE SECCIÓN
-══════════════════════════════════════════ */
-.sh{padding:14px 0 10px}
+.sh{padding:13px 0 9px}
 .sh-row{display:flex;justify-content:space-between;align-items:center}
 .sh-label{font-size:9px;font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:var(--pale)}
 .sh-right{font-size:10px;font-weight:300;color:var(--pale)}
 .sh-link{font-size:10px;font-weight:400;color:var(--ink);cursor:pointer;letter-spacing:.04em;transition:color .2s}
 .sh-link:hover{color:var(--mid)}
 
-/* ══════════════════════════════════════════
-   FOOTER
-══════════════════════════════════════════ */
-.footer{padding:16px 0;border-top:0.5px solid var(--line);margin-top:0}
+/* FOOTER */
+.footer{padding:16px 0;border-top:0.5px solid var(--line)}
 .footer-row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
 .ft-l{font-family:var(--f);font-size:12px;font-weight:700;color:var(--ink)}
 .ft-m{font-size:9px;font-weight:300;color:var(--pale);letter-spacing:.08em}
 .ft-r{font-size:9px;font-weight:300;color:var(--pale)}
 
-/* ══════════════════════════════════════════
-   VISTA: INICIO
-══════════════════════════════════════════ */
+/* PLACEHOLDERS */
+.ph-txt{font-size:9px;font-weight:300;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--pale);text-align:center;padding:0 16px;line-height:1.6}
 
-/* — Hero — */
+/* ── INICIO ── */
 .hero{padding:52px 0 40px}
 .hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:end}
-.hero-name{font-family:var(--f);font-size:clamp(56px,8vw,92px);font-weight:800;line-height:.86;letter-spacing:-.05em;color:var(--ink)}
+.hero-name{font-family:var(--f);font-size:clamp(56px,8vw,92px);font-weight:800;
+  line-height:.86;letter-spacing:-.05em;color:var(--ink)}
 .hero-name span{display:block;font-weight:300;color:var(--muted)}
 .hero-right{display:flex;flex-direction:column;gap:18px}
 .hero-stmt{font-size:15px;font-weight:300;color:var(--ink2);line-height:1.8}
@@ -126,10 +112,12 @@ nav{
 .mk{font-size:9px;font-weight:400;letter-spacing:.1em;text-transform:uppercase;color:var(--pale)}
 .mv{font-size:12px;font-weight:300;color:var(--ink)}
 .chips{display:flex;flex-wrap:wrap;gap:5px}
-.chip{font-size:10px;font-weight:300;letter-spacing:.04em;color:var(--mid);border:0.5px solid var(--line);padding:5px 11px;background:var(--white);transition:all .15s;cursor:default}
+.chip{font-size:10px;font-weight:300;letter-spacing:.04em;color:var(--mid);
+  border:0.5px solid var(--line);padding:5px 11px;background:var(--white);
+  transition:all .15s;cursor:default}
 .chip:hover{border-color:var(--muted);color:var(--ink)}
 
-/* — Proyectos preview (3 cards) — */
+/* Proyectos preview */
 .proj-prev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line)}
 .ppc{background:var(--bg);cursor:pointer;transition:background .18s;overflow:hidden}
 .ppc:hover{background:var(--hover)}
@@ -143,52 +131,60 @@ nav{
 .ppc-t{font-family:var(--f);font-size:18px;font-weight:700;color:var(--ink);line-height:1;letter-spacing:-.02em;margin-bottom:3px}
 .ppc-c{font-size:10px;font-weight:300;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
 
-/* — Paramétrica — */
+/* Paramétrica */
 .param-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line)}
 .param-cell{position:relative;overflow:hidden;cursor:pointer;background:var(--white)}
 .param-cell.big{aspect-ratio:16/9}
 .param-cell.sm3{aspect-ratio:4/3}
 .param-cell img{width:100%;height:100%;object-fit:cover;transition:transform .7s ease;display:block}
 .param-cell:hover img{transform:scale(1.04)}
-.param-ph{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:var(--white);flex-direction:column;gap:8px}
+.param-ph{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+  background:var(--white);flex-direction:column;gap:8px}
 .param-ph-icon{font-size:20px;opacity:.1}
-.param-ph-txt{font-size:8px;font-weight:300;letter-spacing:.12em;text-transform:uppercase;color:var(--pale);text-align:center;padding:0 12px}
-.param-lbl{position:absolute;bottom:10px;left:12px;z-index:2;font-size:8px;font-weight:400;letter-spacing:.1em;text-transform:uppercase;color:rgba(0,0,0,.4);background:rgba(255,255,255,.75);padding:3px 7px}
-/* fila 3 celdas — span full width */
+.param-lbl{position:absolute;bottom:10px;left:12px;z-index:2;font-size:8px;font-weight:400;
+  letter-spacing:.1em;text-transform:uppercase;color:rgba(0,0,0,.4);
+  background:rgba(255,255,255,.75);padding:3px 7px}
 .param-row3{grid-column:1/-1;display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line)}
 
-/* — Proceso preview — */
+/* Proceso preview */
 .proc-prev-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line)}
 .proc-prev-cell{position:relative;overflow:hidden;cursor:pointer;background:var(--white);aspect-ratio:1}
-.proc-prev-cell img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease;display:block}
+.proc-prev-cell img{width:100%;height:100%;object-fit:cover;transition:transform .6s;display:block}
 .proc-prev-cell:hover img{transform:scale(1.05)}
-.proc-prev-ph{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:var(--white);flex-direction:column;gap:6px}
-.proc-prev-ph span{font-size:8px;font-weight:300;letter-spacing:.12em;text-transform:uppercase;color:var(--pale);text-align:center;padding:0 8px}
+.proc-prev-ph{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+  background:var(--white);flex-direction:column;gap:6px}
 
-/* — Slider inicio — */
+/* Slider */
 .slider-lbl-bar{display:flex;justify-content:space-between;align-items:center;padding:10px 0}
 .sl-title{font-size:9px;font-weight:400;letter-spacing:.14em;text-transform:uppercase;color:var(--mid)}
 .sl-hint{font-size:10px;font-weight:300;color:var(--pale)}
-.slider-outer{position:relative;width:100%;aspect-ratio:16/6;overflow:hidden;cursor:col-resize;user-select:none;max-height:380px}
-.sl-after{position:absolute;inset:0;background:url('https://facu182.github.io/despues.jpg') center/cover no-repeat}
-.sl-before{position:absolute;inset:0;background:url('https://facu182.github.io/antes.jpg') center/cover no-repeat;clip-path:inset(0 50% 0 0)}
-.sl-line{position:absolute;top:0;bottom:0;left:50%;width:2px;background:rgba(255,255,255,.92);transform:translateX(-50%);pointer-events:none;box-shadow:0 0 14px rgba(0,0,0,.22)}
-.sl-handle{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:40px;height:40px;border-radius:50%;background:white;box-shadow:0 2px 14px rgba(0,0,0,.18);display:flex;align-items:center;justify-content:center;pointer-events:none}
+.slider-outer{position:relative;width:100%;aspect-ratio:16/6;overflow:hidden;
+  cursor:col-resize;user-select:none;max-height:380px}
+/* ══ SLIDER ANTES: img/render-antes.jpg | 1920×720px, render Twinmotion sin editar */
+/* ══ SLIDER DESPUÉS: img/render-despues.jpg | 1920×720px, post-prod IA, mismo ángulo */
+.sl-after{position:absolute;inset:0;background:url('img/render-despues.jpg') center/cover no-repeat}
+.sl-before{position:absolute;inset:0;background:url('img/render-antes.jpg') center/cover no-repeat;clip-path:inset(0 50% 0 0)}
+.sl-line{position:absolute;top:0;bottom:0;left:50%;width:2px;background:rgba(255,255,255,.92);
+  transform:translateX(-50%);pointer-events:none;box-shadow:0 0 14px rgba(0,0,0,.22)}
+.sl-handle{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  width:40px;height:40px;border-radius:50%;background:white;
+  box-shadow:0 2px 14px rgba(0,0,0,.18);display:flex;align-items:center;justify-content:center;pointer-events:none}
 .sl-handle::before{content:'‹';font-size:14px;color:var(--ink);margin-right:2px}
 .sl-handle::after{content:'›';font-size:14px;color:var(--ink);margin-left:2px}
-.sl-tag{position:absolute;bottom:12px;z-index:2;font-size:9px;font-weight:400;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.8);background:rgba(0,0,0,.22);padding:3px 9px;pointer-events:none}
+.sl-tag{position:absolute;bottom:12px;z-index:2;font-size:9px;font-weight:400;letter-spacing:.1em;
+  text-transform:uppercase;color:rgba(255,255,255,.8);background:rgba(0,0,0,.22);padding:3px 9px;pointer-events:none}
 .sl-tag.l{left:14px}.sl-tag.r{right:14px}
 
-/* — CTAs — */
+/* CTAs */
 .home-ctas{display:flex;gap:12px;align-items:center;flex-wrap:wrap;padding:28px 0 0}
-.cta-p{font-size:11px;font-weight:400;letter-spacing:.1em;text-transform:uppercase;background:var(--ink);color:var(--white);padding:12px 22px;transition:opacity .2s;border:none;cursor:pointer;font-family:var(--ui)}
+.cta-p{font-size:11px;font-weight:400;letter-spacing:.1em;text-transform:uppercase;
+  background:var(--ink);color:var(--white);padding:12px 22px;transition:opacity .2s}
 .cta-p:hover{opacity:.8}
-.cta-g{font-size:11px;font-weight:300;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);transition:color .2s;border:none;background:none;cursor:pointer;font-family:var(--ui)}
+.cta-g{font-size:11px;font-weight:300;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--muted);transition:color .2s}
 .cta-g:hover{color:var(--ink)}
 
-/* ══════════════════════════════════════════
-   VISTA: PROYECTOS (lista)
-══════════════════════════════════════════ */
+/* ── LISTA PROYECTOS ── */
 .prow{display:grid;cursor:pointer;transition:background .18s;overflow:hidden;border-bottom:0.5px solid var(--line)}
 .prow:hover{background:var(--hover)}
 .prow-n{grid-template-columns:55% 1fr}
@@ -198,7 +194,9 @@ nav{
 .pi-in{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .7s ease}
 .prow:hover .pi-in{transform:scale(1.04)}
 .pi-ov{position:absolute;inset:0;background:rgba(0,0,0,.04)}
-.pi-tag{position:absolute;bottom:12px;left:14px;z-index:2;font-size:9px;font-weight:400;letter-spacing:.1em;color:rgba(255,255,255,.75);text-transform:uppercase;background:rgba(0,0,0,.22);padding:4px 9px}
+.pi-tag{position:absolute;bottom:12px;left:14px;z-index:2;font-size:9px;font-weight:400;
+  letter-spacing:.1em;color:rgba(255,255,255,.75);text-transform:uppercase;
+  background:rgba(0,0,0,.22);padding:4px 9px}
 .pinfo{padding:32px 36px;display:flex;flex-direction:column;justify-content:space-between;border-left:0.5px solid var(--line)}
 .prow-f .pinfo{border-left:none;border-right:0.5px solid var(--line)}
 .ptop{display:flex;justify-content:space-between;margin-bottom:14px}
@@ -208,156 +206,94 @@ nav{
 .pcat{font-size:11px;font-weight:400;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);margin-bottom:12px}
 .pdesc{font-size:13px;font-weight:300;color:var(--ink2);line-height:1.75;flex:1}
 .ptags{display:flex;flex-wrap:wrap;gap:4px;margin-top:14px}
-.ptag{font-size:9px;font-weight:400;letter-spacing:.08em;color:var(--pale);border:0.5px solid var(--line);padding:3px 8px;background:var(--white)}
+.ptag{font-size:9px;font-weight:400;letter-spacing:.08em;color:var(--pale);
+  border:0.5px solid var(--line);padding:3px 8px;background:var(--white)}
 .parr{margin-top:18px;font-size:11px;font-weight:300;color:var(--pale);align-self:flex-end;transition:all .18s}
 .prow:hover .parr{color:var(--ink);transform:translateX(5px)}
 
 /* Croquis */
 .croquis-wrap{background:var(--white);padding:40px 0;display:flex;justify-content:center;border-bottom:0.5px solid var(--line)}
-.croquis-box{max-width:520px;width:100%;aspect-ratio:4/3;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.croquis-box{max-width:520px;width:100%;aspect-ratio:4/3;position:relative;overflow:hidden;
+  display:flex;align-items:center;justify-content:center}
 .croquis-box img{width:100%;height:100%;object-fit:contain;filter:contrast(1.08)}
-.croquis-ph{position:absolute;inset:0;background:var(--white);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px}
+.croquis-ph{position:absolute;inset:0;background:var(--white);
+  display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px}
 .croquis-ph-icon{font-size:20px;opacity:.1}
-.croquis-ph-txt{font-size:9px;font-weight:300;letter-spacing:.14em;text-transform:uppercase;color:var(--pale)}
 
-/* GH strip full bleed */
+/* GH strip */
 .gh{position:relative;overflow:hidden;background:var(--dark);border-top:0.5px solid var(--line);border-bottom:0.5px solid var(--line)}
 .gh::before{content:'';display:block;padding-top:20%}
 .gh-in{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;overflow:hidden}
 .gh-in svg{width:100%;height:100%;opacity:.2}
 .gh-bg{position:absolute;inset:0;background-size:cover;background-position:center;opacity:.9;transition:transform 1s ease}
 .gh:hover .gh-bg{transform:scale(1.015)}
-.gh-lbl{position:absolute;bottom:14px;left:var(--pad);z-index:2;font-size:9px;font-weight:300;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.3)}
+.gh-lbl{position:absolute;bottom:14px;left:var(--pad);z-index:2;font-size:9px;font-weight:300;
+  letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.3)}
 
-/* ══════════════════════════════════════════
-   VISTA: PROYECTO INDIVIDUAL
-   Render hero → texto → láminas → maqueta
-══════════════════════════════════════════ */
-
-/* Hero del proyecto — imagen full width con fade abajo */
-.proj-hero{
-  position:relative;
-  width:100%;
-  aspect-ratio:16/7;
-  overflow:hidden;
-  max-height:520px;
-}
-.proj-hero img{
-  width:100%;height:100%;object-fit:cover;display:block;
-}
-.proj-hero-ph{
-  position:absolute;inset:0;background:var(--hover);
-  display:flex;align-items:center;justify-content:center;
-  flex-direction:column;gap:10px;
-}
-.proj-hero-ph-txt{font-size:9px;font-weight:300;letter-spacing:.14em;text-transform:uppercase;color:var(--pale)}
-/* fade gradiente abajo */
-.proj-hero-fade{
-  position:absolute;bottom:0;left:0;right:0;
-  height:180px;
-  background:linear-gradient(to bottom,transparent,var(--bg));
-  pointer-events:none;
-}
-
-/* Botón volver */
-.back-btn{
-  display:inline-flex;align-items:center;gap:8px;
-  font-size:10px;font-weight:400;letter-spacing:.1em;text-transform:uppercase;
-  color:var(--muted);transition:color .2s;cursor:pointer;
-  padding:16px 0 0;
-}
+/* ── PROYECTO INDIVIDUAL ── */
+.proj-hero{position:relative;width:100%;aspect-ratio:16/7;overflow:hidden;max-height:520px;background:var(--hover)}
+.proj-hero img{width:100%;height:100%;object-fit:cover;display:block}
+.proj-hero-ph{position:absolute;inset:0;background:var(--hover);
+  display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px}
+.proj-hero-fade{position:absolute;bottom:0;left:0;right:0;height:180px;
+  background:linear-gradient(to bottom,transparent,var(--bg));pointer-events:none}
+.back-btn{display:inline-flex;align-items:center;gap:8px;font-size:10px;font-weight:400;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--muted);transition:color .2s;
+  cursor:pointer;padding:16px 0}
 .back-btn:hover{color:var(--ink)}
-
-/* Header del proyecto */
-.proj-header{padding:24px 0 32px}
+.proj-header{padding:20px 0 28px}
 .proj-header-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
-.proj-eyebrow{font-size:9px;font-weight:400;letter-spacing:.16em;text-transform:uppercase;color:var(--pale);margin-bottom:12px}
-.proj-title{font-family:var(--f);font-size:clamp(36px,5vw,56px);font-weight:800;line-height:.88;letter-spacing:-.04em;color:var(--ink);margin-bottom:8px}
-.proj-subtitle{font-family:var(--f);font-size:20px;font-weight:300;color:var(--muted);margin-bottom:20px;letter-spacing:-.01em}
+.proj-eyebrow{font-size:9px;font-weight:400;letter-spacing:.16em;text-transform:uppercase;color:var(--pale);margin-bottom:10px}
+.proj-title{font-family:var(--f);font-size:clamp(36px,5vw,54px);font-weight:800;
+  line-height:.88;letter-spacing:-.04em;color:var(--ink);margin-bottom:6px}
+.proj-subtitle{font-family:var(--f);font-size:18px;font-weight:300;color:var(--muted);margin-bottom:18px;letter-spacing:-.01em}
 .proj-meta{border-top:0.5px solid var(--line)}
-.proj-meta-row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:0.5px solid var(--line)}
+.proj-meta-row{display:flex;justify-content:space-between;padding:7px 0;border-bottom:0.5px solid var(--line)}
 .pmk{font-size:9px;font-weight:400;letter-spacing:.1em;text-transform:uppercase;color:var(--pale)}
-.pmv{font-size:12px;font-weight:300;color:var(--ink)}
-.proj-desc-col{display:flex;flex-direction:column;gap:16px}
-.proj-desc-text{font-size:14px;font-weight:300;color:var(--ink2);line-height:1.85}
+.pmv{font-size:11px;font-weight:300;color:var(--ink)}
+.proj-desc-col{display:flex;flex-direction:column;gap:14px}
+.proj-desc-text{font-size:13px;font-weight:300;color:var(--ink2);line-height:1.85}
 .proj-desc-text strong{font-weight:400;color:var(--ink)}
 .proj-tags{display:flex;flex-wrap:wrap;gap:5px}
-.proj-tag{font-size:9px;font-weight:400;letter-spacing:.08em;color:var(--pale);border:0.5px solid var(--line);padding:4px 10px;background:var(--white)}
+.proj-tag{font-size:9px;font-weight:400;letter-spacing:.08em;color:var(--pale);
+  border:0.5px solid var(--line);padding:4px 10px;background:var(--white)}
 
-/* Láminas — una por una, scroll vertical */
-/* Láminas — tamaños por columna */
-.laminas-stack{display:flex;flex-direction:column}
-.laminas-stack .lam-full{width:100%}
-.laminas-stack .lam-half,.laminas-stack .lam-third{display:inline-block;vertical-align:top}
-/* Rows de mitades y tercios */
-.lam-row{display:grid;gap:2px}
+/* Láminas — scroll vertical con fondo b/n */
+.laminas-bg{position:fixed;top:0;left:0;right:0;bottom:0;z-index:0;
+  pointer-events:none;opacity:0;transition:opacity .4s ease}
+.laminas-bg.visible{opacity:1}
+.laminas-bg img{width:100%;height:100%;object-fit:cover;
+  filter:grayscale(100%) blur(8px) brightness(.5)}
+.laminas-stack{position:relative;z-index:1;display:flex;flex-direction:column;gap:2px}
+.lamina{position:relative;width:100%;cursor:pointer;background:var(--white);overflow:hidden}
+.lamina img{width:100%;height:auto;display:block;transition:transform .5s ease}
+.lamina:hover img{transform:scale(1.01)}
+.lamina-ph{width:100%;aspect-ratio:16/9;display:flex;align-items:center;
+  justify-content:center;background:var(--white);flex-direction:column;gap:8px}
+/* Filas de láminas */
+.lam-row{display:grid;gap:2px;background:var(--line)}
 .lam-row-2{grid-template-columns:1fr 1fr}
 .lam-row-4{grid-template-columns:1fr 1fr 1fr 1fr}
-.lam-row .lamina{width:100%}
-.laminas-section{position:relative}
-/* Fondo fijo: imagen del proyecto en b/n difuminado */
-.laminas-bg{
-  position:fixed;top:0;left:0;right:0;bottom:0;
-  z-index:0;
-  pointer-events:none;
-  opacity:0;
-  transition:opacity .4s ease;
-}
-.laminas-bg.visible{opacity:1}
-.laminas-bg img{
-  width:100%;height:100%;
-  object-fit:cover;
-  filter:grayscale(100%) blur(8px) brightness(.55);
-}
-.laminas-stack{
-  position:relative;
-  z-index:1;
-  display:flex;flex-direction:column;
-  gap:2px;
-}
-.lamina{
-  position:relative;
-  width:100%;
-  cursor:pointer;
-  background:var(--white);
-  overflow:hidden;
-}
-.lamina img{
-  width:100%;height:auto;
-  display:block;
-  transition:transform .5s ease;
-}
-.lamina:hover img{transform:scale(1.01)}
-.lamina-ph{
-  width:100%;aspect-ratio:16/9;
-  display:flex;align-items:center;justify-content:center;
-  background:var(--white);flex-direction:column;gap:8px;
-}
-.lamina-ph-txt{font-size:9px;font-weight:300;letter-spacing:.12em;text-transform:uppercase;color:var(--pale);text-align:center;padding:0 16px}
+.lam-row .lamina{aspect-ratio:4/3}
 
-/* Maqueta al final */
-.maqueta-section{padding:0}
-.maqueta-label{padding:14px 0 10px}
-.maqueta-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line)}
-.maqueta-img{position:relative;overflow:hidden;cursor:pointer;background:var(--hover);aspect-ratio:1}
-.maqueta-img img{width:100%;height:100%;object-fit:cover;transition:transform .7s ease;display:block}
-.maqueta-img:hover img{transform:scale(1.06)}
-.maqueta-ph{position:absolute;inset:0;background:var(--hover);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px}
-.maqueta-ph-txt{font-size:9px;font-weight:300;letter-spacing:.12em;text-transform:uppercase;color:var(--pale);text-align:center;padding:0 12px}
+/* Maqueta */
+.maqueta-section{margin-top:2px}
+.maqueta-grid{display:grid;grid-template-columns:1fr;gap:1px;background:var(--line)}
+.maqueta-img{position:relative;overflow:hidden;cursor:pointer;background:var(--hover);aspect-ratio:16/9}
+.maqueta-img img{width:100%;height:100%;object-fit:cover;transition:transform .7s;display:block}
+.maqueta-img:hover img{transform:scale(1.04)}
+.maqueta-ph{position:absolute;inset:0;background:var(--hover);
+  display:flex;align-items:center;justify-content:center}
 
-/* ══════════════════════════════════════════
-   VISTA: PROCESO
-══════════════════════════════════════════ */
+/* ── PROCESO ── */
 .proc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line)}
 .proc-card{position:relative;overflow:hidden;cursor:pointer;background:var(--white)}
 .proc-card::before{content:'';display:block;padding-top:80%}
-.proc-card img,.proc-ph{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .7s ease;display:block}
+.proc-card img,.proc-ph{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .7s;display:block}
 .proc-card:hover img{transform:scale(1.05)}
 .proc-ph{display:flex;align-items:center;justify-content:center;background:var(--white);flex-direction:column;gap:10px}
 .proc-ph-icon{font-size:20px;opacity:.1}
-.proc-ph-txt{font-size:9px;font-weight:300;letter-spacing:.12em;text-transform:uppercase;color:var(--pale);text-align:center;padding:0 12px}
 
-/* AI strip */
 .ai-strip{display:grid;grid-template-columns:1fr 1fr}
 .ai-l{padding:32px 40px 32px 0;border-right:0.5px solid var(--line)}
 .ai-big{font-family:var(--f);font-size:32px;font-weight:800;line-height:.9;letter-spacing:-.04em;color:var(--ink);margin-bottom:3px}
@@ -372,76 +308,48 @@ nav{
 .ai-name{font-family:var(--f);font-size:13px;font-weight:700;color:var(--ink);margin-bottom:4px}
 .ai-desc{font-size:11px;font-weight:300;color:var(--mid);line-height:1.6}
 
-/* ══════════════════════════════════════════
-   VISTA: EFELE
-══════════════════════════════════════════ */
-.efele-top{display:grid;grid-template-columns:1fr 1fr;gap:0;border-bottom:0.5px solid var(--line)}
-.efele-l{padding:40px 40px 40px 0;border-right:0.5px solid var(--line);display:flex;flex-direction:column;justify-content:space-between;gap:24px}
-
-/* Logo EFELE */
-.efele-logo-box{
-  width:100%;max-width:280px;
-  display:flex;align-items:center;justify-content:flex-start;
-}
-.efele-logo-box img{
-  max-height:80px;width:auto;object-fit:contain;
-  filter:none;
-}
-/*
-  LOGO EFELE.ARQ:
-  Poné tu logo en: img/efele-logo.png
-  PNG con fondo transparente.
-  El <img> ya está configurado abajo.
-  Si el logo se ve muy grande/chico, ajustá max-height arriba.
-*/
-.efele-logo-ph{
-  display:flex;align-items:center;gap:10px;
-  padding:16px 20px;border:0.5px dashed var(--line);
-  max-width:280px;
-}
-.efele-logo-ph span{font-size:9px;font-weight:300;letter-spacing:.12em;text-transform:uppercase;color:var(--pale)}
-
-.efele-mark-row{display:flex;align-items:center;gap:10px;margin-bottom:4px}
+/* ── EFELE ── */
+.efele-top{display:grid;grid-template-columns:1fr 1fr;border-bottom:0.5px solid var(--line)}
+.efele-l{padding:40px 40px 40px 0;border-right:0.5px solid var(--line);display:flex;flex-direction:column;gap:24px}
+.efele-logo-ph{display:flex;align-items:center;padding:16px 20px;border:0.5px dashed var(--line);max-width:280px}
+.efele-logo-box{max-width:280px;max-height:80px;width:auto;object-fit:contain}
+.efele-mark-row{display:flex;align-items:center;gap:10px}
 .efele-sq{width:10px;height:10px;background:var(--ink);flex-shrink:0}
 .efele-name-lbl{font-size:13px;font-weight:400;color:var(--ink)}
-.efele-tagline{font-size:12px;font-weight:300;color:var(--muted);letter-spacing:.02em}
-
+.efele-tagline{font-size:12px;font-weight:300;color:var(--muted);letter-spacing:.02em;margin-top:4px}
 .efele-r{padding:40px 0 40px 40px;display:flex;flex-direction:column;justify-content:space-between}
 .efele-desc{font-size:14px;font-weight:300;color:var(--ink2);line-height:1.85;margin-bottom:22px}
 .efele-desc strong{font-weight:400;color:var(--ink)}
-.efele-cta{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:400;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);border-bottom:0.5px solid var(--ink);padding-bottom:3px;transition:all .2s;align-self:flex-start}
+.efele-cta{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:400;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--ink);
+  border-bottom:0.5px solid var(--ink);padding-bottom:3px;transition:all .2s;align-self:flex-start}
 .efele-cta:hover{color:var(--muted);border-color:var(--pale)}
 .efele-gal{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line)}
 .efele-img{overflow:hidden;background:var(--hover);position:relative;cursor:pointer;aspect-ratio:1}
-.efele-img img{width:100%;height:100%;object-fit:cover;transition:transform .7s ease;display:block}
+.efele-img img{width:100%;height:100%;object-fit:cover;transition:transform .7s;display:block}
 .efele-img:hover img{transform:scale(1.06)}
 .efele-img-ph{position:absolute;inset:0;background:var(--hover);display:flex;align-items:center;justify-content:center}
-.efele-img-ph span{font-size:9px;font-weight:300;letter-spacing:.1em;text-transform:uppercase;color:var(--pale)}
 
-/* ══════════════════════════════════════════
-   VISTA: ABOUT
-══════════════════════════════════════════ */
+/* ── ABOUT ── */
 .about-grid{display:grid;grid-template-columns:1fr 1fr}
-.about-img-col{overflow:hidden;background:var(--hover);min-height:400px;display:flex;align-items:center;justify-content:center;position:relative;border-right:0.5px solid var(--line)}
+.about-img-col{overflow:hidden;background:var(--hover);min-height:400px;
+  display:flex;align-items:center;justify-content:center;position:relative;border-right:0.5px solid var(--line)}
 .about-img-col img{width:100%;height:100%;object-fit:cover;display:block}
 .about-img-ph{display:flex;flex-direction:column;align-items:center;gap:12px}
 .about-img-ph-icon{font-size:28px;opacity:.12}
-.about-img-ph-txt{font-size:9px;font-weight:300;letter-spacing:.14em;text-transform:uppercase;color:var(--pale)}
 .about-txt{padding:44px 0 44px 44px;display:flex;flex-direction:column;justify-content:space-between}
 .about-lbl{font-size:9px;font-weight:400;letter-spacing:.16em;text-transform:uppercase;color:var(--pale);margin-bottom:20px}
 .about-body{font-size:15px;font-weight:300;color:var(--ink2);line-height:1.9;flex:1}
 .about-body strong{font-weight:400;color:var(--ink)}
 .about-links{display:flex;gap:18px;margin-top:28px;padding-top:18px;border-top:0.5px solid var(--line);flex-wrap:wrap}
-.about-link{font-size:11px;font-weight:400;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);border-bottom:0.5px solid var(--line);padding-bottom:2px;transition:all .2s}
+.about-link{font-size:11px;font-weight:400;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--muted);border-bottom:0.5px solid var(--line);padding-bottom:2px;transition:all .2s}
 .about-link:hover{color:var(--ink);border-color:var(--ink)}
 
-/* ══════════════════════════════════════════
-   VISTA: CONTACTO
-══════════════════════════════════════════ */
+/* ── CONTACTO ── */
 .contact-grid{display:grid;grid-template-columns:1fr 1fr}
 .contact-l{padding:44px 44px 44px 0;border-right:0.5px solid var(--line);display:flex;flex-direction:column}
-.contact-big{font-family:var(--f);font-size:48px;font-weight:800;line-height:.86;letter-spacing:-.05em;color:var(--ink);margin-bottom:5px}
-.contact-light{font-family:var(--f);font-size:44px;font-weight:300;line-height:.86;letter-spacing:-.04em;color:var(--muted);margin-bottom:36px}
+.contact-big{font-family:var(--f);font-size:44px;font-weight:800;line-height:.86;letter-spacing:-.05em;color:var(--ink);margin-bottom:36px}
 .contact-items{flex:1;display:flex;flex-direction:column;justify-content:center}
 .ci{display:flex;flex-direction:column;gap:4px;padding:14px 0;border-bottom:0.5px solid var(--line)}
 .ci:first-child{border-top:0.5px solid var(--line)}
@@ -453,38 +361,40 @@ nav{
 .cform{display:flex;flex-direction:column;gap:16px;flex:1}
 .fg{display:flex;flex-direction:column;gap:6px}
 .fl{font-size:10px;font-weight:400;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
-.fi,.ft{font-family:var(--ui);font-size:13px;font-weight:300;color:var(--ink);background:transparent;border:none;border-bottom:0.5px solid var(--line);padding:9px 0;outline:none;transition:border-color .2s;resize:none}
+.fi,.ft{font-family:var(--ui);font-size:13px;font-weight:300;color:var(--ink);
+  background:transparent;border:none;border-bottom:0.5px solid var(--line);
+  padding:9px 0;outline:none;transition:border-color .2s;resize:none}
 .fi:focus,.ft:focus{border-color:var(--ink)}
 .fi::placeholder,.ft::placeholder{color:var(--pale)}
 .ft{min-height:80px;flex:1}
-.fsub{font-size:11px;font-weight:400;letter-spacing:.1em;text-transform:uppercase;background:var(--ink);color:var(--white);border:none;padding:12px 24px;cursor:pointer;transition:opacity .2s;align-self:flex-start;margin-top:8px;font-family:var(--ui)}
+.fsub{font-size:11px;font-weight:400;letter-spacing:.1em;text-transform:uppercase;
+  background:var(--ink);color:var(--white);border:none;padding:12px 24px;
+  cursor:pointer;transition:opacity .2s;align-self:flex-start;margin-top:8px;font-family:var(--ui)}
 .fsub:hover{opacity:.8}
 
-/* ══════════════════════════════════════════
-   LIGHTBOX
-══════════════════════════════════════════ */
-.lb{display:none;position:fixed;inset:0;background:rgba(0,0,0,.9);z-index:999;align-items:center;justify-content:center;padding:20px}
+/* ── LIGHTBOX ── */
+.lb{display:none;position:fixed;inset:0;background:rgba(0,0,0,.9);z-index:999;
+  align-items:center;justify-content:center;padding:20px}
 .lb.open{display:flex}
 .lb img{max-width:92vw;max-height:92vh;object-fit:contain}
-.lb-close{position:absolute;top:16px;right:20px;font-size:24px;color:rgba(255,255,255,.65);cursor:pointer;line-height:1;transition:color .2s;z-index:2}
+.lb-close{position:absolute;top:16px;right:20px;font-size:24px;color:rgba(255,255,255,.65);cursor:pointer;z-index:2;transition:color .2s}
 .lb-close:hover{color:white}
-.lb-prev,.lb-next{position:absolute;top:50%;transform:translateY(-50%);font-size:30px;color:rgba(255,255,255,.45);cursor:pointer;padding:20px;transition:color .2s;user-select:none;z-index:2}
+.lb-prev,.lb-next{position:absolute;top:50%;transform:translateY(-50%);font-size:30px;
+  color:rgba(255,255,255,.45);cursor:pointer;padding:20px;transition:color .2s;user-select:none;z-index:2}
 .lb-prev:hover,.lb-next:hover{color:white}
 .lb-prev{left:0}.lb-next{right:0}
 
-/* ══════════════════════════════════════════
-   RESPONSIVE — Tablet ≤ 768px
-══════════════════════════════════════════ */
+/* ── RESPONSIVE ── */
 @media(max-width:768px){
   :root{--pad:20px;--max:100%}
   .nav-links{display:none}
   .nav-tog{display:flex}
-  .hero-grid,.about-grid,.contact-grid,.efele-top,.ai-strip,.proj-header-grid,.laminas-grid{grid-template-columns:1fr}
+  .hero-grid,.about-grid,.contact-grid,.efele-top,.ai-strip,.proj-header-grid{grid-template-columns:1fr}
   .hero-name{font-size:clamp(48px,12vw,72px)}
   .proj-prev-grid{grid-template-columns:1fr 1fr}
-  .param-grid{grid-template-columns:1fr 1fr}.param-row3{grid-template-columns:repeat(3,1fr)}
-  .proc-prev-grid{grid-template-columns:1fr 1fr}
-  .proc-grid{grid-template-columns:1fr 1fr}
+  .param-grid{grid-template-columns:1fr 1fr}
+  .param-row3{grid-template-columns:1fr 1fr}
+  .proc-prev-grid,.proc-grid{grid-template-columns:1fr 1fr}
   .efele-gal{grid-template-columns:1fr 1fr}
   .prow-n,.prow-f{grid-template-columns:1fr}
   .pinfo{border-left:none!important;border-right:none!important}
@@ -492,62 +402,41 @@ nav{
   .about-txt{padding:28px 0}
   .contact-l{border-right:none;border-bottom:0.5px solid var(--line);padding:28px 0}
   .contact-r{padding:28px 0}
-  .contact-big{font-size:36px}.contact-light{font-size:32px;margin-bottom:24px}
+  .contact-big{font-size:32px}
   .efele-l{border-right:none;border-bottom:0.5px solid var(--line);padding:28px 0}
   .efele-r{padding:28px 0}
   .ai-l{border-right:none;border-bottom:0.5px solid var(--line);padding:28px 0}
   .ai-r{padding:0;grid-template-columns:1fr 1fr}
-  .maqueta-grid{grid-template-columns:1fr 1fr}
+  .lam-row-4{grid-template-columns:1fr 1fr}
   .proj-hero{aspect-ratio:4/3;max-height:320px}
-  .proj-title{font-size:clamp(32px,8vw,48px)}
 }
-
-/* ══════════════════════════════════════════
-   RESPONSIVE — Mobile ≤ 480px
-══════════════════════════════════════════ */
 @media(max-width:480px){
   :root{--pad:16px}
-  .proj-prev-grid{grid-template-columns:1fr}
-  .param-grid{grid-template-columns:1fr}.param-row3{grid-template-columns:1fr}
-  .proc-grid{grid-template-columns:1fr 1fr}
-  .efele-gal{grid-template-columns:1fr 1fr}
+  .proj-prev-grid,.param-row3,.proc-grid,.efele-gal{grid-template-columns:1fr 1fr}
+  .param-grid{grid-template-columns:1fr}
   .ai-r{grid-template-columns:1fr}
   .ai-cell{border-right:none!important}
-  .maqueta-grid{grid-template-columns:1fr 1fr}
-  .laminas-grid{grid-template-columns:1fr}
   .home-ctas{flex-direction:column;align-items:flex-start}
+  .lam-row-2,.lam-row-4{grid-template-columns:1fr}
 }
-
-/* ══════════════════════════════════════════
-   RESPONSIVE — Grande ≥ 1400px
-══════════════════════════════════════════ */
 @media(min-width:1400px){
   :root{--max:1240px}
   .hero-name{font-size:104px}
   .ptitle{font-size:34px}
 }
 </style>
-  <!--
-    ANALYTICS — Umami (gratis, sin cookies, sin popup)
-    1. Creá cuenta en umami.is
-    2. Agregá tu sitio: facu182.github.io
-    3. Reemplazá TU-ID-AQUI con el data-website-id que te dan
-  -->
-  <script defer src="https://cloud.umami.is/script.js" data-website-id="TU-ID-AQUI"></script>
 </head>
 <body>
 
-<!-- LIGHTBOX -->
 <div class="lb" id="lb">
   <span class="lb-close" onclick="lbClose()">✕</span>
-  <span class="lb-prev"  onclick="lbNav(-1)">‹</span>
+  <span class="lb-prev" onclick="lbNav(-1)">‹</span>
   <img id="lb-img" src="" alt="">
-  <span class="lb-next"  onclick="lbNav(1)">›</span>
+  <span class="lb-next" onclick="lbNav(1)">›</span>
 </div>
 
 <div id="cur"></div>
 
-<!-- ══ NAV ══ -->
 <nav>
   <div class="nav-w">
     <span class="nav-logo" onclick="go('inicio')">Facundo Luna</span>
@@ -576,21 +465,17 @@ nav{
   <a onclick="go('contacto');closeMob()"  data-vm="contacto">Contacto</a>
 </div>
 
-<!-- ════════════════════════════════════════
-   VISTA: INICIO
-════════════════════════════════════════ -->
+<!-- ════════ INICIO ════════ -->
 <div class="view active" id="view-inicio">
   <div class="w">
-
-    <!-- Hero -->
     <div class="hero">
       <div class="hero-grid">
         <div class="hero-name">FACUNDO<span>Luna.</span></div>
         <div class="hero-right">
           <p class="hero-stmt"
-             data-es="Estudiante de arquitectura en <strong>FADU UBA</strong> que fusiona documentación técnica con <strong>diseño paramétrico</strong> e <strong>inteligencia artificial</strong>. Creo arquitectura que no podría existir sin las dos."
-             data-en="Architecture student at <strong>FADU UBA</strong> fusing technical documentation with <strong>parametric design</strong> and <strong>artificial intelligence</strong>. I create architecture that couldn't exist without both.">
-            Estudiante de arquitectura en <strong>FADU UBA</strong> que fusiona documentación técnica con <strong>diseño paramétrico</strong> e <strong>inteligencia artificial</strong>. Creo arquitectura que no podría existir sin las dos.
+             data-es="Estudiante de arquitectura en <strong>FADU UBA</strong> que fusiona documentación técnica con <strong>diseño paramétrico</strong> e <strong>inteligencia artificial</strong>."
+             data-en="Architecture student at <strong>FADU UBA</strong> fusing technical documentation with <strong>parametric design</strong> and <strong>artificial intelligence</strong>.">
+            Estudiante de arquitectura en <strong>FADU UBA</strong> que fusiona documentación técnica con <strong>diseño paramétrico</strong> e <strong>inteligencia artificial</strong>.
           </p>
           <div class="meta-block">
             <div class="meta-row"><span class="mk">Base</span><span class="mv">Buenos Aires, AR</span></div>
@@ -598,350 +483,305 @@ nav{
             <div class="meta-row"><span class="mk">Disciplina</span><span class="mv">Arquitectura + IA</span></div>
           </div>
           <div class="chips">
-            <span class="chip">Grasshopper</span>
-            <span class="chip">Rhino</span>
-            <span class="chip">Twinmotion</span>
-            <span class="chip">SketchUp</span>
-            <span class="chip">AutoCAD</span>
-            <span class="chip">Photoshop</span>
-            <span class="chip">AI Post-prod</span>
-            <span class="chip">Legajo Ejec.</span>
+            <span class="chip">Grasshopper</span><span class="chip">Rhino</span>
+            <span class="chip">Twinmotion</span><span class="chip">SketchUp</span>
+            <span class="chip">AutoCAD</span><span class="chip">Photoshop</span>
+            <span class="chip">AI Post-prod</span><span class="chip">Legajo Ejec.</span>
           </div>
         </div>
       </div>
     </div>
     <hr class="hr">
-
-    <!-- Proyectos preview -->
-    <div class="sh">
-      <div class="sh-row">
-        <span class="sh-label" data-es="Proyectos seleccionados" data-en="Selected projects">Proyectos seleccionados</span>
-        <span class="sh-link" onclick="go('proyectos')" data-es="Ver todos →" data-en="See all →">Ver todos →</span>
-      </div>
-    </div>
-    <!--
-      3 proyectos en inicio: Vivienda Unifamiliar, Conjunto Habitacional, Biblioteca Costera
-      Comparten materialidad — concreto, madera, luz natural
-    -->
+    <div class="sh"><div class="sh-row">
+      <span class="sh-label" data-es="Proyectos seleccionados" data-en="Selected projects">Proyectos seleccionados</span>
+      <span class="sh-link" onclick="go('proyectos')" data-es="Ver todos →" data-en="See all →">Ver todos →</span>
+    </div></div>
     <div class="proj-prev-grid">
-      <!-- Vivienda Unifamiliar → img/vivienda/cover.jpg -->
+      <!-- Vivienda Unifamiliar · img/vivienda/cover.jpg -->
       <div class="ppc" onclick="go('proj-01')">
-        <div class="ppc-img">
-          <div class="ppc-img-in" style="background-image:url('https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/0f577a232345049.689aaf95bb01d.png')"></div>
-          <div class="ppc-ov"></div>
-        </div>
+        <div class="ppc-img"><div class="ppc-img-in" style="background-image:url('https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/0f577a232345049.689aaf95bb01d.png')"></div><div class="ppc-ov"></div></div>
         <div class="ppc-info"><div class="ppc-n">01</div><div class="ppc-t" data-es="Vivienda Unifamiliar" data-en="Single Family House">Vivienda Unifamiliar</div><div class="ppc-c" data-es="Residencial · 2024" data-en="Residential · 2024">Residencial · 2024</div></div>
       </div>
-      <!-- Conjunto Habitacional → img/conjunto/cover.jpg -->
+      <!-- Conjunto Habitacional · img/conjunto/cover.jpg -->
       <div class="ppc" onclick="go('proj-05')">
-        <div class="ppc-img">
-          <div class="ppc-img-in" style="background-image:url('https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/8bc5a4232344485.689aaa72e3cef.jpg')"></div>
-          <div class="ppc-ov"></div>
-        </div>
+        <div class="ppc-img"><div class="ppc-img-in" style="background-image:url('https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/8bc5a4232344485.689aaa72e3cef.jpg')"></div><div class="ppc-ov"></div></div>
         <div class="ppc-info"><div class="ppc-n">05</div><div class="ppc-t" data-es="Conjunto Habitacional" data-en="Housing Complex">Conjunto Habitacional</div><div class="ppc-c" data-es="Vivienda Colectiva · 2025" data-en="Collective Housing · 2025">Vivienda Colectiva · 2025</div></div>
       </div>
-      <!-- Biblioteca Costera → img/biblioteca/cover.jpg -->
+      <!-- Biblioteca Costera · img/biblioteca/cover.jpg -->
       <div class="ppc" onclick="go('proj-02')">
-        <div class="ppc-img">
-          <div class="ppc-img-in" style="background-image:url('https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/16b476239108565.692283c72e728.png')"></div>
-          <div class="ppc-ov"></div>
-        </div>
+        <div class="ppc-img"><div class="ppc-img-in" style="background-image:url('https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/16b476239108565.692283c72e728.png')"></div><div class="ppc-ov"></div></div>
         <div class="ppc-info"><div class="ppc-n">02</div><div class="ppc-t" data-es="Biblioteca Costera" data-en="Coastal Library">Biblioteca Costera</div><div class="ppc-c" data-es="Equipamiento · 2025" data-en="Equipment · 2025">Equipamiento · 2025</div></div>
       </div>
     </div>
     <hr class="hr">
-
-    <!-- Paramétrica -->
-    <div class="sh">
-      <div class="sh-row">
-        <span class="sh-label" data-es="Diseño paramétrico" data-en="Parametric design">Diseño paramétrico</span>
-        <span class="sh-right">Rhino · Grasshopper</span>
-      </div>
-    </div>
+    <div class="sh"><div class="sh-row">
+      <span class="sh-label" data-es="Diseño paramétrico" data-en="Parametric design">Diseño paramétrico</span>
+      <span class="sh-right">Rhino · Grasshopper</span>
+    </div></div>
     <div class="param-grid">
-      <!-- FILA 1: 2 celdas grandes 16:9 — Modelo Rhino + Grasshopper -->
-      <!-- Modelo: img/param-modelo.jpg — captura axonométrica del modelo final -->
+      <!-- FILA 1: 2 celdas grandes 16:9 -->
+      <!-- img/param-modelo.jpg | 1920×1080px, captura axonométrica del modelo Rhino final -->
+      <!-- <img src="img/param-modelo.jpg" alt="Modelo 3D" loading="lazy"> para activar -->
       <div class="param-cell big">
-        <div class="param-ph"><div class="param-ph-icon">▣</div>
-      <!-- ══ PARAMÉTRICA — Modelo 3D final en Rhino
-           Tamaño: 1920×1080px, vista axonométrica o perspectiva limpia del modelo
-           Para activar: descomentá el <img> y borrá el div.placeholder -->
-      <!-- <img src="img/param-modelo.jpg" alt="PARAMÉTRICA" loading="lazy"> -->
-      <div class="param-ph-txt">img/param-modelo.jpg<br>Modelo Rhino — vista final</div></div>
+        <div class="param-ph"><div class="param-ph-icon">▣</div><div class="ph-txt">img/param-modelo.jpg</div></div>
         <div class="param-lbl" data-es="Modelo 3D" data-en="3D Model">Modelo 3D</div>
       </div>
-      <!-- Grasshopper: img/param-grasshopper.jpg — screenshot con las curvas NURBS -->
+      <!-- img/param-grasshopper.jpg | 1920×1080px, screenshot Grasshopper con curvas NURBS -->
       <div class="param-cell big">
-        <div class="param-ph"><div class="param-ph-icon">⬡</div>
-      <!-- ══ PARAMÉTRICA — Captura de Grasshopper
-           Tamaño: 1920×1080px, screenshot con las curvas NURBS, fondo oscuro
-           Para activar: descomentá el <img> y borrá el div.placeholder -->
-      <!-- <img src="img/param-grasshopper.jpg" alt="PARAMÉTRICA" loading="lazy"> -->
-      <div class="param-ph-txt">img/param-grasshopper.jpg<br>Captura Grasshopper</div></div>
+        <div class="param-ph"><div class="param-ph-icon">⬡</div><div class="ph-txt">img/param-grasshopper.jpg</div></div>
         <div class="param-lbl">Grasshopper</div>
       </div>
-      <!-- FILA 2: 3 celdas pequeñas 4:3 — Referencia + Análisis + Proceso -->
+      <!-- FILA 2: 3 celdas pequeñas 4:3 -->
       <div class="param-row3">
-        <!-- Referencia real: img/param-referencia.jpg — foto de edificio o imagen inspiración -->
+        <!-- img/param-referencia.jpg | 800×600px, foto edificio de referencia o inspiración -->
         <div class="param-cell sm3">
-          <div class="param-ph"><div class="param-ph-icon">◻</div>
-      <!-- ══ PARAMÉTRICA — Referencia real
-           Tamaño: 800×600px, foto de edificio o imagen que inspiró el proyecto
-           Para activar: descomentá el <img> y borrá el div.placeholder -->
-      <!-- <img src="img/param-referencia.jpg" alt="PARAMÉTRICA" loading="lazy"> -->
-      <div class="param-ph-txt">img/param-referencia.jpg<br>Referencia real</div></div>
+          <div class="param-ph"><div class="param-ph-icon">◻</div><div class="ph-txt">img/param-referencia.jpg</div></div>
           <div class="param-lbl" data-es="Referencia" data-en="Reference">Referencia</div>
         </div>
-        <!-- Análisis: img/param-analisis.jpg — diagrama solar / condicionantes -->
+        <!-- img/param-analisis.jpg | 800×600px, diagrama análisis solar / condicionantes -->
         <div class="param-cell sm3">
-          <div class="param-ph"><div class="param-ph-icon">◎</div>
-      <!-- ══ PARAMÉTRICA — Diagrama de análisis
-           Tamaño: 800×600px, análisis solar / vistas / condicionantes del sitio
-           Para activar: descomentá el <img> y borrá el div.placeholder -->
-      <!-- <img src="img/param-analisis.jpg" alt="PARAMÉTRICA" loading="lazy"> -->
-      <div class="param-ph-txt">img/param-analisis.jpg<br>Análisis del proyecto</div></div>
+          <div class="param-ph"><div class="param-ph-icon">◎</div><div class="ph-txt">img/param-analisis.jpg</div></div>
           <div class="param-lbl" data-es="Análisis" data-en="Analysis">Análisis</div>
         </div>
-        <!-- Proceso: img/param-proceso.jpg — iteraciones / exploraciones formales -->
+        <!-- img/param-proceso.jpg | 800×600px, iteraciones o exploraciones formales -->
         <div class="param-cell sm3">
-          <div class="param-ph"><div class="param-ph-icon">⬡</div>
-      <!-- ══ PARAMÉTRICA — Proceso de armado
-           Tamaño: 800×600px, iteraciones o exploraciones formales del proyecto
-           Para activar: descomentá el <img> y borrá el div.placeholder -->
-      <!-- <img src="img/param-proceso.jpg" alt="PARAMÉTRICA" loading="lazy"> -->
-      <div class="param-ph-txt">img/param-proceso.jpg<br>Proceso de armado</div></div>
+          <div class="param-ph"><div class="param-ph-icon">⬡</div><div class="ph-txt">img/param-proceso.jpg</div></div>
           <div class="param-lbl" data-es="Proceso" data-en="Process">Proceso</div>
         </div>
       </div>
     </div>
     <hr class="hr">
-
-    <!-- Proceso preview -->
-    <div class="sh">
-      <div class="sh-row">
-        <span class="sh-label" data-es="Proceso" data-en="Process">Proceso</span>
-        <span class="sh-link" onclick="go('proceso')" data-es="Ver todo →" data-en="See all →">Ver todo →</span>
-      </div>
-    </div>
+    <div class="sh"><div class="sh-row">
+      <span class="sh-label" data-es="Proceso" data-en="Process">Proceso</span>
+      <span class="sh-link" onclick="go('proceso')" data-es="Ver todo →" data-en="See all →">Ver todo →</span>
+    </div></div>
     <div class="proc-prev-grid">
       <!-- img/proceso-croquis-01.jpg -->
-      <div class="proc-prev-cell">
-      <!-- ══ PROCESO — Croquis a mano 1
-           Tamaño: Cualquier tamaño, croquis conceptual a lápiz, fondo claro
-           Para activar: descomentá el <img> y borrá el div.placeholder -->
-      <!-- <img src="img/proceso-croquis-01.jpg" alt="PROCESO" loading="lazy"> -->
-      <div class="proc-prev-ph"><span>img/proceso-croquis-01.jpg</span></div></div>
+      <div class="proc-prev-cell"><div class="proc-prev-ph"><div class="ph-txt">img/proceso-croquis-01.jpg</div></div></div>
       <!-- img/proceso-diagrama-01.jpg -->
-      <div class="proc-prev-cell">
-      <!-- ══ PROCESO — Diagrama de concepto
-           Tamaño: Cualquier tamaño, diagrama digital o a mano, análisis de sitio
-           Para activar: descomentá el <img> y borrá el div.placeholder -->
-      <!-- <img src="img/proceso-diagrama-01.jpg" alt="PROCESO" loading="lazy"> -->
-      <div class="proc-prev-ph"><span>img/proceso-diagrama-01.jpg</span></div></div>
+      <div class="proc-prev-cell"><div class="proc-prev-ph"><div class="ph-txt">img/proceso-diagrama-01.jpg</div></div></div>
       <!-- img/proceso-gh-01.jpg -->
-      <div class="proc-prev-cell">
-      <!-- ══ PROCESO — Grasshopper / modelo paramétrico
-           Tamaño: Captura de pantalla de Grasshopper o Rhino
-           Para activar: descomentá el <img> y borrá el div.placeholder -->
-      <!-- <img src="img/proceso-gh-01.jpg" alt="PROCESO" loading="lazy"> -->
-      <div class="proc-prev-ph"><span>img/proceso-gh-01.jpg</span></div></div>
+      <div class="proc-prev-cell"><div class="proc-prev-ph"><div class="ph-txt">img/proceso-gh-01.jpg</div></div></div>
       <!-- img/proceso-maqueta-01.jpg -->
-      <div class="proc-prev-cell">
-      <!-- ══ PROCESO — Foto de maqueta 1
-           Tamaño: Foto con buena luz natural, fondo neutro
-           Para activar: descomentá el <img> y borrá el div.placeholder -->
-      <!-- <img src="img/proceso-maqueta-01.jpg" alt="PROCESO" loading="lazy"> -->
-      <div class="proc-prev-ph"><span>img/proceso-maqueta-01.jpg</span></div></div>
+      <div class="proc-prev-cell"><div class="proc-prev-ph"><div class="ph-txt">img/proceso-maqueta-01.jpg</div></div></div>
     </div>
     <hr class="hr">
-
-    <!-- Slider -->
     <div class="slider-lbl-bar">
       <span class="sl-title" data-es="Post-producción con IA" data-en="AI Post-production">Post-producción con IA</span>
       <span class="sl-hint"  data-es="← arrastrá para comparar →" data-en="← drag to compare →">← arrastrá para comparar →</span>
     </div>
-    <!--
-      SLIDER ANTES/DESPUÉS
-      Antes (Twinmotion sin editar): url('img/render-antes.jpg') en .sl-before
-      Después (post-prod IA):        url('img/render-despues.jpg') en .sl-after
-      Mismo ángulo y encuadre exacto. Tamaño: 1920×720px aprox.
-    -->
     <div class="slider-outer" id="sw">
-            <!--
-        SLIDER ANTES — img/render-antes.jpg
-        Render base salido de Twinmotion, sin editar
-        Tamaño: 1920×720px horizontal — MISMO ángulo y encuadre que el después
-        Para activar: reemplazá la URL en background:url() de abajo
-      -->
-      <div class="sl-after" id="sl-a"></div>
-            <!--
-        SLIDER DESPUÉS — img/render-despues.jpg
-        Post-producción con IA — mismo ángulo y encuadre exacto que el antes
-        Para activar: reemplazá la URL en .sl-before en el CSS
-      -->
+      <div class="sl-after"></div>
       <div class="sl-before" id="sl-b"></div>
-      <div class="sl-line" id="sl-l"><div class="sl-handle"></div></div>
-      <div class="sl-tag l" data-es="Render base" data-en="Base render">Render base</div>
-      <div class="sl-tag r" data-es="Post-producción IA" data-en="AI Post-production">Post-producción IA</div>
+      <div class="sl-line"  id="sl-l"><div class="sl-handle"></div></div>
+      <div class="sl-tag l" data-es="Render base"         data-en="Base render">Render base</div>
+      <div class="sl-tag r" data-es="Post-producción IA"  data-en="AI Post-production">Post-producción IA</div>
     </div>
     <hr class="hr">
-
-    <!-- CTAs -->
     <div class="home-ctas">
       <button class="cta-p" onclick="go('proyectos')" data-es="Ver proyectos →" data-en="See projects →">Ver proyectos →</button>
       <button class="cta-g" onclick="go('contacto')"  data-es="Contacto"        data-en="Contact">Contacto</button>
       <button class="cta-g" onclick="go('efele')"     data-es="EFELE.ARQ"       data-en="EFELE.ARQ">EFELE.ARQ</button>
     </div>
-
-    <div class="footer" style="margin-top:24px">
-      <div class="footer-row"><span class="ft-l">Facundo Luna</span><span class="ft-m">FADU UBA · Arquitectura + IA · Buenos Aires</span><span class="ft-r">© 2026</span></div>
-    </div>
+    <div style="height:24px"></div>
+    <div class="footer"><div class="footer-row">
+      <span class="ft-l">Facundo Luna</span>
+      <span class="ft-m">FADU UBA · Arquitectura + IA · Buenos Aires</span>
+      <span class="ft-r">© 2026</span>
+    </div></div>
   </div>
 </div>
 
-<!-- ════════════════════════════════════════
-   VISTA: PROYECTOS (lista)
-════════════════════════════════════════ -->
+<!-- ════════ PROYECTOS ════════ -->
 <div class="view" id="view-proyectos">
-  <div class="w">
-    <div class="sh"><div class="sh-row"><span class="sh-label" data-es="Proyectos seleccionados" data-en="Selected projects">Proyectos seleccionados</span><span class="sh-right">06 · 2024–2025</span></div></div>
-  </div>
+  <div class="w"><div class="sh"><div class="sh-row">
+    <span class="sh-label" data-es="Proyectos seleccionados" data-en="Selected projects">Proyectos seleccionados</span>
+    <span class="sh-right">06 · 2024–2025</span>
+  </div></div></div>
 
-  <!-- 01 Vivienda -->
   <div class="w">
     <div class="prow prow-n" onclick="go('proj-01')">
-      <div class="pi"><div class="pi-in" style="background-image:url('https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/0f577a232345049.689aaf95bb01d.png')"></div><div class="pi-ov"></div><div class="pi-tag" data-es="Render final" data-en="Final render">Render final</div></div>
-      <div class="pinfo"><div><div class="ptop"><span class="pnum">01</span><span class="pyr">2024</span></div><div class="ptitle" data-es="Vivienda<br>Unifamiliar" data-en="Single<br>Family House">Vivienda<br>Unifamiliar</div><div class="pcat" data-es="Residencial" data-en="Residential">Residencial</div><div class="pdesc" data-es="Partido volumétrico articulado por patios interiores de luz. Lote entre medianeras en Buenos Aires." data-en="Volumetric scheme articulated by interior light patios. Party-wall lot in Buenos Aires.">Partido volumétrico articulado por patios interiores de luz. Lote entre medianeras en Buenos Aires.</div><div class="ptags"><span class="ptag">Croquis</span><span class="ptag">Plantas</span><span class="ptag">Render</span><span class="ptag">Post IA</span></div></div><span class="parr" data-es="→ ver proyecto" data-en="→ view project">→ ver proyecto</span></div>
+      <div class="pi">
+        <div class="pi-in" style="background-image:url('https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/0f577a232345049.689aaf95bb01d.png')"></div>
+        <div class="pi-ov"></div>
+        <div class="pi-tag">Render final</div>
+      </div>
+      <div class="pinfo" style="">
+        <div>
+          <div class="ptop"><span class="pnum">01</span><span class="pyr">2024</span></div>
+          <div class="ptitle" data-es="Vivienda<br>Unifamiliar" data-en="Single<br>Family House">Vivienda<br>Unifamiliar</div>
+          <div class="pcat"   data-es="Residencial"   data-en="Residential">Residencial</div>
+          <div class="pdesc"  data-es="Partido volumétrico articulado por patios interiores de luz. Lote entre medianeras en Buenos Aires."  data-en="Volumetric scheme articulated by interior light patios. Party-wall lot in Buenos Aires.">Partido volumétrico articulado por patios interiores de luz. Lote entre medianeras en Buenos Aires.</div>
+          <div class="ptags"><span class="ptag">Croquis</span><span class="ptag">Plantas</span><span class="ptag">Render</span><span class="ptag">Post IA</span></div>
+        </div>
+        <span class="parr" data-es="→ ver proyecto" data-en="→ view project">→ ver proyecto</span>
+      </div>
     </div>
   </div>
 
-  <!-- Croquis 1 -->
   <div class="w">
     <div class="croquis-wrap">
       <div class="croquis-box">
-        <!-- img/croquis-01.jpg — cualquier croquis a mano, fondo blanco -->
-        <div class="croquis-ph"><div class="croquis-ph-icon">✏️</div>
-      <!-- ══ CROQUIS — Entre proyecto 01 y 02
-           Tamaño: Cualquier croquis a mano, fondo blanco, lápiz/tinta
-           Para activar: descomentá el <img> y borrá el div.placeholder -->
-      <!-- <img src="img/croquis-01.jpg" alt="CROQUIS" loading="lazy"> -->
-      <div class="croquis-ph-txt">img/croquis-01.jpg</div></div>
+        <!-- ══ img/croquis-01.jpg | cualquier tamaño, fondo blanco, croquis a mano -->
+        <!-- <img src="img/croquis-01.jpg" alt="Croquis" loading="lazy"> -->
+        <div class="croquis-ph">
+          <div class="croquis-ph-icon">✏️</div>
+          <div class="ph-txt">img/croquis-01.jpg</div>
+        </div>
       </div>
     </div>
   </div>
 
-  <!-- 02 Biblioteca -->
   <div class="w">
     <div class="prow prow-f" onclick="go('proj-02')">
-      <div class="pinfo"><div><div class="ptop"><span class="pnum">02</span><span class="pyr">2025</span></div><div class="ptitle" data-es="Biblioteca<br>Costera" data-en="Coastal<br>Library">Biblioteca<br>Costera</div><div class="pcat" data-es="Equipamiento · Paramétrico" data-en="Equipment · Parametric">Equipamiento · Paramétrico</div><div class="pdesc" data-es="Piel generada en Grasshopper que optimiza orientación solar. Estructura adaptable al frente costero." data-en="Skin generated in Grasshopper optimizing solar orientation. Adaptive structure for the coastal front.">Piel generada en Grasshopper que optimiza orientación solar. Estructura adaptable al frente costero.</div><div class="ptags"><span class="ptag">Croquis</span><span class="ptag">Análisis sitio</span><span class="ptag">Maqueta</span><span class="ptag">Post IA</span></div></div><span class="parr" data-es="→ ver proyecto" data-en="→ view project">→ ver proyecto</span></div>
-      <div class="pi"><div class="pi-in" style="background-image:url('https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/16b476239108565.692283c72e728.png')"></div><div class="pi-ov"></div><div class="pi-tag" data-es="Render final" data-en="Final render">Render final</div></div>
+      <div class="pinfo" style="border-right:0.5px solid var(--line)">
+        <div>
+          <div class="ptop"><span class="pnum">02</span><span class="pyr">2025</span></div>
+          <div class="ptitle" data-es="Biblioteca<br>Costera" data-en="Coastal<br>Library">Biblioteca<br>Costera</div>
+          <div class="pcat"   data-es="Equipamiento · Paramétrico"   data-en="Equipment · Parametric">Equipamiento · Paramétrico</div>
+          <div class="pdesc"  data-es="Piel generada en Grasshopper que optimiza orientación solar. Estructura adaptable al frente costero."  data-en="Skin generated in Grasshopper optimizing solar orientation. Adaptive structure for the coastal front.">Piel generada en Grasshopper que optimiza orientación solar. Estructura adaptable al frente costero.</div>
+          <div class="ptags"><span class="ptag">Croquis</span><span class="ptag">Análisis sitio</span><span class="ptag">Maqueta</span><span class="ptag">Post IA</span></div>
+        </div>
+        <span class="parr" data-es="→ ver proyecto" data-en="→ view project">→ ver proyecto</span>
+      </div>
+      <div class="pi">
+        <div class="pi-in" style="background-image:url('https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/16b476239108565.692283c72e728.png')"></div>
+        <div class="pi-ov"></div>
+        <div class="pi-tag">Render final</div>
+      </div>
     </div>
   </div>
 
-  <!-- 03 Legajo -->
   <div class="w">
     <div class="prow prow-n" onclick="go('proj-03')">
-      <div class="pi"><div class="pi-in" style="background-image:url('https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/c5eb49232347839.689ac25a63221.jpg')"></div><div class="pi-ov"></div><div class="pi-tag" data-es="Documentación" data-en="Documentation">Documentación</div></div>
-      <div class="pinfo"><div><div class="ptop"><span class="pnum">03</span><span class="pyr">2024</span></div><div class="ptitle" data-es="Legajo<br>Municipal" data-en="Municipal<br>File">Legajo<br>Municipal</div><div class="pcat" data-es="Técnico · Trabajo real" data-en="Technical · Real project">Técnico · Trabajo real</div><div class="pdesc" data-es="Documentación ejecutiva completa para gestión ante municipio. Primer proyecto profesional real." data-en="Complete executive documentation for municipal management. First real professional project.">Documentación ejecutiva completa para gestión ante municipio. Primer proyecto profesional real.</div><div class="ptags"><span class="ptag">Plantas</span><span class="ptag">Cortes</span><span class="ptag">Detalles</span></div></div><span class="parr" data-es="→ ver proyecto" data-en="→ view project">→ ver proyecto</span></div>
+      <div class="pi">
+        <div class="pi-in" style="background-image:url('https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/c5eb49232347839.689ac25a63221.jpg')"></div>
+        <div class="pi-ov"></div>
+        <div class="pi-tag">Documentación</div>
+      </div>
+      <div class="pinfo" style="">
+        <div>
+          <div class="ptop"><span class="pnum">03</span><span class="pyr">2024</span></div>
+          <div class="ptitle" data-es="Legajo<br>Municipal" data-en="Municipal<br>File">Legajo<br>Municipal</div>
+          <div class="pcat"   data-es="Técnico · Trabajo real"   data-en="Technical · Real project">Técnico · Trabajo real</div>
+          <div class="pdesc"  data-es="Documentación ejecutiva completa para gestión ante municipio. Primer proyecto profesional real."  data-en="Complete executive documentation for municipal management. First real professional project.">Documentación ejecutiva completa para gestión ante municipio. Primer proyecto profesional real.</div>
+          <div class="ptags"><span class="ptag">Plantas</span><span class="ptag">Cortes</span><span class="ptag">Detalles</span></div>
+        </div>
+        <span class="parr" data-es="→ ver proyecto" data-en="→ view project">→ ver proyecto</span>
+      </div>
     </div>
   </div>
 
-  <!-- Croquis 2 -->
   <div class="w">
     <div class="croquis-wrap" style="background:#f9f9f9">
       <div class="croquis-box">
-        <!-- img/croquis-02.jpg — diagrama de concepto o análisis de sitio -->
-        <div class="croquis-ph"><div class="croquis-ph-icon">◎</div>
-      <!-- ══ CROQUIS — Entre proyecto 03 y 04
-           Tamaño: Diagrama de concepto, análisis de sitio o boceto de partido
-           Para activar: descomentá el <img> y borrá el div.placeholder -->
-      <!-- <img src="img/croquis-02.jpg" alt="CROQUIS" loading="lazy"> -->
-      <div class="croquis-ph-txt">img/croquis-02.jpg</div></div>
+        <!-- ══ img/croquis-02.jpg | cualquier tamaño, fondo blanco, croquis a mano -->
+        <!-- <img src="img/croquis-02.jpg" alt="Croquis" loading="lazy"> -->
+        <div class="croquis-ph">
+          <div class="croquis-ph-icon">◎</div>
+          <div class="ph-txt">img/croquis-02.jpg</div>
+        </div>
       </div>
     </div>
   </div>
 
-  <!-- 04 Intervención -->
   <div class="w">
     <div class="prow prow-f" onclick="go('proj-04')">
-      <div class="pinfo"><div><div class="ptop"><span class="pnum">04</span><span class="pyr">2025</span></div><div class="ptitle" data-es="Intervención<br>Urbana" data-en="Urban<br>Intervention">Intervención<br>Urbana</div><div class="pcat" data-es="Urbanismo" data-en="Urbanism">Urbanismo</div><div class="pdesc" data-es="Reconversión de espacio público degradado. Activación por capas temporales y permanentes." data-en="Reconversion of degraded public space. Activation through temporary and permanent layers.">Reconversión de espacio público degradado. Activación por capas temporales y permanentes.</div><div class="ptags"><span class="ptag">Análisis sitio</span><span class="ptag">Diagramas</span><span class="ptag">Plantas</span></div></div><span class="parr" data-es="→ ver proyecto" data-en="→ view project">→ ver proyecto</span></div>
-      <div class="pi"><div class="pi-in" style="background-image:url('https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/02f691232344061.689aa6e222427.jpg')"></div><div class="pi-ov"></div><div class="pi-tag" data-es="Render final" data-en="Final render">Render final</div></div>
+      <div class="pinfo" style="border-right:0.5px solid var(--line)">
+        <div>
+          <div class="ptop"><span class="pnum">04</span><span class="pyr">2025</span></div>
+          <div class="ptitle" data-es="Intervención<br>Urbana" data-en="Urban<br>Intervention">Intervención<br>Urbana</div>
+          <div class="pcat"   data-es="Urbanismo"   data-en="Urbanism">Urbanismo</div>
+          <div class="pdesc"  data-es="Reconversión de espacio público degradado. Activación por capas temporales y permanentes."  data-en="Reconversion of degraded public space. Activation through temporary and permanent layers.">Reconversión de espacio público degradado. Activación por capas temporales y permanentes.</div>
+          <div class="ptags"><span class="ptag">Análisis sitio</span><span class="ptag">Diagramas</span><span class="ptag">Plantas</span></div>
+        </div>
+        <span class="parr" data-es="→ ver proyecto" data-en="→ view project">→ ver proyecto</span>
+      </div>
+      <div class="pi">
+        <div class="pi-in" style="background-image:url('https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/02f691232344061.689aa6e222427.jpg')"></div>
+        <div class="pi-ov"></div>
+        <div class="pi-tag">Render final</div>
+      </div>
     </div>
   </div>
 
-  <!-- 05 Conjunto -->
   <div class="w">
     <div class="prow prow-n" onclick="go('proj-05')">
-      <div class="pi"><div class="pi-in" style="background-image:url('https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/8bc5a4232344485.689aaa72e3cef.jpg')"></div><div class="pi-ov"></div><div class="pi-tag" data-es="Render final" data-en="Final render">Render final</div></div>
-      <div class="pinfo"><div><div class="ptop"><span class="pnum">05</span><span class="pyr">2025</span></div><div class="ptitle" data-es="Conjunto<br>Habitacional" data-en="Housing<br>Complex">Conjunto<br>Habitacional</div><div class="pcat" data-es="Vivienda Colectiva" data-en="Collective Housing">Vivienda Colectiva</div><div class="pdesc" data-es="Planta libre. Circulaciones integradas al paisaje urbano. Iluminación natural cenital." data-en="Open plan. Circulations integrated into the urban landscape. Zenithal natural light.">Planta libre. Circulaciones integradas al paisaje urbano.</div><div class="ptags"><span class="ptag">Croquis</span><span class="ptag">Plantas</span><span class="ptag">Cortes</span><span class="ptag">Render</span></div></div><span class="parr" data-es="→ ver proyecto" data-en="→ view project">→ ver proyecto</span></div>
+      <div class="pi">
+        <div class="pi-in" style="background-image:url('https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/8bc5a4232344485.689aaa72e3cef.jpg')"></div>
+        <div class="pi-ov"></div>
+        <div class="pi-tag">Render final</div>
+      </div>
+      <div class="pinfo" style="">
+        <div>
+          <div class="ptop"><span class="pnum">05</span><span class="pyr">2025</span></div>
+          <div class="ptitle" data-es="Conjunto<br>Habitacional" data-en="Housing<br>Complex">Conjunto<br>Habitacional</div>
+          <div class="pcat"   data-es="Vivienda Colectiva"   data-en="Collective Housing">Vivienda Colectiva</div>
+          <div class="pdesc"  data-es="Planta libre. Circulaciones integradas al paisaje urbano. Iluminación natural cenital."  data-en="Open plan. Circulations integrated into the urban landscape. Zenithal natural light.">Planta libre. Circulaciones integradas al paisaje urbano. Iluminación natural cenital.</div>
+          <div class="ptags"><span class="ptag">Croquis</span><span class="ptag">Plantas</span><span class="ptag">Cortes</span><span class="ptag">Render</span></div>
+        </div>
+        <span class="parr" data-es="→ ver proyecto" data-en="→ view project">→ ver proyecto</span>
+      </div>
     </div>
   </div>
 
-  <!-- GH strip full bleed -->
+  <!-- Grasshopper strip full-bleed -->
+  <!-- Para usar tu imagen: <div class="gh-bg" style="background-image:url('img/param-grasshopper.jpg')"></div> -->
   <div class="gh">
-    <div class="gh-in">
-      <!--
-        GRASSHOPPER STRIP — para usar tu imagen real:
-        1. Descomentá: <div class="gh-bg" style="background-image:url('img/param-grasshopper.jpg')"></div>
-        2. Borrá el bloque <svg>
-        Ratio recomendado: 16:3 panorámico, fondo oscuro
-      -->
-      <!-- <div class="gh-bg" style="background-image:url('img/param-grasshopper.jpg')"></div> -->
-      <svg viewBox="0 0 1200 240" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
-        <g stroke="#c8c0a8" stroke-width=".6" fill="none">
-          <path d="M0,120 C150,22 300,218 450,120 S750,22 900,120 S1100,218 1200,120"/>
-          <path d="M0,100 C150,2 300,198 450,100 S750,2 900,100 S1100,198 1200,100"/>
-          <path d="M0,140 C150,42 300,238 450,140 S750,42 900,140 S1100,238 1200,140"/>
-          <path d="M0,80 C200,0 350,180 500,80 S800,0 1000,80" opacity=".5"/>
-          <path d="M0,160 C200,60 350,238 500,160 S800,60 1000,160" opacity=".5"/>
-        </g>
-        <g fill="none" stroke="#c8c0a8" stroke-width=".3" opacity=".3">
-          <line x1="150" y1="22" x2="300" y2="218"/><line x1="300" y1="218" x2="450" y2="120"/>
-          <line x1="600" y1="22" x2="750" y2="218"/><line x1="750" y1="218" x2="900" y2="120"/>
-        </g>
-        <g fill="#fff" opacity=".18">
-          <circle cx="150" cy="22" r="3.5"/><circle cx="300" cy="218" r="3.5"/>
-          <circle cx="450" cy="120" r="3.5"/><circle cx="600" cy="22" r="3.5"/>
-          <circle cx="750" cy="218" r="3.5"/><circle cx="900" cy="120" r="3.5"/>
-        </g>
-      </svg>
-    </div>
+    <div class="gh-in"><svg viewBox="0 0 1200 240" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+      <g stroke="#c8c0a8" stroke-width=".6" fill="none">
+        <path d="M0,120 C150,22 300,218 450,120 S750,22 900,120 S1100,218 1200,120"/>
+        <path d="M0,100 C150,2  300,198 450,100 S750,2  900,100 S1100,198 1200,100"/>
+        <path d="M0,140 C150,42 300,238 450,140 S750,42 900,140 S1100,238 1200,140"/>
+        <path d="M0,80  C200,0  350,180 500,80  S800,0  1000,80"  opacity=".5"/>
+        <path d="M0,160 C200,60 350,238 500,160 S800,60 1000,160" opacity=".5"/>
+      </g>
+      <g fill="none" stroke="#c8c0a8" stroke-width=".3" opacity=".3">
+        <line x1="150" y1="22" x2="300" y2="218"/>
+        <line x1="300" y1="218" x2="450" y2="120"/>
+        <line x1="600" y1="22" x2="750" y2="218"/>
+        <line x1="750" y1="218" x2="900" y2="120"/>
+      </g>
+      <g fill="#fff" opacity=".18">
+        <circle cx="150" cy="22" r="3.5"/><circle cx="300" cy="218" r="3.5"/>
+        <circle cx="450" cy="120" r="3.5"/><circle cx="600" cy="22" r="3.5"/>
+        <circle cx="750" cy="218" r="3.5"/><circle cx="900" cy="120" r="3.5"/>
+      </g>
+    </svg></div>
     <div class="gh-lbl">Grasshopper · Diseño paramétrico · curvas NURBS</div>
   </div>
 
-  <!-- 06 Espacio Sacro -->
   <div class="w">
-    <div class="prow prow-f" onclick="go('proj-06')">
-      <div class="pinfo"><div><div class="ptop"><span class="pnum">06</span><span class="pyr">2024</span></div><div class="ptitle" data-es="Espacio<br>Sacro" data-en="Sacred<br>Space">Espacio<br>Sacro</div><div class="pcat" data-es="Religioso · Paramétrico" data-en="Religious · Parametric">Religioso · Paramétrico</div><div class="pdesc" data-es="La luz natural como material estructural. Celosías paramétricas que filtran y dirigen." data-en="Natural light as structural material. Parametric lattices that filter and direct.">La luz natural como material estructural. Celosías paramétricas que filtran y dirigen.</div><div class="ptags"><span class="ptag">Croquis</span><span class="ptag">Diagrama</span><span class="ptag">Post IA</span></div></div><span class="parr" data-es="→ ver proyecto" data-en="→ view project">→ ver proyecto</span></div>
-      <div class="pi"><div class="pi-in" style="background-image:url('https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/bec6d3232343769.689aa47f6ed6d.jpg')"></div><div class="pi-ov"></div><div class="pi-tag" data-es="Render final" data-en="Final render">Render final</div></div>
+    <div class="prow prow-f" style="border-bottom:none" onclick="go('proj-06')">
+      <div class="pinfo" style="border-right:0.5px solid var(--line)">
+        <div>
+          <div class="ptop"><span class="pnum">06</span><span class="pyr">2024</span></div>
+          <div class="ptitle" data-es="Espacio<br>Sacro" data-en="Sacred<br>Space">Espacio<br>Sacro</div>
+          <div class="pcat"   data-es="Religioso · Paramétrico"   data-en="Religious · Parametric">Religioso · Paramétrico</div>
+          <div class="pdesc"  data-es="La luz natural como material estructural. Celosías paramétricas que filtran y dirigen."  data-en="Natural light as structural material. Parametric lattices that filter and direct.">La luz natural como material estructural. Celosías paramétricas que filtran y dirigen.</div>
+          <div class="ptags"><span class="ptag">Croquis</span><span class="ptag">Diagrama</span><span class="ptag">Post IA</span></div>
+        </div>
+        <span class="parr" data-es="→ ver proyecto" data-en="→ view project">→ ver proyecto</span>
+      </div>
+      <div class="pi">
+        <div class="pi-in" style="background-image:url('https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/bec6d3232343769.689aa47f6ed6d.jpg')"></div>
+        <div class="pi-ov"></div>
+        <div class="pi-tag">Render final</div>
+      </div>
     </div>
   </div>
 
-  <div class="w"><div class="footer" style="margin-top:0"><div class="footer-row"><span class="ft-l">Facundo Luna</span><span class="ft-m">FADU UBA · Arquitectura + IA</span><span class="ft-r">© 2026</span></div></div></div>
+  <div class="w"><div class="footer"><div class="footer-row">
+    <span class="ft-l">Facundo Luna</span><span class="ft-m">FADU UBA · Arquitectura + IA</span><span class="ft-r">© 2026</span>
+  </div></div></div>
 </div>
 
-<!-- ════════════════════════════════════════
-   VISTAS: PROYECTOS INDIVIDUALES
-   Render hero → texto → láminas → maqueta
-════════════════════════════════════════ -->
-
-<!-- Macro: cada proyecto usa id="view-proj-XX" -->
-
-<!-- PROYECTO 01: Vivienda Unifamiliar -->
+<!-- ════════ PROYECTO 01 ════════ -->
 <div class="view" id="view-proj-01">
-  <!--
-    IMAGEN HERO PROYECTO 01:
-    Reemplazá el src por: src="img/vivienda/hero.jpg"
-    Ratio: 16:7 aprox. Imagen más impactante del proyecto.
-    O dejá el div sin img y usá background-image si preferís.
-  -->
+  <!-- ══ Hero: img/vivienda/hero.jpg | 1920×820px, render más impactante -->
+  <!-- <img src="img/vivienda/hero.jpg" alt="" loading="eager"> — para activar reemplazá el div siguiente -->
   <div class="proj-hero">
-    
-      <!-- ══ VIVIENDA — Imagen principal (hero)
-           Tamaño: 1920×820px horizontal, el render más impactante del proyecto
-           Para activar: descomentá el <img> y borrá el div.placeholder -->
-      <!-- <img src="img/vivienda/hero.jpg" alt="VIVIENDA" loading="lazy"> -->
-      <div class="proj-hero-ph"><div class="proj-hero-ph-txt">img/vivienda/hero.jpg — imagen principal 16:7</div></div>
+    <div class="proj-hero-ph"><div class="ph-txt">img/vivienda/hero.jpg · 1920×820px</div></div>
     <div class="proj-hero-fade"></div>
   </div>
   <div class="w">
@@ -949,96 +789,63 @@ nav{
     <div class="proj-header">
       <div class="proj-header-grid">
         <div>
-          <div class="proj-eyebrow" data-es="Residencial · Buenos Aires · 2024" data-en="Residential · Buenos Aires · 2024">Residencial · Buenos Aires · 2024</div>
+          <div class="proj-eyebrow">Residencial · Buenos Aires · 2024</div>
           <div class="proj-title" data-es="Vivienda<br>Unifamiliar" data-en="Single Family<br>House">Vivienda<br>Unifamiliar</div>
           <div class="proj-subtitle" data-es="Lote entre medianeras" data-en="Party-wall lot">Lote entre medianeras</div>
           <div class="proj-meta">
             <div class="proj-meta-row"><span class="pmk" data-es="Año" data-en="Year">Año</span><span class="pmv">2024</span></div>
-            <div class="proj-meta-row"><span class="pmk" data-es="Tipo" data-en="Type">Tipo</span><span class="pmv" data-es="Vivienda unifamiliar" data-en="Single family house">Vivienda unifamiliar</span></div>
             <div class="proj-meta-row"><span class="pmk">Herramientas</span><span class="pmv">AutoCAD · SketchUp · Twinmotion · AI</span></div>
             <div class="proj-meta-row"><span class="pmk">Cátedra</span><span class="pmv">FADU UBA</span></div>
           </div>
         </div>
         <div class="proj-desc-col">
-          <p class="proj-desc-text"
-             data-es="Partido volumétrico articulado por patios interiores de luz. El lote entre medianeras impone condicionantes de privacidad y asoleamiento que se convierten en los generadores principales del proyecto. Los patios organizan la planta y distribuyen la luz natural hacia los espacios de vida.<br><br>La post-producción con IA transforma el render base en una imagen con atmósfera real — materiales, luz filtrada y profundidad que el motor de render no genera solo."
-             data-en="Volumetric scheme articulated by interior light patios. The party-wall lot imposes privacy and sun exposure constraints that become the main project generators. The patios organize the floor plan and distribute natural light to living spaces.<br><br>AI post-production transforms the base render into an image with real atmosphere — materials, filtered light and depth that the render engine alone cannot generate.">
-            Partido volumétrico articulado por patios interiores de luz. El lote entre medianeras impone condicionantes de privacidad y asoleamiento que se convierten en los generadores principales del proyecto.<br><br>La post-producción con IA transforma el render base en una imagen con atmósfera real — materiales, luz filtrada y profundidad que el motor de render no genera solo.
-          </p>
-          <div class="proj-tags">
-            <span class="proj-tag">Croquis</span><span class="proj-tag">Plantas</span><span class="proj-tag">Cortes</span><span class="proj-tag">Render</span><span class="proj-tag">Post IA</span>
-          </div>
+          <p class="proj-desc-text" data-es="Partido volumétrico articulado por patios interiores de luz. El lote entre medianeras impone condicionantes de privacidad y asoleamiento que se convierten en los generadores principales del proyecto." data-en="Volumetric scheme articulated by interior light patios. The party-wall lot imposes constraints that become the main project generators.">Partido volumétrico articulado por patios interiores de luz. El lote entre medianeras impone condicionantes de privacidad y asoleamiento que se convierten en los generadores principales del proyecto.</p>
+          <div class="proj-tags"><span class="proj-tag">Croquis</span><span class="proj-tag">Plantas</span><span class="proj-tag">Cortes</span><span class="proj-tag">Render</span><span class="proj-tag">Post IA</span></div>
         </div>
       </div>
     </div>
     <hr class="hr">
-
-    <!-- Láminas -->
     <div class="sh"><div class="sh-row"><span class="sh-label" data-es="Láminas" data-en="Sheets">Láminas</span></div></div>
-    <div class="laminas-section">
-              <div class="laminas-bg" id="lam-bg-01">
+    <div class="laminas-bg" id="lam-bg-01">
       <img src="img/vivienda/hero.jpg" alt="">
     </div>
     <div class="laminas-stack" id="lam-grid-01" data-bg="lam-bg-01">
       <!-- ══ Planta baja / Renders | 1920×1080px -->
       <!-- <img src="img/vivienda/lam-01.jpg" alt="Planta baja / Renders" loading="lazy"> -->
       <div class="lamina" onclick="lbOpen(this,'lam-grid-01')">
-        <div class="lamina-ph"><div class="lamina-ph-txt">img/vivienda/lam-01.jpg<br>Planta baja / Renders</div></div>
+        <div class="lamina-ph"><div class="ph-txt">img/vivienda/lam-01.jpg<br>Planta baja / Renders</div></div>
       </div>
       <!-- ══ Cortes y fachadas | 1920×1080px -->
       <!-- <img src="img/vivienda/lam-02.jpg" alt="Cortes y fachadas" loading="lazy"> -->
       <div class="lamina" onclick="lbOpen(this,'lam-grid-01')">
-        <div class="lamina-ph"><div class="lamina-ph-txt">img/vivienda/lam-02.jpg<br>Cortes y fachadas</div></div>
+        <div class="lamina-ph"><div class="ph-txt">img/vivienda/lam-02.jpg<br>Cortes y fachadas</div></div>
       </div>
     </div>
-
     <hr class="hr">
-
-    <!-- Maqueta -->
-    <div class="maqueta-section">
-      <div class="maqueta-label"><div class="sh-row"><span class="sh-label" data-es="Maqueta" data-en="Model">Maqueta</span></div></div>
+        <div class="maqueta-section">
+      <div class="sh"><div class="sh-row"><span class="sh-label" data-es="Maqueta" data-en="Model">Maqueta</span></div></div>
       <div class="maqueta-grid" id="maq-grid-01">
-        <!--
-          FOTOS DE MAQUETA — VIVIENDA
-          img/vivienda/maqueta-01.jpg → vista general
-          img/vivienda/maqueta-02.jpg → detalle
-          img/vivienda/maqueta-03.jpg → otra vista
-          Si no tenés maqueta de este proyecto, borrá esta sección
-        -->
+        <!-- ══ Foto de maqueta | 1920×1080px, luz natural, fondo neutro -->
+        <!-- <img src="img/vivienda/maqueta-01.jpg" alt="Maqueta" loading="lazy"> -->
         <div class="maqueta-img" onclick="lbOpen(this,'maq-grid-01')">
-      <!-- ══ VIVIENDA — Maqueta foto 1
-           Tamaño: Vista general de la maqueta, luz natural, fondo neutro
-           Para activar: descomentá el <img> y borrá el div.placeholder -->
-      <!-- <img src="img/vivienda/maqueta-01.jpg" alt="VIVIENDA" loading="lazy"> -->
-      <div class="maqueta-ph"><div class="maqueta-ph-txt">img/vivienda/maqueta-01.jpg</div></div></div>
-        <div class="maqueta-img" onclick="lbOpen(this,'maq-grid-01')">
-      <!-- ══ VIVIENDA — Maqueta foto 2
-           Tamaño: Detalle o vista lateral de la maqueta
-           Para activar: descomentá el <img> y borrá el div.placeholder -->
-      <!-- <img src="img/vivienda/maqueta-02.jpg" alt="VIVIENDA" loading="lazy"> -->
-      <div class="maqueta-ph"><div class="maqueta-ph-txt">img/vivienda/maqueta-02.jpg</div></div></div>
-        <div class="maqueta-img" onclick="lbOpen(this,'maq-grid-01')">
-      <!-- ══ VIVIENDA — Maqueta foto 3
-           Tamaño: Otra vista — cenital o perspectiva
-           Para activar: descomentá el <img> y borrá el div.placeholder -->
-      <!-- <img src="img/vivienda/maqueta-03.jpg" alt="VIVIENDA" loading="lazy"> -->
-      <div class="maqueta-ph"><div class="maqueta-ph-txt">img/vivienda/maqueta-03.jpg</div></div></div>
+          <div class="maqueta-ph"><div class="ph-txt">img/vivienda/maqueta-01.jpg</div></div>
+        </div>
       </div>
     </div>
-    <div class="footer" style="margin-top:0"><div class="footer-row"><span class="ft-l">Facundo Luna</span><span class="ft-m">FADU UBA · Arquitectura + IA</span><span class="ft-r">© 2026</span></div></div>
+    <div class="footer" style="margin-top:2px"><div class="footer-row">
+      <span class="ft-l">Facundo Luna</span>
+      <span class="ft-m">FADU UBA · Arquitectura + IA</span>
+      <span class="ft-r">© 2026</span>
+    </div></div>
   </div>
 </div>
 
-<!-- PROYECTO 02: Biblioteca Costera -->
+<!-- ════════ PROYECTO 02 ════════ -->
 <div class="view" id="view-proj-02">
+  <!-- ══ Hero: img/biblioteca/hero.jpg | 1920×820px, render más impactante -->
+  <!-- <img src="img/biblioteca/hero.jpg" alt="" loading="eager"> — para activar reemplazá el div siguiente -->
   <div class="proj-hero">
-    <!-- img/biblioteca/hero.jpg -->
-    
-      <!-- ══ BIBLIOTECA — Imagen principal (hero)
-           Tamaño: 1920×820px horizontal, render exterior más impactante
-           Para activar: descomentá el <img> y borrá el div.placeholder -->
-      <!-- <img src="img/biblioteca/hero.jpg" alt="BIBLIOTECA" loading="lazy"> -->
-      <div class="proj-hero-ph"><div class="proj-hero-ph-txt">img/biblioteca/hero.jpg</div></div>
+    <div class="proj-hero-ph"><div class="ph-txt">img/biblioteca/hero.jpg · 1920×820px</div></div>
     <div class="proj-hero-fade"></div>
   </div>
   <div class="w">
@@ -1046,121 +853,102 @@ nav{
     <div class="proj-header">
       <div class="proj-header-grid">
         <div>
-          <div class="proj-eyebrow" data-es="Equipamiento · Frente costero · 2025" data-en="Equipment · Coastal front · 2025">Equipamiento · Frente costero · 2025</div>
+          <div class="proj-eyebrow">Equipamiento · Frente costero · 2025</div>
           <div class="proj-title" data-es="Biblioteca<br>Costera" data-en="Coastal<br>Library">Biblioteca<br>Costera</div>
           <div class="proj-subtitle" data-es="Estructura paramétrica adaptable" data-en="Adaptive parametric structure">Estructura paramétrica adaptable</div>
           <div class="proj-meta">
             <div class="proj-meta-row"><span class="pmk" data-es="Año" data-en="Year">Año</span><span class="pmv">2025</span></div>
-            <div class="proj-meta-row"><span class="pmk" data-es="Tipo" data-en="Type">Tipo</span><span class="pmv" data-es="Equipamiento cultural" data-en="Cultural equipment">Equipamiento cultural</span></div>
             <div class="proj-meta-row"><span class="pmk">Herramientas</span><span class="pmv">Rhino · Grasshopper · Twinmotion · AI</span></div>
             <div class="proj-meta-row"><span class="pmk">Cátedra</span><span class="pmv">FADU UBA</span></div>
           </div>
         </div>
         <div class="proj-desc-col">
-          <p class="proj-desc-text"
-             data-es="La Biblioteca Costera nace de una pregunta concreta: ¿puede una estructura adaptarse a su entorno sin renunciar a su programa? La piel paramétrica generada en Grasshopper optimiza orientación solar y vistas simultáneamente, produciendo una geometría que no podría existir sin el algoritmo.<br><br>El análisis del sitio costero — vientos, orientación, vistas — alimenta directamente la definición paramétrica. Cada panel de la piel responde de forma distinta según su posición en la fachada."
-             data-en="The Coastal Library emerges from a concrete question: can a structure adapt to its environment without abandoning its program? The parametric skin generated in Grasshopper simultaneously optimizes solar orientation and views, producing a geometry that couldn't exist without the algorithm.<br><br>The coastal site analysis — winds, orientation, views — directly feeds the parametric definition. Each skin panel responds differently according to its position on the facade.">
-            La Biblioteca Costera nace de una pregunta concreta: ¿puede una estructura adaptarse a su entorno sin renunciar a su programa? La piel paramétrica generada en Grasshopper optimiza orientación solar y vistas simultáneamente.<br><br>Cada panel de la piel responde de forma distinta según su posición en la fachada — el algoritmo como herramienta de diseño, no de producción.
-          </p>
-          <div class="proj-tags">
-            <span class="proj-tag">Croquis</span><span class="proj-tag">Análisis sitio</span><span class="proj-tag">Grasshopper</span><span class="proj-tag">Maqueta</span><span class="proj-tag">Post IA</span>
-          </div>
+          <p class="proj-desc-text" data-es="Piel generada en Grasshopper que optimiza orientación solar y vistas simultáneamente. Cada panel de la piel responde de forma distinta según su posición en la fachada." data-en="Skin generated in Grasshopper simultaneously optimizing solar orientation and views. Each panel responds differently according to its position on the facade.">Piel generada en Grasshopper que optimiza orientación solar y vistas simultáneamente. Cada panel de la piel responde de forma distinta según su posición en la fachada.</p>
+          <div class="proj-tags"><span class="proj-tag">Croquis</span><span class="proj-tag">Análisis sitio</span><span class="proj-tag">Maqueta</span><span class="proj-tag">Post IA</span></div>
         </div>
       </div>
     </div>
     <hr class="hr">
     <div class="sh"><div class="sh-row"><span class="sh-label" data-es="Láminas" data-en="Sheets">Láminas</span></div></div>
-    <div class="laminas-section">
-                  <div class="laminas-bg" id="lam-bg-02">
+    <div class="laminas-bg" id="lam-bg-02">
       <img src="img/biblioteca/hero.jpg" alt="">
     </div>
     <div class="laminas-stack" id="lam-grid-02" data-bg="lam-bg-02">
       <!-- ══ Vista principal | 1920×1080px -->
       <!-- <img src="img/biblioteca/lam-01.jpg" alt="Vista principal" loading="lazy"> -->
       <div class="lamina" onclick="lbOpen(this,'lam-grid-02')">
-        <div class="lamina-ph"><div class="lamina-ph-txt">img/biblioteca/lam-01.jpg<br>Vista principal</div></div>
+        <div class="lamina-ph"><div class="ph-txt">img/biblioteca/lam-01.jpg<br>Vista principal</div></div>
       </div>
       <div class="lam-row lam-row-2">
       <!-- ══ Análisis de sitio | 960×720px -->
       <!-- <img src="img/biblioteca/lam-02.jpg" alt="Análisis de sitio" loading="lazy"> -->
       <div class="lamina" onclick="lbOpen(this,'lam-grid-02')">
-        <div class="lamina-ph"><div class="lamina-ph-txt">img/biblioteca/lam-02.jpg<br>Análisis de sitio</div></div>
+        <div class="lamina-ph"><div class="ph-txt">img/biblioteca/lam-02.jpg<br>Análisis de sitio</div></div>
       </div>
       <!-- ══ Planta / Corte | 960×720px -->
       <!-- <img src="img/biblioteca/lam-03.jpg" alt="Planta / Corte" loading="lazy"> -->
       <div class="lamina" onclick="lbOpen(this,'lam-grid-02')">
-        <div class="lamina-ph"><div class="lamina-ph-txt">img/biblioteca/lam-03.jpg<br>Planta / Corte</div></div>
+        <div class="lamina-ph"><div class="ph-txt">img/biblioteca/lam-03.jpg<br>Planta / Corte</div></div>
       </div>
       </div>
       <!-- ══ Grasshopper / Piel | 1920×1080px -->
       <!-- <img src="img/biblioteca/lam-04.jpg" alt="Grasshopper / Piel" loading="lazy"> -->
       <div class="lamina" onclick="lbOpen(this,'lam-grid-02')">
-        <div class="lamina-ph"><div class="lamina-ph-txt">img/biblioteca/lam-04.jpg<br>Grasshopper / Piel</div></div>
+        <div class="lamina-ph"><div class="ph-txt">img/biblioteca/lam-04.jpg<br>Grasshopper / Piel</div></div>
       </div>
       <!-- ══ Render exterior 1 | 1920×1080px -->
       <!-- <img src="img/biblioteca/lam-05.jpg" alt="Render exterior 1" loading="lazy"> -->
       <div class="lamina" onclick="lbOpen(this,'lam-grid-02')">
-        <div class="lamina-ph"><div class="lamina-ph-txt">img/biblioteca/lam-05.jpg<br>Render exterior 1</div></div>
+        <div class="lamina-ph"><div class="ph-txt">img/biblioteca/lam-05.jpg<br>Render exterior 1</div></div>
       </div>
       <!-- ══ Render exterior 2 | 1920×1080px -->
       <!-- <img src="img/biblioteca/lam-06.jpg" alt="Render exterior 2" loading="lazy"> -->
       <div class="lamina" onclick="lbOpen(this,'lam-grid-02')">
-        <div class="lamina-ph"><div class="lamina-ph-txt">img/biblioteca/lam-06.jpg<br>Render exterior 2</div></div>
+        <div class="lamina-ph"><div class="ph-txt">img/biblioteca/lam-06.jpg<br>Render exterior 2</div></div>
       </div>
       <!-- ══ Render interior 1 | 1920×1080px -->
       <!-- <img src="img/biblioteca/lam-07.jpg" alt="Render interior 1" loading="lazy"> -->
       <div class="lamina" onclick="lbOpen(this,'lam-grid-02')">
-        <div class="lamina-ph"><div class="lamina-ph-txt">img/biblioteca/lam-07.jpg<br>Render interior 1</div></div>
+        <div class="lamina-ph"><div class="ph-txt">img/biblioteca/lam-07.jpg<br>Render interior 1</div></div>
       </div>
       <!-- ══ Render interior 2 | 1920×1080px -->
       <!-- <img src="img/biblioteca/lam-08.jpg" alt="Render interior 2" loading="lazy"> -->
       <div class="lamina" onclick="lbOpen(this,'lam-grid-02')">
-        <div class="lamina-ph"><div class="lamina-ph-txt">img/biblioteca/lam-08.jpg<br>Render interior 2</div></div>
+        <div class="lamina-ph"><div class="ph-txt">img/biblioteca/lam-08.jpg<br>Render interior 2</div></div>
       </div>
       <!-- ══ Detalle de piel | 1920×1080px -->
       <!-- <img src="img/biblioteca/lam-09.jpg" alt="Detalle de piel" loading="lazy"> -->
       <div class="lamina" onclick="lbOpen(this,'lam-grid-02')">
-        <div class="lamina-ph"><div class="lamina-ph-txt">img/biblioteca/lam-09.jpg<br>Detalle de piel</div></div>
+        <div class="lamina-ph"><div class="ph-txt">img/biblioteca/lam-09.jpg<br>Detalle de piel</div></div>
       </div>
     </div>
-
     <hr class="hr">
-    <div class="maqueta-section">
-      <div class="maqueta-label"><div class="sh-row"><span class="sh-label" data-es="Maqueta" data-en="Model">Maqueta</span></div></div>
+        <div class="maqueta-section">
+      <div class="sh"><div class="sh-row"><span class="sh-label" data-es="Maqueta" data-en="Model">Maqueta</span></div></div>
       <div class="maqueta-grid" id="maq-grid-02">
-        <!-- img/biblioteca/maqueta-01.jpg  maqueta-02.jpg  maqueta-03.jpg -->
+        <!-- ══ Foto de maqueta | 1920×1080px, luz natural, fondo neutro -->
+        <!-- <img src="img/biblioteca/maqueta-01.jpg" alt="Maqueta" loading="lazy"> -->
         <div class="maqueta-img" onclick="lbOpen(this,'maq-grid-02')">
-      <!-- ══ BIBLIOTECA — Maqueta foto 1
-           Tamaño: Vista general
-           Para activar: descomentá el <img> y borrá el div.placeholder -->
-      <!-- <img src="img/biblioteca/maqueta-01.jpg" alt="BIBLIOTECA" loading="lazy"> -->
-      <div class="maqueta-ph"><div class="maqueta-ph-txt">img/biblioteca/maqueta-01.jpg</div></div></div>
-        <div class="maqueta-img" onclick="lbOpen(this,'maq-grid-02')">
-      <!-- ══ BIBLIOTECA — Maqueta foto 2
-           Tamaño: Detalle
-           Para activar: descomentá el <img> y borrá el div.placeholder -->
-      <!-- <img src="img/biblioteca/maqueta-02.jpg" alt="BIBLIOTECA" loading="lazy"> -->
-      <div class="maqueta-ph"><div class="maqueta-ph-txt">img/biblioteca/maqueta-02.jpg</div></div></div>
-        <div class="maqueta-img" onclick="lbOpen(this,'maq-grid-02')">
-      <!-- ══ BIBLIOTECA — Maqueta foto 3
-           Tamaño: Otra vista
-           Para activar: descomentá el <img> y borrá el div.placeholder -->
-      <!-- <img src="img/biblioteca/maqueta-03.jpg" alt="BIBLIOTECA" loading="lazy"> -->
-      <div class="maqueta-ph"><div class="maqueta-ph-txt">img/biblioteca/maqueta-03.jpg</div></div></div>
+          <div class="maqueta-ph"><div class="ph-txt">img/biblioteca/maqueta-01.jpg</div></div>
+        </div>
       </div>
     </div>
-    <div class="footer" style="margin-top:0"><div class="footer-row"><span class="ft-l">Facundo Luna</span><span class="ft-m">FADU UBA · Arquitectura + IA</span><span class="ft-r">© 2026</span></div></div>
+    <div class="footer" style="margin-top:2px"><div class="footer-row">
+      <span class="ft-l">Facundo Luna</span>
+      <span class="ft-m">FADU UBA · Arquitectura + IA</span>
+      <span class="ft-r">© 2026</span>
+    </div></div>
   </div>
 </div>
 
-<!-- PROYECTO 03: Legajo Municipal -->
+<!-- ════════ PROYECTO 03 ════════ -->
 <div class="view" id="view-proj-03">
+  <!-- ══ Hero: img/legajo/hero.jpg | 1920×820px, render más impactante -->
+  <!-- <img src="img/legajo/hero.jpg" alt="" loading="eager"> — para activar reemplazá el div siguiente -->
   <div class="proj-hero">
-      <!-- ══ LEGAJO — Imagen principal (hero)
-           Tamaño: 1920×820px horizontal, plano o render del proyecto
-           Para activar: descomentá el <img> y borrá el div.placeholder -->
-      <!-- <img src="img/legajo/hero.jpg" alt="LEGAJO" loading="lazy"> -->
-      <div class="proj-hero-ph"><div class="proj-hero-ph-txt">img/legajo/hero.jpg</div></div><div class="proj-hero-fade"></div></div>
+    <div class="proj-hero-ph"><div class="ph-txt">img/legajo/hero.jpg · 1920×820px</div></div>
+    <div class="proj-hero-fade"></div>
+  </div>
   <div class="w">
     <span class="back-btn" onclick="go('proyectos')">← <span data-es="Volver a proyectos" data-en="Back to projects">Volver a proyectos</span></span>
     <div class="proj-header">
@@ -1170,53 +958,46 @@ nav{
           <div class="proj-title" data-es="Legajo<br>Municipal" data-en="Municipal<br>File">Legajo<br>Municipal</div>
           <div class="proj-subtitle" data-es="Documentación ejecutiva" data-en="Executive documentation">Documentación ejecutiva</div>
           <div class="proj-meta">
-            <div class="proj-meta-row"><span class="pmk">Año</span><span class="pmv">2024</span></div>
-            <div class="proj-meta-row"><span class="pmk">Tipo</span><span class="pmv" data-es="Documentación técnica profesional" data-en="Professional technical documentation">Documentación técnica profesional</span></div>
+            <div class="proj-meta-row"><span class="pmk" data-es="Año" data-en="Year">Año</span><span class="pmv">2024</span></div>
             <div class="proj-meta-row"><span class="pmk">Herramientas</span><span class="pmv">AutoCAD · Photoshop</span></div>
+            <div class="proj-meta-row"><span class="pmk">Cátedra</span><span class="pmv">FADU UBA</span></div>
           </div>
         </div>
         <div class="proj-desc-col">
-          <p class="proj-desc-text"
-             data-es="Documentación ejecutiva completa para gestión ante municipio. Plantas, cortes, fachadas, detalles constructivos y memoria descriptiva. Primer proyecto profesional real — trabajo encargado por un cliente particular.<br><br>El proceso implicó relevamiento in situ, ajuste a normativa local y presentación ante el organismo municipal correspondiente."
-             data-en="Complete executive documentation for municipal management. Floor plans, sections, elevations, construction details and descriptive report. First real professional project — commissioned by a private client.<br><br>The process involved on-site survey, adjustment to local regulations and presentation to the relevant municipal body.">
-            Documentación ejecutiva completa para gestión ante municipio. Plantas, cortes, fachadas, detalles constructivos y memoria descriptiva. Primer proyecto profesional real.
-          </p>
+          <p class="proj-desc-text" data-es="Documentación ejecutiva completa para gestión ante municipio. Plantas, cortes, fachadas, detalles constructivos y memoria descriptiva. Primer proyecto profesional real." data-en="Complete executive documentation for municipal management. Plans, sections, elevations, construction details and report. First real professional project.">Documentación ejecutiva completa para gestión ante municipio. Plantas, cortes, fachadas, detalles constructivos y memoria descriptiva. Primer proyecto profesional real.</p>
           <div class="proj-tags"><span class="proj-tag">Plantas</span><span class="proj-tag">Cortes</span><span class="proj-tag">Fachadas</span><span class="proj-tag">Detalles</span></div>
         </div>
       </div>
     </div>
     <hr class="hr">
-    <div class="sh"><div class="sh-row"><span class="sh-label">Láminas</span></div></div>
-    <div class="laminas-section">
-    <!-- Fondo b/n de la imagen del proyecto -->
-    
-      <!-- ══ LEGAJO — Imagen principal (hero)
-           Tamaño: 1920×820px horizontal, plano o render del proyecto
-           Para activar: descomentá el <img> y borrá el div.placeholder -->
-      <!-- <img src="img/legajo/hero.jpg" alt="LEGAJO" loading="lazy"> -->
-              <div class="laminas-bg" id="lam-bg-03">
+    <div class="sh"><div class="sh-row"><span class="sh-label" data-es="Láminas" data-en="Sheets">Láminas</span></div></div>
+    <div class="laminas-bg" id="lam-bg-03">
       <img src="img/legajo/hero.jpg" alt="">
     </div>
     <div class="laminas-stack" id="lam-grid-03" data-bg="lam-bg-03">
       <!-- ══ Documentación técnica completa | 1920×1080px -->
       <!-- <img src="img/legajo/lam-01.jpg" alt="Documentación técnica completa" loading="lazy"> -->
       <div class="lamina" onclick="lbOpen(this,'lam-grid-03')">
-        <div class="lamina-ph"><div class="lamina-ph-txt">img/legajo/lam-01.jpg<br>Documentación técnica completa</div></div>
+        <div class="lamina-ph"><div class="ph-txt">img/legajo/lam-01.jpg<br>Documentación técnica completa</div></div>
       </div>
     </div>
 
-    <div class="footer" style="margin-top:24px"><div class="footer-row"><span class="ft-l">Facundo Luna</span><span class="ft-m">FADU UBA · Arquitectura + IA</span><span class="ft-r">© 2026</span></div></div>
+    <div class="footer" style="margin-top:2px"><div class="footer-row">
+      <span class="ft-l">Facundo Luna</span>
+      <span class="ft-m">FADU UBA · Arquitectura + IA</span>
+      <span class="ft-r">© 2026</span>
+    </div></div>
   </div>
 </div>
 
-<!-- PROYECTO 04: Intervención Urbana -->
+<!-- ════════ PROYECTO 04 ════════ -->
 <div class="view" id="view-proj-04">
+  <!-- ══ Hero: img/urbana/hero.jpg | 1920×820px, render más impactante -->
+  <!-- <img src="img/urbana/hero.jpg" alt="" loading="eager"> — para activar reemplazá el div siguiente -->
   <div class="proj-hero">
-      <!-- ══ URBANA — Imagen principal (hero)
-           Tamaño: 1920×820px horizontal, render o imagen más impactante
-           Para activar: descomentá el <img> y borrá el div.placeholder -->
-      <!-- <img src="img/urbana/hero.jpg" alt="URBANA" loading="lazy"> -->
-      <div class="proj-hero-ph"><div class="proj-hero-ph-txt">img/urbana/hero.jpg</div></div><div class="proj-hero-fade"></div></div>
+    <div class="proj-hero-ph"><div class="ph-txt">img/urbana/hero.jpg · 1920×820px</div></div>
+    <div class="proj-hero-fade"></div>
+  </div>
   <div class="w">
     <span class="back-btn" onclick="go('proyectos')">← <span data-es="Volver a proyectos" data-en="Back to projects">Volver a proyectos</span></span>
     <div class="proj-header">
@@ -1226,108 +1007,100 @@ nav{
           <div class="proj-title" data-es="Intervención<br>Urbana" data-en="Urban<br>Intervention">Intervención<br>Urbana</div>
           <div class="proj-subtitle" data-es="Reconversión de espacio público" data-en="Public space reconversion">Reconversión de espacio público</div>
           <div class="proj-meta">
-            <div class="proj-meta-row"><span class="pmk">Año</span><span class="pmv">2025</span></div>
-            <div class="proj-meta-row"><span class="pmk">Tipo</span><span class="pmv">Urbanismo</span></div>
+            <div class="proj-meta-row"><span class="pmk" data-es="Año" data-en="Year">Año</span><span class="pmv">2025</span></div>
             <div class="proj-meta-row"><span class="pmk">Herramientas</span><span class="pmv">AutoCAD · SketchUp · Photoshop · AI</span></div>
             <div class="proj-meta-row"><span class="pmk">Cátedra</span><span class="pmv">FADU UBA</span></div>
           </div>
         </div>
         <div class="proj-desc-col">
-          <p class="proj-desc-text"
-             data-es="Reconversión de espacio público degradado en Buenos Aires. La estrategia parte de un análisis de capas — usos actuales, flujos peatonales, identidad del barrio — para proponer una activación por etapas temporales y permanentes.<br><br>La intervención respeta la escala del barrio mientras introduce nueva infraestructura que cataliza la apropiación del espacio por parte de los habitantes."
-             data-en="Reconversion of degraded public space in Buenos Aires. The strategy starts from a layered analysis — current uses, pedestrian flows, neighborhood identity — to propose an activation through temporary and permanent phases.<br><br>The intervention respects the neighborhood scale while introducing new infrastructure that catalyzes space appropriation by residents.">
-            Reconversión de espacio público degradado en Buenos Aires. La estrategia parte de un análisis de capas para proponer una activación por etapas temporales y permanentes.
-          </p>
+          <p class="proj-desc-text" data-es="Reconversión de espacio público degradado. La estrategia parte de un análisis de capas — usos actuales, flujos peatonales, identidad del barrio — para proponer una activación por etapas." data-en="Reconversion of degraded public space. The strategy starts from a layered analysis to propose phased activation.">Reconversión de espacio público degradado. La estrategia parte de un análisis de capas — usos actuales, flujos peatonales, identidad del barrio — para proponer una activación por etapas.</p>
           <div class="proj-tags"><span class="proj-tag">Análisis sitio</span><span class="proj-tag">Diagramas</span><span class="proj-tag">Plantas</span><span class="proj-tag">Render</span></div>
         </div>
       </div>
     </div>
     <hr class="hr">
-    <div class="sh"><div class="sh-row"><span class="sh-label">Láminas</span></div></div>
-    <div class="laminas-section">
-    <!-- Fondo b/n de la imagen del proyecto -->
-    
-      <!-- ══ URBANA — Imagen principal (hero)
-           Tamaño: 1920×820px horizontal, render o imagen más impactante
-           Para activar: descomentá el <img> y borrá el div.placeholder -->
-      <!-- <img src="img/urbana/hero.jpg" alt="URBANA" loading="lazy"> -->
-              <div class="laminas-bg" id="lam-bg-04">
+    <div class="sh"><div class="sh-row"><span class="sh-label" data-es="Láminas" data-en="Sheets">Láminas</span></div></div>
+    <div class="laminas-bg" id="lam-bg-04">
       <img src="img/urbana/hero.jpg" alt="">
     </div>
     <div class="laminas-stack" id="lam-grid-04" data-bg="lam-bg-04">
       <!-- ══ Análisis urbano general | 1920×1080px -->
       <!-- <img src="img/urbana/lam-01.jpg" alt="Análisis urbano general" loading="lazy"> -->
       <div class="lamina" onclick="lbOpen(this,'lam-grid-04')">
-        <div class="lamina-ph"><div class="lamina-ph-txt">img/urbana/lam-01.jpg<br>Análisis urbano general</div></div>
+        <div class="lamina-ph"><div class="ph-txt">img/urbana/lam-01.jpg<br>Análisis urbano general</div></div>
       </div>
       <div class="lam-row lam-row-4">
       <!-- ══ Diagnóstico 1 | 960×720px -->
       <!-- <img src="img/urbana/lam-02.jpg" alt="Diagnóstico 1" loading="lazy"> -->
       <div class="lamina" onclick="lbOpen(this,'lam-grid-04')">
-        <div class="lamina-ph"><div class="lamina-ph-txt">img/urbana/lam-02.jpg<br>Diagnóstico 1</div></div>
+        <div class="lamina-ph"><div class="ph-txt">img/urbana/lam-02.jpg<br>Diagnóstico 1</div></div>
       </div>
       <!-- ══ Diagnóstico 2 | 960×720px -->
       <!-- <img src="img/urbana/lam-03.jpg" alt="Diagnóstico 2" loading="lazy"> -->
       <div class="lamina" onclick="lbOpen(this,'lam-grid-04')">
-        <div class="lamina-ph"><div class="lamina-ph-txt">img/urbana/lam-03.jpg<br>Diagnóstico 2</div></div>
+        <div class="lamina-ph"><div class="ph-txt">img/urbana/lam-03.jpg<br>Diagnóstico 2</div></div>
       </div>
       <!-- ══ Diagnóstico 3 | 960×720px -->
       <!-- <img src="img/urbana/lam-04.jpg" alt="Diagnóstico 3" loading="lazy"> -->
       <div class="lamina" onclick="lbOpen(this,'lam-grid-04')">
-        <div class="lamina-ph"><div class="lamina-ph-txt">img/urbana/lam-04.jpg<br>Diagnóstico 3</div></div>
+        <div class="lamina-ph"><div class="ph-txt">img/urbana/lam-04.jpg<br>Diagnóstico 3</div></div>
       </div>
       <!-- ══ Diagnóstico 4 | 960×720px -->
       <!-- <img src="img/urbana/lam-05.jpg" alt="Diagnóstico 4" loading="lazy"> -->
       <div class="lamina" onclick="lbOpen(this,'lam-grid-04')">
-        <div class="lamina-ph"><div class="lamina-ph-txt">img/urbana/lam-05.jpg<br>Diagnóstico 4</div></div>
+        <div class="lamina-ph"><div class="ph-txt">img/urbana/lam-05.jpg<br>Diagnóstico 4</div></div>
       </div>
       </div>
       <!-- ══ Estrategia A | 1920×1080px -->
       <!-- <img src="img/urbana/lam-06.jpg" alt="Estrategia A" loading="lazy"> -->
       <div class="lamina" onclick="lbOpen(this,'lam-grid-04')">
-        <div class="lamina-ph"><div class="lamina-ph-txt">img/urbana/lam-06.jpg<br>Estrategia A</div></div>
+        <div class="lamina-ph"><div class="ph-txt">img/urbana/lam-06.jpg<br>Estrategia A</div></div>
       </div>
       <!-- ══ Estrategia B | 1920×1080px -->
       <!-- <img src="img/urbana/lam-07.jpg" alt="Estrategia B" loading="lazy"> -->
       <div class="lamina" onclick="lbOpen(this,'lam-grid-04')">
-        <div class="lamina-ph"><div class="lamina-ph-txt">img/urbana/lam-07.jpg<br>Estrategia B</div></div>
+        <div class="lamina-ph"><div class="ph-txt">img/urbana/lam-07.jpg<br>Estrategia B</div></div>
       </div>
       <div class="lam-row lam-row-4">
       <!-- ══ Propuesta 1 | 960×720px -->
       <!-- <img src="img/urbana/lam-08.jpg" alt="Propuesta 1" loading="lazy"> -->
       <div class="lamina" onclick="lbOpen(this,'lam-grid-04')">
-        <div class="lamina-ph"><div class="lamina-ph-txt">img/urbana/lam-08.jpg<br>Propuesta 1</div></div>
+        <div class="lamina-ph"><div class="ph-txt">img/urbana/lam-08.jpg<br>Propuesta 1</div></div>
       </div>
       <!-- ══ Propuesta 2 | 960×720px -->
       <!-- <img src="img/urbana/lam-09.jpg" alt="Propuesta 2" loading="lazy"> -->
       <div class="lamina" onclick="lbOpen(this,'lam-grid-04')">
-        <div class="lamina-ph"><div class="lamina-ph-txt">img/urbana/lam-09.jpg<br>Propuesta 2</div></div>
+        <div class="lamina-ph"><div class="ph-txt">img/urbana/lam-09.jpg<br>Propuesta 2</div></div>
       </div>
       <!-- ══ Propuesta 3 | 960×720px -->
       <!-- <img src="img/urbana/lam-10.jpg" alt="Propuesta 3" loading="lazy"> -->
       <div class="lamina" onclick="lbOpen(this,'lam-grid-04')">
-        <div class="lamina-ph"><div class="lamina-ph-txt">img/urbana/lam-10.jpg<br>Propuesta 3</div></div>
+        <div class="lamina-ph"><div class="ph-txt">img/urbana/lam-10.jpg<br>Propuesta 3</div></div>
       </div>
       <!-- ══ Propuesta 4 | 960×720px -->
       <!-- <img src="img/urbana/lam-11.jpg" alt="Propuesta 4" loading="lazy"> -->
       <div class="lamina" onclick="lbOpen(this,'lam-grid-04')">
-        <div class="lamina-ph"><div class="lamina-ph-txt">img/urbana/lam-11.jpg<br>Propuesta 4</div></div>
+        <div class="lamina-ph"><div class="ph-txt">img/urbana/lam-11.jpg<br>Propuesta 4</div></div>
       </div>
       </div>
     </div>
 
-    <div class="footer" style="margin-top:24px"><div class="footer-row"><span class="ft-l">Facundo Luna</span><span class="ft-m">FADU UBA · Arquitectura + IA</span><span class="ft-r">© 2026</span></div></div>
+    <div class="footer" style="margin-top:2px"><div class="footer-row">
+      <span class="ft-l">Facundo Luna</span>
+      <span class="ft-m">FADU UBA · Arquitectura + IA</span>
+      <span class="ft-r">© 2026</span>
+    </div></div>
   </div>
 </div>
 
-<!-- PROYECTO 05: Conjunto Habitacional -->
+<!-- ════════ PROYECTO 05 ════════ -->
 <div class="view" id="view-proj-05">
+  <!-- ══ Hero: img/conjunto/hero.jpg | 1920×820px, render más impactante -->
+  <!-- <img src="img/conjunto/hero.jpg" alt="" loading="eager"> — para activar reemplazá el div siguiente -->
   <div class="proj-hero">
-      <!-- ══ CONJUNTO — Imagen principal (hero)
-           Tamaño: 1920×820px horizontal, render más impactante
-           Para activar: descomentá el <img> y borrá el div.placeholder -->
-      <!-- <img src="img/conjunto/hero.jpg" alt="CONJUNTO" loading="lazy"> -->
-      <div class="proj-hero-ph"><div class="proj-hero-ph-txt">img/conjunto/hero.jpg</div></div><div class="proj-hero-fade"></div></div>
+    <div class="proj-hero-ph"><div class="ph-txt">img/conjunto/hero.jpg · 1920×820px</div></div>
+    <div class="proj-hero-fade"></div>
+  </div>
   <div class="w">
     <span class="back-btn" onclick="go('proyectos')">← <span data-es="Volver a proyectos" data-en="Back to projects">Volver a proyectos</span></span>
     <div class="proj-header">
@@ -1337,115 +1110,93 @@ nav{
           <div class="proj-title" data-es="Conjunto<br>Habitacional" data-en="Housing<br>Complex">Conjunto<br>Habitacional</div>
           <div class="proj-subtitle" data-es="Planta libre · Iluminación cenital" data-en="Open plan · Zenithal light">Planta libre · Iluminación cenital</div>
           <div class="proj-meta">
-            <div class="proj-meta-row"><span class="pmk">Año</span><span class="pmv">2025</span></div>
-            <div class="proj-meta-row"><span class="pmk">Tipo</span><span class="pmv" data-es="Vivienda colectiva" data-en="Collective housing">Vivienda colectiva</span></div>
+            <div class="proj-meta-row"><span class="pmk" data-es="Año" data-en="Year">Año</span><span class="pmv">2025</span></div>
             <div class="proj-meta-row"><span class="pmk">Herramientas</span><span class="pmv">AutoCAD · SketchUp · Twinmotion · AI</span></div>
             <div class="proj-meta-row"><span class="pmk">Cátedra</span><span class="pmv">FADU UBA</span></div>
           </div>
         </div>
         <div class="proj-desc-col">
-          <p class="proj-desc-text"
-             data-es="Planta libre como principio organizador. Las circulaciones verticales y horizontales se integran al paisaje urbano en lugar de segmentarlo. La iluminación natural cenital actúa como organizador del espacio colectivo, creando una secuencia espacial que va de lo privado a lo común."
-             data-en="Open plan as organizing principle. Vertical and horizontal circulations integrate into the urban landscape rather than segmenting it. Zenithal natural light acts as organizer of collective space, creating a spatial sequence from private to common.">
-            Planta libre como principio organizador. Las circulaciones se integran al paisaje urbano. La iluminación natural cenital actúa como organizador del espacio colectivo.
-          </p>
+          <p class="proj-desc-text" data-es="Planta libre como principio organizador. Las circulaciones verticales y horizontales se integran al paisaje urbano. La iluminación natural cenital actúa como organizador del espacio colectivo." data-en="Open plan as organizing principle. Circulations integrate into the urban landscape. Zenithal natural light organizes collective space.">Planta libre como principio organizador. Las circulaciones verticales y horizontales se integran al paisaje urbano. La iluminación natural cenital actúa como organizador del espacio colectivo.</p>
           <div class="proj-tags"><span class="proj-tag">Croquis</span><span class="proj-tag">Plantas</span><span class="proj-tag">Cortes</span><span class="proj-tag">Render</span><span class="proj-tag">Post IA</span></div>
         </div>
       </div>
     </div>
     <hr class="hr">
-    <div class="sh"><div class="sh-row"><span class="sh-label">Láminas</span></div></div>
-    <div class="laminas-section">
-    <!-- Fondo b/n de la imagen del proyecto -->
-    
-      <!-- ══ CONJUNTO — Imagen principal (hero)
-           Tamaño: 1920×820px horizontal, render más impactante
-           Para activar: descomentá el <img> y borrá el div.placeholder -->
-      <!-- <img src="img/conjunto/hero.jpg" alt="CONJUNTO" loading="lazy"> -->
-              <div class="laminas-bg" id="lam-bg-05">
+    <div class="sh"><div class="sh-row"><span class="sh-label" data-es="Láminas" data-en="Sheets">Láminas</span></div></div>
+    <div class="laminas-bg" id="lam-bg-05">
       <img src="img/conjunto/hero.jpg" alt="">
     </div>
     <div class="laminas-stack" id="lam-grid-05" data-bg="lam-bg-05">
       <!-- ══ Vista general / Render principal | 1920×1080px -->
       <!-- <img src="img/conjunto/lam-01.jpg" alt="Vista general / Render principal" loading="lazy"> -->
       <div class="lamina" onclick="lbOpen(this,'lam-grid-05')">
-        <div class="lamina-ph"><div class="lamina-ph-txt">img/conjunto/lam-01.jpg<br>Vista general / Render principal</div></div>
+        <div class="lamina-ph"><div class="ph-txt">img/conjunto/lam-01.jpg<br>Vista general / Render principal</div></div>
       </div>
       <div class="lam-row lam-row-2">
       <!-- ══ Planta libre | 960×720px -->
       <!-- <img src="img/conjunto/lam-02.jpg" alt="Planta libre" loading="lazy"> -->
       <div class="lamina" onclick="lbOpen(this,'lam-grid-05')">
-        <div class="lamina-ph"><div class="lamina-ph-txt">img/conjunto/lam-02.jpg<br>Planta libre</div></div>
+        <div class="lamina-ph"><div class="ph-txt">img/conjunto/lam-02.jpg<br>Planta libre</div></div>
       </div>
       <!-- ══ Corte longitudinal | 960×720px -->
       <!-- <img src="img/conjunto/lam-03.jpg" alt="Corte longitudinal" loading="lazy"> -->
       <div class="lamina" onclick="lbOpen(this,'lam-grid-05')">
-        <div class="lamina-ph"><div class="lamina-ph-txt">img/conjunto/lam-03.jpg<br>Corte longitudinal</div></div>
+        <div class="lamina-ph"><div class="ph-txt">img/conjunto/lam-03.jpg<br>Corte longitudinal</div></div>
       </div>
       </div>
       <!-- ══ Render exterior 1 | 1920×1080px -->
       <!-- <img src="img/conjunto/lam-04.jpg" alt="Render exterior 1" loading="lazy"> -->
       <div class="lamina" onclick="lbOpen(this,'lam-grid-05')">
-        <div class="lamina-ph"><div class="lamina-ph-txt">img/conjunto/lam-04.jpg<br>Render exterior 1</div></div>
+        <div class="lamina-ph"><div class="ph-txt">img/conjunto/lam-04.jpg<br>Render exterior 1</div></div>
       </div>
       <!-- ══ Render exterior 2 | 1920×1080px -->
       <!-- <img src="img/conjunto/lam-05.jpg" alt="Render exterior 2" loading="lazy"> -->
       <div class="lamina" onclick="lbOpen(this,'lam-grid-05')">
-        <div class="lamina-ph"><div class="lamina-ph-txt">img/conjunto/lam-05.jpg<br>Render exterior 2</div></div>
+        <div class="lamina-ph"><div class="ph-txt">img/conjunto/lam-05.jpg<br>Render exterior 2</div></div>
       </div>
       <!-- ══ Render exterior 3 | 1920×1080px -->
       <!-- <img src="img/conjunto/lam-06.jpg" alt="Render exterior 3" loading="lazy"> -->
       <div class="lamina" onclick="lbOpen(this,'lam-grid-05')">
-        <div class="lamina-ph"><div class="lamina-ph-txt">img/conjunto/lam-06.jpg<br>Render exterior 3</div></div>
+        <div class="lamina-ph"><div class="ph-txt">img/conjunto/lam-06.jpg<br>Render exterior 3</div></div>
       </div>
       <!-- ══ Render interior 1 | 1920×1080px -->
       <!-- <img src="img/conjunto/lam-07.jpg" alt="Render interior 1" loading="lazy"> -->
       <div class="lamina" onclick="lbOpen(this,'lam-grid-05')">
-        <div class="lamina-ph"><div class="lamina-ph-txt">img/conjunto/lam-07.jpg<br>Render interior 1</div></div>
+        <div class="lamina-ph"><div class="ph-txt">img/conjunto/lam-07.jpg<br>Render interior 1</div></div>
       </div>
       <!-- ══ Render interior 2 | 1920×1080px -->
       <!-- <img src="img/conjunto/lam-08.jpg" alt="Render interior 2" loading="lazy"> -->
       <div class="lamina" onclick="lbOpen(this,'lam-grid-05')">
-        <div class="lamina-ph"><div class="lamina-ph-txt">img/conjunto/lam-08.jpg<br>Render interior 2</div></div>
+        <div class="lamina-ph"><div class="ph-txt">img/conjunto/lam-08.jpg<br>Render interior 2</div></div>
       </div>
     </div>
-
     <hr class="hr">
-    <div class="maqueta-section">
-      <div class="maqueta-label"><div class="sh-row"><span class="sh-label">Maqueta</span></div></div>
+        <div class="maqueta-section">
+      <div class="sh"><div class="sh-row"><span class="sh-label" data-es="Maqueta" data-en="Model">Maqueta</span></div></div>
       <div class="maqueta-grid" id="maq-grid-05">
+        <!-- ══ Foto de maqueta | 1920×1080px, luz natural, fondo neutro -->
+        <!-- <img src="img/conjunto/maqueta-01.jpg" alt="Maqueta" loading="lazy"> -->
         <div class="maqueta-img" onclick="lbOpen(this,'maq-grid-05')">
-      <!-- ══ CONJUNTO — Maqueta foto 1
-           Tamaño: Vista general
-           Para activar: descomentá el <img> y borrá el div.placeholder -->
-      <!-- <img src="img/conjunto/maqueta-01.jpg" alt="CONJUNTO" loading="lazy"> -->
-      <div class="maqueta-ph"><div class="maqueta-ph-txt">img/conjunto/maqueta-01.jpg</div></div></div>
-        <div class="maqueta-img" onclick="lbOpen(this,'maq-grid-05')">
-      <!-- ══ CONJUNTO — Maqueta foto 2
-           Tamaño: Detalle
-           Para activar: descomentá el <img> y borrá el div.placeholder -->
-      <!-- <img src="img/conjunto/maqueta-02.jpg" alt="CONJUNTO" loading="lazy"> -->
-      <div class="maqueta-ph"><div class="maqueta-ph-txt">img/conjunto/maqueta-02.jpg</div></div></div>
-        <div class="maqueta-img" onclick="lbOpen(this,'maq-grid-05')">
-      <!-- ══ CONJUNTO — Maqueta foto 3
-           Tamaño: Otra vista
-           Para activar: descomentá el <img> y borrá el div.placeholder -->
-      <!-- <img src="img/conjunto/maqueta-03.jpg" alt="CONJUNTO" loading="lazy"> -->
-      <div class="maqueta-ph"><div class="maqueta-ph-txt">img/conjunto/maqueta-03.jpg</div></div></div>
+          <div class="maqueta-ph"><div class="ph-txt">img/conjunto/maqueta-01.jpg</div></div>
+        </div>
       </div>
     </div>
-    <div class="footer" style="margin-top:0"><div class="footer-row"><span class="ft-l">Facundo Luna</span><span class="ft-m">FADU UBA · Arquitectura + IA</span><span class="ft-r">© 2026</span></div></div>
+    <div class="footer" style="margin-top:2px"><div class="footer-row">
+      <span class="ft-l">Facundo Luna</span>
+      <span class="ft-m">FADU UBA · Arquitectura + IA</span>
+      <span class="ft-r">© 2026</span>
+    </div></div>
   </div>
 </div>
 
-<!-- PROYECTO 06: Espacio Sacro -->
+<!-- ════════ PROYECTO 06 ════════ -->
 <div class="view" id="view-proj-06">
+  <!-- ══ Hero: img/sacro/hero.jpg | 1920×820px, render más impactante -->
+  <!-- <img src="img/sacro/hero.jpg" alt="" loading="eager"> — para activar reemplazá el div siguiente -->
   <div class="proj-hero">
-      <!-- ══ SACRO — Imagen principal (hero)
-           Tamaño: 1920×820px horizontal, render de luz más impactante
-           Para activar: descomentá el <img> y borrá el div.placeholder -->
-      <!-- <img src="img/sacro/hero.jpg" alt="SACRO" loading="lazy"> -->
-      <div class="proj-hero-ph"><div class="proj-hero-ph-txt">img/sacro/hero.jpg</div></div><div class="proj-hero-fade"></div></div>
+    <div class="proj-hero-ph"><div class="ph-txt">img/sacro/hero.jpg · 1920×820px</div></div>
+    <div class="proj-hero-fade"></div>
+  </div>
   <div class="w">
     <span class="back-btn" onclick="go('proyectos')">← <span data-es="Volver a proyectos" data-en="Back to projects">Volver a proyectos</span></span>
     <div class="proj-header">
@@ -1455,145 +1206,117 @@ nav{
           <div class="proj-title" data-es="Espacio<br>Sacro" data-en="Sacred<br>Space">Espacio<br>Sacro</div>
           <div class="proj-subtitle" data-es="Luz natural como material" data-en="Natural light as material">Luz natural como material</div>
           <div class="proj-meta">
-            <div class="proj-meta-row"><span class="pmk">Año</span><span class="pmv">2024</span></div>
-            <div class="proj-meta-row"><span class="pmk">Tipo</span><span class="pmv" data-es="Espacio religioso" data-en="Religious space">Espacio religioso</span></div>
+            <div class="proj-meta-row"><span class="pmk" data-es="Año" data-en="Year">Año</span><span class="pmv">2024</span></div>
             <div class="proj-meta-row"><span class="pmk">Herramientas</span><span class="pmv">Rhino · Grasshopper · Twinmotion · AI</span></div>
             <div class="proj-meta-row"><span class="pmk">Cátedra</span><span class="pmv">FADU UBA</span></div>
           </div>
         </div>
         <div class="proj-desc-col">
-          <p class="proj-desc-text"
-             data-es="La luz natural como material estructural del proyecto. Las celosías paramétricas generadas en Grasshopper filtran y dirigen la luz según la orientación y la hora del día, creando una experiencia espacial que cambia constantemente.<br><br>El programa litúrgico impone una secuencia espacial precisa — atrio, nave, altar — que el proyecto refuerza con la gradación de la luz: de lo difuso a lo concentrado."
-             data-en="Natural light as the structural material of the project. The parametric lattices generated in Grasshopper filter and direct light according to orientation and time of day, creating a spatial experience that constantly changes.<br><br>The liturgical program imposes a precise spatial sequence — atrium, nave, altar — that the project reinforces with the gradation of light: from diffuse to concentrated.">
-            La luz natural como material estructural. Celosías paramétricas que filtran y dirigen la luz según orientación y hora del día, creando una experiencia espacial que cambia constantemente.
-          </p>
-          <div class="proj-tags"><span class="proj-tag">Croquis</span><span class="proj-tag">Diagrama</span><span class="proj-tag">Grasshopper</span><span class="proj-tag">Post IA</span></div>
+          <p class="proj-desc-text" data-es="La luz natural como material estructural del proyecto. Las celosías paramétricas generadas en Grasshopper filtran y dirigen la luz según la orientación y la hora del día." data-en="Natural light as the structural material. Parametric lattices generated in Grasshopper filter and direct light according to orientation and time of day.">La luz natural como material estructural del proyecto. Las celosías paramétricas generadas en Grasshopper filtran y dirigen la luz según la orientación y la hora del día.</p>
+          <div class="proj-tags"><span class="proj-tag">Croquis</span><span class="proj-tag">Diagrama</span><span class="proj-tag">Post IA</span></div>
         </div>
       </div>
     </div>
     <hr class="hr">
-    <div class="sh"><div class="sh-row"><span class="sh-label">Láminas</span></div></div>
-    <div class="laminas-section">
-    <!-- Fondo b/n de la imagen del proyecto -->
-    
-      <!-- ══ SACRO — Imagen principal (hero)
-           Tamaño: 1920×820px horizontal, render de luz más impactante
-           Para activar: descomentá el <img> y borrá el div.placeholder -->
-      <!-- <img src="img/sacro/hero.jpg" alt="SACRO" loading="lazy"> -->
-              <div class="laminas-bg" id="lam-bg-06">
+    <div class="sh"><div class="sh-row"><span class="sh-label" data-es="Láminas" data-en="Sheets">Láminas</span></div></div>
+    <div class="laminas-bg" id="lam-bg-06">
       <img src="img/sacro/hero.jpg" alt="">
     </div>
     <div class="laminas-stack" id="lam-grid-06" data-bg="lam-bg-06">
       <!-- ══ Diagrama de luz / Celosías | 1920×1080px -->
       <!-- <img src="img/sacro/lam-01.jpg" alt="Diagrama de luz / Celosías" loading="lazy"> -->
       <div class="lamina" onclick="lbOpen(this,'lam-grid-06')">
-        <div class="lamina-ph"><div class="lamina-ph-txt">img/sacro/lam-01.jpg<br>Diagrama de luz / Celosías</div></div>
+        <div class="lamina-ph"><div class="ph-txt">img/sacro/lam-01.jpg<br>Diagrama de luz / Celosías</div></div>
       </div>
       <!-- ══ Render con post IA | 1920×1080px -->
       <!-- <img src="img/sacro/lam-02.jpg" alt="Render con post IA" loading="lazy"> -->
       <div class="lamina" onclick="lbOpen(this,'lam-grid-06')">
-        <div class="lamina-ph"><div class="lamina-ph-txt">img/sacro/lam-02.jpg<br>Render con post IA</div></div>
+        <div class="lamina-ph"><div class="ph-txt">img/sacro/lam-02.jpg<br>Render con post IA</div></div>
       </div>
     </div>
 
-    <div class="footer" style="margin-top:24px"><div class="footer-row"><span class="ft-l">Facundo Luna</span><span class="ft-m">FADU UBA · Arquitectura + IA</span><span class="ft-r">© 2026</span></div></div>
+    <div class="footer" style="margin-top:2px"><div class="footer-row">
+      <span class="ft-l">Facundo Luna</span>
+      <span class="ft-m">FADU UBA · Arquitectura + IA</span>
+      <span class="ft-r">© 2026</span>
+    </div></div>
   </div>
 </div>
 
-<!-- ════════════════════════════════════════
-   VISTA: PROCESO
-════════════════════════════════════════ -->
+<!-- ════════ PROCESO ════════ -->
 <div class="view" id="view-proceso">
   <div class="w">
-    <div class="sh"><div class="sh-row"><span class="sh-label" data-es="Proceso" data-en="Process">Proceso</span><span class="sh-right" data-es="Croquis · diagramas · modelos · algoritmos" data-en="Sketches · diagrams · models · algorithms">Croquis · diagramas · modelos · algoritmos</span></div></div>
+    <div class="sh"><div class="sh-row">
+      <span class="sh-label" data-es="Proceso" data-en="Process">Proceso</span>
+      <span class="sh-right" data-es="Croquis · diagramas · modelos · algoritmos" data-en="Sketches · diagrams · models · algorithms">Croquis · diagramas · modelos · algoritmos</span>
+    </div></div>
     <div class="proc-grid">
-      <!--
-        6 IMÁGENES DE PROCESO — grilla 3×2
-        Sin texto, solo imágenes.
-        Reemplazá cada bloque por: <img src="img/proceso-XX.jpg" alt="..." loading="lazy">
-        01 → img/proceso-croquis-01.jpg   (croquis a mano)
-        02 → img/proceso-diagrama-01.jpg  (diagrama / análisis)
-        03 → img/proceso-gh-01.jpg        (Grasshopper)
-        04 → img/proceso-planta-01.jpg    (planta / corte técnico)
-        05 → img/proceso-maqueta-01.jpg   (foto de maqueta)
-        06 → img/proceso-croquis-02.jpg   (otro croquis / detalle)
-      -->
-      <div class="proc-card"><div class="proc-ph"><div class="proc-ph-icon">✏️</div>
-      <!-- ══ PROCESO — Croquis a mano 1
-           Tamaño: Cualquier tamaño, croquis conceptual a lápiz, fondo claro
-           Para activar: descomentá el <img> y borrá el div.placeholder -->
-      <!-- <img src="img/proceso-croquis-01.jpg" alt="PROCESO" loading="lazy"> -->
-      <div class="proc-ph-txt">img/proceso-croquis-01.jpg</div></div></div>
-      <div class="proc-card"><div class="proc-ph"><div class="proc-ph-icon">◎</div>
-      <!-- ══ PROCESO — Diagrama de concepto
-           Tamaño: Cualquier tamaño, diagrama digital o a mano, análisis de sitio
-           Para activar: descomentá el <img> y borrá el div.placeholder -->
-      <!-- <img src="img/proceso-diagrama-01.jpg" alt="PROCESO" loading="lazy"> -->
-      <div class="proc-ph-txt">img/proceso-diagrama-01.jpg</div></div></div>
-      <div class="proc-card"><div class="proc-ph"><div class="proc-ph-icon">⬡</div>
-      <!-- ══ PROCESO — Grasshopper / modelo paramétrico
-           Tamaño: Captura de pantalla de Grasshopper o Rhino
-           Para activar: descomentá el <img> y borrá el div.placeholder -->
-      <!-- <img src="img/proceso-gh-01.jpg" alt="PROCESO" loading="lazy"> -->
-      <div class="proc-ph-txt">img/proceso-gh-01.jpg</div></div></div>
-      <div class="proc-card"><div class="proc-ph"><div class="proc-ph-icon">▭</div>
-      <!-- ══ PROCESO — Planta o corte técnico
-           Tamaño: Planta o corte en AutoCAD, blanco y negro
-           Para activar: descomentá el <img> y borrá el div.placeholder -->
-      <!-- <img src="img/proceso-planta-01.jpg" alt="PROCESO" loading="lazy"> -->
-      <div class="proc-ph-txt">img/proceso-planta-01.jpg</div></div></div>
-      <div class="proc-card"><div class="proc-ph"><div class="proc-ph-icon">▣</div>
-      <!-- ══ PROCESO — Foto de maqueta 1
-           Tamaño: Foto con buena luz natural, fondo neutro
-           Para activar: descomentá el <img> y borrá el div.placeholder -->
-      <!-- <img src="img/proceso-maqueta-01.jpg" alt="PROCESO" loading="lazy"> -->
-      <div class="proc-ph-txt">img/proceso-maqueta-01.jpg</div></div></div>
-      <div class="proc-card"><div class="proc-ph"><div class="proc-ph-icon">✏️</div>
-      <!-- ══ PROCESO — Croquis a mano 2
-           Tamaño: Detalle constructivo, partido, o diagrama conceptual
-           Para activar: descomentá el <img> y borrá el div.placeholder -->
-      <!-- <img src="img/proceso-croquis-02.jpg" alt="PROCESO" loading="lazy"> -->
-      <div class="proc-ph-txt">img/proceso-croquis-02.jpg</div></div></div>
+      <!-- ══ Croquis a mano — boceto conceptual, lápiz sobre papel | img/proceso-croquis-01.jpg -->
+      <!-- <img src="img/proceso-croquis-01.jpg" alt="Croquis a mano — boceto conceptual, lápiz sobre papel" loading="lazy"> -->
+      <div class="proc-card">
+        <div class="proc-ph"><div class="proc-ph-icon">✏️</div><div class="ph-txt">img/proceso-croquis-01.jpg</div></div>
+      </div>
+      <!-- ══ Diagrama de concepto o análisis de sitio | img/proceso-diagrama-01.jpg -->
+      <!-- <img src="img/proceso-diagrama-01.jpg" alt="Diagrama de concepto o análisis de sitio" loading="lazy"> -->
+      <div class="proc-card">
+        <div class="proc-ph"><div class="proc-ph-icon">◎</div><div class="ph-txt">img/proceso-diagrama-01.jpg</div></div>
+      </div>
+      <!-- ══ Captura de Grasshopper o Rhino — proceso paramétrico | img/proceso-gh-01.jpg -->
+      <!-- <img src="img/proceso-gh-01.jpg" alt="Captura de Grasshopper o Rhino — proceso paramétrico" loading="lazy"> -->
+      <div class="proc-card">
+        <div class="proc-ph"><div class="proc-ph-icon">⬡</div><div class="ph-txt">img/proceso-gh-01.jpg</div></div>
+      </div>
+      <!-- ══ Planta o corte técnico en AutoCAD | img/proceso-planta-01.jpg -->
+      <!-- <img src="img/proceso-planta-01.jpg" alt="Planta o corte técnico en AutoCAD" loading="lazy"> -->
+      <div class="proc-card">
+        <div class="proc-ph"><div class="proc-ph-icon">▭</div><div class="ph-txt">img/proceso-planta-01.jpg</div></div>
+      </div>
+      <!-- ══ Foto de maqueta física — luz natural, fondo neutro | img/proceso-maqueta-01.jpg -->
+      <!-- <img src="img/proceso-maqueta-01.jpg" alt="Foto de maqueta física — luz natural, fondo neutro" loading="lazy"> -->
+      <div class="proc-card">
+        <div class="proc-ph"><div class="proc-ph-icon">▣</div><div class="ph-txt">img/proceso-maqueta-01.jpg</div></div>
+      </div>
+      <!-- ══ Croquis a mano — detalle constructivo o partido | img/proceso-croquis-02.jpg -->
+      <!-- <img src="img/proceso-croquis-02.jpg" alt="Croquis a mano — detalle constructivo o partido" loading="lazy"> -->
+      <div class="proc-card">
+        <div class="proc-ph"><div class="proc-ph-icon">✏️</div><div class="ph-txt">img/proceso-croquis-02.jpg</div></div>
+      </div>
     </div>
     <hr class="hr">
     <div class="ai-strip">
       <div class="ai-l">
-        <div class="ai-big" data-es="El render" data-en="The render">El render</div>
+        <div class="ai-big"  data-es="El render"      data-en="The render">El render</div>
         <div class="ai-light" data-es="es solo el inicio." data-en="is just the start.">es solo el inicio.</div>
-        <p class="ai-body" data-es="Post-producción con IA en cada proyecto. Atmósfera, luz y detalle final que ningún motor de render genera solo." data-en="AI post-production in every project. Atmosphere, light and final detail that no render engine generates alone.">Post-producción con IA en cada proyecto. Atmósfera, luz y detalle final que ningún motor de render genera solo.</p>
+        <p class="ai-body" data-es="Post-producción con IA en cada proyecto. Atmósfera, luz y detalle final que ningún motor de render genera solo." data-en="AI post-production in every project. Atmosphere, light and final detail no render engine generates alone.">Post-producción con IA en cada proyecto. Atmósfera, luz y detalle final que ningún motor de render genera solo.</p>
       </div>
       <div class="ai-r">
-        <div class="ai-cell"><div class="ai-n">01 ——</div><div class="ai-name" data-es="Modelo paramétrico" data-en="Parametric model">Modelo paramétrico</div><div class="ai-desc" data-es="Rhino + Grasshopper. Lógica generativa desde el inicio." data-en="Rhino + Grasshopper. Generative logic from the start.">Rhino + Grasshopper. Lógica generativa desde el inicio.</div></div>
+        <div class="ai-cell"><div class="ai-n">01 ——</div><div class="ai-name" data-es="Modelo paramétrico" data-en="Parametric model">Modelo paramétrico</div><div class="ai-desc" data-es="Rhino + Grasshopper. Lógica generativa." data-en="Rhino + Grasshopper. Generative logic.">Rhino + Grasshopper. Lógica generativa.</div></div>
         <div class="ai-cell"><div class="ai-n">02 ——</div><div class="ai-name" data-es="Render base" data-en="Base render">Render base</div><div class="ai-desc" data-es="Twinmotion. El lienzo, no el resultado." data-en="Twinmotion. The canvas, not the result.">Twinmotion. El lienzo, no el resultado.</div></div>
-        <div class="ai-cell"><div class="ai-n">03 ——</div><div class="ai-name" data-es="Post-prod IA" data-en="AI Post-prod">Post-prod IA</div><div class="ai-desc" data-es="Luz, atmósfera y materiales. Lo que cambia todo." data-en="Light, atmosphere and materials. What changes everything.">Luz, atmósfera y materiales. Lo que cambia todo.</div></div>
-        <div class="ai-cell"><div class="ai-n">04 ——</div><div class="ai-name" data-es="Imagen final" data-en="Final image">Imagen final</div><div class="ai-desc" data-es="Arquitectura con presencia real. Lo que se recuerda." data-en="Architecture with real presence. What is remembered.">Arquitectura con presencia real. Lo que se recuerda.</div></div>
+        <div class="ai-cell"><div class="ai-n">03 ——</div><div class="ai-name" data-es="Post-prod IA" data-en="AI Post-prod">Post-prod IA</div><div class="ai-desc" data-es="Luz, atmósfera y materiales." data-en="Light, atmosphere and materials.">Luz, atmósfera y materiales.</div></div>
+        <div class="ai-cell"><div class="ai-n">04 ——</div><div class="ai-name" data-es="Imagen final" data-en="Final image">Imagen final</div><div class="ai-desc" data-es="Arquitectura con presencia real." data-en="Architecture with real presence.">Arquitectura con presencia real.</div></div>
       </div>
     </div>
     <hr class="hr">
-    <div class="footer"><div class="footer-row"><span class="ft-l">Facundo Luna</span><span class="ft-m">FADU UBA · Arquitectura + IA</span><span class="ft-r">© 2026</span></div></div>
+    <div class="footer"><div class="footer-row">
+      <span class="ft-l">Facundo Luna</span><span class="ft-m">FADU UBA · Arquitectura + IA</span><span class="ft-r">© 2026</span>
+    </div></div>
   </div>
 </div>
 
-<!-- ════════════════════════════════════════
-   VISTA: EFELE
-════════════════════════════════════════ -->
+<!-- ════════ EFELE ════════ -->
 <div class="view" id="view-efele">
   <div class="w">
-    <div class="sh"><div class="sh-row"><span class="sh-label">EFELE.ARQ</span><span class="sh-right" data-es="Laboratorio de investigación en diseño e IA" data-en="Design and AI research laboratory">Laboratorio de investigación en diseño e IA</span></div></div>
+    <div class="sh"><div class="sh-row">
+      <span class="sh-label">EFELE.ARQ</span>
+      <span class="sh-right" data-es="Laboratorio de investigación en diseño e IA" data-en="Design and AI research laboratory">Laboratorio de investigación en diseño e IA</span>
+    </div></div>
     <div class="efele-top">
       <div class="efele-l">
-        <!--
-          LOGO EFELE.ARQ:
-          1. Subí tu logo a: img/efele-logo.png  (PNG transparente)
-          2. Borrá el bloque <div class="efele-logo-ph">
-          3. Descomentá la línea del <img> de abajo
-          El logo se muestra a max 280px de ancho, max 80px alto
-        -->
+        <!-- ══ LOGO EFELE.ARQ
+             Subí: img/efele-logo.png (PNG transparente, cualquier tamaño)
+             Para activar: borrá el div.efele-logo-ph y descomentá el <img> -->
         <!-- <img src="img/efele-logo.png" alt="EFELE.ARQ" class="efele-logo-box"> -->
-        <div class="efele-logo-ph">
-          <span>img/efele-logo.png</span>
-        </div>
-
+        <div class="efele-logo-ph"><div class="ph-txt">img/efele-logo.png</div></div>
         <div>
           <div class="efele-mark-row"><div class="efele-sq"></div><span class="efele-name-lbl">EFELE.ARQ</span></div>
           <div class="efele-tagline" data-es="Laboratorio de diseño e inteligencia artificial" data-en="Design and artificial intelligence laboratory">Laboratorio de diseño e inteligencia artificial</div>
@@ -1603,177 +1326,151 @@ nav{
         <p class="efele-desc"
            data-es="<strong>EFELE.ARQ</strong> es un laboratorio personal de investigación en diseño e inteligencia artificial. Un espacio para explorar los límites entre <strong>algoritmo, imagen y arquitectura</strong> — fuera del programa académico, dentro de la práctica real.<br><br>Nació como extensión natural de un proceso de trabajo donde la IA no es un atajo sino una herramienta de pensamiento. Cada publicación es un experimento, no un resultado."
            data-en="<strong>EFELE.ARQ</strong> is a personal research laboratory in design and artificial intelligence. A space to explore the boundaries between <strong>algorithm, image and architecture</strong> — outside the academic program, within real practice.<br><br>It emerged as a natural extension of a work process where AI is not a shortcut but a thinking tool. Each publication is an experiment, not a result.">
-          <strong>EFELE.ARQ</strong> es un laboratorio personal de investigación en diseño e inteligencia artificial. Un espacio para explorar los límites entre <strong>algoritmo, imagen y arquitectura</strong> — fuera del programa académico, dentro de la práctica real.<br><br>Nació como extensión natural de un proceso de trabajo donde la IA no es un atajo sino una herramienta de pensamiento.
+          <strong>EFELE.ARQ</strong> es un laboratorio personal de investigación en diseño e inteligencia artificial. Un espacio para explorar los límites entre <strong>algoritmo, imagen y arquitectura</strong> — fuera del programa académico, dentro de la práctica real.<br><br>Nació como extensión natural de un proceso de trabajo donde la IA no es un atajo sino una herramienta de pensamiento. Cada publicación es un experimento, no un resultado.
         </p>
-        <a class="efele-cta" href="https://instagram.com/efele.arq" target="_blank" rel="noopener" data-es="Ver en Instagram →" data-en="See on Instagram →">Ver en Instagram →</a>
+        <a class="efele-cta" href="https://instagram.com/efele.arq" target="_blank" rel="noopener"
+           data-es="Ver en Instagram →" data-en="See on Instagram →">Ver en Instagram →</a>
       </div>
     </div>
     <hr class="hr">
     <div class="efele-gal">
-      <!--
-        GALERÍA EFELE — 4 imágenes cuadradas
-        img/efele-01.jpg → render exterior con post IA
-        img/efele-02.jpg → render interior
-        img/efele-03.jpg → remodelación con IA
-        img/efele-04.jpg → lámina informativa
-        Actualmente usa URLs de tu GitHub, funcionan hasta que las reemplaces.
-      -->
-      <div class="efele-img"><img src="https://facu182.github.io/foto1.jpg" alt="EFELE 1" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-      <!-- ══ EFELE — Imagen 1 (cuadrada)
-           Tamaño: 800×800px mínimo, render exterior con post-prod IA
-           Para activar: descomentá el <img> y borrá el div.placeholder -->
-      <!-- <img src="img/efele-01.jpg" alt="EFELE" loading="lazy"> -->
-      <div class="efele-img-ph" style="display:none"><span>img/efele-01.jpg</span></div></div>
-      <div class="efele-img"><img src="https://facu182.github.io/foto2.jpg" alt="EFELE 2" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-      <!-- ══ EFELE — Imagen 2 (cuadrada)
-           Tamaño: 800×800px mínimo, render interior o espacio
-           Para activar: descomentá el <img> y borrá el div.placeholder -->
-      <!-- <img src="img/efele-02.jpg" alt="EFELE" loading="lazy"> -->
-      <div class="efele-img-ph" style="display:none"><span>img/efele-02.jpg</span></div></div>
-      <div class="efele-img"><img src="https://facu182.github.io/foto3.jpg" alt="EFELE 3" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-      <!-- ══ EFELE — Imagen 3 (cuadrada)
-           Tamaño: 800×800px mínimo, remodelación o propuesta con IA
-           Para activar: descomentá el <img> y borrá el div.placeholder -->
-      <!-- <img src="img/efele-03.jpg" alt="EFELE" loading="lazy"> -->
-      <div class="efele-img-ph" style="display:none"><span>img/efele-03.jpg</span></div></div>
-      <div class="efele-img"><img src="https://facu182.github.io/foto4.jpg" alt="EFELE 4" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-      <!-- ══ EFELE — Imagen 4 (cuadrada)
-           Tamaño: 800×800px mínimo, lámina informativa o collage
-           Para activar: descomentá el <img> y borrá el div.placeholder -->
-      <!-- <img src="img/efele-04.jpg" alt="EFELE" loading="lazy"> -->
-      <div class="efele-img-ph" style="display:none"><span>img/efele-04.jpg</span></div></div>
+      <!-- ══ Render exterior con post IA | 800×800px mínimo, imagen cuadrada -->
+      <!-- <img src="img/efele-01.jpg" alt="Render exterior con post IA" loading="lazy"> -->
+      <div class="efele-img">
+        <div class="efele-img-ph"><div class="ph-txt">img/efele-01.jpg</div></div>
+      </div>
+      <!-- ══ Render interior | 800×800px mínimo, imagen cuadrada -->
+      <!-- <img src="img/efele-02.jpg" alt="Render interior" loading="lazy"> -->
+      <div class="efele-img">
+        <div class="efele-img-ph"><div class="ph-txt">img/efele-02.jpg</div></div>
+      </div>
+      <!-- ══ Remodelación con IA | 800×800px mínimo, imagen cuadrada -->
+      <!-- <img src="img/efele-03.jpg" alt="Remodelación con IA" loading="lazy"> -->
+      <div class="efele-img">
+        <div class="efele-img-ph"><div class="ph-txt">img/efele-03.jpg</div></div>
+      </div>
+      <!-- ══ Lámina informativa | 800×800px mínimo, imagen cuadrada -->
+      <!-- <img src="img/efele-04.jpg" alt="Lámina informativa" loading="lazy"> -->
+      <div class="efele-img">
+        <div class="efele-img-ph"><div class="ph-txt">img/efele-04.jpg</div></div>
+      </div>
     </div>
     <hr class="hr">
-    <div class="footer"><div class="footer-row"><span class="ft-l">Facundo Luna</span><span class="ft-m">FADU UBA · Arquitectura + IA</span><span class="ft-r">© 2026</span></div></div>
+    <div class="footer"><div class="footer-row">
+      <span class="ft-l">Facundo Luna</span><span class="ft-m">FADU UBA · Arquitectura + IA</span><span class="ft-r">© 2026</span>
+    </div></div>
   </div>
 </div>
 
-<!-- ════════════════════════════════════════
-   VISTA: ABOUT
-════════════════════════════════════════ -->
+<!-- ════════ ABOUT ════════ -->
 <div class="view" id="view-about">
   <div class="w">
-    <div class="sh"><div class="sh-row"><span class="sh-label" data-es="About" data-en="About">About</span><span class="sh-right" data-es="Facundo Luna · Buenos Aires" data-en="Facundo Luna · Buenos Aires">Facundo Luna · Buenos Aires</span></div></div>
+    <div class="sh"><div class="sh-row">
+      <span class="sh-label" data-es="About" data-en="About">About</span>
+      <span class="sh-right" data-es="Facundo Luna · Buenos Aires" data-en="Facundo Luna · Buenos Aires">Facundo Luna · Buenos Aires</span>
+    </div></div>
     <div class="about-grid">
       <div class="about-img-col">
-        <!--
-          FOTO PERSONAL: img/foto-facundo.jpg
-          Para activar: reemplazá este bloque por:
-          <img src="img/foto-facundo.jpg" alt="Facundo Luna" loading="lazy">
-          Foto vertical, buena iluminación. Mín 600×750px.
-        -->
+        <!-- ══ FOTO PERSONAL: img/foto-facundo.jpg | 600×750px mínimo, vertical, buena luz -->
+        <!-- Para activar: reemplazá el div siguiente por <img src="img/foto-facundo.jpg" alt="Facundo Luna" loading="lazy"> -->
         <div class="about-img-ph">
           <div class="about-img-ph-icon">◻</div>
-          
-      <!-- ══ ABOUT — Foto tuya
-           Tamaño: 600×750px mínimo, foto vertical, buena luz natural
-           Para activar: descomentá el <img> y borrá el div.placeholder -->
-      <!-- <img src="img/foto-facundo.jpg" alt="ABOUT" loading="lazy"> -->
-      <div class="about-img-ph-txt">img/foto-facundo.jpg</div>
+          <div class="ph-txt">img/foto-facundo.jpg</div>
         </div>
       </div>
       <div class="about-txt">
         <div class="about-lbl" data-es="Facundo Luna — Arquitectura + IA" data-en="Facundo Luna — Architecture + AI">Facundo Luna — Arquitectura + IA</div>
         <p class="about-body"
            data-es="Soy <strong>Facundo Luna</strong>, estudiante de arquitectura en <strong>FADU UBA</strong>, Buenos Aires. Mi práctica combina el rigor de la documentación técnica con el diseño paramétrico y la inteligencia artificial — dos herramientas que no uso por moda, sino porque me permiten pensar proyectos que de otra forma no existirían.<br><br>Fundé <strong>EFELE.ARQ</strong> como espacio de investigación personal donde exploro los límites entre algoritmo, imagen y arquitectura."
-           data-en="I am <strong>Facundo Luna</strong>, architecture student at <strong>FADU UBA</strong>, Buenos Aires. My practice combines the rigor of technical documentation with parametric design and artificial intelligence — two tools I use not as trends, but because they allow me to think projects that otherwise wouldn't exist.<br><br>I founded <strong>EFELE.ARQ</strong> as a personal research space where I explore the boundaries between algorithm, image and architecture.">
+           data-en="I am <strong>Facundo Luna</strong>, architecture student at <strong>FADU UBA</strong>, Buenos Aires. My practice combines the rigor of technical documentation with parametric design and artificial intelligence — two tools I use not as trends, but because they allow me to think projects that otherwise wouldn't exist.<br><br>I founded <strong>EFELE.ARQ</strong> as a personal research space exploring the boundaries between algorithm, image and architecture.">
           Soy <strong>Facundo Luna</strong>, estudiante de arquitectura en <strong>FADU UBA</strong>, Buenos Aires. Mi práctica combina el rigor de la documentación técnica con el diseño paramétrico y la inteligencia artificial — dos herramientas que no uso por moda, sino porque me permiten pensar proyectos que de otra forma no existirían.<br><br>Fundé <strong>EFELE.ARQ</strong> como espacio de investigación personal donde exploro los límites entre algoritmo, imagen y arquitectura.
         </p>
         <div class="about-links">
-          <a class="about-link" href="/cdn-cgi/l/email-protection#c6a0a7a5b3a8a2a9aab3a8a7f7fef486a1aba7afaae8a5a9ab">Email</a>
+          <a class="about-link" href="mailto:facundoluna182@gmail.com">Email</a>
           <a class="about-link" href="https://instagram.com/efele.arq" target="_blank" rel="noopener">Instagram</a>
           <a class="about-link" href="https://www.behance.net/facundoluna182" target="_blank" rel="noopener">Behance</a>
-          <!-- CV: descomentá cuando tengas el PDF
-          <a class="about-link" href="cv-facundo-luna.pdf" download>Descargar CV</a> -->
+          <!-- <a class="about-link" href="cv-facundo-luna.pdf" download>Descargar CV</a> -->
         </div>
       </div>
     </div>
     <hr class="hr">
-    <div class="footer"><div class="footer-row"><span class="ft-l">Facundo Luna</span><span class="ft-m">FADU UBA · Arquitectura + IA</span><span class="ft-r">© 2026</span></div></div>
+    <div class="footer"><div class="footer-row">
+      <span class="ft-l">Facundo Luna</span><span class="ft-m">FADU UBA · Arquitectura + IA</span><span class="ft-r">© 2026</span>
+    </div></div>
   </div>
 </div>
 
-<!-- ════════════════════════════════════════
-   VISTA: CONTACTO
-════════════════════════════════════════ -->
+<!-- ════════ CONTACTO ════════ -->
 <div class="view" id="view-contacto">
   <div class="w">
-    <div class="sh"><div class="sh-row"><span class="sh-label" data-es="Contacto" data-en="Contact">Contacto</span><span class="sh-right" data-es="Buenos Aires · Argentina" data-en="Buenos Aires · Argentina">Buenos Aires · Argentina</span></div></div>
+    <div class="sh"><div class="sh-row">
+      <span class="sh-label" data-es="Contacto" data-en="Contact">Contacto</span>
+      <span class="sh-right" data-es="Buenos Aires · Argentina" data-en="Buenos Aires · Argentina">Buenos Aires · Argentina</span>
+    </div></div>
     <div class="contact-grid">
       <div class="contact-l">
         <div class="contact-big" data-es="CONTACTAME" data-en="CONTACT ME">CONTACTAME</div>
         <div class="contact-items">
-          <div class="ci"><span class="ci-k">Email</span><a class="ci-v" href="/cdn-cgi/l/email-protection#34525557415a505b58415a55050c06745359555d581a575b59"><span class="__cf_email__" data-cfemail="43252220362d272c2f362d22727b7103242e222a2f6d202c2e">[email&#160;protected]</span></a></div>
+          <div class="ci"><span class="ci-k">Email</span><a class="ci-v" href="mailto:facundoluna182@gmail.com">facundoluna182@gmail.com</a></div>
           <div class="ci"><span class="ci-k">Instagram</span><a class="ci-v" href="https://instagram.com/efele.arq" target="_blank" rel="noopener">@efele.arq</a></div>
           <div class="ci"><span class="ci-k" data-es="Ubicación" data-en="Location">Ubicación</span><span class="ci-v">Buenos Aires, Argentina</span></div>
         </div>
-        <!-- CV: <a class="cta-p" style="margin-top:24px;display:inline-block" href="cv-facundo-luna.pdf" download>Descargar CV ↓</a> -->
+        <!-- <a class="cta-p" style="margin-top:24px;display:inline-block" href="cv-facundo-luna.pdf" download>Descargar CV ↓</a> -->
       </div>
       <div class="contact-r">
         <div class="form-top-lbl" data-es="Escribime" data-en="Write to me">Escribime</div>
         <!--
-          FORMULARIO — para que funcione:
-          1. Creá cuenta gratis en formspree.io
-          2. Nuevo form → copiá tu ID (ej: xpzgwkrb)
-          3. Cambiá: action="https://formspree.io/f/TU_ID" method="POST"
-          4. Borrá el onsubmit="handleForm(event)"
+          FORMULARIO: para que funcione de verdad →
+          1. formspree.io → cuenta gratis → nuevo form → copiá tu ID
+          2. Cambiá onsubmit="handleForm(event)" por action="https://formspree.io/f/TU-ID" method="POST"
         -->
         <form class="cform" onsubmit="handleForm(event)">
           <div class="fg"><label class="fl" data-es="Nombre" data-en="Name">Nombre</label><input class="fi" type="text" name="nombre" placeholder="Tu nombre" required autocomplete="name"></div>
           <div class="fg"><label class="fl">Email</label><input class="fi" type="email" name="email" placeholder="tu@email.com" required autocomplete="email"></div>
-          <div class="fg" style="flex:1;display:flex;flex-direction:column"><label class="fl" data-es="Mensaje" data-en="Message">Mensaje</label><textarea class="ft" name="mensaje" placeholder="Contame sobre tu proyecto..." required style="flex:1"></textarea></div>
+          <div class="fg" style="flex:1;display:flex;flex-direction:column">
+            <label class="fl" data-es="Mensaje" data-en="Message">Mensaje</label>
+            <textarea class="ft" name="mensaje" placeholder="Contame sobre tu proyecto..." required style="flex:1"></textarea>
+          </div>
           <button class="fsub" type="submit" data-es="Enviar →" data-en="Send →">Enviar →</button>
         </form>
       </div>
     </div>
     <hr class="hr">
-    <div class="footer"><div class="footer-row"><span class="ft-l">Facundo Luna</span><span class="ft-m">FADU UBA · Arquitectura + IA · Buenos Aires</span><span class="ft-r">© 2026</span></div></div>
+    <div class="footer"><div class="footer-row">
+      <span class="ft-l">Facundo Luna</span>
+      <span class="ft-m">FADU UBA · Arquitectura + IA · Buenos Aires</span>
+      <span class="ft-r">© 2026</span>
+    </div></div>
   </div>
 </div>
 
-<!-- ════════════════════════════════════════
-   SCRIPTS
-════════════════════════════════════════ -->
 <script>
 'use strict';
 
-/* ── VISTAS ── */
-const VALID_VIEWS = ['inicio','proyectos','proceso','efele','about','contacto',
+const VIEWS = ['inicio','proyectos','proceso','efele','about','contacto',
   'proj-01','proj-02','proj-03','proj-04','proj-05','proj-06'];
 
 function go(name) {
   document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
-
-  /* nav activo: solo las 6 secciones principales */
+  const navKey = name.startsWith('proj-') ? 'proyectos' : name;
   document.querySelectorAll('[data-v],[data-vm]').forEach(a => {
     const k = a.dataset.v || a.dataset.vm;
-    /* un proyecto individual mantiene "Proyectos" activo en el nav */
-    const navKey = name.startsWith('proj-') ? 'proyectos' : name;
     a.classList.toggle('active', k === navKey);
   });
-
-  const target = document.getElementById('view-' + name);
-  if (target) {
-    target.classList.add('active');
-    window.scrollTo(0, 0);
-  }
+  const t = document.getElementById('view-' + name);
+  if (t) { t.classList.add('active'); window.scrollTo(0, 0); }
   history.pushState({v: name}, '', '#' + name);
   closeMob();
-  /* mostrar/ocultar fondo b/n de láminas */
-  setTimeout(setupLaminasBg, 100);
+  setTimeout(setupLaminasBg, 80);
 }
 
-/* Restaurar vista desde URL hash */
 (function(){
   const h = location.hash.replace('#','');
-  go(VALID_VIEWS.includes(h) ? h : 'inicio');
+  go(VIEWS.includes(h) ? h : 'inicio');
 })();
 
-window.addEventListener('popstate', e => {
-  if (e.state && e.state.v) go(e.state.v);
-});
+window.addEventListener('popstate', e => { if (e.state && e.state.v) go(e.state.v); });
 
-/* ── NAV MOBILE ── */
 function togMob(){
   document.getElementById('nm').classList.toggle('open');
   document.getElementById('nt').classList.toggle('open');
@@ -1783,42 +1480,34 @@ function closeMob(){
   document.getElementById('nt').classList.remove('open');
 }
 
-/* ── CURSOR ── */
+/* CURSOR */
 if (window.matchMedia('(pointer:fine)').matches) {
   const cur = document.getElementById('cur');
   if (cur) {
     cur.style.cssText = 'width:8px;height:8px;border-radius:50%;background:#0d0d0d;position:fixed;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .18s,height .18s,background .18s,border .18s;mix-blend-mode:multiply';
     let rx=0,ry=0,cx=0,cy=0;
     document.addEventListener('mousemove', e=>{rx=e.clientX;ry=e.clientY},{passive:true});
-    (function loop(){
-      cx+=(rx-cx)*.14; cy+=(ry-cy)*.14;
-      cur.style.left=cx+'px'; cur.style.top=cy+'px';
-      requestAnimationFrame(loop);
-    })();
-    const big = () => {cur.style.width='18px';cur.style.height='18px';cur.style.background='transparent';cur.style.border='1px solid #0d0d0d';};
-    const sm  = () => {cur.style.width='8px';cur.style.height='8px';cur.style.background='#0d0d0d';cur.style.border='none';};
-    const xl  = () => {cur.style.width='36px';cur.style.height='36px';cur.style.background='transparent';cur.style.border='1.5px solid #0d0d0d';};
-    document.addEventListener('mouseover', e=>{
-      if(e.target.closest('a,button,.prow,.ppc,.proc-card,.efele-img,.proc-prev-cell,.param-cell,.lamina,.maqueta-img,.back-btn')) big();
-    });
-    document.addEventListener('mouseout', e=>{
-      if(e.target.closest('a,button,.prow,.ppc,.proc-card,.efele-img,.proc-prev-cell,.param-cell,.lamina,.maqueta-img,.back-btn')) sm();
-    });
+    (function loop(){cx+=(rx-cx)*.14;cy+=(ry-cy)*.14;cur.style.left=cx+'px';cur.style.top=cy+'px';requestAnimationFrame(loop)})();
+    const big=()=>{cur.style.width='18px';cur.style.height='18px';cur.style.background='transparent';cur.style.border='1px solid #0d0d0d';};
+    const sm =()=>{cur.style.width='8px';cur.style.height='8px';cur.style.background='#0d0d0d';cur.style.border='none';};
+    const xl =()=>{cur.style.width='36px';cur.style.height='36px';cur.style.background='transparent';cur.style.border='1.5px solid #0d0d0d';};
+    document.addEventListener('mouseover', e=>{if(e.target.closest('a,button,.prow,.ppc,.proc-card,.efele-img,.proc-prev-cell,.param-cell,.lamina,.maqueta-img,.back-btn'))big();});
+    document.addEventListener('mouseout',  e=>{if(e.target.closest('a,button,.prow,.ppc,.proc-card,.efele-img,.proc-prev-cell,.param-cell,.lamina,.maqueta-img,.back-btn'))sm();});
     const sw = document.getElementById('sw');
-    if(sw){ sw.addEventListener('mouseenter',xl); sw.addEventListener('mouseleave',sm); }
+    if(sw){sw.addEventListener('mouseenter',xl);sw.addEventListener('mouseleave',sm);}
   }
 }
 
-/* ── SLIDER ── */
+/* SLIDER */
 (function(){
   const wrap = document.getElementById('sw');
   if (!wrap) return;
-  const bef  = document.getElementById('sl-b');
-  const line = document.getElementById('sl-l');
+  const bef = document.getElementById('sl-b');
+  const line= document.getElementById('sl-l');
   let drag = false;
-  function set(p){ p=Math.max(2,Math.min(98,p)); bef.style.clipPath='inset(0 '+(100-p)+'% 0 0)'; line.style.left=p+'%'; }
-  function getX(e){ return e.touches ? e.touches[0].clientX : e.clientX; }
-  function move(e){ if(!drag)return; const r=wrap.getBoundingClientRect(); set(((getX(e)-r.left)/r.width)*100); }
+  function set(p){p=Math.max(2,Math.min(98,p));bef.style.clipPath='inset(0 '+(100-p)+'% 0 0)';line.style.left=p+'%';}
+  function getX(e){return e.touches?e.touches[0].clientX:e.clientX;}
+  function move(e){if(!drag)return;const r=wrap.getBoundingClientRect();set(((getX(e)-r.left)/r.width)*100);}
   wrap.addEventListener('mousedown', e=>{drag=true;move(e);});
   wrap.addEventListener('touchstart',e=>{drag=true;move(e);},{passive:true});
   document.addEventListener('mouseup',  ()=>drag=false);
@@ -1828,83 +1517,66 @@ if (window.matchMedia('(pointer:fine)').matches) {
   set(50);
 })();
 
-/* ── LIGHTBOX ── */
-let lbImgs = [], lbIdx = 0;
-
-function lbOpen(cell, gridId) {
-  const img = cell.querySelector('img');
-  if (!img) return;
-  const grid = document.getElementById(gridId);
-  if (grid) {
-    lbImgs = Array.from(grid.querySelectorAll('img')).filter(i => i.src && !i.src.endsWith('#'));
-    lbIdx  = lbImgs.indexOf(img);
-    if (lbIdx < 0) lbIdx = 0;
-  } else {
-    lbImgs = [img]; lbIdx = 0;
-  }
-  if (lbImgs.length === 0) return;
-  document.getElementById('lb-img').src = lbImgs[lbIdx].src;
-  document.getElementById('lb').classList.add('open');
-  document.body.style.overflow = 'hidden';
-}
-
-function lbClose(){
-  document.getElementById('lb').classList.remove('open');
-  document.body.style.overflow = '';
-}
-
-function lbNav(dir){
-  if (lbImgs.length === 0) return;
-  lbIdx = (lbIdx + dir + lbImgs.length) % lbImgs.length;
-  document.getElementById('lb-img').src = lbImgs[lbIdx].src;
-}
-
-document.getElementById('lb').addEventListener('click', function(e){
-  if (e.target === this) lbClose();
-});
-
-document.addEventListener('keydown', e => {
-  if (!document.getElementById('lb').classList.contains('open')) return;
-  if (e.key === 'Escape')      lbClose();
-  if (e.key === 'ArrowLeft')   lbNav(-1);
-  if (e.key === 'ArrowRight')  lbNav(1);
-});
-
-/* ── IDIOMA ── */
-let lang = 'es';
-function setLang(l) {
-  lang = l;
-  document.getElementById('btn-es').classList.toggle('on', l === 'es');
-  document.getElementById('btn-en').classList.toggle('on', l === 'en');
-  document.querySelectorAll('[data-es]').forEach(el => {
-    const val = l === 'es' ? el.dataset.es : el.dataset.en;
-    if (val !== undefined) el.innerHTML = val;
-  });
-}
-
-/* ── FONDO B/N LÁMINAS ── */
-function setupLaminasBg() {
-  if (!('IntersectionObserver' in window)) return;
-  document.querySelectorAll('.laminas-stack').forEach(stack => {
-    const bgId = stack.dataset.bg;
-    const bg = bgId ? document.getElementById(bgId) : null;
-    if (!bg || stack._bgObserver) return;
-    const obs = new IntersectionObserver(entries => {
-      entries.forEach(e => bg.classList.toggle('visible', e.isIntersecting));
-    }, {threshold: 0.05});
+/* LÁMINAS BG */
+function setupLaminasBg(){
+  if(!('IntersectionObserver' in window))return;
+  document.querySelectorAll('.laminas-stack').forEach(stack=>{
+    if(stack._bgObs)return;
+    const bg=stack.dataset.bg?document.getElementById(stack.dataset.bg):null;
+    if(!bg)return;
+    const obs=new IntersectionObserver(entries=>{
+      entries.forEach(e=>bg.classList.toggle('visible',e.isIntersecting));
+    },{threshold:0.05});
     obs.observe(stack);
-    stack._bgObserver = obs;
+    stack._bgObs=obs;
   });
 }
 setupLaminasBg();
 
-/* ── FORMULARIO ── */
-function handleForm(e) {
+/* LIGHTBOX */
+let lbImgs=[],lbIdx=0;
+function lbOpen(cell,gridId){
+  const img=cell.querySelector('img');
+  if(!img)return;
+  const grid=document.getElementById(gridId);
+  if(grid){
+    lbImgs=Array.from(grid.querySelectorAll('img')).filter(i=>i.src&&!i.src.endsWith('#'));
+    lbIdx=lbImgs.indexOf(img);if(lbIdx<0)lbIdx=0;
+  }else{lbImgs=[img];lbIdx=0;}
+  if(!lbImgs.length)return;
+  document.getElementById('lb-img').src=lbImgs[lbIdx].src;
+  document.getElementById('lb').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function lbClose(){document.getElementById('lb').classList.remove('open');document.body.style.overflow='';}
+function lbNav(d){if(!lbImgs.length)return;lbIdx=(lbIdx+d+lbImgs.length)%lbImgs.length;document.getElementById('lb-img').src=lbImgs[lbIdx].src;}
+document.getElementById('lb').addEventListener('click',function(e){if(e.target===this)lbClose();});
+document.addEventListener('keydown',e=>{
+  if(!document.getElementById('lb').classList.contains('open'))return;
+  if(e.key==='Escape')lbClose();
+  if(e.key==='ArrowLeft')lbNav(-1);
+  if(e.key==='ArrowRight')lbNav(1);
+});
+
+/* IDIOMA */
+let lang='es';
+function setLang(l){
+  lang=l;
+  document.getElementById('btn-es').classList.toggle('on',l==='es');
+  document.getElementById('btn-en').classList.toggle('on',l==='en');
+  document.querySelectorAll('[data-es]').forEach(el=>{
+    const val=l==='es'?el.dataset.es:el.dataset.en;
+    if(val!==undefined)el.innerHTML=val;
+  });
+}
+
+/* FORMULARIO */
+function handleForm(e){
   e.preventDefault();
-  const btn = e.target.querySelector('.fsub');
-  btn.textContent = 'Enviado ✓';
-  btn.style.opacity = '.5';
-  btn.disabled = true;
+  const btn=e.target.querySelector('.fsub');
+  btn.textContent='Enviado ✓';
+  btn.style.opacity='.5';
+  btn.disabled=true;
 }
 </script>
 </body>
