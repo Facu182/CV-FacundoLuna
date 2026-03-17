@@ -162,8 +162,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
   cursor:col-resize;user-select:none;max-height:380px}
 /* ══ SLIDER ANTES: img/render-antes.jpg | 1920×720px, render Twinmotion sin editar */
 /* ══ SLIDER DESPUÉS: img/render-despues.jpg | 1920×720px, post-prod IA, mismo ángulo */
-.sl-after{position:absolute;inset:0;background:url('img/render-despues.jpg') center/cover no-repeat}
-.sl-before{position:absolute;inset:0;background:url('img/render-antes.jpg') center/cover no-repeat;clip-path:inset(0 50% 0 0)}
+.sl-after{position:absolute;inset:0;background:url('img/despues.jpg') center/cover no-repeat}
+.sl-before{position:absolute;inset:0;background:url('img/antes.jpg') center/cover no-repeat;clip-path:inset(0 50% 0 0)}
 .sl-line{position:absolute;top:0;bottom:0;left:50%;width:2px;background:rgba(255,255,255,.92);
   transform:translateX(-50%);pointer-events:none;box-shadow:0 0 14px rgba(0,0,0,.22)}
 .sl-handle{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
@@ -521,9 +521,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
     <div class="param-grid">
       <!-- FILA 1: 2 celdas grandes 16:9 -->
       <!-- img/param-modelo.jpg | 1920×1080px, captura axonométrica del modelo Rhino final -->
-      <!-- <img src="img/param-modelo.jpg" alt="Modelo 3D" loading="lazy"> para activar -->
+      <!-- <img src="img/modelado complejo.jpg" alt="Modelo 3D" loading="lazy"> para activar -->
       <div class="param-cell big">
-        <div class="param-ph"><div class="param-ph-icon">▣</div><div class="ph-txt">→ img/modelo complejo.jpg</div></div>
+        <div class="param-ph"><div class="param-ph-icon">▣</div><div class="ph-txt">→ img/modelado complejo.jpg</div></div>
         <div class="param-lbl" data-es="Modelo 3D" data-en="3D Model">Modelo 3D</div>
       </div>
       <!-- img/param-grasshopper.jpg | 1920×1080px, screenshot Grasshopper con curvas NURBS -->
@@ -545,7 +545,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
         </div>
         <!-- img/param-proceso.jpg | 800×600px, iteraciones o exploraciones formales -->
         <div class="param-cell sm3">
-          <div class="param-ph"><div class="param-ph-icon">⬡</div><div class="ph-txt">→ img/proceso 3.jpg</div></div>
+          <div class="param-ph"><div class="param-ph-icon">⬡</div><div class="ph-txt">→ img/proceso3.jpg</div></div>
           <div class="param-lbl" data-es="Proceso" data-en="Process">Proceso</div>
         </div>
       </div>
@@ -557,13 +557,13 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
     </div></div>
     <div class="proc-prev-grid">
       <!-- img/proceso-croquis-01.jpg -->
-      <div class="proc-prev-cell"><div class="proc-prev-ph"><div class="ph-txt">→ img/proceso-croquis-01.jpg</div></div></div>
+      <div class="proc-prev-cell"><div class="proc-prev-ph"><div class="ph-txt">→ img/croquis biblioteca.jpg</div></div></div>
       <!-- img/proceso-diagrama-01.jpg -->
-      <div class="proc-prev-cell"><div class="proc-prev-ph"><div class="ph-txt">→ img/proceso-diagrama-01.jpg</div></div></div>
+      <div class="proc-prev-cell"><div class="proc-prev-ph"><div class="ph-txt">→ img/diagrama biblioteca.jpg</div></div></div>
       <!-- img/proceso-gh-01.jpg -->
-      <div class="proc-prev-cell"><div class="proc-prev-ph"><div class="ph-txt">→ img/proceso-gh-01.jpg</div></div></div>
+      <div class="proc-prev-cell"><div class="proc-prev-ph"><div class="ph-txt">→ img/diagrama planta.jpg</div></div></div>
       <!-- img/proceso-maqueta-01.jpg -->
-      <div class="proc-prev-cell"><div class="proc-prev-ph"><div class="ph-txt">→ img/proceso-maqueta-01.jpg</div></div></div>
+      <div class="proc-prev-cell"><div class="proc-prev-ph"><div class="ph-txt">→ img/maqueta biblioteca.jpg</div></div></div>
     </div>
     <hr class="hr">
     <div class="slider-lbl-bar">
@@ -623,10 +623,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
     <div class="croquis-wrap">
       <div class="croquis-box">
         <!-- ══ img/croquis-01.jpg | cualquier tamaño, fondo blanco, croquis a mano -->
-        <!-- <img src="img/croquis-01.jpg" alt="Croquis" loading="lazy"> -->
+        <!-- <img src="img/croquis1.jpg" alt="Croquis" loading="lazy"> -->
         <div class="croquis-ph">
           <div class="croquis-ph-icon">✏️</div>
-          <div class="ph-txt">→ img/croquis-01.jpg</div>
+          <div class="ph-txt">→ img/croquis1.jpg</div>
         </div>
       </div>
     </div>
@@ -676,10 +676,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
     <div class="croquis-wrap" style="background:#f9f9f9">
       <div class="croquis-box">
         <!-- ══ img/croquis-02.jpg | cualquier tamaño, fondo blanco, croquis a mano -->
-        <!-- <img src="img/croquis-02.jpg" alt="Croquis" loading="lazy"> -->
+        <!-- <img src="img/croquis2.jpg" alt="Croquis" loading="lazy"> -->
         <div class="croquis-ph">
           <div class="croquis-ph-icon">◎</div>
-          <div class="ph-txt">→ img/croquis-02.jpg</div>
+          <div class="ph-txt">→ img/croquis2.jpg</div>
         </div>
       </div>
     </div>
@@ -779,9 +779,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
 <!-- ════════ PROYECTO 01 ════════ -->
 <div class="view" id="view-proj-01">
   <!-- ══ Hero: img/vivienda/hero.jpg | 1920×820px, render más impactante -->
-  <!-- <img src="img/vivienda/hero.jpg" alt="" loading="eager"> — para activar reemplazá el div siguiente -->
+  <!-- <img src="img/vivienda/casa.jpg" alt="" loading="eager"> — para activar reemplazá el div siguiente -->
   <div class="proj-hero">
-    <div class="proj-hero-ph"><div class="ph-txt">→ img/vivienda/hero.jpg · 1920×820px</div></div>
+    <div class="proj-hero-ph"><div class="ph-txt">→ img/vivienda/casa.jpg · 1920×820px</div></div>
     <div class="proj-hero-fade"></div>
   </div>
   <div class="w">
@@ -807,29 +807,18 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
     <hr class="hr">
     <div class="sh"><div class="sh-row"><span class="sh-label" data-es="Láminas" data-en="Sheets">Láminas</span></div></div>
     <div class="laminas-bg" id="lam-bg-01">
-      <img src="img/vivienda/hero.jpg" alt="">
+      <img src="img/vivienda/casa.jpg" alt="">
     </div>
     <div class="laminas-stack" id="lam-grid-01" data-bg="lam-bg-01">
       <!-- ══ Planta baja / Renders | 1920×1080px -->
-      <!-- <img src="img/vivienda/lam-01.jpg" alt="Planta baja / Renders" loading="lazy"> -->
+      <!-- <img src="img/vivienda/casa1.jpg" alt="Planta baja / Renders" loading="lazy"> -->
       <div class="lamina" onclick="lbOpen(this,'lam-grid-01')">
-        <div class="lamina-ph"><div class="ph-txt">→ img/vivienda/lam-01.jpg</div></div>
+        <div class="lamina-ph"><div class="ph-txt">→ img/vivienda/casa1.jpg</div></div>
       </div>
       <!-- ══ Cortes y fachadas | 1920×1080px -->
-      <!-- <img src="img/vivienda/lam-02.jpg" alt="Cortes y fachadas" loading="lazy"> -->
+      <!-- <img src="img/vivienda/casa2.jpg" alt="Cortes y fachadas" loading="lazy"> -->
       <div class="lamina" onclick="lbOpen(this,'lam-grid-01')">
-        <div class="lamina-ph"><div class="ph-txt">→ img/vivienda/lam-02.jpg</div></div>
-      </div>
-    </div>
-    <hr class="hr">
-        <div class="maqueta-section">
-      <div class="sh"><div class="sh-row"><span class="sh-label" data-es="Maqueta" data-en="Model">Maqueta</span></div></div>
-      <div class="maqueta-grid" id="maq-grid-01">
-        <!-- ══ Foto de maqueta | 1920×1080px, luz natural, fondo neutro -->
-        <!-- <img src="img/vivienda/maqueta-01.jpg" alt="Maqueta" loading="lazy"> -->
-        <div class="maqueta-img" onclick="lbOpen(this,'maq-grid-01')">
-          <div class="maqueta-ph"><div class="ph-txt">→ img/vivienda/maqueta-01.jpg</div></div>
-        </div>
+        <div class="lamina-ph"><div class="ph-txt">→ img/vivienda/casa2.jpg</div></div>
       </div>
     </div>
     <div class="footer" style="margin-top:2px"><div class="footer-row">
@@ -843,9 +832,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
 <!-- ════════ PROYECTO 02 ════════ -->
 <div class="view" id="view-proj-02">
   <!-- ══ Hero: img/biblioteca/hero.jpg | 1920×820px, render más impactante -->
-  <!-- <img src="img/biblioteca/hero.jpg" alt="" loading="eager"> — para activar reemplazá el div siguiente -->
+  <!-- <img src="img/biblioteca/biblioteca.jpg" alt="" loading="eager"> — para activar reemplazá el div siguiente -->
   <div class="proj-hero">
-    <div class="proj-hero-ph"><div class="ph-txt">→ img/biblioteca/hero.jpg · 1920×820px</div></div>
+    <div class="proj-hero-ph"><div class="ph-txt">→ img/biblioteca/biblioteca.jpg · 1920×820px</div></div>
     <div class="proj-hero-fade"></div>
   </div>
   <div class="w">
@@ -871,55 +860,55 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
     <hr class="hr">
     <div class="sh"><div class="sh-row"><span class="sh-label" data-es="Láminas" data-en="Sheets">Láminas</span></div></div>
     <div class="laminas-bg" id="lam-bg-02">
-      <img src="img/biblioteca/hero.jpg" alt="">
+      <img src="img/biblioteca/biblioteca.jpg" alt="">
     </div>
     <div class="laminas-stack" id="lam-grid-02" data-bg="lam-bg-02">
       <!-- ══ Vista principal | 1920×1080px -->
-      <!-- <img src="img/biblioteca/lam-01.jpg" alt="Vista principal" loading="lazy"> -->
+      <!-- <img src="img/biblioteca/biblioteca1.jpg" alt="Vista principal" loading="lazy"> -->
       <div class="lamina" onclick="lbOpen(this,'lam-grid-02')">
-        <div class="lamina-ph"><div class="ph-txt">→ img/biblioteca/lam-01.jpg</div></div>
+        <div class="lamina-ph"><div class="ph-txt">→ img/biblioteca/biblioteca1.jpg</div></div>
       </div>
       <div class="lam-row lam-row-2">
       <!-- ══ Análisis de sitio | 960×720px -->
-      <!-- <img src="img/biblioteca/lam-02.jpg" alt="Análisis de sitio" loading="lazy"> -->
+      <!-- <img src="img/biblioteca/biblioteca2.jpg" alt="Análisis de sitio" loading="lazy"> -->
       <div class="lamina" onclick="lbOpen(this,'lam-grid-02')">
-        <div class="lamina-ph"><div class="ph-txt">→ img/biblioteca/lam-02.jpg</div></div>
+        <div class="lamina-ph"><div class="ph-txt">→ img/biblioteca/biblioteca2.jpg</div></div>
       </div>
       <!-- ══ Planta / Corte | 960×720px -->
-      <!-- <img src="img/biblioteca/lam-03.jpg" alt="Planta / Corte" loading="lazy"> -->
+      <!-- <img src="img/biblioteca/biblioteca3.jpg" alt="Planta / Corte" loading="lazy"> -->
       <div class="lamina" onclick="lbOpen(this,'lam-grid-02')">
-        <div class="lamina-ph"><div class="ph-txt">→ img/biblioteca/lam-03.jpg</div></div>
+        <div class="lamina-ph"><div class="ph-txt">→ img/biblioteca/biblioteca3.jpg</div></div>
       </div>
       </div>
       <!-- ══ Grasshopper / Piel | 1920×1080px -->
-      <!-- <img src="img/biblioteca/lam-04.jpg" alt="Grasshopper / Piel" loading="lazy"> -->
+      <!-- <img src="img/biblioteca/biblioteca4.jpg" alt="Grasshopper / Piel" loading="lazy"> -->
       <div class="lamina" onclick="lbOpen(this,'lam-grid-02')">
-        <div class="lamina-ph"><div class="ph-txt">→ img/biblioteca/lam-04.jpg</div></div>
+        <div class="lamina-ph"><div class="ph-txt">→ img/biblioteca/biblioteca4.jpg</div></div>
       </div>
       <!-- ══ Render exterior 1 | 1920×1080px -->
-      <!-- <img src="img/biblioteca/lam-05.jpg" alt="Render exterior 1" loading="lazy"> -->
+      <!-- <img src="img/biblioteca/biblioteca5.jpg" alt="Render exterior 1" loading="lazy"> -->
       <div class="lamina" onclick="lbOpen(this,'lam-grid-02')">
-        <div class="lamina-ph"><div class="ph-txt">→ img/biblioteca/lam-05.jpg</div></div>
+        <div class="lamina-ph"><div class="ph-txt">→ img/biblioteca/biblioteca5.jpg</div></div>
       </div>
       <!-- ══ Render exterior 2 | 1920×1080px -->
-      <!-- <img src="img/biblioteca/lam-06.jpg" alt="Render exterior 2" loading="lazy"> -->
+      <!-- <img src="img/biblioteca/biblioteca6.jpg" alt="Render exterior 2" loading="lazy"> -->
       <div class="lamina" onclick="lbOpen(this,'lam-grid-02')">
-        <div class="lamina-ph"><div class="ph-txt">→ img/biblioteca/lam-06.jpg</div></div>
+        <div class="lamina-ph"><div class="ph-txt">→ img/biblioteca/biblioteca6.jpg</div></div>
       </div>
       <!-- ══ Render interior 1 | 1920×1080px -->
-      <!-- <img src="img/biblioteca/lam-07.jpg" alt="Render interior 1" loading="lazy"> -->
+      <!-- <img src="img/biblioteca/biblioteca7.jpg" alt="Render interior 1" loading="lazy"> -->
       <div class="lamina" onclick="lbOpen(this,'lam-grid-02')">
-        <div class="lamina-ph"><div class="ph-txt">→ img/biblioteca/lam-07.jpg</div></div>
+        <div class="lamina-ph"><div class="ph-txt">→ img/biblioteca/biblioteca7.jpg</div></div>
       </div>
       <!-- ══ Render interior 2 | 1920×1080px -->
-      <!-- <img src="img/biblioteca/lam-08.jpg" alt="Render interior 2" loading="lazy"> -->
+      <!-- <img src="img/biblioteca/biblioteca8.jpg" alt="Render interior 2" loading="lazy"> -->
       <div class="lamina" onclick="lbOpen(this,'lam-grid-02')">
-        <div class="lamina-ph"><div class="ph-txt">→ img/biblioteca/lam-08.jpg</div></div>
+        <div class="lamina-ph"><div class="ph-txt">→ img/biblioteca/biblioteca8.jpg</div></div>
       </div>
       <!-- ══ Detalle de piel | 1920×1080px -->
-      <!-- <img src="img/biblioteca/lam-09.jpg" alt="Detalle de piel" loading="lazy"> -->
+      <!-- <img src="img/biblioteca/biblioteca9.jpg" alt="Detalle de piel" loading="lazy"> -->
       <div class="lamina" onclick="lbOpen(this,'lam-grid-02')">
-        <div class="lamina-ph"><div class="ph-txt">→ img/biblioteca/lam-09.jpg</div></div>
+        <div class="lamina-ph"><div class="ph-txt">→ img/biblioteca/biblioteca9.jpg</div></div>
       </div>
     </div>
     <hr class="hr">
@@ -927,9 +916,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
       <div class="sh"><div class="sh-row"><span class="sh-label" data-es="Maqueta" data-en="Model">Maqueta</span></div></div>
       <div class="maqueta-grid" id="maq-grid-02">
         <!-- ══ Foto de maqueta | 1920×1080px, luz natural, fondo neutro -->
-        <!-- <img src="img/biblioteca/maqueta-01.jpg" alt="Maqueta" loading="lazy"> -->
+        <!-- <img src="img/biblioteca/maqueta biblioteca.jpg" alt="Maqueta" loading="lazy"> -->
         <div class="maqueta-img" onclick="lbOpen(this,'maq-grid-02')">
-          <div class="maqueta-ph"><div class="ph-txt">→ img/biblioteca/maqueta-01.jpg</div></div>
+          <div class="maqueta-ph"><div class="ph-txt">→ img/biblioteca/maqueta biblioteca.jpg</div></div>
         </div>
       </div>
     </div>
@@ -944,9 +933,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
 <!-- ════════ PROYECTO 03 ════════ -->
 <div class="view" id="view-proj-03">
   <!-- ══ Hero: img/legajo/hero.jpg | 1920×820px, render más impactante -->
-  <!-- <img src="img/legajo/hero.jpg" alt="" loading="eager"> — para activar reemplazá el div siguiente -->
+  <!-- <img src="img/legajo/plano.jpg" alt="" loading="eager"> — para activar reemplazá el div siguiente -->
   <div class="proj-hero">
-    <div class="proj-hero-ph"><div class="ph-txt">→ img/legajo/hero.jpg · 1920×820px</div></div>
+    <div class="proj-hero-ph"><div class="ph-txt">→ img/legajo/plano.jpg · 1920×820px</div></div>
     <div class="proj-hero-fade"></div>
   </div>
   <div class="w">
@@ -972,13 +961,13 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
     <hr class="hr">
     <div class="sh"><div class="sh-row"><span class="sh-label" data-es="Láminas" data-en="Sheets">Láminas</span></div></div>
     <div class="laminas-bg" id="lam-bg-03">
-      <img src="img/legajo/hero.jpg" alt="">
+      <img src="img/legajo/plano.jpg" alt="">
     </div>
     <div class="laminas-stack" id="lam-grid-03" data-bg="lam-bg-03">
       <!-- ══ Documentación técnica completa | 1920×1080px -->
-      <!-- <img src="img/legajo/lam-01.jpg" alt="Documentación técnica completa" loading="lazy"> -->
+      <!-- <img src="img/legajo/plano.jpg" alt="Documentación técnica completa" loading="lazy"> -->
       <div class="lamina" onclick="lbOpen(this,'lam-grid-03')">
-        <div class="lamina-ph"><div class="ph-txt">→ img/legajo/lam-01.jpg</div></div>
+        <div class="lamina-ph"><div class="ph-txt">→ img/legajo/plano.jpg</div></div>
       </div>
     </div>
 
@@ -993,9 +982,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
 <!-- ════════ PROYECTO 04 ════════ -->
 <div class="view" id="view-proj-04">
   <!-- ══ Hero: img/urbana/hero.jpg | 1920×820px, render más impactante -->
-  <!-- <img src="img/urbana/hero.jpg" alt="" loading="eager"> — para activar reemplazá el div siguiente -->
+  <!-- <img src="img/urbana/intervencio9.jpg" alt="" loading="eager"> — para activar reemplazá el div siguiente -->
   <div class="proj-hero">
-    <div class="proj-hero-ph"><div class="ph-txt">→ img/urbana/hero.jpg · 1920×820px</div></div>
+    <div class="proj-hero-ph"><div class="ph-txt">→ img/urbana/intervencio9.jpg · 1920×820px</div></div>
     <div class="proj-hero-fade"></div>
   </div>
   <div class="w">
@@ -1021,66 +1010,66 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
     <hr class="hr">
     <div class="sh"><div class="sh-row"><span class="sh-label" data-es="Láminas" data-en="Sheets">Láminas</span></div></div>
     <div class="laminas-bg" id="lam-bg-04">
-      <img src="img/urbana/hero.jpg" alt="">
+      <img src="img/urbana/intervencio9.jpg" alt="">
     </div>
     <div class="laminas-stack" id="lam-grid-04" data-bg="lam-bg-04">
       <!-- ══ Análisis urbano general | 1920×1080px -->
-      <!-- <img src="img/urbana/lam-01.jpg" alt="Análisis urbano general" loading="lazy"> -->
+      <!-- <img src="img/urbana/intervencion.jpg" alt="Análisis urbano general" loading="lazy"> -->
       <div class="lamina" onclick="lbOpen(this,'lam-grid-04')">
-        <div class="lamina-ph"><div class="ph-txt">→ img/urbana/lam-01.jpg</div></div>
+        <div class="lamina-ph"><div class="ph-txt">→ img/urbana/intervencion.jpg</div></div>
       </div>
       <div class="lam-row lam-row-4">
       <!-- ══ Diagnóstico 1 | 960×720px -->
-      <!-- <img src="img/urbana/lam-02.jpg" alt="Diagnóstico 1" loading="lazy"> -->
+      <!-- <img src="img/urbana/intervencion1.jpg" alt="Diagnóstico 1" loading="lazy"> -->
       <div class="lamina" onclick="lbOpen(this,'lam-grid-04')">
-        <div class="lamina-ph"><div class="ph-txt">→ img/urbana/lam-02.jpg</div></div>
+        <div class="lamina-ph"><div class="ph-txt">→ img/urbana/intervencion1.jpg</div></div>
       </div>
       <!-- ══ Diagnóstico 2 | 960×720px -->
-      <!-- <img src="img/urbana/lam-03.jpg" alt="Diagnóstico 2" loading="lazy"> -->
+      <!-- <img src="img/urbana/intervencion2.jpg" alt="Diagnóstico 2" loading="lazy"> -->
       <div class="lamina" onclick="lbOpen(this,'lam-grid-04')">
-        <div class="lamina-ph"><div class="ph-txt">→ img/urbana/lam-03.jpg</div></div>
+        <div class="lamina-ph"><div class="ph-txt">→ img/urbana/intervencion2.jpg</div></div>
       </div>
       <!-- ══ Diagnóstico 3 | 960×720px -->
-      <!-- <img src="img/urbana/lam-04.jpg" alt="Diagnóstico 3" loading="lazy"> -->
+      <!-- <img src="img/urbana/intervencion3.jpg" alt="Diagnóstico 3" loading="lazy"> -->
       <div class="lamina" onclick="lbOpen(this,'lam-grid-04')">
-        <div class="lamina-ph"><div class="ph-txt">→ img/urbana/lam-04.jpg</div></div>
+        <div class="lamina-ph"><div class="ph-txt">→ img/urbana/intervencion3.jpg</div></div>
       </div>
       <!-- ══ Diagnóstico 4 | 960×720px -->
-      <!-- <img src="img/urbana/lam-05.jpg" alt="Diagnóstico 4" loading="lazy"> -->
+      <!-- <img src="img/urbana/intervencion4.jpg" alt="Diagnóstico 4" loading="lazy"> -->
       <div class="lamina" onclick="lbOpen(this,'lam-grid-04')">
-        <div class="lamina-ph"><div class="ph-txt">→ img/urbana/lam-05.jpg</div></div>
+        <div class="lamina-ph"><div class="ph-txt">→ img/urbana/intervencion4.jpg</div></div>
       </div>
       </div>
       <!-- ══ Estrategia A | 1920×1080px -->
-      <!-- <img src="img/urbana/lam-06.jpg" alt="Estrategia A" loading="lazy"> -->
+      <!-- <img src="img/urbana/intervencion5.jpg" alt="Estrategia A" loading="lazy"> -->
       <div class="lamina" onclick="lbOpen(this,'lam-grid-04')">
-        <div class="lamina-ph"><div class="ph-txt">→ img/urbana/lam-06.jpg</div></div>
+        <div class="lamina-ph"><div class="ph-txt">→ img/urbana/intervencion5.jpg</div></div>
       </div>
       <!-- ══ Estrategia B | 1920×1080px -->
-      <!-- <img src="img/urbana/lam-07.jpg" alt="Estrategia B" loading="lazy"> -->
+      <!-- <img src="img/urbana/intervencion6.jpg" alt="Estrategia B" loading="lazy"> -->
       <div class="lamina" onclick="lbOpen(this,'lam-grid-04')">
-        <div class="lamina-ph"><div class="ph-txt">→ img/urbana/lam-07.jpg</div></div>
+        <div class="lamina-ph"><div class="ph-txt">→ img/urbana/intervencion6.jpg</div></div>
       </div>
       <div class="lam-row lam-row-4">
       <!-- ══ Propuesta 1 | 960×720px -->
-      <!-- <img src="img/urbana/lam-08.jpg" alt="Propuesta 1" loading="lazy"> -->
+      <!-- <img src="img/urbana/intervencion7.jpg" alt="Propuesta 1" loading="lazy"> -->
       <div class="lamina" onclick="lbOpen(this,'lam-grid-04')">
-        <div class="lamina-ph"><div class="ph-txt">→ img/urbana/lam-08.jpg</div></div>
+        <div class="lamina-ph"><div class="ph-txt">→ img/urbana/intervencion7.jpg</div></div>
       </div>
       <!-- ══ Propuesta 2 | 960×720px -->
-      <!-- <img src="img/urbana/lam-09.jpg" alt="Propuesta 2" loading="lazy"> -->
+      <!-- <img src="img/urbana/intervencion8.jpg" alt="Propuesta 2" loading="lazy"> -->
       <div class="lamina" onclick="lbOpen(this,'lam-grid-04')">
-        <div class="lamina-ph"><div class="ph-txt">→ img/urbana/lam-09.jpg</div></div>
+        <div class="lamina-ph"><div class="ph-txt">→ img/urbana/intervencion8.jpg</div></div>
       </div>
       <!-- ══ Propuesta 3 | 960×720px -->
-      <!-- <img src="img/urbana/lam-10.jpg" alt="Propuesta 3" loading="lazy"> -->
+      <!-- <img src="img/urbana/intervencion9.jpg" alt="Propuesta 3" loading="lazy"> -->
       <div class="lamina" onclick="lbOpen(this,'lam-grid-04')">
-        <div class="lamina-ph"><div class="ph-txt">→ img/urbana/lam-10.jpg</div></div>
+        <div class="lamina-ph"><div class="ph-txt">→ img/urbana/intervencion9.jpg</div></div>
       </div>
       <!-- ══ Propuesta 4 | 960×720px -->
-      <!-- <img src="img/urbana/lam-11.jpg" alt="Propuesta 4" loading="lazy"> -->
+      <!-- <img src="img/urbana/intervencion10.jpg" alt="Propuesta 4" loading="lazy"> -->
       <div class="lamina" onclick="lbOpen(this,'lam-grid-04')">
-        <div class="lamina-ph"><div class="ph-txt">→ img/urbana/lam-11.jpg</div></div>
+        <div class="lamina-ph"><div class="ph-txt">→ img/urbana/intervencion10.jpg</div></div>
       </div>
       </div>
     </div>
@@ -1096,9 +1085,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
 <!-- ════════ PROYECTO 05 ════════ -->
 <div class="view" id="view-proj-05">
   <!-- ══ Hero: img/conjunto/hero.jpg | 1920×820px, render más impactante -->
-  <!-- <img src="img/conjunto/hero.jpg" alt="" loading="eager"> — para activar reemplazá el div siguiente -->
+  <!-- <img src="img/conjunto/conjuntogrande.jpg" alt="" loading="eager"> — para activar reemplazá el div siguiente -->
   <div class="proj-hero">
-    <div class="proj-hero-ph"><div class="ph-txt">→ img/conjunto/hero.jpg · 1920×820px</div></div>
+    <div class="proj-hero-ph"><div class="ph-txt">→ img/conjunto/conjuntogrande.jpg · 1920×820px</div></div>
     <div class="proj-hero-fade"></div>
   </div>
   <div class="w">
@@ -1124,50 +1113,50 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
     <hr class="hr">
     <div class="sh"><div class="sh-row"><span class="sh-label" data-es="Láminas" data-en="Sheets">Láminas</span></div></div>
     <div class="laminas-bg" id="lam-bg-05">
-      <img src="img/conjunto/hero.jpg" alt="">
+      <img src="img/conjunto/conjuntogrande.jpg" alt="">
     </div>
     <div class="laminas-stack" id="lam-grid-05" data-bg="lam-bg-05">
       <!-- ══ Vista general / Render principal | 1920×1080px -->
-      <!-- <img src="img/conjunto/lam-01.jpg" alt="Vista general / Render principal" loading="lazy"> -->
+      <!-- <img src="img/conjunto/conjunto1.jpg" alt="Vista general / Render principal" loading="lazy"> -->
       <div class="lamina" onclick="lbOpen(this,'lam-grid-05')">
-        <div class="lamina-ph"><div class="ph-txt">→ img/conjunto/lam-01.jpg</div></div>
+        <div class="lamina-ph"><div class="ph-txt">→ img/conjunto/conjunto1.jpg</div></div>
       </div>
       <div class="lam-row lam-row-2">
       <!-- ══ Planta libre | 960×720px -->
-      <!-- <img src="img/conjunto/lam-02.jpg" alt="Planta libre" loading="lazy"> -->
+      <!-- <img src="img/conjunto/conjunto2.jpg" alt="Planta libre" loading="lazy"> -->
       <div class="lamina" onclick="lbOpen(this,'lam-grid-05')">
-        <div class="lamina-ph"><div class="ph-txt">→ img/conjunto/lam-02.jpg</div></div>
+        <div class="lamina-ph"><div class="ph-txt">→ img/conjunto/conjunto2.jpg</div></div>
       </div>
       <!-- ══ Corte longitudinal | 960×720px -->
-      <!-- <img src="img/conjunto/lam-03.jpg" alt="Corte longitudinal" loading="lazy"> -->
+      <!-- <img src="img/conjunto/conjunto3.jpg" alt="Corte longitudinal" loading="lazy"> -->
       <div class="lamina" onclick="lbOpen(this,'lam-grid-05')">
-        <div class="lamina-ph"><div class="ph-txt">→ img/conjunto/lam-03.jpg</div></div>
+        <div class="lamina-ph"><div class="ph-txt">→ img/conjunto/conjunto3.jpg</div></div>
       </div>
       </div>
       <!-- ══ Render exterior 1 | 1920×1080px -->
-      <!-- <img src="img/conjunto/lam-04.jpg" alt="Render exterior 1" loading="lazy"> -->
+      <!-- <img src="img/conjunto/conjunto4.jpg" alt="Render exterior 1" loading="lazy"> -->
       <div class="lamina" onclick="lbOpen(this,'lam-grid-05')">
-        <div class="lamina-ph"><div class="ph-txt">→ img/conjunto/lam-04.jpg</div></div>
+        <div class="lamina-ph"><div class="ph-txt">→ img/conjunto/conjunto4.jpg</div></div>
       </div>
       <!-- ══ Render exterior 2 | 1920×1080px -->
-      <!-- <img src="img/conjunto/lam-05.jpg" alt="Render exterior 2" loading="lazy"> -->
+      <!-- <img src="img/conjunto/conjunto5.jpg" alt="Render exterior 2" loading="lazy"> -->
       <div class="lamina" onclick="lbOpen(this,'lam-grid-05')">
-        <div class="lamina-ph"><div class="ph-txt">→ img/conjunto/lam-05.jpg</div></div>
+        <div class="lamina-ph"><div class="ph-txt">→ img/conjunto/conjunto5.jpg</div></div>
       </div>
       <!-- ══ Render exterior 3 | 1920×1080px -->
-      <!-- <img src="img/conjunto/lam-06.jpg" alt="Render exterior 3" loading="lazy"> -->
+      <!-- <img src="img/conjunto/conjunto6.jpg" alt="Render exterior 3" loading="lazy"> -->
       <div class="lamina" onclick="lbOpen(this,'lam-grid-05')">
-        <div class="lamina-ph"><div class="ph-txt">→ img/conjunto/lam-06.jpg</div></div>
+        <div class="lamina-ph"><div class="ph-txt">→ img/conjunto/conjunto6.jpg</div></div>
       </div>
       <!-- ══ Render interior 1 | 1920×1080px -->
-      <!-- <img src="img/conjunto/lam-07.jpg" alt="Render interior 1" loading="lazy"> -->
+      <!-- <img src="img/conjunto/conjunto7.jpg" alt="Render interior 1" loading="lazy"> -->
       <div class="lamina" onclick="lbOpen(this,'lam-grid-05')">
-        <div class="lamina-ph"><div class="ph-txt">→ img/conjunto/lam-07.jpg</div></div>
+        <div class="lamina-ph"><div class="ph-txt">→ img/conjunto/conjunto7.jpg</div></div>
       </div>
       <!-- ══ Render interior 2 | 1920×1080px -->
-      <!-- <img src="img/conjunto/lam-08.jpg" alt="Render interior 2" loading="lazy"> -->
+      <!-- <img src="img/conjunto/conjunto8.jpg" alt="Render interior 2" loading="lazy"> -->
       <div class="lamina" onclick="lbOpen(this,'lam-grid-05')">
-        <div class="lamina-ph"><div class="ph-txt">→ img/conjunto/lam-08.jpg</div></div>
+        <div class="lamina-ph"><div class="ph-txt">→ img/conjunto/conjunto8.jpg</div></div>
       </div>
     </div>
     <hr class="hr">
@@ -1175,9 +1164,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
       <div class="sh"><div class="sh-row"><span class="sh-label" data-es="Maqueta" data-en="Model">Maqueta</span></div></div>
       <div class="maqueta-grid" id="maq-grid-05">
         <!-- ══ Foto de maqueta | 1920×1080px, luz natural, fondo neutro -->
-        <!-- <img src="img/conjunto/maqueta-01.jpg" alt="Maqueta" loading="lazy"> -->
+        <!-- <img src="img/conjunto/maqueta conjunto.jpg" alt="Maqueta" loading="lazy"> -->
         <div class="maqueta-img" onclick="lbOpen(this,'maq-grid-05')">
-          <div class="maqueta-ph"><div class="ph-txt">→ img/conjunto/maqueta-01.jpg</div></div>
+          <div class="maqueta-ph"><div class="ph-txt">→ img/conjunto/maqueta conjunto.jpg</div></div>
         </div>
       </div>
     </div>
@@ -1192,9 +1181,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
 <!-- ════════ PROYECTO 06 ════════ -->
 <div class="view" id="view-proj-06">
   <!-- ══ Hero: img/sacro/hero.jpg | 1920×820px, render más impactante -->
-  <!-- <img src="img/sacro/hero.jpg" alt="" loading="eager"> — para activar reemplazá el div siguiente -->
+  <!-- <img src="img/sacro/iglesia.jpg" alt="" loading="eager"> — para activar reemplazá el div siguiente -->
   <div class="proj-hero">
-    <div class="proj-hero-ph"><div class="ph-txt">→ img/sacro/hero.jpg · 1920×820px</div></div>
+    <div class="proj-hero-ph"><div class="ph-txt">→ img/sacro/iglesia.jpg · 1920×820px</div></div>
     <div class="proj-hero-fade"></div>
   </div>
   <div class="w">
@@ -1220,18 +1209,18 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
     <hr class="hr">
     <div class="sh"><div class="sh-row"><span class="sh-label" data-es="Láminas" data-en="Sheets">Láminas</span></div></div>
     <div class="laminas-bg" id="lam-bg-06">
-      <img src="img/sacro/hero.jpg" alt="">
+      <img src="img/sacro/iglesia.jpg" alt="">
     </div>
     <div class="laminas-stack" id="lam-grid-06" data-bg="lam-bg-06">
       <!-- ══ Diagrama de luz / Celosías | 1920×1080px -->
-      <!-- <img src="img/sacro/lam-01.jpg" alt="Diagrama de luz / Celosías" loading="lazy"> -->
+      <!-- <img src="img/sacro/iglesia1.jpg" alt="Diagrama de luz / Celosías" loading="lazy"> -->
       <div class="lamina" onclick="lbOpen(this,'lam-grid-06')">
-        <div class="lamina-ph"><div class="ph-txt">→ img/sacro/lam-01.jpg</div></div>
+        <div class="lamina-ph"><div class="ph-txt">→ img/sacro/iglesia1.jpg</div></div>
       </div>
       <!-- ══ Render con post IA | 1920×1080px -->
-      <!-- <img src="img/sacro/lam-02.jpg" alt="Render con post IA" loading="lazy"> -->
+      <!-- <img src="img/sacro/iglesia2.jpg" alt="Render con post IA" loading="lazy"> -->
       <div class="lamina" onclick="lbOpen(this,'lam-grid-06')">
-        <div class="lamina-ph"><div class="ph-txt">→ img/sacro/lam-02.jpg</div></div>
+        <div class="lamina-ph"><div class="ph-txt">→ img/sacro/iglesia2.jpg</div></div>
       </div>
     </div>
 
@@ -1252,34 +1241,34 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
     </div></div>
     <div class="proc-grid">
       <!-- ══ Croquis a mano — boceto conceptual, lápiz sobre papel | img/proceso-croquis-01.jpg -->
-      <!-- <img src="img/proceso-croquis-01.jpg" alt="Croquis a mano — boceto conceptual, lápiz sobre papel" loading="lazy"> -->
+      <!-- <img src="img/croquis biblioteca.jpg" alt="Croquis a mano — boceto conceptual, lápiz sobre papel" loading="lazy"> -->
       <div class="proc-card">
-        <div class="proc-ph"><div class="proc-ph-icon">✏️</div><div class="ph-txt">→ img/proceso-croquis-01.jpg</div></div>
+        <div class="proc-ph"><div class="proc-ph-icon">✏️</div><div class="ph-txt">→ img/croquis biblioteca.jpg</div></div>
       </div>
       <!-- ══ Diagrama de concepto o análisis de sitio | img/proceso-diagrama-01.jpg -->
-      <!-- <img src="img/proceso-diagrama-01.jpg" alt="Diagrama de concepto o análisis de sitio" loading="lazy"> -->
+      <!-- <img src="img/diagrama biblioteca.jpg" alt="Diagrama de concepto o análisis de sitio" loading="lazy"> -->
       <div class="proc-card">
-        <div class="proc-ph"><div class="proc-ph-icon">◎</div><div class="ph-txt">→ img/proceso-diagrama-01.jpg</div></div>
+        <div class="proc-ph"><div class="proc-ph-icon">◎</div><div class="ph-txt">→ img/diagrama biblioteca.jpg</div></div>
       </div>
       <!-- ══ Captura de Grasshopper o Rhino — proceso paramétrico | img/proceso-gh-01.jpg -->
-      <!-- <img src="img/proceso-gh-01.jpg" alt="Captura de Grasshopper o Rhino — proceso paramétrico" loading="lazy"> -->
+      <!-- <img src="img/diagrama planta.jpg" alt="Captura de Grasshopper o Rhino — proceso paramétrico" loading="lazy"> -->
       <div class="proc-card">
-        <div class="proc-ph"><div class="proc-ph-icon">⬡</div><div class="ph-txt">→ img/proceso-gh-01.jpg</div></div>
+        <div class="proc-ph"><div class="proc-ph-icon">⬡</div><div class="ph-txt">→ img/diagrama planta.jpg</div></div>
       </div>
       <!-- ══ Planta o corte técnico en AutoCAD | img/proceso-planta-01.jpg -->
-      <!-- <img src="img/proceso-planta-01.jpg" alt="Planta o corte técnico en AutoCAD" loading="lazy"> -->
+      <!-- <img src="img/planta biblioteca.jpg" alt="Planta o corte técnico en AutoCAD" loading="lazy"> -->
       <div class="proc-card">
-        <div class="proc-ph"><div class="proc-ph-icon">▭</div><div class="ph-txt">→ img/proceso-planta-01.jpg</div></div>
+        <div class="proc-ph"><div class="proc-ph-icon">▭</div><div class="ph-txt">→ img/planta biblioteca.jpg</div></div>
       </div>
       <!-- ══ Foto de maqueta física — luz natural, fondo neutro | img/proceso-maqueta-01.jpg -->
-      <!-- <img src="img/proceso-maqueta-01.jpg" alt="Foto de maqueta física — luz natural, fondo neutro" loading="lazy"> -->
+      <!-- <img src="img/maqueta biblioteca.jpg" alt="Foto de maqueta física — luz natural, fondo neutro" loading="lazy"> -->
       <div class="proc-card">
-        <div class="proc-ph"><div class="proc-ph-icon">▣</div><div class="ph-txt">→ img/proceso-maqueta-01.jpg</div></div>
+        <div class="proc-ph"><div class="proc-ph-icon">▣</div><div class="ph-txt">→ img/maqueta biblioteca.jpg</div></div>
       </div>
       <!-- ══ Croquis a mano — detalle constructivo o partido | img/proceso-croquis-02.jpg -->
-      <!-- <img src="img/proceso-croquis-02.jpg" alt="Croquis a mano — detalle constructivo o partido" loading="lazy"> -->
+      <!-- <img src="img/planta biblioteca.jpg" alt="Croquis a mano — detalle constructivo o partido" loading="lazy"> -->
       <div class="proc-card">
-        <div class="proc-ph"><div class="proc-ph-icon">✏️</div><div class="ph-txt">→ img/proceso-croquis-02.jpg</div></div>
+        <div class="proc-ph"><div class="proc-ph-icon">✏️</div><div class="ph-txt">→ img/planta biblioteca.jpg</div></div>
       </div>
     </div>
     <hr class="hr">
@@ -1315,8 +1304,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
         <!-- ══ LOGO EFELE.ARQ
              Subí: img/efele-logo.png (PNG transparente, cualquier tamaño)
              Para activar: borrá el div.efele-logo-ph y descomentá el <img> -->
-        <!-- <img src="img/efele-logo.png" alt="EFELE.ARQ" class="efele-logo-box"> -->
-        <div class="efele-logo-ph"><div class="ph-txt">→ img/efele-logo.png</div></div>
+        <!-- <img src="img/efele logo.png" alt="EFELE.ARQ" class="efele-logo-box"> -->
+        <div class="efele-logo-ph"><div class="ph-txt">→ img/efele logo.png</div></div>
         <div>
           <div class="efele-mark-row"><div class="efele-sq"></div><span class="efele-name-lbl">EFELE.ARQ</span></div>
           <div class="efele-tagline" data-es="Laboratorio de diseño e inteligencia artificial" data-en="Design and artificial intelligence laboratory">Laboratorio de diseño e inteligencia artificial</div>
@@ -1335,24 +1324,24 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
     <hr class="hr">
     <div class="efele-gal">
       <!-- ══ Render exterior con post IA | 800×800px mínimo, imagen cuadrada -->
-      <!-- <img src="img/efele-01.jpg" alt="Render exterior con post IA" loading="lazy"> -->
+      <!-- <img src="img/efele1.jpg" alt="Render exterior con post IA" loading="lazy"> -->
       <div class="efele-img">
-        <div class="efele-img-ph"><div class="ph-txt">→ img/efele-01.jpg</div></div>
+        <div class="efele-img-ph"><div class="ph-txt">→ img/efele1.jpg</div></div>
       </div>
       <!-- ══ Render interior | 800×800px mínimo, imagen cuadrada -->
-      <!-- <img src="img/efele-02.jpg" alt="Render interior" loading="lazy"> -->
+      <!-- <img src="img/efele2.jpg" alt="Render interior" loading="lazy"> -->
       <div class="efele-img">
-        <div class="efele-img-ph"><div class="ph-txt">→ img/efele-02.jpg</div></div>
+        <div class="efele-img-ph"><div class="ph-txt">→ img/efele2.jpg</div></div>
       </div>
       <!-- ══ Remodelación con IA | 800×800px mínimo, imagen cuadrada -->
-      <!-- <img src="img/efele-03.jpg" alt="Remodelación con IA" loading="lazy"> -->
+      <!-- <img src="img/efele3.jpg" alt="Remodelación con IA" loading="lazy"> -->
       <div class="efele-img">
-        <div class="efele-img-ph"><div class="ph-txt">→ img/efele-03.jpg</div></div>
+        <div class="efele-img-ph"><div class="ph-txt">→ img/efele3.jpg</div></div>
       </div>
       <!-- ══ Lámina informativa | 800×800px mínimo, imagen cuadrada -->
-      <!-- <img src="img/efele-04.jpg" alt="Lámina informativa" loading="lazy"> -->
+      <!-- <img src="img/efele4.jpg" alt="Lámina informativa" loading="lazy"> -->
       <div class="efele-img">
-        <div class="efele-img-ph"><div class="ph-txt">→ img/efele-04.jpg</div></div>
+        <div class="efele-img-ph"><div class="ph-txt">→ img/efele4.jpg</div></div>
       </div>
     </div>
     <hr class="hr">
