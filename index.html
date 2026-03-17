@@ -785,7 +785,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
     <div class="proj-hero-fade"></div>
   </div>
   <div class="w">
-    <span class="back-btn" onclick="go('proyectos')">← <span data-es="Volver a proyectos" data-en="Back to projects">Volver a proyectos</span></span>
+    <span class="back-btn" onclick="go('proyectos',true)">← <span data-es="Volver a proyectos" data-en="Back to projects">Volver a proyectos</span></span>
     <div class="proj-header">
       <div class="proj-header-grid">
         <div>
@@ -849,7 +849,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
     <div class="proj-hero-fade"></div>
   </div>
   <div class="w">
-    <span class="back-btn" onclick="go('proyectos')">← <span data-es="Volver a proyectos" data-en="Back to projects">Volver a proyectos</span></span>
+    <span class="back-btn" onclick="go('proyectos',true)">← <span data-es="Volver a proyectos" data-en="Back to projects">Volver a proyectos</span></span>
     <div class="proj-header">
       <div class="proj-header-grid">
         <div>
@@ -950,7 +950,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
     <div class="proj-hero-fade"></div>
   </div>
   <div class="w">
-    <span class="back-btn" onclick="go('proyectos')">← <span data-es="Volver a proyectos" data-en="Back to projects">Volver a proyectos</span></span>
+    <span class="back-btn" onclick="go('proyectos',true)">← <span data-es="Volver a proyectos" data-en="Back to projects">Volver a proyectos</span></span>
     <div class="proj-header">
       <div class="proj-header-grid">
         <div>
@@ -999,7 +999,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
     <div class="proj-hero-fade"></div>
   </div>
   <div class="w">
-    <span class="back-btn" onclick="go('proyectos')">← <span data-es="Volver a proyectos" data-en="Back to projects">Volver a proyectos</span></span>
+    <span class="back-btn" onclick="go('proyectos',true)">← <span data-es="Volver a proyectos" data-en="Back to projects">Volver a proyectos</span></span>
     <div class="proj-header">
       <div class="proj-header-grid">
         <div>
@@ -1102,7 +1102,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
     <div class="proj-hero-fade"></div>
   </div>
   <div class="w">
-    <span class="back-btn" onclick="go('proyectos')">← <span data-es="Volver a proyectos" data-en="Back to projects">Volver a proyectos</span></span>
+    <span class="back-btn" onclick="go('proyectos',true)">← <span data-es="Volver a proyectos" data-en="Back to projects">Volver a proyectos</span></span>
     <div class="proj-header">
       <div class="proj-header-grid">
         <div>
@@ -1198,7 +1198,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
     <div class="proj-hero-fade"></div>
   </div>
   <div class="w">
-    <span class="back-btn" onclick="go('proyectos')">← <span data-es="Volver a proyectos" data-en="Back to projects">Volver a proyectos</span></span>
+    <span class="back-btn" onclick="go('proyectos',true)">← <span data-es="Volver a proyectos" data-en="Back to projects">Volver a proyectos</span></span>
     <div class="proj-header">
       <div class="proj-header-grid">
         <div>
@@ -1450,7 +1450,14 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
 const VIEWS = ['inicio','proyectos','proceso','efele','about','contacto',
   'proj-01','proj-02','proj-03','proj-04','proj-05','proj-06'];
 
-function go(name) {
+/* Guarda la posición de scroll de cada vista */
+const scrollPos = {};
+let currentView = 'inicio';
+
+function go(name, restoreScroll) {
+  /* Guardar scroll de la vista actual antes de salir */
+  scrollPos[currentView] = window.scrollY;
+
   document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
   const navKey = name.startsWith('proj-') ? 'proyectos' : name;
   document.querySelectorAll('[data-v],[data-vm]').forEach(a => {
@@ -1458,7 +1465,14 @@ function go(name) {
     a.classList.toggle('active', k === navKey);
   });
   const t = document.getElementById('view-' + name);
-  if (t) { t.classList.add('active'); window.scrollTo(0, 0); }
+  if (t) {
+    t.classList.add('active');
+    /* Restaurar scroll si volvemos a una vista ya visitada,
+       o ir arriba si es una vista nueva / un proyecto individual */
+    const savedY = restoreScroll && scrollPos[name] != null ? scrollPos[name] : 0;
+    window.scrollTo(0, savedY);
+  }
+  currentView = name;
   history.pushState({v: name}, '', '#' + name);
   closeMob();
   setTimeout(setupLaminasBg, 80);
@@ -1469,7 +1483,7 @@ function go(name) {
   go(VIEWS.includes(h) ? h : 'inicio');
 })();
 
-window.addEventListener('popstate', e => { if (e.state && e.state.v) go(e.state.v); });
+window.addEventListener('popstate', e => { if (e.state && e.state.v) go(e.state.v, true); });
 
 function togMob(){
   document.getElementById('nm').classList.toggle('open');
