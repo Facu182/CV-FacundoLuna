@@ -8,12 +8,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,700;12..96,800&family=Inter:wght@300;400&display=swap" rel="stylesheet">
-<!--
-  ANALYTICS — Umami (gratis, sin cookies)
-  1. Creá cuenta en umami.is
-  2. Agregá tu sitio: facu182.github.io
-  3. Reemplazá TU-ID-AQUI con el data-website-id que te dan
--->
 <script defer src="https://cloud.umami.is/script.js" data-website-id="TU-ID-AQUI"></script>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -434,7 +428,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
   <img id="lb-img" src="" alt="">
   <span class="lb-next" onclick="lbNav(1)">›</span>
 </div>
-
 <div id="cur"></div>
 
 <nav>
@@ -451,7 +444,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
     <div class="nav-right">
       <button class="lang-btn on" id="btn-es" onclick="setLang('es')">ES</button>
       <span class="lang-sep">·</span>
-      <button class="lang-btn"    id="btn-en" onclick="setLang('en')">EN</button>
+      <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
       <div class="nav-tog" id="nt" onclick="togMob()"><span></span><span></span><span></span></div>
     </div>
   </div>
@@ -465,7 +458,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
   <a onclick="go('contacto');closeMob()"  data-vm="contacto">Contacto</a>
 </div>
 
-<!-- ════════ INICIO ════════ -->
 <div class="view active" id="view-inicio">
   <div class="w">
     <div class="hero">
@@ -492,91 +484,90 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
       </div>
     </div>
     <hr class="hr">
+
+    <!-- Proyectos preview -->
     <div class="sh"><div class="sh-row">
       <span class="sh-label" data-es="Proyectos seleccionados" data-en="Selected projects">Proyectos seleccionados</span>
       <span class="sh-link" onclick="go('proyectos')" data-es="Ver todos →" data-en="See all →">Ver todos →</span>
     </div></div>
     <div class="proj-prev-grid">
-      <!-- Vivienda Unifamiliar · img/vivienda/cover.jpg -->
       <div class="ppc" onclick="go('proj-01')">
-        <div class="ppc-img"><div class="ppc-img-in" style="background-image:url('https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/0f577a232345049.689aaf95bb01d.png')"></div><div class="ppc-ov"></div></div>
-        <div class="ppc-info"><div class="ppc-n">01</div><div class="ppc-t" data-es="Vivienda Unifamiliar" data-en="Single Family House">Vivienda Unifamiliar</div><div class="ppc-c" data-es="Residencial · 2024" data-en="Residential · 2024">Residencial · 2024</div></div>
+        <div class="ppc-img"><div class="ppc-img-in" style="background-image:url('img/vivienda/casa1.jpg')"></div><div class="ppc-ov"></div></div>
+        <div class="ppc-info"><div class="ppc-n">01</div><div class="ppc-t" data-es="Vivienda Unifamiliar" data-en="Single Family House">Vivienda Unifamiliar</div><div class="ppc-c">Residencial · 2024</div></div>
       </div>
-      <!-- Conjunto Habitacional · img/conjunto/cover.jpg -->
       <div class="ppc" onclick="go('proj-05')">
-        <div class="ppc-img"><div class="ppc-img-in" style="background-image:url('https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/8bc5a4232344485.689aaa72e3cef.jpg')"></div><div class="ppc-ov"></div></div>
-        <div class="ppc-info"><div class="ppc-n">05</div><div class="ppc-t" data-es="Conjunto Habitacional" data-en="Housing Complex">Conjunto Habitacional</div><div class="ppc-c" data-es="Vivienda Colectiva · 2025" data-en="Collective Housing · 2025">Vivienda Colectiva · 2025</div></div>
+        <div class="ppc-img"><div class="ppc-img-in" style="background-image:url('img/conjunto/conjuntogrande.jpg')"></div><div class="ppc-ov"></div></div>
+        <div class="ppc-info"><div class="ppc-n">05</div><div class="ppc-t" data-es="Conjunto Habitacional" data-en="Housing Complex">Conjunto Habitacional</div><div class="ppc-c">Vivienda Colectiva · 2025</div></div>
       </div>
-      <!-- Biblioteca Costera · img/biblioteca/cover.jpg -->
       <div class="ppc" onclick="go('proj-02')">
-        <div class="ppc-img"><div class="ppc-img-in" style="background-image:url('https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/16b476239108565.692283c72e728.png')"></div><div class="ppc-ov"></div></div>
-        <div class="ppc-info"><div class="ppc-n">02</div><div class="ppc-t" data-es="Biblioteca Costera" data-en="Coastal Library">Biblioteca Costera</div><div class="ppc-c" data-es="Equipamiento · 2025" data-en="Equipment · 2025">Equipamiento · 2025</div></div>
+        <div class="ppc-img"><div class="ppc-img-in" style="background-image:url('img/biblioteca/biblioteca.jpg')"></div><div class="ppc-ov"></div></div>
+        <div class="ppc-info"><div class="ppc-n">02</div><div class="ppc-t" data-es="Biblioteca Costera" data-en="Coastal Library">Biblioteca Costera</div><div class="ppc-c">Equipamiento · 2025</div></div>
       </div>
     </div>
     <hr class="hr">
+
+    <!-- Paramétrica -->
     <div class="sh"><div class="sh-row">
       <span class="sh-label" data-es="Diseño paramétrico" data-en="Parametric design">Diseño paramétrico</span>
       <span class="sh-right">Rhino · Grasshopper</span>
     </div></div>
     <div class="param-grid">
-      <!-- FILA 1: 2 celdas grandes 16:9 -->
-      <!-- img/param-modelo.jpg | 1920×1080px, captura axonométrica del modelo Rhino final -->
-      <!-- <img src="img/modelado-complejo.jpg" alt="Modelo 3D" loading="lazy"> para activar -->
-      <div class="param-cell big"><div class="ph-txt">→ img/modelado-complejo.jpg</div></div>
+      <div class="param-cell big">
+        <img src="img/modelado-complejo.jpg" alt="Modelo 3D" loading="lazy">
         <div class="param-lbl" data-es="Modelo 3D" data-en="3D Model">Modelo 3D</div>
       </div>
-      <!-- img/param-grasshopper.jpg | 1920×1080px, screenshot Grasshopper con curvas NURBS -->
-      <div class="param-cell big"><div class="ph-txt">→ img/grass.jpg</div></div>
+      <div class="param-cell big">
+        <img src="img/grass.jpg" alt="Grasshopper" loading="lazy">
         <div class="param-lbl">Grasshopper</div>
       </div>
-      <!-- FILA 2: 3 celdas pequeñas 4:3 -->
       <div class="param-row3">
-        <!-- img/param-referencia.jpg | 800×600px, foto edificio de referencia o inspiración -->
-        <div class="param-cell sm3"><div class="ph-txt">→ img/proceso-4.jpg</div></div>
+        <div class="param-cell sm3">
+          <img src="img/proceso-4.jpg" alt="Referencia" loading="lazy">
           <div class="param-lbl" data-es="Referencia" data-en="Reference">Referencia</div>
         </div>
-        <!-- img/param-analisis.jpg | 800×600px, diagrama análisis solar / condicionantes -->
-        <div class="param-cell sm3"><div class="ph-txt">→ img/proceso2.jpg</div></div>
+        <div class="param-cell sm3">
+          <img src="img/proceso2.jpg" alt="Análisis" loading="lazy">
           <div class="param-lbl" data-es="Análisis" data-en="Analysis">Análisis</div>
         </div>
-        <!-- img/param-proceso.jpg | 800×600px, iteraciones o exploraciones formales -->
-        <div class="param-cell sm3"><div class="ph-txt">→ img/proceso3.jpg</div></div>
+        <div class="param-cell sm3">
+          <img src="img/proceso3.jpg" alt="Proceso" loading="lazy">
           <div class="param-lbl" data-es="Proceso" data-en="Process">Proceso</div>
         </div>
       </div>
     </div>
     <hr class="hr">
+
+    <!-- Proceso preview -->
     <div class="sh"><div class="sh-row">
       <span class="sh-label" data-es="Proceso" data-en="Process">Proceso</span>
       <span class="sh-link" onclick="go('proceso')" data-es="Ver todo →" data-en="See all →">Ver todo →</span>
     </div></div>
     <div class="proc-prev-grid">
-      <!-- img/proceso-croquis-01.jpg -->
-      <div class="proc-prev-cell"><div class="proc-prev-ph"><div class="ph-txt">→ img/croquis-biblioteca.jpg</div></div></div>
-      <!-- img/proceso-diagrama-01.jpg -->
-      <div class="proc-prev-cell"><div class="proc-prev-ph"><div class="ph-txt">→ img/diagrama-biblioteca.jpg</div></div></div>
-      <!-- img/proceso-gh-01.jpg -->
-      <div class="proc-prev-cell"><div class="proc-prev-ph"><div class="ph-txt">→ img/diagrama-planta.jpg</div></div></div>
-      <!-- img/proceso-maqueta-01.jpg -->
-      <div class="proc-prev-cell"><div class="proc-prev-ph"><div class="ph-txt">→ img/maqueta-biblioteca.jpg</div></div></div>
+      <div class="proc-prev-cell"><img src="img/croquis-biblioteca.jpg" alt="Proceso" loading="lazy"></div>
+      <div class="proc-prev-cell"><img src="img/diagrama-biblioteca.jpg" alt="Proceso" loading="lazy"></div>
+      <div class="proc-prev-cell"><img src="img/diagrama-planta.jpg" alt="Proceso" loading="lazy"></div>
+      <div class="proc-prev-cell"><img src="img/planta-biblioteca.jpg" alt="Proceso" loading="lazy"></div>
     </div>
     <hr class="hr">
+
+    <!-- Slider -->
     <div class="slider-lbl-bar">
       <span class="sl-title" data-es="Post-producción con IA" data-en="AI Post-production">Post-producción con IA</span>
-      <span class="sl-hint"  data-es="← arrastrá para comparar →" data-en="← drag to compare →">← arrastrá para comparar →</span>
+      <span class="sl-hint" data-es="← arrastrá para comparar →" data-en="← drag to compare →">← arrastrá para comparar →</span>
     </div>
     <div class="slider-outer" id="sw">
-      <div class="sl-after"></div>
-      <div class="sl-before" id="sl-b"></div>
-      <div class="sl-line"  id="sl-l"><div class="sl-handle"></div></div>
-      <div class="sl-tag l" data-es="Render base"         data-en="Base render">Render base</div>
-      <div class="sl-tag r" data-es="Post-producción IA"  data-en="AI Post-production">Post-producción IA</div>
+      <div class="sl-after" style="background-image:url('img/despues.jpg');background-size:cover;background-position:center"></div>
+      <div class="sl-before" id="sl-b" style="background-image:url('img/antes.jpg');background-size:cover;background-position:center;clip-path:inset(0 50% 0 0)"></div>
+      <div class="sl-line" id="sl-l"><div class="sl-handle"></div></div>
+      <div class="sl-tag l" data-es="Render base" data-en="Base render">Render base</div>
+      <div class="sl-tag r" data-es="Post-producción IA" data-en="AI Post-production">Post-producción IA</div>
     </div>
     <hr class="hr">
+
     <div class="home-ctas">
       <button class="cta-p" onclick="go('proyectos')" data-es="Ver proyectos →" data-en="See projects →">Ver proyectos →</button>
-      <button class="cta-g" onclick="go('contacto')"  data-es="Contacto"        data-en="Contact">Contacto</button>
-      <button class="cta-g" onclick="go('efele')"     data-es="EFELE.ARQ"       data-en="EFELE.ARQ">EFELE.ARQ</button>
+      <button class="cta-g" onclick="go('contacto')"  data-es="Contacto" data-en="Contact">Contacto</button>
+      <button class="cta-g" onclick="go('efele')"     data-es="EFELE.ARQ" data-en="EFELE.ARQ">EFELE.ARQ</button>
     </div>
     <div style="height:24px"></div>
     <div class="footer"><div class="footer-row">
@@ -587,142 +578,120 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
   </div>
 </div>
 
-<!-- ════════ PROYECTOS ════════ -->
 <div class="view" id="view-proyectos">
   <div class="w"><div class="sh"><div class="sh-row">
     <span class="sh-label" data-es="Proyectos seleccionados" data-en="Selected projects">Proyectos seleccionados</span>
-    <span class="sh-right">06 · 2024–2025</span>
+    <span class="sh-right">08 · 2024–2025</span>
   </div></div></div>
-
   <div class="w">
     <div class="prow prow-n" onclick="go('proj-01')">
       <div class="pi">
-        <div class="pi-in" style="background-image:url('https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/0f577a232345049.689aaf95bb01d.png')"></div>
+        <div class="pi-in" style="background-image:url('img/vivienda/casa1.jpg')"></div>
         <div class="pi-ov"></div>
-        <div class="pi-tag">Render final</div>
       </div>
       <div class="pinfo" style="">
         <div>
           <div class="ptop"><span class="pnum">01</span><span class="pyr">2024</span></div>
           <div class="ptitle" data-es="Vivienda<br>Unifamiliar" data-en="Single<br>Family House">Vivienda<br>Unifamiliar</div>
-          <div class="pcat"   data-es="Residencial"   data-en="Residential">Residencial</div>
-          <div class="pdesc"  data-es="Partido volumétrico articulado por patios interiores de luz. Lote entre medianeras en Buenos Aires."  data-en="Volumetric scheme articulated by interior light patios. Party-wall lot in Buenos Aires.">Partido volumétrico articulado por patios interiores de luz. Lote entre medianeras en Buenos Aires.</div>
+          <div class="pcat" data-es="Residencial" data-en="Residential">Residencial</div>
+          <div class="pdesc" data-es="Partido volumétrico articulado por patios interiores de luz. Lote entre medianeras en Buenos Aires." data-en="Volumetric scheme articulated by interior light patios. Party-wall lot in Buenos Aires.">Partido volumétrico articulado por patios interiores de luz. Lote entre medianeras en Buenos Aires.</div>
           <div class="ptags"><span class="ptag">Croquis</span><span class="ptag">Plantas</span><span class="ptag">Render</span><span class="ptag">Post IA</span></div>
         </div>
         <span class="parr" data-es="→ ver proyecto" data-en="→ view project">→ ver proyecto</span>
       </div>
     </div>
   </div>
-
   <div class="w">
     <div class="croquis-wrap">
       <div class="croquis-box">
-        <!-- ══ img/croquis-01.jpg | cualquier tamaño, fondo blanco, croquis a mano -->
         <img src="img/croquis1.jpg" alt="Croquis" loading="lazy">
-        </div>
       </div>
     </div>
   </div>
-
   <div class="w">
     <div class="prow prow-f" onclick="go('proj-02')">
       <div class="pinfo" style="border-right:0.5px solid var(--line)">
         <div>
           <div class="ptop"><span class="pnum">02</span><span class="pyr">2025</span></div>
           <div class="ptitle" data-es="Biblioteca<br>Costera" data-en="Coastal<br>Library">Biblioteca<br>Costera</div>
-          <div class="pcat"   data-es="Equipamiento · Paramétrico"   data-en="Equipment · Parametric">Equipamiento · Paramétrico</div>
-          <div class="pdesc"  data-es="Piel generada en Grasshopper que optimiza orientación solar. Estructura adaptable al frente costero."  data-en="Skin generated in Grasshopper optimizing solar orientation. Adaptive structure for the coastal front.">Piel generada en Grasshopper que optimiza orientación solar. Estructura adaptable al frente costero.</div>
+          <div class="pcat" data-es="Equipamiento · Paramétrico" data-en="Equipment · Parametric">Equipamiento · Paramétrico</div>
+          <div class="pdesc" data-es="Piel generada en Grasshopper que optimiza orientación solar. Estructura adaptable al frente costero." data-en="Skin generated in Grasshopper optimizing solar orientation. Adaptive structure for the coastal front.">Piel generada en Grasshopper que optimiza orientación solar. Estructura adaptable al frente costero.</div>
           <div class="ptags"><span class="ptag">Croquis</span><span class="ptag">Análisis sitio</span><span class="ptag">Maqueta</span><span class="ptag">Post IA</span></div>
         </div>
         <span class="parr" data-es="→ ver proyecto" data-en="→ view project">→ ver proyecto</span>
       </div>
       <div class="pi">
-        <div class="pi-in" style="background-image:url('https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/16b476239108565.692283c72e728.png')"></div>
+        <div class="pi-in" style="background-image:url('img/biblioteca/biblioteca.jpg')"></div>
         <div class="pi-ov"></div>
-        <div class="pi-tag">Render final</div>
       </div>
     </div>
-  </div>
-
-  <div class="w">
+  </div>  <div class="w">
     <div class="prow prow-n" onclick="go('proj-03')">
       <div class="pi">
-        <div class="pi-in" style="background-image:url('https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/c5eb49232347839.689ac25a63221.jpg')"></div>
+        <div class="pi-in" style="background-image:url('img/plano/plano.jpg')"></div>
         <div class="pi-ov"></div>
-        <div class="pi-tag">Documentación</div>
       </div>
       <div class="pinfo" style="">
         <div>
           <div class="ptop"><span class="pnum">03</span><span class="pyr">2024</span></div>
           <div class="ptitle" data-es="Legajo<br>Municipal" data-en="Municipal<br>File">Legajo<br>Municipal</div>
-          <div class="pcat"   data-es="Técnico · Trabajo real"   data-en="Technical · Real project">Técnico · Trabajo real</div>
-          <div class="pdesc"  data-es="Documentación ejecutiva completa para gestión ante municipio. Primer proyecto profesional real."  data-en="Complete executive documentation for municipal management. First real professional project.">Documentación ejecutiva completa para gestión ante municipio. Primer proyecto profesional real.</div>
+          <div class="pcat" data-es="Técnico · Trabajo real" data-en="Technical · Real project">Técnico · Trabajo real</div>
+          <div class="pdesc" data-es="Documentación ejecutiva completa para gestión ante municipio. Primer proyecto profesional real." data-en="Complete executive documentation for municipal management. First real professional project.">Documentación ejecutiva completa para gestión ante municipio. Primer proyecto profesional real.</div>
           <div class="ptags"><span class="ptag">Plantas</span><span class="ptag">Cortes</span><span class="ptag">Detalles</span></div>
         </div>
         <span class="parr" data-es="→ ver proyecto" data-en="→ view project">→ ver proyecto</span>
       </div>
     </div>
   </div>
-
   <div class="w">
     <div class="croquis-wrap" style="background:#f9f9f9">
       <div class="croquis-box">
-        <!-- ══ img/croquis-02.jpg | cualquier tamaño, fondo blanco, croquis a mano -->
         <img src="img/croquis2.jpg" alt="Croquis" loading="lazy">
-        </div>
       </div>
     </div>
   </div>
-
   <div class="w">
     <div class="prow prow-f" onclick="go('proj-04')">
       <div class="pinfo" style="border-right:0.5px solid var(--line)">
         <div>
           <div class="ptop"><span class="pnum">04</span><span class="pyr">2025</span></div>
           <div class="ptitle" data-es="Intervención<br>Urbana" data-en="Urban<br>Intervention">Intervención<br>Urbana</div>
-          <div class="pcat"   data-es="Urbanismo"   data-en="Urbanism">Urbanismo</div>
-          <div class="pdesc"  data-es="Reconversión de espacio público degradado. Activación por capas temporales y permanentes."  data-en="Reconversion of degraded public space. Activation through temporary and permanent layers.">Reconversión de espacio público degradado. Activación por capas temporales y permanentes.</div>
+          <div class="pcat" data-es="Urbanismo" data-en="Urbanism">Urbanismo</div>
+          <div class="pdesc" data-es="Reconversión de espacio público degradado. Activación por capas temporales y permanentes." data-en="Reconversion of degraded public space. Activation through temporary and permanent layers.">Reconversión de espacio público degradado. Activación por capas temporales y permanentes.</div>
           <div class="ptags"><span class="ptag">Análisis sitio</span><span class="ptag">Diagramas</span><span class="ptag">Plantas</span></div>
         </div>
         <span class="parr" data-es="→ ver proyecto" data-en="→ view project">→ ver proyecto</span>
       </div>
       <div class="pi">
-        <div class="pi-in" style="background-image:url('https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/02f691232344061.689aa6e222427.jpg')"></div>
+        <div class="pi-in" style="background-image:url('img/intervencion/intervencion9.jpg')"></div>
         <div class="pi-ov"></div>
-        <div class="pi-tag">Render final</div>
       </div>
     </div>
-  </div>
-
-  <div class="w">
+  </div>  <div class="w">
     <div class="prow prow-n" onclick="go('proj-05')">
       <div class="pi">
-        <div class="pi-in" style="background-image:url('https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/8bc5a4232344485.689aaa72e3cef.jpg')"></div>
+        <div class="pi-in" style="background-image:url('img/conjunto/conjuntogrande.jpg')"></div>
         <div class="pi-ov"></div>
-        <div class="pi-tag">Render final</div>
       </div>
       <div class="pinfo" style="">
         <div>
           <div class="ptop"><span class="pnum">05</span><span class="pyr">2025</span></div>
           <div class="ptitle" data-es="Conjunto<br>Habitacional" data-en="Housing<br>Complex">Conjunto<br>Habitacional</div>
-          <div class="pcat"   data-es="Vivienda Colectiva"   data-en="Collective Housing">Vivienda Colectiva</div>
-          <div class="pdesc"  data-es="Planta libre. Circulaciones integradas al paisaje urbano. Iluminación natural cenital."  data-en="Open plan. Circulations integrated into the urban landscape. Zenithal natural light.">Planta libre. Circulaciones integradas al paisaje urbano. Iluminación natural cenital.</div>
+          <div class="pcat" data-es="Vivienda Colectiva" data-en="Collective Housing">Vivienda Colectiva</div>
+          <div class="pdesc" data-es="Planta libre. Circulaciones integradas al paisaje urbano. Iluminación natural cenital." data-en="Open plan. Circulations integrated into the urban landscape. Zenithal natural light.">Planta libre. Circulaciones integradas al paisaje urbano. Iluminación natural cenital.</div>
           <div class="ptags"><span class="ptag">Croquis</span><span class="ptag">Plantas</span><span class="ptag">Cortes</span><span class="ptag">Render</span></div>
         </div>
         <span class="parr" data-es="→ ver proyecto" data-en="→ view project">→ ver proyecto</span>
       </div>
     </div>
   </div>
-
-  <!-- Grasshopper strip full-bleed -->
-  <!-- Para usar tu imagen: <div class="gh-bg" style="background-image:url('img/param-grasshopper.jpg')"></div> -->
   <div class="gh">
     <div class="gh-in"><svg viewBox="0 0 1200 240" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
       <g stroke="#c8c0a8" stroke-width=".6" fill="none">
         <path d="M0,120 C150,22 300,218 450,120 S750,22 900,120 S1100,218 1200,120"/>
-        <path d="M0,100 C150,2  300,198 450,100 S750,2  900,100 S1100,198 1200,100"/>
+        <path d="M0,100 C150,2 300,198 450,100 S750,2 900,100 S1100,198 1200,100"/>
         <path d="M0,140 C150,42 300,238 450,140 S750,42 900,140 S1100,238 1200,140"/>
-        <path d="M0,80  C200,0  350,180 500,80  S800,0  1000,80"  opacity=".5"/>
+        <path d="M0,80 C200,0 350,180 500,80 S800,0 1000,80" opacity=".5"/>
         <path d="M0,160 C200,60 350,238 500,160 S800,60 1000,160" opacity=".5"/>
       </g>
       <g fill="none" stroke="#c8c0a8" stroke-width=".3" opacity=".3">
@@ -739,34 +708,28 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
     </svg></div>
     <div class="gh-lbl">Grasshopper · Diseño paramétrico · curvas NURBS</div>
   </div>
-
   <div class="w">
-    <div class="prow prow-f" style="border-bottom:none" onclick="go('proj-06')">
+    <div class="prow prow-f" onclick="go('proj-06')">
       <div class="pinfo" style="border-right:0.5px solid var(--line)">
         <div>
           <div class="ptop"><span class="pnum">06</span><span class="pyr">2024</span></div>
           <div class="ptitle" data-es="Espacio<br>Sacro" data-en="Sacred<br>Space">Espacio<br>Sacro</div>
-          <div class="pcat"   data-es="Religioso · Paramétrico"   data-en="Religious · Parametric">Religioso · Paramétrico</div>
-          <div class="pdesc"  data-es="La luz natural como material estructural. Celosías paramétricas que filtran y dirigen."  data-en="Natural light as structural material. Parametric lattices that filter and direct.">La luz natural como material estructural. Celosías paramétricas que filtran y dirigen.</div>
+          <div class="pcat" data-es="Religioso · Paramétrico" data-en="Religious · Parametric">Religioso · Paramétrico</div>
+          <div class="pdesc" data-es="La luz natural como material estructural. Celosías paramétricas que filtran y dirigen." data-en="Natural light as structural material. Parametric lattices that filter and direct.">La luz natural como material estructural. Celosías paramétricas que filtran y dirigen.</div>
           <div class="ptags"><span class="ptag">Croquis</span><span class="ptag">Diagrama</span><span class="ptag">Post IA</span></div>
         </div>
         <span class="parr" data-es="→ ver proyecto" data-en="→ view project">→ ver proyecto</span>
       </div>
       <div class="pi">
-        <div class="pi-in" style="background-image:url('https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/bec6d3232343769.689aa47f6ed6d.jpg')"></div>
+        <div class="pi-in" style="background-image:url('img/iglesia/iglesia1.jpg')"></div>
         <div class="pi-ov"></div>
-        <div class="pi-tag">Render final</div>
       </div>
     </div>
-  </div>
-
-
-  <div class="w">
+  </div>  <div class="w">
     <div class="prow prow-n" onclick="go('proj-07')">
       <div class="pi">
-        <div class="pi-in" style="background:var(--hover)"></div>
+        <div class="pi-in" style="background-image:url('img/parametrico/hero.jpg')"></div>
         <div class="pi-ov"></div>
-        <div class="pi-tag">Rhino · IA</div>
       </div>
       <div class="pinfo" style="">
         <div>
@@ -779,9 +742,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
         <span class="parr" data-es="→ ver proyecto" data-en="→ view project">→ ver proyecto</span>
       </div>
     </div>
-  </div>
-
-  <div class="w">
+  </div>  <div class="w">
     <div class="prow prow-f" style="border-bottom:none" onclick="go('proj-08')">
       <div class="pinfo" style="border-right:0.5px solid var(--line)">
         <div>
@@ -794,13 +755,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
         <span class="parr" data-es="→ ver proyecto" data-en="→ view project">→ ver proyecto</span>
       </div>
       <div class="pi">
-        <div class="pi-in" style="background:var(--hover)"></div>
+        <div class="pi-in" style="background-image:url('img/reversion/hero.jpg')"></div>
         <div class="pi-ov"></div>
-        <div class="pi-tag">Rhino · IA</div>
       </div>
     </div>
   </div>
-
   <div class="w"><div class="footer"><div class="footer-row">
     <span class="ft-l">Facundo Luna</span><span class="ft-m">FADU UBA · Arquitectura + IA</span><span class="ft-r">© 2026</span>
   </div></div></div>
@@ -808,9 +767,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
 
 <!-- ════════ PROYECTO 01 ════════ -->
 <div class="view" id="view-proj-01">
-  <!-- ══ Hero: img/vivienda/hero.jpg | 1920×820px, render más impactante -->
-  <!-- <img src="img/vivienda/casa1.jpg" alt="" loading="eager"> — para activar reemplazá el div siguiente -->
-  <div class="proj-hero"></div>
+  <div class="proj-hero">
+    <img src="img/vivienda/casa1.jpg" alt="" loading="eager">
     <div class="proj-hero-fade"></div>
   </div>
   <div class="w">
@@ -839,15 +797,14 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
       <img src="img/vivienda/casa1.jpg" alt="">
     </div>
     <div class="laminas-stack" id="lam-grid-01" data-bg="lam-bg-01">
-      <!-- ══ Planta baja / Renders | 1920×1080px -->
-      <img src="img/vivienda/casa1.jpg" alt="Planta baja / Renders" loading="lazy">
-      <div class="lamina" onclick="lbOpen(this,'lam-grid-01')"></div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-01')">
+        <img src="img/vivienda/casa1.jpg" alt="Lámina" loading="lazy">
       </div>
-      <!-- ══ Cortes y fachadas | 1920×1080px -->
-      <img src="img/vivienda/casa2.jpg" alt="Cortes y fachadas" loading="lazy">
-      <div class="lamina" onclick="lbOpen(this,'lam-grid-01')"></div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-01')">
+        <img src="img/vivienda/casa2.jpg" alt="Lámina" loading="lazy">
       </div>
     </div>
+
     <div class="footer" style="margin-top:2px"><div class="footer-row">
       <span class="ft-l">Facundo Luna</span>
       <span class="ft-m">FADU UBA · Arquitectura + IA</span>
@@ -858,9 +815,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
 
 <!-- ════════ PROYECTO 02 ════════ -->
 <div class="view" id="view-proj-02">
-  <!-- ══ Hero: img/biblioteca/hero.jpg | 1920×820px, render más impactante -->
-  <!-- <img src="img/biblioteca/biblioteca.jpg" alt="" loading="eager"> — para activar reemplazá el div siguiente -->
-  <div class="proj-hero"></div>
+  <div class="proj-hero">
+    <img src="img/biblioteca/biblioteca.jpg" alt="" loading="eager">
     <div class="proj-hero-fade"></div>
   </div>
   <div class="w">
@@ -878,7 +834,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
           </div>
         </div>
         <div class="proj-desc-col">
-          <p class="proj-desc-text" data-es="Piel generada en Grasshopper que optimiza orientación solar y vistas simultáneamente. Cada panel de la piel responde de forma distinta según su posición en la fachada." data-en="Skin generated in Grasshopper simultaneously optimizing solar orientation and views. Each panel responds differently according to its position on the facade.">Piel generada en Grasshopper que optimiza orientación solar y vistas simultáneamente. Cada panel de la piel responde de forma distinta según su posición en la fachada.</p>
+          <p class="proj-desc-text" data-es="Piel generada en Grasshopper que optimiza orientación solar y vistas simultáneamente. Cada panel de la piel responde de forma distinta según su posición en la fachada." data-en="Skin generated in Grasshopper simultaneously optimizing solar orientation and views.">Piel generada en Grasshopper que optimiza orientación solar y vistas simultáneamente. Cada panel de la piel responde de forma distinta según su posición en la fachada.</p>
           <div class="proj-tags"><span class="proj-tag">Croquis</span><span class="proj-tag">Análisis sitio</span><span class="proj-tag">Maqueta</span><span class="proj-tag">Post IA</span></div>
         </div>
       </div>
@@ -889,52 +845,41 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
       <img src="img/biblioteca/biblioteca.jpg" alt="">
     </div>
     <div class="laminas-stack" id="lam-grid-02" data-bg="lam-bg-02">
-      <!-- ══ Vista principal | 1920×1080px -->
-      <img src="img/biblioteca/biblioteca1.jpg" alt="Vista principal" loading="lazy">
-      <div class="lamina" onclick="lbOpen(this,'lam-grid-02')"></div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-02')">
+        <img src="img/biblioteca/biblioteca.jpg" alt="Lámina" loading="lazy">
       </div>
       <div class="lam-row lam-row-2">
-      <!-- ══ Análisis de sitio | 960×720px -->
-      <img src="img/biblioteca/biblioteca2.jpg" alt="Análisis de sitio" loading="lazy">
-      <div class="lamina" onclick="lbOpen(this,'lam-grid-02')"></div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-02')">
+        <img src="img/biblioteca/biblioteca1.jpg" alt="Lámina" loading="lazy">
       </div>
-      <!-- ══ Planta / Corte | 960×720px -->
-      <img src="img/biblioteca/biblioteca3.jpg" alt="Planta / Corte" loading="lazy">
-      <div class="lamina" onclick="lbOpen(this,'lam-grid-02')"></div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-02')">
+        <img src="img/biblioteca/biblioteca2.jpg" alt="Lámina" loading="lazy">
       </div>
       </div>
-      <!-- ══ Grasshopper / Piel | 1920×1080px -->
-      <img src="img/biblioteca/biblioteca4.jpg" alt="Grasshopper / Piel" loading="lazy">
-      <div class="lamina" onclick="lbOpen(this,'lam-grid-02')"></div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-02')">
+        <img src="img/biblioteca/biblioteca3.jpg" alt="Lámina" loading="lazy">
       </div>
-      <!-- ══ Render exterior 1 | 1920×1080px -->
-      <img src="img/biblioteca/biblioteca5.jpg" alt="Render exterior 1" loading="lazy">
-      <div class="lamina" onclick="lbOpen(this,'lam-grid-02')"></div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-02')">
+        <img src="img/biblioteca/biblioteca4.jpg" alt="Lámina" loading="lazy">
       </div>
-      <!-- ══ Render exterior 2 | 1920×1080px -->
-      <img src="img/biblioteca/biblioteca6.jpg" alt="Render exterior 2" loading="lazy">
-      <div class="lamina" onclick="lbOpen(this,'lam-grid-02')"></div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-02')">
+        <img src="img/biblioteca/biblioteca5.jpg" alt="Lámina" loading="lazy">
       </div>
-      <!-- ══ Render interior 1 | 1920×1080px -->
-      <img src="img/biblioteca/biblioteca7.jpg" alt="Render interior 1" loading="lazy">
-      <div class="lamina" onclick="lbOpen(this,'lam-grid-02')"></div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-02')">
+        <img src="img/biblioteca/biblioteca6.jpg" alt="Lámina" loading="lazy">
       </div>
-      <!-- ══ Render interior 2 | 1920×1080px -->
-      <img src="img/biblioteca/biblioteca8.jpg" alt="Render interior 2" loading="lazy">
-      <div class="lamina" onclick="lbOpen(this,'lam-grid-02')"></div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-02')">
+        <img src="img/biblioteca/biblioteca7.jpg" alt="Lámina" loading="lazy">
       </div>
-      <!-- ══ Detalle de piel | 1920×1080px -->
-      <img src="img/biblioteca/biblioteca8.jpg" alt="Detalle de piel" loading="lazy">
-      <div class="lamina" onclick="lbOpen(this,'lam-grid-02')"></div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-02')">
+        <img src="img/biblioteca/biblioteca8.jpg" alt="Lámina" loading="lazy">
       </div>
     </div>
-    <hr class="hr">
-        <div class="maqueta-section">
+    <div class="maqueta-section">
       <div class="sh"><div class="sh-row"><span class="sh-label" data-es="Maqueta" data-en="Model">Maqueta</span></div></div>
       <div class="maqueta-grid" id="maq-grid-02">
-        <!-- ══ Foto de maqueta | 1920×1080px, luz natural, fondo neutro -->
-        <img src="img/biblioteca/maqueta-biblioteca.jpg" alt="Maqueta" loading="lazy">
-        <div class="maqueta-img" onclick="lbOpen(this,'maq-grid-02')"></div>
+        <div class="maqueta-img" onclick="lbOpen(this,'maq-grid-02')">
+          <img src="img/biblioteca/maqueta-biblioteca.jpg" alt="Maqueta" loading="lazy">
         </div>
       </div>
     </div>
@@ -948,9 +893,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
 
 <!-- ════════ PROYECTO 03 ════════ -->
 <div class="view" id="view-proj-03">
-  <!-- ══ Hero: img/plano/hero.jpg | 1920×820px, render más impactante -->
-  <!-- <img src="img/plano/plano.jpg" alt="" loading="eager"> — para activar reemplazá el div siguiente -->
-  <div class="proj-hero"></div>
+  <div class="proj-hero">
+    <img src="img/plano/plano.jpg" alt="" loading="eager">
     <div class="proj-hero-fade"></div>
   </div>
   <div class="w">
@@ -968,7 +912,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
           </div>
         </div>
         <div class="proj-desc-col">
-          <p class="proj-desc-text" data-es="Documentación ejecutiva completa para gestión ante municipio. Plantas, cortes, fachadas, detalles constructivos y memoria descriptiva. Primer proyecto profesional real." data-en="Complete executive documentation for municipal management. Plans, sections, elevations, construction details and report. First real professional project.">Documentación ejecutiva completa para gestión ante municipio. Plantas, cortes, fachadas, detalles constructivos y memoria descriptiva. Primer proyecto profesional real.</p>
+          <p class="proj-desc-text" data-es="Documentación ejecutiva completa para gestión ante municipio. Plantas, cortes, fachadas, detalles constructivos y memoria descriptiva." data-en="Complete executive documentation for municipal management.">Documentación ejecutiva completa para gestión ante municipio. Plantas, cortes, fachadas, detalles constructivos y memoria descriptiva.</p>
           <div class="proj-tags"><span class="proj-tag">Plantas</span><span class="proj-tag">Cortes</span><span class="proj-tag">Fachadas</span><span class="proj-tag">Detalles</span></div>
         </div>
       </div>
@@ -979,9 +923,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
       <img src="img/plano/plano.jpg" alt="">
     </div>
     <div class="laminas-stack" id="lam-grid-03" data-bg="lam-bg-03">
-      <!-- ══ Documentación técnica completa | 1920×1080px -->
-      <img src="img/plano/plano.jpg" alt="Documentación técnica completa" loading="lazy">
-      <div class="lamina" onclick="lbOpen(this,'lam-grid-03')"></div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-03')">
+        <img src="img/plano/plano.jpg" alt="Lámina" loading="lazy">
       </div>
     </div>
 
@@ -995,9 +938,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
 
 <!-- ════════ PROYECTO 04 ════════ -->
 <div class="view" id="view-proj-04">
-  <!-- ══ Hero: img/intervencion/hero.jpg | 1920×820px, render más impactante -->
-  <!-- <img src="img/intervencion/intervencion9.jpg" alt="" loading="eager"> — para activar reemplazá el div siguiente -->
-  <div class="proj-hero"></div>
+  <div class="proj-hero">
+    <img src="img/intervencion/intervencion9.jpg" alt="" loading="eager">
     <div class="proj-hero-fade"></div>
   </div>
   <div class="w">
@@ -1015,7 +957,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
           </div>
         </div>
         <div class="proj-desc-col">
-          <p class="proj-desc-text" data-es="Reconversión de espacio público degradado. La estrategia parte de un análisis de capas — usos actuales, flujos peatonales, identidad del barrio — para proponer una activación por etapas." data-en="Reconversion of degraded public space. The strategy starts from a layered analysis to propose phased activation.">Reconversión de espacio público degradado. La estrategia parte de un análisis de capas — usos actuales, flujos peatonales, identidad del barrio — para proponer una activación por etapas.</p>
+          <p class="proj-desc-text" data-es="Reconversión de espacio público degradado. La estrategia parte de un análisis de capas para proponer una activación por etapas." data-en="Reconversion of degraded public space through layered analysis and phased activation.">Reconversión de espacio público degradado. La estrategia parte de un análisis de capas para proponer una activación por etapas.</p>
           <div class="proj-tags"><span class="proj-tag">Análisis sitio</span><span class="proj-tag">Diagramas</span><span class="proj-tag">Plantas</span><span class="proj-tag">Render</span></div>
         </div>
       </div>
@@ -1026,52 +968,41 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
       <img src="img/intervencion/intervencion9.jpg" alt="">
     </div>
     <div class="laminas-stack" id="lam-grid-04" data-bg="lam-bg-04">
-      <!-- ══ Análisis urbano general | 1920×1080px -->
-      <img src="img/intervencion/intervencion.jpg" alt="Análisis urbano general" loading="lazy">
-      <div class="lamina" onclick="lbOpen(this,'lam-grid-04')"></div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-04')">
+        <img src="img/intervencion/intervencion.jpg" alt="Lámina" loading="lazy">
       </div>
       <div class="lam-row lam-row-4">
-      <!-- ══ Diagnóstico 1 | 960×720px -->
-      <img src="img/intervencion/intervencion1.jpg" alt="Diagnóstico 1" loading="lazy">
-      <div class="lamina" onclick="lbOpen(this,'lam-grid-04')"></div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-04')">
+        <img src="img/intervencion/intervencion1.jpg" alt="Lámina" loading="lazy">
       </div>
-      <!-- ══ Diagnóstico 2 | 960×720px -->
-      <img src="img/intervencion/intervencion2.jpg" alt="Diagnóstico 2" loading="lazy">
-      <div class="lamina" onclick="lbOpen(this,'lam-grid-04')"></div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-04')">
+        <img src="img/intervencion/intervencion2.jpg" alt="Lámina" loading="lazy">
       </div>
-      <!-- ══ Diagnóstico 3 | 960×720px -->
-      <img src="img/intervencion/intervencion3.jpg" alt="Diagnóstico 3" loading="lazy">
-      <div class="lamina" onclick="lbOpen(this,'lam-grid-04')"></div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-04')">
+        <img src="img/intervencion/intervencion3.jpg" alt="Lámina" loading="lazy">
       </div>
-      <!-- ══ Diagnóstico 4 | 960×720px -->
-      <img src="img/intervencion/intervencion4.jpg" alt="Diagnóstico 4" loading="lazy">
-      <div class="lamina" onclick="lbOpen(this,'lam-grid-04')"></div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-04')">
+        <img src="img/intervencion/intervencion4.jpg" alt="Lámina" loading="lazy">
       </div>
       </div>
-      <!-- ══ Estrategia A | 1920×1080px -->
-      <img src="img/intervencion/intervencion5.jpg" alt="Estrategia A" loading="lazy">
-      <div class="lamina" onclick="lbOpen(this,'lam-grid-04')"></div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-04')">
+        <img src="img/intervencion/intervencion5.jpg" alt="Lámina" loading="lazy">
       </div>
-      <!-- ══ Estrategia B | 1920×1080px -->
-      <img src="img/intervencion/intervencion6.jpg" alt="Estrategia B" loading="lazy">
-      <div class="lamina" onclick="lbOpen(this,'lam-grid-04')"></div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-04')">
+        <img src="img/intervencion/intervencion6.jpg" alt="Lámina" loading="lazy">
       </div>
       <div class="lam-row lam-row-4">
-      <!-- ══ Propuesta 1 | 960×720px -->
-      <img src="img/intervencion/intervencion7.jpg" alt="Propuesta 1" loading="lazy">
-      <div class="lamina" onclick="lbOpen(this,'lam-grid-04')"></div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-04')">
+        <img src="img/intervencion/intervencion7.jpg" alt="Lámina" loading="lazy">
       </div>
-      <!-- ══ Propuesta 2 | 960×720px -->
-      <img src="img/intervencion/intervencion8.jpg" alt="Propuesta 2" loading="lazy">
-      <div class="lamina" onclick="lbOpen(this,'lam-grid-04')"></div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-04')">
+        <img src="img/intervencion/intervencion8.jpg" alt="Lámina" loading="lazy">
       </div>
-      <!-- ══ Propuesta 3 | 960×720px -->
-      <img src="img/intervencion/intervencion9.jpg" alt="Propuesta 3" loading="lazy">
-      <div class="lamina" onclick="lbOpen(this,'lam-grid-04')"></div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-04')">
+        <img src="img/intervencion/intervencion9.jpg" alt="Lámina" loading="lazy">
       </div>
-      <!-- ══ Propuesta 4 | 960×720px -->
-      <img src="img/intervencion/intervencion10.jpg" alt="Propuesta 4" loading="lazy">
-      <div class="lamina" onclick="lbOpen(this,'lam-grid-04')"></div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-04')">
+        <img src="img/intervencion/intervencion10.jpg" alt="Lámina" loading="lazy">
       </div>
       </div>
     </div>
@@ -1086,9 +1017,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
 
 <!-- ════════ PROYECTO 05 ════════ -->
 <div class="view" id="view-proj-05">
-  <!-- ══ Hero: img/conjunto/hero.jpg | 1920×820px, render más impactante -->
-  <!-- <img src="img/conjunto/conjuntogrande.jpg" alt="" loading="eager"> — para activar reemplazá el div siguiente -->
-  <div class="proj-hero"></div>
+  <div class="proj-hero">
+    <img src="img/conjunto/conjuntogrande.jpg" alt="" loading="eager">
     <div class="proj-hero-fade"></div>
   </div>
   <div class="w">
@@ -1106,7 +1036,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
           </div>
         </div>
         <div class="proj-desc-col">
-          <p class="proj-desc-text" data-es="Planta libre como principio organizador. Las circulaciones verticales y horizontales se integran al paisaje urbano. La iluminación natural cenital actúa como organizador del espacio colectivo." data-en="Open plan as organizing principle. Circulations integrate into the urban landscape. Zenithal natural light organizes collective space.">Planta libre como principio organizador. Las circulaciones verticales y horizontales se integran al paisaje urbano. La iluminación natural cenital actúa como organizador del espacio colectivo.</p>
+          <p class="proj-desc-text" data-es="Planta libre como principio organizador. Las circulaciones se integran al paisaje urbano. La iluminación natural cenital actúa como organizador del espacio colectivo." data-en="Open plan as organizing principle. Circulations integrate into the urban landscape.">Planta libre como principio organizador. Las circulaciones se integran al paisaje urbano. La iluminación natural cenital actúa como organizador del espacio colectivo.</p>
           <div class="proj-tags"><span class="proj-tag">Croquis</span><span class="proj-tag">Plantas</span><span class="proj-tag">Cortes</span><span class="proj-tag">Render</span><span class="proj-tag">Post IA</span></div>
         </div>
       </div>
@@ -1117,48 +1047,38 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
       <img src="img/conjunto/conjuntogrande.jpg" alt="">
     </div>
     <div class="laminas-stack" id="lam-grid-05" data-bg="lam-bg-05">
-      <!-- ══ Vista general / Render principal | 1920×1080px -->
-      <img src="img/conjunto/conjunto1.jpg" alt="Vista general / Render principal" loading="lazy">
-      <div class="lamina" onclick="lbOpen(this,'lam-grid-05')"></div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-05')">
+        <img src="img/conjunto/conjuntogrande.jpg" alt="Lámina" loading="lazy">
       </div>
       <div class="lam-row lam-row-2">
-      <!-- ══ Planta libre | 960×720px -->
-      <img src="img/conjunto/conjunto2.jpg" alt="Planta libre" loading="lazy">
-      <div class="lamina" onclick="lbOpen(this,'lam-grid-05')"></div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-05')">
+        <img src="img/conjunto/conjunto1.jpg" alt="Lámina" loading="lazy">
       </div>
-      <!-- ══ Corte longitudinal | 960×720px -->
-      <img src="img/conjunto/conjunto3.jpg" alt="Corte longitudinal" loading="lazy">
-      <div class="lamina" onclick="lbOpen(this,'lam-grid-05')"></div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-05')">
+        <img src="img/conjunto/conjunto2.jpg" alt="Lámina" loading="lazy">
       </div>
       </div>
-      <!-- ══ Render exterior 1 | 1920×1080px -->
-      <img src="img/conjunto/conjunto4.jpg" alt="Render exterior 1" loading="lazy">
-      <div class="lamina" onclick="lbOpen(this,'lam-grid-05')"></div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-05')">
+        <img src="img/conjunto/conjunto3.jpg" alt="Lámina" loading="lazy">
       </div>
-      <!-- ══ Render exterior 2 | 1920×1080px -->
-      <img src="img/conjunto/conjunto5.jpg" alt="Render exterior 2" loading="lazy">
-      <div class="lamina" onclick="lbOpen(this,'lam-grid-05')"></div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-05')">
+        <img src="img/conjunto/conjunto4.jpg" alt="Lámina" loading="lazy">
       </div>
-      <!-- ══ Render exterior 3 | 1920×1080px -->
-      <img src="img/conjunto/conjunto5.jpg" alt="Render exterior 3" loading="lazy">
-      <div class="lamina" onclick="lbOpen(this,'lam-grid-05')"></div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-05')">
+        <img src="img/conjunto/conjunto5.jpg" alt="Lámina" loading="lazy">
       </div>
-      <!-- ══ Render interior 1 | 1920×1080px -->
-      <img src="img/conjunto/conjunto5.jpg" alt="Render interior 1" loading="lazy">
-      <div class="lamina" onclick="lbOpen(this,'lam-grid-05')"></div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-05')">
+        <img src="img/conjunto/conjunto5.jpg" alt="Lámina" loading="lazy">
       </div>
-      <!-- ══ Render interior 2 | 1920×1080px -->
-      <img src="img/conjunto/conjuntogrande.jpg" alt="Render interior 2" loading="lazy">
-      <div class="lamina" onclick="lbOpen(this,'lam-grid-05')"></div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-05')">
+        <img src="img/conjunto/conjunto5.jpg" alt="Lámina" loading="lazy">
       </div>
     </div>
-    <hr class="hr">
-        <div class="maqueta-section">
+    <div class="maqueta-section">
       <div class="sh"><div class="sh-row"><span class="sh-label" data-es="Maqueta" data-en="Model">Maqueta</span></div></div>
       <div class="maqueta-grid" id="maq-grid-05">
-        <!-- ══ Foto de maqueta | 1920×1080px, luz natural, fondo neutro -->
-        <img src="img/conjunto/maqueta-conjunto.jpg" alt="Maqueta" loading="lazy">
-        <div class="maqueta-img" onclick="lbOpen(this,'maq-grid-05')"></div>
+        <div class="maqueta-img" onclick="lbOpen(this,'maq-grid-05')">
+          <img src="img/conjunto/maqueta-conjunto.jpg" alt="Maqueta" loading="lazy">
         </div>
       </div>
     </div>
@@ -1172,9 +1092,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
 
 <!-- ════════ PROYECTO 06 ════════ -->
 <div class="view" id="view-proj-06">
-  <!-- ══ Hero: img/iglesia/hero.jpg | 1920×820px, render más impactante -->
-  <!-- <img src="img/iglesia/iglesia1.jpg" alt="" loading="eager"> — para activar reemplazá el div siguiente -->
-  <div class="proj-hero"></div>
+  <div class="proj-hero">
+    <img src="img/iglesia/iglesia1.jpg" alt="" loading="eager">
     <div class="proj-hero-fade"></div>
   </div>
   <div class="w">
@@ -1192,7 +1111,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
           </div>
         </div>
         <div class="proj-desc-col">
-          <p class="proj-desc-text" data-es="La luz natural como material estructural del proyecto. Las celosías paramétricas generadas en Grasshopper filtran y dirigen la luz según la orientación y la hora del día." data-en="Natural light as the structural material. Parametric lattices generated in Grasshopper filter and direct light according to orientation and time of day.">La luz natural como material estructural del proyecto. Las celosías paramétricas generadas en Grasshopper filtran y dirigen la luz según la orientación y la hora del día.</p>
+          <p class="proj-desc-text" data-es="La luz natural como material estructural del proyecto. Las celosías paramétricas generadas en Grasshopper filtran y dirigen la luz según la orientación y la hora del día." data-en="Natural light as the structural material. Parametric lattices filter and direct light.">La luz natural como material estructural del proyecto. Las celosías paramétricas generadas en Grasshopper filtran y dirigen la luz según la orientación y la hora del día.</p>
           <div class="proj-tags"><span class="proj-tag">Croquis</span><span class="proj-tag">Diagrama</span><span class="proj-tag">Post IA</span></div>
         </div>
       </div>
@@ -1203,13 +1122,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
       <img src="img/iglesia/iglesia1.jpg" alt="">
     </div>
     <div class="laminas-stack" id="lam-grid-06" data-bg="lam-bg-06">
-      <!-- ══ Diagrama de luz / Celosías | 1920×1080px -->
-      <img src="img/iglesia/iglesia1.jpg" alt="Diagrama de luz / Celosías" loading="lazy">
-      <div class="lamina" onclick="lbOpen(this,'lam-grid-06')"></div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-06')">
+        <img src="img/iglesia/iglesia1.jpg" alt="Lámina" loading="lazy">
       </div>
-      <!-- ══ Render con post IA | 1920×1080px -->
-      <img src="img/iglesia/iglesia2.jpg" alt="Render con post IA" loading="lazy">
-      <div class="lamina" onclick="lbOpen(this,'lam-grid-06')"></div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-06')">
+        <img src="img/iglesia/iglesia2.jpg" alt="Lámina" loading="lazy">
       </div>
     </div>
 
@@ -1221,7 +1138,90 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
   </div>
 </div>
 
-<!-- ════════ PROCESO ════════ -->
+<!-- ════════ PROYECTO 07 ════════ -->
+<div class="view" id="view-proj-07">
+  <div class="proj-hero">
+    <img src="img/parametrico/hero.jpg" alt="" loading="eager">
+    <div class="proj-hero-fade"></div>
+  </div>
+  <div class="w">
+    <span class="back-btn" onclick="go('proyectos',true)">← <span data-es="Volver a proyectos" data-en="Back to projects">Volver a proyectos</span></span>
+    <div class="proj-header">
+      <div class="proj-header-grid">
+        <div>
+          <div class="proj-eyebrow">Paramétrico · Investigación · 2025</div>
+          <div class="proj-title" data-es="Análisis<br>Paramétrico" data-en="Parametric<br>Analysis">Análisis<br>Paramétrico</div>
+          <div class="proj-subtitle" data-es="Morfología generativa" data-en="Generative morphology">Morfología generativa</div>
+          <div class="proj-meta">
+            <div class="proj-meta-row"><span class="pmk" data-es="Año" data-en="Year">Año</span><span class="pmv">2025</span></div>
+            <div class="proj-meta-row"><span class="pmk">Herramientas</span><span class="pmv">Rhino · IA · Photoshop</span></div>
+            <div class="proj-meta-row"><span class="pmk">Cátedra</span><span class="pmv">FADU UBA</span></div>
+          </div>
+        </div>
+        <div class="proj-desc-col">
+          <p class="proj-desc-text" data-es="Análisis morfológico generado en Rhino con post-producción en IA y Photoshop." data-en="Morphological analysis generated in Rhino with AI and Photoshop post-production.">Análisis morfológico generado en Rhino con post-producción en IA y Photoshop.</p>
+          <div class="proj-tags"><span class="proj-tag">Rhino</span><span class="proj-tag">IA</span><span class="proj-tag">Photoshop</span></div>
+        </div>
+      </div>
+    </div>
+    <hr class="hr">
+    <div class="sh"><div class="sh-row"><span class="sh-label" data-es="Láminas" data-en="Sheets">Láminas</span></div></div>
+    <div class="laminas-bg" id="lam-bg-07"><img src="img/parametrico/hero.jpg" alt=""></div>
+    <div class="laminas-stack" id="lam-grid-07" data-bg="lam-bg-07">
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-07')"><img src="img/parametrico/lam-01.jpg" alt="" loading="lazy"></div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-07')"><img src="img/parametrico/lam-02.jpg" alt="" loading="lazy"></div>
+    </div>
+
+    <div class="footer" style="margin-top:2px"><div class="footer-row">
+      <span class="ft-l">Facundo Luna</span>
+      <span class="ft-m">FADU UBA · Arquitectura + IA</span>
+      <span class="ft-r">© 2026</span>
+    </div></div>
+  </div>
+</div>
+
+<!-- ════════ PROYECTO 08 ════════ -->
+<div class="view" id="view-proj-08">
+  <div class="proj-hero">
+    <img src="img/reversion/hero.jpg" alt="" loading="eager">
+    <div class="proj-hero-fade"></div>
+  </div>
+  <div class="w">
+    <span class="back-btn" onclick="go('proyectos',true)">← <span data-es="Volver a proyectos" data-en="Back to projects">Volver a proyectos</span></span>
+    <div class="proj-header">
+      <div class="proj-header-grid">
+        <div>
+          <div class="proj-eyebrow">Intervención · IA · 2025</div>
+          <div class="proj-title" data-es="RE*VERSION" data-en="RE*VERSION">RE*VERSION</div>
+          <div class="proj-subtitle" data-es="Reinterpretación de lo existente" data-en="Reinterpretation of the existing">Reinterpretación de lo existente</div>
+          <div class="proj-meta">
+            <div class="proj-meta-row"><span class="pmk" data-es="Año" data-en="Year">Año</span><span class="pmv">2025</span></div>
+            <div class="proj-meta-row"><span class="pmk">Herramientas</span><span class="pmv">Rhino · IA · Photoshop</span></div>
+            <div class="proj-meta-row"><span class="pmk">Cátedra</span><span class="pmv">FADU UBA</span></div>
+          </div>
+        </div>
+        <div class="proj-desc-col">
+          <p class="proj-desc-text" data-es="Reinterpretación de espacios existentes mediante Rhino, inteligencia artificial y Photoshop." data-en="Reinterpretation of existing spaces using Rhino, artificial intelligence and Photoshop.">Reinterpretación de espacios existentes mediante Rhino, inteligencia artificial y Photoshop.</p>
+          <div class="proj-tags"><span class="proj-tag">Rhino</span><span class="proj-tag">IA</span><span class="proj-tag">Photoshop</span></div>
+        </div>
+      </div>
+    </div>
+    <hr class="hr">
+    <div class="sh"><div class="sh-row"><span class="sh-label" data-es="Láminas" data-en="Sheets">Láminas</span></div></div>
+    <div class="laminas-bg" id="lam-bg-08"><img src="img/reversion/hero.jpg" alt=""></div>
+    <div class="laminas-stack" id="lam-grid-08" data-bg="lam-bg-08">
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-08')"><img src="img/reversion/lam-01.jpg" alt="" loading="lazy"></div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-08')"><img src="img/reversion/lam-02.jpg" alt="" loading="lazy"></div>
+    </div>
+
+    <div class="footer" style="margin-top:2px"><div class="footer-row">
+      <span class="ft-l">Facundo Luna</span>
+      <span class="ft-m">FADU UBA · Arquitectura + IA</span>
+      <span class="ft-r">© 2026</span>
+    </div></div>
+  </div>
+</div>
+
 <div class="view" id="view-proceso">
   <div class="w">
     <div class="sh"><div class="sh-row">
@@ -1229,43 +1229,25 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
       <span class="sh-right" data-es="Croquis · diagramas · modelos · algoritmos" data-en="Sketches · diagrams · models · algorithms">Croquis · diagramas · modelos · algoritmos</span>
     </div></div>
     <div class="proc-grid">
-      <!-- ══ Croquis a mano — boceto conceptual, lápiz sobre papel | img/proceso-croquis-01.jpg -->
-      <img src="img/croquis-biblioteca.jpg" alt="Croquis a mano — boceto conceptual, lápiz sobre papel" loading="lazy">
-      <div class="proc-card"><div class="ph-txt">→ img/croquis-biblioteca.jpg</div></div>
-      </div>
-      <!-- ══ Diagrama de concepto o análisis de sitio | img/proceso-diagrama-01.jpg -->
-      <img src="img/diagrama-biblioteca.jpg" alt="Diagrama de concepto o análisis de sitio" loading="lazy">
-      <div class="proc-card"><div class="ph-txt">→ img/diagrama-biblioteca.jpg</div></div>
-      </div>
-      <!-- ══ Captura de Grasshopper o Rhino — proceso paramétrico | img/proceso-gh-01.jpg -->
-      <img src="img/diagrama-planta.jpg" alt="Captura de Grasshopper o Rhino — proceso paramétrico" loading="lazy">
-      <div class="proc-card"><div class="ph-txt">→ img/diagrama-planta.jpg</div></div>
-      </div>
-      <!-- ══ Planta o corte técnico en AutoCAD | img/proceso-planta-01.jpg -->
-      <img src="img/planta-biblioteca.jpg" alt="Planta o corte técnico en AutoCAD" loading="lazy">
-      <div class="proc-card"><div class="ph-txt">→ img/planta-biblioteca.jpg</div></div>
-      </div>
-      <!-- ══ Foto de maqueta física — luz natural, fondo neutro | img/proceso-maqueta-01.jpg -->
-      <img src="img/maqueta-biblioteca.jpg" alt="Foto de maqueta física — luz natural, fondo neutro" loading="lazy">
-      <div class="proc-card"><div class="ph-txt">→ img/maqueta-biblioteca.jpg</div></div>
-      </div>
-      <!-- ══ Croquis a mano — detalle constructivo o partido | img/proceso-croquis-02.jpg -->
-      <img src="img/planta-biblioteca.jpg" alt="Croquis a mano — detalle constructivo o partido" loading="lazy">
-      <div class="proc-card"><div class="ph-txt">→ img/planta-biblioteca.jpg</div></div>
-      </div>
+      <div class="proc-card"><img src="img/croquis-biblioteca.jpg" alt="Proceso" loading="lazy"></div>
+      <div class="proc-card"><img src="img/diagrama-biblioteca.jpg" alt="Proceso" loading="lazy"></div>
+      <div class="proc-card"><img src="img/diagrama-planta.jpg" alt="Proceso" loading="lazy"></div>
+      <div class="proc-card"><img src="img/planta-biblioteca.jpg" alt="Proceso" loading="lazy"></div>
+      <div class="proc-card"><img src="img/maqueta-biblioteca.jpg" alt="Proceso" loading="lazy"></div>
+      <div class="proc-card"><img src="img/planta-biblioteca.jpg" alt="Proceso" loading="lazy"></div>
     </div>
     <hr class="hr">
     <div class="ai-strip">
       <div class="ai-l">
-        <div class="ai-big"  data-es="El render"      data-en="The render">El render</div>
+        <div class="ai-big" data-es="El render" data-en="The render">El render</div>
         <div class="ai-light" data-es="es solo el inicio." data-en="is just the start.">es solo el inicio.</div>
         <p class="ai-body" data-es="Post-producción con IA en cada proyecto. Atmósfera, luz y detalle final que ningún motor de render genera solo." data-en="AI post-production in every project. Atmosphere, light and final detail no render engine generates alone.">Post-producción con IA en cada proyecto. Atmósfera, luz y detalle final que ningún motor de render genera solo.</p>
       </div>
       <div class="ai-r">
-        <div class="ai-cell"><div class="ai-n">01 ——</div><div class="ai-name" data-es="Modelo paramétrico" data-en="Parametric model">Modelo paramétrico</div><div class="ai-desc" data-es="Rhino + Grasshopper. Lógica generativa." data-en="Rhino + Grasshopper. Generative logic.">Rhino + Grasshopper. Lógica generativa.</div></div>
-        <div class="ai-cell"><div class="ai-n">02 ——</div><div class="ai-name" data-es="Render base" data-en="Base render">Render base</div><div class="ai-desc" data-es="Twinmotion. El lienzo, no el resultado." data-en="Twinmotion. The canvas, not the result.">Twinmotion. El lienzo, no el resultado.</div></div>
-        <div class="ai-cell"><div class="ai-n">03 ——</div><div class="ai-name" data-es="Post-prod IA" data-en="AI Post-prod">Post-prod IA</div><div class="ai-desc" data-es="Luz, atmósfera y materiales." data-en="Light, atmosphere and materials.">Luz, atmósfera y materiales.</div></div>
-        <div class="ai-cell"><div class="ai-n">04 ——</div><div class="ai-name" data-es="Imagen final" data-en="Final image">Imagen final</div><div class="ai-desc" data-es="Arquitectura con presencia real." data-en="Architecture with real presence.">Arquitectura con presencia real.</div></div>
+        <div class="ai-cell"><div class="ai-n">01 ——</div><div class="ai-name" data-es="Modelo paramétrico" data-en="Parametric model">Modelo paramétrico</div><div class="ai-desc">Rhino + Grasshopper.</div></div>
+        <div class="ai-cell"><div class="ai-n">02 ——</div><div class="ai-name" data-es="Render base" data-en="Base render">Render base</div><div class="ai-desc">Twinmotion. El lienzo, no el resultado.</div></div>
+        <div class="ai-cell"><div class="ai-n">03 ——</div><div class="ai-name" data-es="Post-prod IA" data-en="AI Post-prod">Post-prod IA</div><div class="ai-desc">Luz, atmósfera y materiales.</div></div>
+        <div class="ai-cell"><div class="ai-n">04 ——</div><div class="ai-name" data-es="Imagen final" data-en="Final image">Imagen final</div><div class="ai-desc">Arquitectura con presencia real.</div></div>
       </div>
     </div>
     <hr class="hr">
@@ -1275,7 +1257,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
   </div>
 </div>
 
-<!-- ════════ EFELE ════════ -->
 <div class="view" id="view-efele">
   <div class="w">
     <div class="sh"><div class="sh-row">
@@ -1284,10 +1265,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
     </div></div>
     <div class="efele-top">
       <div class="efele-l">
-        <!-- ══ LOGO EFELE.ARQ
-             Subí: img/efele-logo.png (PNG transparente, cualquier tamaño)
-             Para activar: borrá el div.efele-logo-ph y descomentá el <img> -->
-        <img src="img/efele-logo.png" alt="EFELE.ARQ" class="efele-logo-box"></div>
+        <img src="img/efele-logo.png" alt="EFELE.ARQ" class="efele-logo-box">
         <div>
           <div class="efele-mark-row"><div class="efele-sq"></div><span class="efele-name-lbl">EFELE.ARQ</span></div>
           <div class="efele-tagline" data-es="Laboratorio de diseño e inteligencia artificial" data-en="Design and artificial intelligence laboratory">Laboratorio de diseño e inteligencia artificial</div>
@@ -1295,9 +1273,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
       </div>
       <div class="efele-r">
         <p class="efele-desc"
-           data-es="<strong>EFELE.ARQ</strong> es un laboratorio personal de investigación en diseño e inteligencia artificial. Un espacio para explorar los límites entre <strong>algoritmo, imagen y arquitectura</strong> — fuera del programa académico, dentro de la práctica real.<br><br>Nació como extensión natural de un proceso de trabajo donde la IA no es un atajo sino una herramienta de pensamiento. Cada publicación es un experimento, no un resultado."
-           data-en="<strong>EFELE.ARQ</strong> is a personal research laboratory in design and artificial intelligence. A space to explore the boundaries between <strong>algorithm, image and architecture</strong> — outside the academic program, within real practice.<br><br>It emerged as a natural extension of a work process where AI is not a shortcut but a thinking tool. Each publication is an experiment, not a result.">
-          <strong>EFELE.ARQ</strong> es un laboratorio personal de investigación en diseño e inteligencia artificial. Un espacio para explorar los límites entre <strong>algoritmo, imagen y arquitectura</strong> — fuera del programa académico, dentro de la práctica real.<br><br>Nació como extensión natural de un proceso de trabajo donde la IA no es un atajo sino una herramienta de pensamiento. Cada publicación es un experimento, no un resultado.
+           data-es="<strong>EFELE.ARQ</strong> es un laboratorio personal de investigación en diseño e inteligencia artificial. Un espacio para explorar los límites entre <strong>algoritmo, imagen y arquitectura</strong> — fuera del programa académico, dentro de la práctica real.<br><br>Nació como extensión natural de un proceso de trabajo donde la IA no es un atajo sino una herramienta de pensamiento."
+           data-en="<strong>EFELE.ARQ</strong> is a personal research laboratory in design and artificial intelligence. A space to explore the boundaries between <strong>algorithm, image and architecture</strong> — outside the academic program, within real practice.<br><br>It emerged as a natural extension of a work process where AI is not a shortcut but a thinking tool.">
+          <strong>EFELE.ARQ</strong> es un laboratorio personal de investigación en diseño e inteligencia artificial. Un espacio para explorar los límites entre <strong>algoritmo, imagen y arquitectura</strong> — fuera del programa académico, dentro de la práctica real.<br><br>Nació como extensión natural de un proceso de trabajo donde la IA no es un atajo sino una herramienta de pensamiento.
         </p>
         <a class="efele-cta" href="https://instagram.com/efele.arq" target="_blank" rel="noopener"
            data-es="Ver en Instagram →" data-en="See on Instagram →">Ver en Instagram →</a>
@@ -1305,22 +1283,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
     </div>
     <hr class="hr">
     <div class="efele-gal">
-      <!-- ══ Render exterior con post IA | 800×800px mínimo, imagen cuadrada -->
-      <img src="img/efele1.jpg" alt="Render exterior con post IA" loading="lazy">
-      <div class="efele-img"></div>
-      </div>
-      <!-- ══ Render interior | 800×800px mínimo, imagen cuadrada -->
-      <img src="img/efele2.jpg" alt="Render interior" loading="lazy">
-      <div class="efele-img"></div>
-      </div>
-      <!-- ══ Remodelación con IA | 800×800px mínimo, imagen cuadrada -->
-      <img src="img/efele3.jpg" alt="Remodelación con IA" loading="lazy">
-      <div class="efele-img"></div>
-      </div>
-      <!-- ══ Lámina informativa | 800×800px mínimo, imagen cuadrada -->
-      <img src="img/efele4.jpg" alt="Lámina informativa" loading="lazy">
-      <div class="efele-img"></div>
-      </div>
+      <div class="efele-img"><img src="img/efele1.jpg" alt="EFELE" loading="lazy"></div>
+      <div class="efele-img"><img src="img/efele2.jpg" alt="EFELE" loading="lazy"></div>
+      <div class="efele-img"><img src="img/efele3.jpg" alt="EFELE" loading="lazy"></div>
+      <div class="efele-img"><img src="img/efele4.jpg" alt="EFELE" loading="lazy"></div>
     </div>
     <hr class="hr">
     <div class="footer"><div class="footer-row">
@@ -1329,7 +1295,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
   </div>
 </div>
 
-<!-- ════════ ABOUT ════════ -->
 <div class="view" id="view-about">
   <div class="w">
     <div class="sh"><div class="sh-row">
@@ -1338,22 +1303,19 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
     </div></div>
     <div class="about-grid">
       <div class="about-img-col">
-        <!-- ══ FOTO PERSONAL: img/foto-facundo.jpg | 600×750px mínimo, vertical, buena luz -->
-        <!-- Para activar: reemplazá el div siguiente por <img src="img/foto-facundo.jpg" alt="Facundo Luna" loading="lazy"> -->
-        </div>
+        <img src="img/foto-facundo.jpg" alt="Facundo Luna" loading="lazy">
       </div>
       <div class="about-txt">
         <div class="about-lbl" data-es="Facundo Luna — Arquitectura + IA" data-en="Facundo Luna — Architecture + AI">Facundo Luna — Arquitectura + IA</div>
         <p class="about-body"
            data-es="Soy <strong>Facundo Luna</strong>, estudiante de arquitectura en <strong>FADU UBA</strong>, Buenos Aires. Mi práctica combina el rigor de la documentación técnica con el diseño paramétrico y la inteligencia artificial — dos herramientas que no uso por moda, sino porque me permiten pensar proyectos que de otra forma no existirían.<br><br>Fundé <strong>EFELE.ARQ</strong> como espacio de investigación personal donde exploro los límites entre algoritmo, imagen y arquitectura."
-           data-en="I am <strong>Facundo Luna</strong>, architecture student at <strong>FADU UBA</strong>, Buenos Aires. My practice combines the rigor of technical documentation with parametric design and artificial intelligence — two tools I use not as trends, but because they allow me to think projects that otherwise wouldn't exist.<br><br>I founded <strong>EFELE.ARQ</strong> as a personal research space exploring the boundaries between algorithm, image and architecture.">
+           data-en="I am <strong>Facundo Luna</strong>, architecture student at <strong>FADU UBA</strong>, Buenos Aires. My practice combines the rigor of technical documentation with parametric design and artificial intelligence — two tools I use because they allow me to think projects that otherwise wouldn't exist.<br><br>I founded <strong>EFELE.ARQ</strong> as a personal research space exploring the boundaries between algorithm, image and architecture.">
           Soy <strong>Facundo Luna</strong>, estudiante de arquitectura en <strong>FADU UBA</strong>, Buenos Aires. Mi práctica combina el rigor de la documentación técnica con el diseño paramétrico y la inteligencia artificial — dos herramientas que no uso por moda, sino porque me permiten pensar proyectos que de otra forma no existirían.<br><br>Fundé <strong>EFELE.ARQ</strong> como espacio de investigación personal donde exploro los límites entre algoritmo, imagen y arquitectura.
         </p>
         <div class="about-links">
-          <a class="about-link" href="/cdn-cgi/l/email-protection#bfd9dedccad1dbd0d3cad1de8e878dffd8d2ded6d391dcd0d2">Email</a>
+          <a class="about-link" href="mailto:facundoluna182@gmail.com">Email</a>
           <a class="about-link" href="https://instagram.com/efele.arq" target="_blank" rel="noopener">Instagram</a>
           <a class="about-link" href="https://www.behance.net/facundoluna182" target="_blank" rel="noopener">Behance</a>
-          <!-- <a class="about-link" href="cv-facundo-luna.pdf" download>Descargar CV</a> -->
         </div>
       </div>
     </div>
@@ -1364,7 +1326,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
   </div>
 </div>
 
-<!-- ════════ CONTACTO ════════ -->
 <div class="view" id="view-contacto">
   <div class="w">
     <div class="sh"><div class="sh-row">
@@ -1375,19 +1336,13 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
       <div class="contact-l">
         <div class="contact-big" data-es="CONTACTAME" data-en="CONTACT ME">CONTACTAME</div>
         <div class="contact-items">
-          <div class="ci"><span class="ci-k">Email</span><a class="ci-v" href="/cdn-cgi/l/email-protection#7f191e1c0a111b10130a111e4e474d3f18121e1613511c1012"><span class="__cf_email__" data-cfemail="a7c1c6c4d2c9c3c8cbd2c9c6969f95e7c0cac6cecb89c4c8ca">[email&#160;protected]</span></a></div>
+          <div class="ci"><span class="ci-k">Email</span><a class="ci-v" href="mailto:facundoluna182@gmail.com">facundoluna182@gmail.com</a></div>
           <div class="ci"><span class="ci-k">Instagram</span><a class="ci-v" href="https://instagram.com/efele.arq" target="_blank" rel="noopener">@efele.arq</a></div>
           <div class="ci"><span class="ci-k" data-es="Ubicación" data-en="Location">Ubicación</span><span class="ci-v">Buenos Aires, Argentina</span></div>
         </div>
-        <!-- <a class="cta-p" style="margin-top:24px;display:inline-block" href="cv-facundo-luna.pdf" download>Descargar CV ↓</a> -->
       </div>
       <div class="contact-r">
         <div class="form-top-lbl" data-es="Escribime" data-en="Write to me">Escribime</div>
-        <!--
-          FORMULARIO: para que funcione de verdad →
-          1. formspree.io → cuenta gratis → nuevo form → copiá tu ID
-          2. Cambiá onsubmit="handleForm(event)" por action="https://formspree.io/f/TU-ID" method="POST"
-        -->
         <form class="cform" onsubmit="handleForm(event)">
           <div class="fg"><label class="fl" data-es="Nombre" data-en="Name">Nombre</label><input class="fi" type="text" name="nombre" placeholder="Tu nombre" required autocomplete="name"></div>
           <div class="fg"><label class="fl">Email</label><input class="fi" type="email" name="email" placeholder="tu@email.com" required autocomplete="email"></div>
@@ -1408,102 +1363,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
   </div>
 </div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
-<!-- ════════ PROYECTO 07 ════════ -->
-<div class="view" id="view-proj-07">
-  <!-- ══ Hero: img/parametrico/hero.jpg | 1920×820px -->
-  <div class="proj-hero"></div>
-    <div class="proj-hero-fade"></div>
-  </div>
-  <div class="w">
-    <span class="back-btn" onclick="go('proyectos',true)">← <span data-es="Volver a proyectos" data-en="Back to projects">Volver a proyectos</span></span>
-    <div class="proj-header">
-      <div class="proj-header-grid">
-        <div>
-          <div class="proj-eyebrow">Paramétrico · Investigación · 2025</div>
-          <div class="proj-title" data-es="Análisis<br>Paramétrico" data-en="Parametric<br>Analysis">Análisis<br>Paramétrico</div>
-          <div class="proj-subtitle" data-es="Morfología generativa" data-en="Generative morphology">Morfología generativa</div>
-          <div class="proj-meta">
-            <div class="proj-meta-row"><span class="pmk" data-es="Año" data-en="Year">Año</span><span class="pmv">2025</span></div>
-            <div class="proj-meta-row"><span class="pmk">Herramientas</span><span class="pmv">Rhino · IA · Photoshop</span></div>
-          </div>
-        </div>
-        <div class="proj-desc-col">
-          <p class="proj-desc-text"
-             data-es="Análisis morfológico generado en Rhino con post-producción en IA y Photoshop."
-             data-en="Morphological analysis generated in Rhino with AI and Photoshop post-production.">
-            Análisis morfológico generado en Rhino con post-producción en IA y Photoshop.
-          </p>
-          <div class="proj-tags"><span class="proj-tag">Rhino</span><span class="proj-tag">IA</span><span class="proj-tag">Photoshop</span></div>
-        </div>
-      </div>
-    </div>
-    <hr class="hr">
-    <div class="sh"><div class="sh-row"><span class="sh-label" data-es="Láminas" data-en="Sheets">Láminas</span></div></div>
-    <div class="laminas-bg" id="lam-bg-07"><img src="img/parametrico/hero.jpg" alt=""></div>
-    <div class="laminas-stack" id="lam-grid-07" data-bg="lam-bg-07">
-      <!-- Para activar: <img src="img/parametrico/lam-01.jpg" loading="lazy"> -->
-      <div class="lamina" onclick="lbOpen(this,'lam-grid-07')"></div>
-      </div>
-      <div class="lamina" onclick="lbOpen(this,'lam-grid-07')"></div>
-      </div>
-    </div>
-    <div class="footer" style="margin-top:2px"><div class="footer-row">
-      <span class="ft-l">Facundo Luna</span>
-      <span class="ft-m">FADU UBA · Arquitectura + IA</span>
-      <span class="ft-r">© 2026</span>
-    </div></div>
-  </div>
-</div>
-
-<!-- ════════ PROYECTO 08 ════════ -->
-<div class="view" id="view-proj-08">
-  <!-- ══ Hero: img/reversion/hero.jpg | 1920×820px -->
-  <div class="proj-hero"></div>
-    <div class="proj-hero-fade"></div>
-  </div>
-  <div class="w">
-    <span class="back-btn" onclick="go('proyectos',true)">← <span data-es="Volver a proyectos" data-en="Back to projects">Volver a proyectos</span></span>
-    <div class="proj-header">
-      <div class="proj-header-grid">
-        <div>
-          <div class="proj-eyebrow">Intervención · IA · 2025</div>
-          <div class="proj-title" data-es="RE*VERSION" data-en="RE*VERSION">RE*VERSION</div>
-          <div class="proj-subtitle" data-es="Reinterpretación de lo existente" data-en="Reinterpretation of the existing">Reinterpretación de lo existente</div>
-          <div class="proj-meta">
-            <div class="proj-meta-row"><span class="pmk" data-es="Año" data-en="Year">Año</span><span class="pmv">2025</span></div>
-            <div class="proj-meta-row"><span class="pmk">Herramientas</span><span class="pmv">Rhino · IA · Photoshop</span></div>
-          </div>
-        </div>
-        <div class="proj-desc-col">
-          <p class="proj-desc-text"
-             data-es="Reinterpretación de espacios existentes mediante Rhino, inteligencia artificial y Photoshop."
-             data-en="Reinterpretation of existing spaces using Rhino, artificial intelligence and Photoshop.">
-            Reinterpretación de espacios existentes mediante Rhino, inteligencia artificial y Photoshop.
-          </p>
-          <div class="proj-tags"><span class="proj-tag">Rhino</span><span class="proj-tag">IA</span><span class="proj-tag">Photoshop</span></div>
-        </div>
-      </div>
-    </div>
-    <hr class="hr">
-    <div class="sh"><div class="sh-row"><span class="sh-label" data-es="Láminas" data-en="Sheets">Láminas</span></div></div>
-    <div class="laminas-bg" id="lam-bg-08"><img src="img/reversion/hero.jpg" alt=""></div>
-    <div class="laminas-stack" id="lam-grid-08" data-bg="lam-bg-08">
-      <!-- Para activar: <img src="img/reversion/lam-01.jpg" loading="lazy"> -->
-      <div class="lamina" onclick="lbOpen(this,'lam-grid-08')"></div>
-      </div>
-      <div class="lamina" onclick="lbOpen(this,'lam-grid-08')"></div>
-      </div>
-    </div>
-    <div class="footer" style="margin-top:2px"><div class="footer-row">
-      <span class="ft-l">Facundo Luna</span>
-      <span class="ft-m">FADU UBA · Arquitectura + IA</span>
-      <span class="ft-r">© 2026</span>
-    </div></div>
-  </div>
-</div>
-
 <script>
+
 'use strict';
 
 const VIEWS = ['inicio','proyectos','proceso','efele','about','contacto',
@@ -1651,6 +1512,7 @@ function handleForm(e){
   btn.style.opacity='.5';
   btn.disabled=true;
 }
+
 </script>
 </body>
 </html>
