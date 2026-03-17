@@ -1467,10 +1467,13 @@ function go(name, restoreScroll) {
   const t = document.getElementById('view-' + name);
   if (t) {
     t.classList.add('active');
-    /* Restaurar scroll si volvemos a una vista ya visitada,
-       o ir arriba si es una vista nueva / un proyecto individual */
     const savedY = restoreScroll && scrollPos[name] != null ? scrollPos[name] : 0;
-    window.scrollTo(0, savedY);
+    /* Esperar 2 frames para que el display:block sea efectivo antes de scrollear */
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        window.scrollTo(0, savedY);
+      });
+    });
   }
   currentView = name;
   history.pushState({v: name}, '', '#' + name);
