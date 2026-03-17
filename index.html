@@ -306,7 +306,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
 .efele-top{display:grid;grid-template-columns:1fr 1fr;border-bottom:0.5px solid var(--line)}
 .efele-l{padding:40px 40px 40px 0;border-right:0.5px solid var(--line);display:flex;flex-direction:column;gap:24px}
 .efele-logo-ph{display:flex;align-items:center;padding:16px 20px;border:0.5px dashed var(--line);max-width:280px}
-.efele-logo-box{max-width:280px;max-height:80px;width:auto;object-fit:contain}
+.efele-logo-box{max-width:380px;max-height:140px;width:auto;object-fit:contain}
 .efele-mark-row{display:flex;align-items:center;gap:10px}
 .efele-sq{width:10px;height:10px;background:var(--ink);flex-shrink:0}
 .efele-name-lbl{font-size:13px;font-weight:400;color:var(--ink)}
@@ -516,22 +516,12 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
       <div class="param-cell big"><img src="img/modelado-complejo.jpg" alt="Modelo 3D" loading="lazy" decoding="async"><div class="param-lbl" data-es="Modelo 3D" data-en="3D Model">Modelo 3D</div></div>
       <div class="param-cell big"><img src="img/grass.jpg" alt="Grasshopper" loading="lazy" decoding="async"><div class="param-lbl">Grasshopper</div></div>
       <div class="param-row3">
-        <div class="param-cell sm3"><img src="img/proceso-4.jpg" alt="Referencia" loading="lazy" decoding="async"><div class="param-lbl" data-es="Referencia" data-en="Reference">Referencia</div></div>
+        <div class="param-cell sm3"><img src="img/proceso4.jpg" alt="Referencia" loading="lazy" decoding="async"><div class="param-lbl" data-es="Referencia" data-en="Reference">Referencia</div></div>
         <div class="param-cell sm3"><img src="img/proceso2.jpg" alt="Análisis" loading="lazy" decoding="async"><div class="param-lbl" data-es="Análisis" data-en="Analysis">Análisis</div></div>
         <div class="param-cell sm3"><img src="img/proceso3.jpg" alt="Proceso" loading="lazy" decoding="async"><div class="param-lbl" data-es="Proceso" data-en="Process">Proceso</div></div>
       </div>
     </div>
     <hr class="hr">
-    <div class="sh"><div class="sh-row">
-      <span class="sh-label" data-es="Proceso" data-en="Process">Proceso</span>
-      <span class="sh-link" onclick="go('proceso')" data-es="Ver todo →" data-en="See all →">Ver todo →</span>
-    </div></div>
-    <div class="proc-prev-grid">
-      <div class="proc-prev-cell"><img src="img/proceso.jpg" alt="" loading="lazy" decoding="async"></div>
-      <div class="proc-prev-cell"><img src="img/proceso2.jpg" alt="" loading="lazy" decoding="async"></div>
-      <div class="proc-prev-cell"><img src="img/proceso3.jpg" alt="" loading="lazy" decoding="async"></div>
-      <div class="proc-prev-cell"><img src="img/proceso4.jpg" alt="" loading="lazy" decoding="async"></div>
-    </div>
     <hr class="hr">
     <div class="slider-lbl-bar">
       <span class="sl-title" data-es="Post-producción con IA" data-en="AI Post-production">Post-producción con IA</span>
@@ -585,7 +575,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
   </div>
   <div class="w">
     <div class="croquis-wrap">
-      <div class="croquis-box"><img src="img/croquis1.jpg" alt="" loading="lazy" decoding="async"></div>
+      <div class="croquis-box"><img src="img/vivienda/proceso5.jpg" alt="Croquis" loading="lazy" decoding="async"><img src="img/croquis1.jpg" alt="" loading="lazy" decoding="async"></div>
     </div>
   </div>  <div class="w">
     <div class="prow prow-f" onclick="go('proj-02')">
@@ -661,18 +651,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
       </div>
     </div>
   </div>
-  <div class="gh">
-    <div class="gh-in"><svg viewBox="0 0 1200 240" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
-      <g stroke="#c8c0a8" stroke-width=".6" fill="none">
-        <path d="M0,120 C150,22 300,218 450,120 S750,22 900,120 S1100,218 1200,120"/>
-        <path d="M0,100 C150,2 300,198 450,100 S750,2 900,100 S1100,198 1200,100"/>
-        <path d="M0,140 C150,42 300,238 450,140 S750,42 900,140 S1100,238 1200,140"/>
-      </g>
-      <g fill="#fff" opacity=".18">
-        <circle cx="150" cy="22" r="3.5"/><circle cx="300" cy="218" r="3.5"/>
-        <circle cx="450" cy="120" r="3.5"/><circle cx="600" cy="22" r="3.5"/>
-      </g>
-    </svg></div>
   </div>  <div class="w">
     <div class="prow prow-f" onclick="go('proj-06')">
       <div class="pinfo" style="border-right:0.5px solid var(--line)">
@@ -730,7 +708,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
   </div></div></div>
 </div>
 <div class="view" id="view-proj-01">
-  <div class="proj-hero">
+  <div class="proj-hero" onclick="lbOpenImg(this)">
     <img src="img/vivienda/casa.jpg" alt="" loading="eager" fetchpriority="high">
     <div class="proj-hero-fade"></div>
   </div>
@@ -777,7 +755,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
   </div>
 </div>
 <div class="view" id="view-proj-02">
-  <div class="proj-hero">
+  <div class="proj-hero" onclick="lbOpenImg(this)">
     <img src="img/biblioteca/biblioteca.jpg" alt="" loading="eager" fetchpriority="high">
     <div class="proj-hero-fade"></div>
   </div>
@@ -803,19 +781,37 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
     </div>
     <hr class="hr">
     <div class="sh"><div class="sh-row"><span class="sh-label" data-es="Láminas" data-en="Sheets">Láminas</span></div></div>
-        <div class="laminas-bg" id="lam-bg-02"><img src="img/biblioteca/biblioteca.jpg" alt=""></div>
+            <div class="laminas-bg" id="lam-bg-02">
+      <img src="img/biblioteca/biblioteca.jpg" alt="">
+    </div>
     <div class="laminas-stack" id="lam-grid-02" data-bg="lam-bg-02">
+      <div class="lam-row lam-row-2">
       <div class="lamina" onclick="lbOpen(this,'lam-grid-02')">
         <img src="img/biblioteca/biblioteca1.jpg" alt="" loading="lazy" decoding="async">
       </div>
-      <div class="lam-row lam-row-2">
       <div class="lamina" onclick="lbOpen(this,'lam-grid-02')">
         <img src="img/biblioteca/biblioteca2.jpg" alt="" loading="lazy" decoding="async">
+      </div>
       </div>
       <div class="lamina" onclick="lbOpen(this,'lam-grid-02')">
         <img src="img/biblioteca/biblioteca3.jpg" alt="" loading="lazy" decoding="async">
       </div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-02')">
+        <img src="img/biblioteca/biblioteca4.jpg" alt="" loading="lazy" decoding="async">
       </div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-02')">
+        <img src="img/biblioteca/biblioteca5.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-02')">
+        <img src="img/biblioteca/biblioteca6.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-02')">
+        <img src="img/biblioteca/biblioteca7.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-02')">
+        <img src="img/biblioteca/biblioteca8.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+    </div>
       <div class="lamina" onclick="lbOpen(this,'lam-grid-02')">
         <img src="img/biblioteca/biblioteca4.jpg" alt="" loading="lazy" decoding="async">
       </div>
@@ -857,7 +853,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
   </div>
 </div>
 <div class="view" id="view-proj-03">
-  <div class="proj-hero">
+  <div class="proj-hero" onclick="lbOpenImg(this)">
     <img src="img/plano/plano.jpg" alt="" loading="eager" fetchpriority="high">
     <div class="proj-hero-fade"></div>
   </div>
@@ -898,7 +894,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
   </div>
 </div>
 <div class="view" id="view-proj-04">
-  <div class="proj-hero">
+  <div class="proj-hero" onclick="lbOpenImg(this)">
     <img src="img/intervencion/intervencion8.jpg" alt="" loading="eager" fetchpriority="high">
     <div class="proj-hero-fade"></div>
   </div>
@@ -924,7 +920,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
     </div>
     <hr class="hr">
     <div class="sh"><div class="sh-row"><span class="sh-label" data-es="Láminas" data-en="Sheets">Láminas</span></div></div>
-            <div class="laminas-bg" id="lam-bg-04"><img src="img/intervencion/intervencion8.jpg" alt=""></div>
+                <div class="laminas-bg" id="lam-bg-04">
+      <img src="img/intervencion/intervencion8.jpg" alt="">
+    </div>
     <div class="laminas-stack" id="lam-grid-04" data-bg="lam-bg-04">
       <div class="lamina" onclick="lbOpen(this,'lam-grid-04')">
         <img src="img/intervencion/intervencion.jpg" alt="" loading="lazy" decoding="async">
@@ -958,6 +956,21 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
       </div>
       </div>
     </div>
+      <div class="lam-row lam-row-4">
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-04')">
+        <img src="img/intervencion/intervencion5.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-04')">
+        <img src="img/intervencion/intervencion6.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-04')">
+        <img src="img/intervencion/intervencion7.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-04')">
+        <img src="img/intervencion/intervencion8.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      </div>
+    </div>
 
     <div class="footer" style="margin-top:2px"><div class="footer-row">
       <span class="ft-l">Facundo Luna</span>
@@ -967,7 +980,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
   </div>
 </div>
 <div class="view" id="view-proj-05">
-  <div class="proj-hero">
+  <div class="proj-hero" onclick="lbOpenImg(this)">
     <img src="img/conjunto/conjuntogrande.jpg" alt="" loading="eager" fetchpriority="high">
     <div class="proj-hero-fade"></div>
   </div>
@@ -993,8 +1006,13 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
     </div>
     <hr class="hr">
     <div class="sh"><div class="sh-row"><span class="sh-label" data-es="Láminas" data-en="Sheets">Láminas</span></div></div>
-            <div class="laminas-bg" id="lam-bg-05"><img src="img/conjunto/conjuntogrande.jpg" alt=""></div>
+                <div class="laminas-bg" id="lam-bg-05">
+      <img src="img/conjunto/conjuntogrande.jpg" alt="">
+    </div>
     <div class="laminas-stack" id="lam-grid-05" data-bg="lam-bg-05">
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-05')">
+        <img src="img/conjunto/conjuntogrande2.jpg" alt="" loading="lazy" decoding="async">
+      </div>
       <div class="lamina" onclick="lbOpen(this,'lam-grid-05')">
         <img src="img/conjunto/conjunto1.jpg" alt="" loading="lazy" decoding="async">
       </div>
@@ -1009,12 +1027,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
       </div>
       <div class="lamina" onclick="lbOpen(this,'lam-grid-05')">
         <img src="img/conjunto/conjunto5.jpg" alt="" loading="lazy" decoding="async">
-      </div>
-      <div class="lamina" onclick="lbOpen(this,'lam-grid-05')">
-        <img src="img/conjunto/conjunto6.jpg" alt="" loading="lazy" decoding="async">
-      </div>
-      <div class="lamina" onclick="lbOpen(this,'lam-grid-05')">
-        <img src="img/conjunto/conjuntogrande.jpg" alt="" loading="lazy" decoding="async">
       </div>
     </div>
         <div class="maqueta-section">
@@ -1033,7 +1045,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
   </div>
 </div>
 <div class="view" id="view-proj-06">
-  <div class="proj-hero">
+  <div class="proj-hero" onclick="lbOpenImg(this)">
     <img src="img/iglesia/iglesia.jpg" alt="" loading="eager" fetchpriority="high">
     <div class="proj-hero-fade"></div>
   </div>
@@ -1077,7 +1089,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
   </div>
 </div>
 <div class="view" id="view-proj-07">
-  <div class="proj-hero">
+  <div class="proj-hero" onclick="lbOpenImg(this)">
     <img src="img/parametrico/1.jpg" alt="" loading="eager" fetchpriority="high">
     <div class="proj-hero-fade"></div>
   </div>
@@ -1181,7 +1193,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
   </div>
 </div>
 <div class="view" id="view-proj-08">
-  <div class="proj-hero">
+  <div class="proj-hero" onclick="lbOpenImg(this)">
     <img src="img/reversion/morfo1.jpg" alt="" loading="eager" fetchpriority="high">
     <div class="proj-hero-fade"></div>
   </div>
@@ -1356,7 +1368,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
           Soy <strong>Facundo Luna</strong>, estudiante de arquitectura en <strong>FADU UBA</strong>, Buenos Aires. Mi práctica combina el rigor de la documentación técnica con el diseño paramétrico y la inteligencia artificial — dos herramientas que no uso por moda, sino porque me permiten pensar proyectos que de otra forma no existirían.<br><br>Fundé <strong>EFELE.ARQ</strong> como espacio de investigación personal donde exploro los límites entre algoritmo, imagen y arquitectura.
         </p>
         <div class="about-links">
-          <a class="about-link" href="mailto:facundoluna182@gmail.com">Email</a>
+          <a class="about-link" href="/cdn-cgi/l/email-protection#c1a7a0a2b4afa5aeadb4afa0f0f9f381a6aca0a8adefa2aeac">Email</a>
           <a class="about-link" href="https://instagram.com/efele.arq" target="_blank" rel="noopener">Instagram</a>
           <a class="about-link" href="https://www.behance.net/facundoluna182" target="_blank" rel="noopener">Behance</a>
         </div>
@@ -1378,7 +1390,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
       <div class="contact-l">
         <div class="contact-big" data-es="CONTACTAME" data-en="CONTACT ME">CONTACTAME</div>
         <div class="contact-items">
-          <div class="ci"><span class="ci-k">Email</span><a class="ci-v" href="mailto:facundoluna182@gmail.com">facundoluna182@gmail.com</a></div>
+          <div class="ci"><span class="ci-k">Email</span><a class="ci-v" href="/cdn-cgi/l/email-protection#fe989f9d8b909a91928b909fcfc6ccbe99939f9792d09d9193"><span class="__cf_email__" data-cfemail="81e7e0e2f4efe5eeedf4efe0b0b9b3c1e6ece0e8edafe2eeec">[email&#160;protected]</span></a></div>
           <div class="ci"><span class="ci-k">Instagram</span><a class="ci-v" href="https://instagram.com/efele.arq" target="_blank" rel="noopener">@efele.arq</a></div>
           <div class="ci"><span class="ci-k" data-es="Ubicación" data-en="Location">Ubicación</span><span class="ci-v">Buenos Aires, Argentina</span></div>
         </div>
@@ -1404,7 +1416,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
     </div></div>
   </div>
 </div>
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 
 
 'use strict';
@@ -1514,6 +1526,17 @@ setupLaminasBg();
 
 /* LIGHTBOX */
 let lbImgs=[],lbIdx=0;
+/* Lightbox para imagen individual (sin grid) */
+function lbOpenImg(el){
+  const img = el.querySelector('img') || el;
+  if(!img || !img.src) return;
+  lbImgs = [img];
+  lbIdx = 0;
+  document.getElementById('lb-img').src = img.src;
+  document.getElementById('lb').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
 function lbOpen(cell,gridId){
   const img=cell.querySelector('img');
   if(!img)return;
@@ -1544,12 +1567,11 @@ function setLang(l){
   document.getElementById('btn-es').classList.toggle('on',l==='es');
   document.getElementById('btn-en').classList.toggle('on',l==='en');
   document.querySelectorAll('[data-es]').forEach(el=>{
-    const val=l=='es'?el.dataset.es:el.dataset.en;
+    const val=l==='es'?el.dataset.es:el.dataset.en;
     if(val!==undefined)el.innerHTML=val;
   });
 }
 
-/* FORMULARIO */
 function handleForm(e){
   e.preventDefault();
   const btn=e.target.querySelector('.fsub');
@@ -1557,8 +1579,6 @@ function handleForm(e){
   btn.style.opacity='.5';
   btn.disabled=true;
 }
-
-
 </script>
 </body>
 </html>
