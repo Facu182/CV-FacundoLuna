@@ -1877,7 +1877,7 @@ function setLang(l) {
   document.getElementById('btn-es').classList.toggle('on', l === 'es');
   document.getElementById('btn-en').classList.toggle('on', l === 'en');
   document.querySelectorAll('[data-es]').forEach(el => {
-    const val = l === 'es' ? el.dataset.es : el.dataseten;
+    const val = l === 'es' ? el.dataset.es : el.dataset.en;
     if (val !== undefined) el.innerHTML = val;
   });
 }
