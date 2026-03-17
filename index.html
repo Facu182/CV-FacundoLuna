@@ -469,20 +469,15 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
       <div class="hero-grid">
         <div class="hero-name">FACUNDO<span>Luna.</span></div>
         <div class="hero-right">
-          <p class="hero-stmt"
-             data-es="Estudiante de arquitectura en <strong>FADU UBA</strong> que fusiona documentación técnica con <strong>diseño paramétrico</strong> e <strong>inteligencia artificial</strong>."
-             data-en="Architecture student at <strong>FADU UBA</strong> fusing technical documentation with <strong>parametric design</strong> and <strong>artificial intelligence</strong>.">
-            Estudiante de arquitectura en <strong>FADU UBA</strong> que fusiona documentación técnica con <strong>diseño paramétrico</strong> e <strong>inteligencia artificial</strong>.
-          </p>
+          <p class="hero-stmt" data-es="Estudiante de arquitectura en <strong>FADU UBA</strong> que fusiona documentación técnica con <strong>diseño paramétrico</strong> e <strong>inteligencia artificial</strong>." data-en="Architecture student at <strong>FADU UBA</strong> fusing technical documentation with <strong>parametric design</strong> and <strong>artificial intelligence</strong>.">Estudiante de arquitectura en <strong>FADU UBA</strong> que fusiona documentación técnica con <strong>diseño paramétrico</strong> e <strong>inteligencia artificial</strong>.</p>
           <div class="meta-block">
             <div class="meta-row"><span class="mk">Base</span><span class="mv">Buenos Aires, AR</span></div>
             <div class="meta-row"><span class="mk">Formación</span><span class="mv">FADU UBA</span></div>
             <div class="meta-row"><span class="mk">Disciplina</span><span class="mv">Arquitectura + IA</span></div>
           </div>
           <div class="chips">
-            <span class="chip">Grasshopper</span><span class="chip">Rhino</span>
-            <span class="chip">Twinmotion</span><span class="chip">SketchUp</span>
-            <span class="chip">AutoCAD</span><span class="chip">Photoshop</span>
+            <span class="chip">Grasshopper</span><span class="chip">Rhino</span><span class="chip">Twinmotion</span>
+            <span class="chip">SketchUp</span><span class="chip">AutoCAD</span><span class="chip">Photoshop</span>
             <span class="chip">AI Post-prod</span><span class="chip">Legajo Ejec.</span>
           </div>
         </div>
@@ -513,15 +508,14 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
       <span class="sh-right">Rhino · Grasshopper</span>
     </div></div>
     <div class="param-grid">
-      <div class="param-cell big"><img src="img/modelado-complejo.jpg" alt="Modelo 3D" loading="lazy" decoding="async"><div class="param-lbl" data-es="Modelo 3D" data-en="3D Model">Modelo 3D</div></div>
-      <div class="param-cell big"><img src="img/grass.jpg" alt="Grasshopper" loading="lazy" decoding="async"><div class="param-lbl">Grasshopper</div></div>
+      <div class="param-cell big" onclick="lbOpenImg(this)"><img src="img/modelado-complejo.jpg" alt="Modelo 3D" loading="lazy" decoding="async"><div class="param-lbl" data-es="Modelo 3D" data-en="3D Model">Modelo 3D</div></div>
+      <div class="param-cell big" onclick="lbOpenImg(this)"><img src="img/grass.jpg" alt="Grasshopper" loading="lazy" decoding="async"><div class="param-lbl">Grasshopper</div></div>
       <div class="param-row3">
-        <div class="param-cell sm3"><img src="img/proceso4.jpg" alt="Referencia" loading="lazy" decoding="async"><div class="param-lbl" data-es="Referencia" data-en="Reference">Referencia</div></div>
-        <div class="param-cell sm3"><img src="img/proceso2.jpg" alt="Análisis" loading="lazy" decoding="async"><div class="param-lbl" data-es="Análisis" data-en="Analysis">Análisis</div></div>
-        <div class="param-cell sm3"><img src="img/proceso3.jpg" alt="Proceso" loading="lazy" decoding="async"><div class="param-lbl" data-es="Proceso" data-en="Process">Proceso</div></div>
+        <div class="param-cell sm3" onclick="lbOpenImg(this)"><img src="img/proceso4.jpg" alt="Referencia" loading="lazy" decoding="async"><div class="param-lbl" data-es="Referencia" data-en="Reference">Referencia</div></div>
+        <div class="param-cell sm3" onclick="lbOpenImg(this)"><img src="img/proceso2.jpg" alt="Análisis" loading="lazy" decoding="async"><div class="param-lbl" data-es="Análisis" data-en="Analysis">Análisis</div></div>
+        <div class="param-cell sm3" onclick="lbOpenImg(this)"><img src="img/proceso3.jpg" alt="Proceso" loading="lazy" decoding="async"><div class="param-lbl" data-es="Proceso" data-en="Process">Proceso</div></div>
       </div>
     </div>
-    <hr class="hr">
     <hr class="hr">
     <div class="slider-lbl-bar">
       <span class="sl-title" data-es="Post-producción con IA" data-en="AI Post-production">Post-producción con IA</span>
@@ -537,14 +531,12 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
     <hr class="hr">
     <div class="home-ctas">
       <button class="cta-p" onclick="go('proyectos')" data-es="Ver proyectos →" data-en="See projects →">Ver proyectos →</button>
-      <button class="cta-g" onclick="go('contacto')"  data-es="Contacto" data-en="Contact">Contacto</button>
-      <button class="cta-g" onclick="go('efele')"     data-es="EFELE.ARQ" data-en="EFELE.ARQ">EFELE.ARQ</button>
+      <button class="cta-g" onclick="go('contacto')" data-es="Contacto" data-en="Contact">Contacto</button>
+      <button class="cta-g" onclick="go('efele')" data-es="EFELE.ARQ" data-en="EFELE.ARQ">EFELE.ARQ</button>
     </div>
     <div style="height:24px"></div>
     <div class="footer"><div class="footer-row">
-      <span class="ft-l">Facundo Luna</span>
-      <span class="ft-m">FADU UBA · Arquitectura + IA · Buenos Aires</span>
-      <span class="ft-r">© 2026</span>
+      <span class="ft-l">Facundo Luna</span><span class="ft-m">FADU UBA · Arquitectura + IA · Buenos Aires</span><span class="ft-r">© 2026</span>
     </div></div>
   </div>
 </div>
@@ -565,8 +557,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
         <div>
           <div class="ptop"><span class="pnum">01</span><span class="pyr">2024</span></div>
           <div class="ptitle" data-es="Vivienda<br>Unifamiliar" data-en="Single<br>Family House">Vivienda<br>Unifamiliar</div>
-          <div class="pcat"   data-es="Residencial"   data-en="Residential">Residencial</div>
-          <div class="pdesc"  data-es="Partido volumétrico articulado por patios interiores de luz. Lote entre medianeras en Buenos Aires."  data-en="Volumetric scheme articulated by interior light patios. Party-wall lot in Buenos Aires.">Partido volumétrico articulado por patios interiores de luz. Lote entre medianeras en Buenos Aires.</div>
+          <div class="pcat">Residencial</div>
+          <div class="pdesc" data-es="Partido volumétrico articulado por patios interiores de luz. Lote entre medianeras en Buenos Aires." data-en="Volumetric scheme articulated by interior light patios. Party-wall lot in Buenos Aires.">Partido volumétrico articulado por patios interiores de luz. Lote entre medianeras en Buenos Aires.</div>
           <div class="ptags"><span class="ptag">Croquis</span><span class="ptag">Plantas</span><span class="ptag">Render</span><span class="ptag">Post IA</span></div>
         </div>
         <span class="parr" data-es="→ ver proyecto" data-en="→ view project">→ ver proyecto</span>
@@ -575,7 +567,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
   </div>
   <div class="w">
     <div class="croquis-wrap">
-      <div class="croquis-box"><img src="img/vivienda/proceso5.jpg" alt="Croquis" loading="lazy" decoding="async"><img src="img/croquis1.jpg" alt="" loading="lazy" decoding="async"></div>
+      <div class="croquis-box">
+        <img src="img/vivienda/proceso5.jpg" alt="Croquis" loading="lazy" decoding="async" onclick="lbOpenImg(this)" style="cursor:pointer">
+      </div>
     </div>
   </div>  <div class="w">
     <div class="prow prow-f" onclick="go('proj-02')">
@@ -583,8 +577,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
         <div>
           <div class="ptop"><span class="pnum">02</span><span class="pyr">2025</span></div>
           <div class="ptitle" data-es="Biblioteca<br>Costera" data-en="Coastal<br>Library">Biblioteca<br>Costera</div>
-          <div class="pcat"   data-es="Equipamiento · Paramétrico"   data-en="Equipment · Parametric">Equipamiento · Paramétrico</div>
-          <div class="pdesc"  data-es="Piel generada en Grasshopper que optimiza orientación solar. Estructura adaptable al frente costero."  data-en="Skin generated in Grasshopper optimizing solar orientation.">Piel generada en Grasshopper que optimiza orientación solar. Estructura adaptable al frente costero.</div>
+          <div class="pcat">Equipamiento · Paramétrico</div>
+          <div class="pdesc" data-es="Piel generada en Grasshopper que optimiza orientación solar. Estructura adaptable al frente costero." data-en="Skin generated in Grasshopper optimizing solar orientation.">Piel generada en Grasshopper que optimiza orientación solar. Estructura adaptable al frente costero.</div>
           <div class="ptags"><span class="ptag">Croquis</span><span class="ptag">Análisis sitio</span><span class="ptag">Maqueta</span><span class="ptag">Post IA</span></div>
         </div>
         <span class="parr" data-es="→ ver proyecto" data-en="→ view project">→ ver proyecto</span>
@@ -604,8 +598,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
         <div>
           <div class="ptop"><span class="pnum">03</span><span class="pyr">2024</span></div>
           <div class="ptitle" data-es="Legajo<br>Municipal" data-en="Municipal<br>File">Legajo<br>Municipal</div>
-          <div class="pcat"   data-es="Técnico · Trabajo real"   data-en="Technical · Real project">Técnico · Trabajo real</div>
-          <div class="pdesc"  data-es="Documentación ejecutiva completa para gestión ante municipio. Primer proyecto profesional real."  data-en="Complete executive documentation for municipal management.">Documentación ejecutiva completa para gestión ante municipio. Primer proyecto profesional real.</div>
+          <div class="pcat">Técnico · Trabajo real</div>
+          <div class="pdesc" data-es="Documentación ejecutiva completa para gestión ante municipio. Primer proyecto profesional real." data-en="Complete executive documentation for municipal management.">Documentación ejecutiva completa para gestión ante municipio. Primer proyecto profesional real.</div>
           <div class="ptags"><span class="ptag">Plantas</span><span class="ptag">Cortes</span><span class="ptag">Detalles</span></div>
         </div>
         <span class="parr" data-es="→ ver proyecto" data-en="→ view project">→ ver proyecto</span>
@@ -614,7 +608,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
   </div>
   <div class="w">
     <div class="croquis-wrap" style="background:#f9f9f9">
-      <div class="croquis-box"><img src="img/croquis2.jpg" alt="" loading="lazy" decoding="async"></div>
+      <div class="croquis-box">
+        <img src="img/croquis2.jpg" alt="Croquis" loading="lazy" decoding="async" onclick="lbOpenImg(this)" style="cursor:pointer">
+      </div>
     </div>
   </div>  <div class="w">
     <div class="prow prow-f" onclick="go('proj-04')">
@@ -622,8 +618,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
         <div>
           <div class="ptop"><span class="pnum">04</span><span class="pyr">2025</span></div>
           <div class="ptitle" data-es="Intervención<br>Urbana" data-en="Urban<br>Intervention">Intervención<br>Urbana</div>
-          <div class="pcat"   data-es="Urbanismo"   data-en="Urbanism">Urbanismo</div>
-          <div class="pdesc"  data-es="Reconversión de espacio público degradado. Activación por capas temporales y permanentes."  data-en="Reconversion of degraded public space. Activation through temporary and permanent layers.">Reconversión de espacio público degradado. Activación por capas temporales y permanentes.</div>
+          <div class="pcat">Urbanismo</div>
+          <div class="pdesc" data-es="Reconversión de espacio público degradado. Activación por capas temporales y permanentes." data-en="Reconversion of degraded public space through layered activation.">Reconversión de espacio público degradado. Activación por capas temporales y permanentes.</div>
           <div class="ptags"><span class="ptag">Análisis sitio</span><span class="ptag">Diagramas</span><span class="ptag">Plantas</span></div>
         </div>
         <span class="parr" data-es="→ ver proyecto" data-en="→ view project">→ ver proyecto</span>
@@ -643,22 +639,21 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
         <div>
           <div class="ptop"><span class="pnum">05</span><span class="pyr">2025</span></div>
           <div class="ptitle" data-es="Conjunto<br>Habitacional" data-en="Housing<br>Complex">Conjunto<br>Habitacional</div>
-          <div class="pcat"   data-es="Vivienda Colectiva"   data-en="Collective Housing">Vivienda Colectiva</div>
-          <div class="pdesc"  data-es="Planta libre. Circulaciones integradas al paisaje urbano. Iluminación natural cenital."  data-en="Open plan. Circulations integrated into the urban landscape. Zenithal natural light.">Planta libre. Circulaciones integradas al paisaje urbano. Iluminación natural cenital.</div>
+          <div class="pcat">Vivienda Colectiva</div>
+          <div class="pdesc" data-es="Planta libre. Circulaciones integradas al paisaje urbano. Iluminación natural cenital." data-en="Open plan. Circulations integrated into the urban landscape.">Planta libre. Circulaciones integradas al paisaje urbano. Iluminación natural cenital.</div>
           <div class="ptags"><span class="ptag">Croquis</span><span class="ptag">Plantas</span><span class="ptag">Cortes</span><span class="ptag">Render</span></div>
         </div>
         <span class="parr" data-es="→ ver proyecto" data-en="→ view project">→ ver proyecto</span>
       </div>
     </div>
-  </div>
   </div>  <div class="w">
     <div class="prow prow-f" onclick="go('proj-06')">
       <div class="pinfo" style="border-right:0.5px solid var(--line)">
         <div>
           <div class="ptop"><span class="pnum">06</span><span class="pyr">2024</span></div>
           <div class="ptitle" data-es="Espacio<br>Sacro" data-en="Sacred<br>Space">Espacio<br>Sacro</div>
-          <div class="pcat"   data-es="Religioso · Paramétrico"   data-en="Religious · Parametric">Religioso · Paramétrico</div>
-          <div class="pdesc"  data-es="La luz natural como material estructural. Celosías paramétricas que filtran y dirigen."  data-en="Natural light as structural material. Parametric lattices that filter and direct.">La luz natural como material estructural. Celosías paramétricas que filtran y dirigen.</div>
+          <div class="pcat">Religioso · Paramétrico</div>
+          <div class="pdesc" data-es="La luz natural como material estructural. Celosías paramétricas que filtran y dirigen." data-en="Natural light as structural material. Parametric lattices that filter and direct.">La luz natural como material estructural. Celosías paramétricas que filtran y dirigen.</div>
           <div class="ptags"><span class="ptag">Croquis</span><span class="ptag">Diagrama</span><span class="ptag">Post IA</span></div>
         </div>
         <span class="parr" data-es="→ ver proyecto" data-en="→ view project">→ ver proyecto</span>
@@ -678,8 +673,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
         <div>
           <div class="ptop"><span class="pnum">07</span><span class="pyr">2025</span></div>
           <div class="ptitle" data-es="Análisis<br>Paramétrico" data-en="Parametric<br>Analysis">Análisis<br>Paramétrico</div>
-          <div class="pcat"   data-es="Paramétrico · Investigación"   data-en="Parametric · Research">Paramétrico · Investigación</div>
-          <div class="pdesc"  data-es="Análisis morfológico generado en Rhino con post-producción en IA y Photoshop."  data-en="Morphological analysis generated in Rhino with AI and Photoshop post-production.">Análisis morfológico generado en Rhino con post-producción en IA y Photoshop.</div>
+          <div class="pcat">Paramétrico · Investigación</div>
+          <div class="pdesc" data-es="Análisis morfológico generado en Rhino con post-producción en IA y Photoshop." data-en="Morphological analysis generated in Rhino with AI and Photoshop post-production.">Análisis morfológico generado en Rhino con post-producción en IA y Photoshop.</div>
           <div class="ptags"><span class="ptag">Rhino</span><span class="ptag">IA</span><span class="ptag">Photoshop</span></div>
         </div>
         <span class="parr" data-es="→ ver proyecto" data-en="→ view project">→ ver proyecto</span>
@@ -691,8 +686,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
         <div>
           <div class="ptop"><span class="pnum">08</span><span class="pyr">2025</span></div>
           <div class="ptitle" data-es="RE*VERSION" data-en="RE*VERSION">RE*VERSION</div>
-          <div class="pcat"   data-es="Intervención · IA"   data-en="Intervention · AI">Intervención · IA</div>
-          <div class="pdesc"  data-es="Reinterpretación de espacios existentes mediante Rhino, inteligencia artificial y Photoshop."  data-en="Reinterpretation of existing spaces using Rhino, artificial intelligence and Photoshop.">Reinterpretación de espacios existentes mediante Rhino, inteligencia artificial y Photoshop.</div>
+          <div class="pcat">Intervención · IA</div>
+          <div class="pdesc" data-es="Reinterpretación de espacios existentes mediante Rhino, inteligencia artificial y Photoshop." data-en="Reinterpretation of existing spaces using Rhino, artificial intelligence and Photoshop.">Reinterpretación de espacios existentes mediante Rhino, inteligencia artificial y Photoshop.</div>
           <div class="ptags"><span class="ptag">Rhino</span><span class="ptag">IA</span><span class="ptag">Photoshop</span></div>
         </div>
         <span class="parr" data-es="→ ver proyecto" data-en="→ view project">→ ver proyecto</span>
@@ -707,8 +702,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
     <span class="ft-l">Facundo Luna</span><span class="ft-m">FADU UBA · Arquitectura + IA</span><span class="ft-r">© 2026</span>
   </div></div></div>
 </div>
+
 <div class="view" id="view-proj-01">
-  <div class="proj-hero" onclick="lbOpenImg(this)">
+  <div class="proj-hero">
     <img src="img/vivienda/casa.jpg" alt="" loading="eager" fetchpriority="high">
     <div class="proj-hero-fade"></div>
   </div>
@@ -727,35 +723,33 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
           </div>
         </div>
         <div class="proj-desc-col">
-          <p class="proj-desc-text" data-es="Partido volumétrico articulado por patios interiores de luz. El lote entre medianeras impone condicionantes de privacidad y asoleamiento que se convierten en los generadores principales del proyecto." data-en="Volumetric scheme articulated by interior light patios.">Partido volumétrico articulado por patios interiores de luz. El lote entre medianeras impone condicionantes de privacidad y asoleamiento que se convierten en los generadores principales del proyecto.</p>
+          <p class="proj-desc-text" data-es="Partido volumétrico articulado por patios interiores de luz. El lote entre medianeras impone condicionantes de privacidad y asoleamiento que se convierten en los generadores principales del proyecto." data-en="Volumetric scheme articulated by interior light patios. The party-wall lot constraints become the main project generators.">Partido volumétrico articulado por patios interiores de luz. El lote entre medianeras impone condicionantes de privacidad y asoleamiento que se convierten en los generadores principales del proyecto.</p>
           <div class="proj-tags"><span class="proj-tag">Croquis</span><span class="proj-tag">Plantas</span><span class="proj-tag">Cortes</span><span class="proj-tag">Render</span><span class="proj-tag">Post IA</span></div>
         </div>
       </div>
     </div>
     <hr class="hr">
     <div class="sh"><div class="sh-row"><span class="sh-label" data-es="Láminas" data-en="Sheets">Láminas</span></div></div>
-            <div class="laminas-bg" id="lam-bg-01"><img src="img/vivienda/casa.jpg" alt=""></div>
+    <div class="laminas-bg" id="lam-bg-01"><img src="img/vivienda/casa.jpg" alt=""></div>
     <div class="laminas-stack" id="lam-grid-01" data-bg="lam-bg-01">
       <div class="lamina" onclick="lbOpen(this,'lam-grid-01')">
-        <img src="img/vivienda/casa1.jpg" alt="" loading="lazy" decoding="async">
+        <img src="v_l1" alt="" loading="lazy" decoding="async">
       </div>
       <div class="lamina" onclick="lbOpen(this,'lam-grid-01')">
-        <img src="img/vivienda/casa2.jpg" alt="" loading="lazy" decoding="async">
+        <img src="v_l2" alt="" loading="lazy" decoding="async">
       </div>
       <div class="lamina" onclick="lbOpen(this,'lam-grid-01')">
-        <img src="img/vivienda/proceso5.jpg" alt="" loading="lazy" decoding="async">
+        <img src="v_l3" alt="" loading="lazy" decoding="async">
       </div>
     </div>
 
-    <div class="footer" style="margin-top:2px"><div class="footer-row">
-      <span class="ft-l">Facundo Luna</span>
-      <span class="ft-m">FADU UBA · Arquitectura + IA</span>
-      <span class="ft-r">© 2026</span>
+    <div class="footer" style="margin-top:4px"><div class="footer-row">
+      <span class="ft-l">Facundo Luna</span><span class="ft-m">FADU UBA · Arquitectura + IA</span><span class="ft-r">© 2026</span>
     </div></div>
   </div>
 </div>
 <div class="view" id="view-proj-02">
-  <div class="proj-hero" onclick="lbOpenImg(this)">
+  <div class="proj-hero">
     <img src="img/biblioteca/biblioteca.jpg" alt="" loading="eager" fetchpriority="high">
     <div class="proj-hero-fade"></div>
   </div>
@@ -774,86 +768,58 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
           </div>
         </div>
         <div class="proj-desc-col">
-          <p class="proj-desc-text" data-es="Piel generada en Grasshopper que optimiza orientación solar y vistas simultáneamente. Cada panel de la piel responde de forma distinta según su posición en la fachada." data-en="Skin generated in Grasshopper simultaneously optimizing solar orientation and views.">Piel generada en Grasshopper que optimiza orientación solar y vistas simultáneamente. Cada panel de la piel responde de forma distinta según su posición en la fachada.</p>
+          <p class="proj-desc-text" data-es="Piel generada en Grasshopper que optimiza orientación solar y vistas simultáneamente. Cada panel responde de forma distinta según su posición en la fachada." data-en="Skin generated in Grasshopper simultaneously optimizing solar orientation and views.">Piel generada en Grasshopper que optimiza orientación solar y vistas simultáneamente. Cada panel responde de forma distinta según su posición en la fachada.</p>
           <div class="proj-tags"><span class="proj-tag">Croquis</span><span class="proj-tag">Análisis sitio</span><span class="proj-tag">Maqueta</span><span class="proj-tag">Post IA</span></div>
         </div>
       </div>
     </div>
     <hr class="hr">
     <div class="sh"><div class="sh-row"><span class="sh-label" data-es="Láminas" data-en="Sheets">Láminas</span></div></div>
-            <div class="laminas-bg" id="lam-bg-02">
-      <img src="img/biblioteca/biblioteca.jpg" alt="">
-    </div>
+    <div class="laminas-bg" id="lam-bg-02"><img src="img/biblioteca/biblioteca.jpg" alt=""></div>
     <div class="laminas-stack" id="lam-grid-02" data-bg="lam-bg-02">
       <div class="lam-row lam-row-2">
       <div class="lamina" onclick="lbOpen(this,'lam-grid-02')">
-        <img src="img/biblioteca/biblioteca1.jpg" alt="" loading="lazy" decoding="async">
+        <img src="b_l1" alt="" loading="lazy" decoding="async">
       </div>
       <div class="lamina" onclick="lbOpen(this,'lam-grid-02')">
-        <img src="img/biblioteca/biblioteca2.jpg" alt="" loading="lazy" decoding="async">
+        <img src="b_l2" alt="" loading="lazy" decoding="async">
       </div>
       </div>
       <div class="lamina" onclick="lbOpen(this,'lam-grid-02')">
-        <img src="img/biblioteca/biblioteca3.jpg" alt="" loading="lazy" decoding="async">
+        <img src="b_l3" alt="" loading="lazy" decoding="async">
       </div>
       <div class="lamina" onclick="lbOpen(this,'lam-grid-02')">
-        <img src="img/biblioteca/biblioteca4.jpg" alt="" loading="lazy" decoding="async">
+        <img src="b_l4" alt="" loading="lazy" decoding="async">
       </div>
       <div class="lamina" onclick="lbOpen(this,'lam-grid-02')">
-        <img src="img/biblioteca/biblioteca5.jpg" alt="" loading="lazy" decoding="async">
+        <img src="b_l5" alt="" loading="lazy" decoding="async">
       </div>
       <div class="lamina" onclick="lbOpen(this,'lam-grid-02')">
-        <img src="img/biblioteca/biblioteca6.jpg" alt="" loading="lazy" decoding="async">
+        <img src="b_l6" alt="" loading="lazy" decoding="async">
       </div>
       <div class="lamina" onclick="lbOpen(this,'lam-grid-02')">
-        <img src="img/biblioteca/biblioteca7.jpg" alt="" loading="lazy" decoding="async">
+        <img src="b_l7" alt="" loading="lazy" decoding="async">
       </div>
       <div class="lamina" onclick="lbOpen(this,'lam-grid-02')">
-        <img src="img/biblioteca/biblioteca8.jpg" alt="" loading="lazy" decoding="async">
+        <img src="b_l8" alt="" loading="lazy" decoding="async">
       </div>
     </div>
-      <div class="lamina" onclick="lbOpen(this,'lam-grid-02')">
-        <img src="img/biblioteca/biblioteca4.jpg" alt="" loading="lazy" decoding="async">
-      </div>
-      <div class="lamina" onclick="lbOpen(this,'lam-grid-02')">
-        <img src="img/biblioteca/biblioteca5.jpg" alt="" loading="lazy" decoding="async">
-      </div>
-      <div class="lamina" onclick="lbOpen(this,'lam-grid-02')">
-        <img src="img/biblioteca/biblioteca6.jpg" alt="" loading="lazy" decoding="async">
-      </div>
-      <div class="lamina" onclick="lbOpen(this,'lam-grid-02')">
-        <img src="img/biblioteca/biblioteca7.jpg" alt="" loading="lazy" decoding="async">
-      </div>
-      <div class="lamina" onclick="lbOpen(this,'lam-grid-02')">
-        <img src="img/biblioteca/biblioteca8.jpg" alt="" loading="lazy" decoding="async">
-      </div>
-    </div>
-        <div class="maqueta-section">
+    <div class="maqueta-section">
       <div class="sh"><div class="sh-row"><span class="sh-label" data-es="Maqueta" data-en="Model">Maqueta</span></div></div>
       <div class="maqueta-grid" id="maq-grid-02" style="grid-template-columns:repeat(4,1fr)">
-        <div class="maqueta-img" onclick="lbOpen(this,'maq-grid-02')">
-          <img src="img/biblioteca/maqueta-biblioteca1.jpg" alt="" loading="lazy" decoding="async">
-        </div>
-        <div class="maqueta-img" onclick="lbOpen(this,'maq-grid-02')">
-          <img src="img/biblioteca/maqueta-biblioteca2.jpg" alt="" loading="lazy" decoding="async">
-        </div>
-        <div class="maqueta-img" onclick="lbOpen(this,'maq-grid-02')">
-          <img src="img/biblioteca/maqueta-biblioteca3.jpg" alt="" loading="lazy" decoding="async">
-        </div>
-        <div class="maqueta-img" onclick="lbOpen(this,'maq-grid-02')">
-          <img src="img/biblioteca/maqueta-biblioteca4.jpg" alt="" loading="lazy" decoding="async">
-        </div>
+        <div class="maqueta-img" onclick="lbOpenImg(this)"><img src="img/biblioteca/maqueta-biblioteca1.jpg" alt="" loading="lazy" decoding="async"></div>
+        <div class="maqueta-img" onclick="lbOpenImg(this)"><img src="img/biblioteca/maqueta-biblioteca2.jpg" alt="" loading="lazy" decoding="async"></div>
+        <div class="maqueta-img" onclick="lbOpenImg(this)"><img src="img/biblioteca/maqueta-biblioteca3.jpg" alt="" loading="lazy" decoding="async"></div>
+        <div class="maqueta-img" onclick="lbOpenImg(this)"><img src="img/biblioteca/maqueta-biblioteca4.jpg" alt="" loading="lazy" decoding="async"></div>
       </div>
     </div>
-    <div class="footer" style="margin-top:2px"><div class="footer-row">
-      <span class="ft-l">Facundo Luna</span>
-      <span class="ft-m">FADU UBA · Arquitectura + IA</span>
-      <span class="ft-r">© 2026</span>
+    <div class="footer" style="margin-top:4px"><div class="footer-row">
+      <span class="ft-l">Facundo Luna</span><span class="ft-m">FADU UBA · Arquitectura + IA</span><span class="ft-r">© 2026</span>
     </div></div>
   </div>
 </div>
 <div class="view" id="view-proj-03">
-  <div class="proj-hero" onclick="lbOpenImg(this)">
+  <div class="proj-hero">
     <img src="img/plano/plano.jpg" alt="" loading="eager" fetchpriority="high">
     <div class="proj-hero-fade"></div>
   </div>
@@ -879,22 +845,20 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
     </div>
     <hr class="hr">
     <div class="sh"><div class="sh-row"><span class="sh-label" data-es="Láminas" data-en="Sheets">Láminas</span></div></div>
-        <div class="laminas-bg" id="lam-bg-03"><img src="img/plano/plano.jpg" alt=""></div>
+    <div class="laminas-bg" id="lam-bg-03"><img src="img/plano/plano.jpg" alt=""></div>
     <div class="laminas-stack" id="lam-grid-03" data-bg="lam-bg-03">
       <div class="lamina" onclick="lbOpen(this,'lam-grid-03')">
-        <img src="img/plano/plano.jpg" alt="" loading="lazy" decoding="async">
+        <img src="l_l1" alt="" loading="lazy" decoding="async">
       </div>
     </div>
 
-    <div class="footer" style="margin-top:2px"><div class="footer-row">
-      <span class="ft-l">Facundo Luna</span>
-      <span class="ft-m">FADU UBA · Arquitectura + IA</span>
-      <span class="ft-r">© 2026</span>
+    <div class="footer" style="margin-top:4px"><div class="footer-row">
+      <span class="ft-l">Facundo Luna</span><span class="ft-m">FADU UBA · Arquitectura + IA</span><span class="ft-r">© 2026</span>
     </div></div>
   </div>
 </div>
 <div class="view" id="view-proj-04">
-  <div class="proj-hero" onclick="lbOpenImg(this)">
+  <div class="proj-hero">
     <img src="img/intervencion/intervencion8.jpg" alt="" loading="eager" fetchpriority="high">
     <div class="proj-hero-fade"></div>
   </div>
@@ -920,67 +884,48 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
     </div>
     <hr class="hr">
     <div class="sh"><div class="sh-row"><span class="sh-label" data-es="Láminas" data-en="Sheets">Láminas</span></div></div>
-                <div class="laminas-bg" id="lam-bg-04">
-      <img src="img/intervencion/intervencion8.jpg" alt="">
-    </div>
+    <div class="laminas-bg" id="lam-bg-04"><img src="img/intervencion/intervencion8.jpg" alt=""></div>
     <div class="laminas-stack" id="lam-grid-04" data-bg="lam-bg-04">
       <div class="lamina" onclick="lbOpen(this,'lam-grid-04')">
-        <img src="img/intervencion/intervencion.jpg" alt="" loading="lazy" decoding="async">
+        <img src="u_l0" alt="" loading="lazy" decoding="async">
       </div>
       <div class="lam-row lam-row-4">
       <div class="lamina" onclick="lbOpen(this,'lam-grid-04')">
-        <img src="img/intervencion/intervencion1.jpg" alt="" loading="lazy" decoding="async">
+        <img src="u_l1" alt="" loading="lazy" decoding="async">
       </div>
       <div class="lamina" onclick="lbOpen(this,'lam-grid-04')">
-        <img src="img/intervencion/intervencion2.jpg" alt="" loading="lazy" decoding="async">
+        <img src="u_l2" alt="" loading="lazy" decoding="async">
       </div>
       <div class="lamina" onclick="lbOpen(this,'lam-grid-04')">
-        <img src="img/intervencion/intervencion3.jpg" alt="" loading="lazy" decoding="async">
+        <img src="u_l3" alt="" loading="lazy" decoding="async">
       </div>
       <div class="lamina" onclick="lbOpen(this,'lam-grid-04')">
-        <img src="img/intervencion/intervencion4.jpg" alt="" loading="lazy" decoding="async">
+        <img src="u_l4" alt="" loading="lazy" decoding="async">
       </div>
       </div>
       <div class="lam-row lam-row-4">
       <div class="lamina" onclick="lbOpen(this,'lam-grid-04')">
-        <img src="img/intervencion/intervencion5.jpg" alt="" loading="lazy" decoding="async">
+        <img src="u_l5" alt="" loading="lazy" decoding="async">
       </div>
       <div class="lamina" onclick="lbOpen(this,'lam-grid-04')">
-        <img src="img/intervencion/intervencion6.jpg" alt="" loading="lazy" decoding="async">
+        <img src="u_l6" alt="" loading="lazy" decoding="async">
       </div>
       <div class="lamina" onclick="lbOpen(this,'lam-grid-04')">
-        <img src="img/intervencion/intervencion7.jpg" alt="" loading="lazy" decoding="async">
+        <img src="u_l7" alt="" loading="lazy" decoding="async">
       </div>
       <div class="lamina" onclick="lbOpen(this,'lam-grid-04')">
-        <img src="img/intervencion/intervencion8.jpg" alt="" loading="lazy" decoding="async">
-      </div>
-      </div>
-    </div>
-      <div class="lam-row lam-row-4">
-      <div class="lamina" onclick="lbOpen(this,'lam-grid-04')">
-        <img src="img/intervencion/intervencion5.jpg" alt="" loading="lazy" decoding="async">
-      </div>
-      <div class="lamina" onclick="lbOpen(this,'lam-grid-04')">
-        <img src="img/intervencion/intervencion6.jpg" alt="" loading="lazy" decoding="async">
-      </div>
-      <div class="lamina" onclick="lbOpen(this,'lam-grid-04')">
-        <img src="img/intervencion/intervencion7.jpg" alt="" loading="lazy" decoding="async">
-      </div>
-      <div class="lamina" onclick="lbOpen(this,'lam-grid-04')">
-        <img src="img/intervencion/intervencion8.jpg" alt="" loading="lazy" decoding="async">
+        <img src="u_l8" alt="" loading="lazy" decoding="async">
       </div>
       </div>
     </div>
 
-    <div class="footer" style="margin-top:2px"><div class="footer-row">
-      <span class="ft-l">Facundo Luna</span>
-      <span class="ft-m">FADU UBA · Arquitectura + IA</span>
-      <span class="ft-r">© 2026</span>
+    <div class="footer" style="margin-top:4px"><div class="footer-row">
+      <span class="ft-l">Facundo Luna</span><span class="ft-m">FADU UBA · Arquitectura + IA</span><span class="ft-r">© 2026</span>
     </div></div>
   </div>
 </div>
 <div class="view" id="view-proj-05">
-  <div class="proj-hero" onclick="lbOpenImg(this)">
+  <div class="proj-hero">
     <img src="img/conjunto/conjuntogrande.jpg" alt="" loading="eager" fetchpriority="high">
     <div class="proj-hero-fade"></div>
   </div>
@@ -999,53 +944,47 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
           </div>
         </div>
         <div class="proj-desc-col">
-          <p class="proj-desc-text" data-es="Planta libre como principio organizador. Las circulaciones se integran al paisaje urbano. La iluminación natural cenital actúa como organizador del espacio colectivo." data-en="Open plan as organizing principle. Circulations integrate into the urban landscape.">Planta libre como principio organizador. Las circulaciones se integran al paisaje urbano. La iluminación natural cenital actúa como organizador del espacio colectivo.</p>
+          <p class="proj-desc-text" data-es="Planta libre como principio organizador. Las circulaciones se integran al paisaje urbano. La iluminación natural cenital actúa como organizador del espacio colectivo." data-en="Open plan as organizing principle. Zenithal natural light organizes collective space.">Planta libre como principio organizador. Las circulaciones se integran al paisaje urbano. La iluminación natural cenital actúa como organizador del espacio colectivo.</p>
           <div class="proj-tags"><span class="proj-tag">Croquis</span><span class="proj-tag">Plantas</span><span class="proj-tag">Cortes</span><span class="proj-tag">Render</span><span class="proj-tag">Post IA</span></div>
         </div>
       </div>
     </div>
     <hr class="hr">
     <div class="sh"><div class="sh-row"><span class="sh-label" data-es="Láminas" data-en="Sheets">Láminas</span></div></div>
-                <div class="laminas-bg" id="lam-bg-05">
-      <img src="img/conjunto/conjuntogrande.jpg" alt="">
-    </div>
+    <div class="laminas-bg" id="lam-bg-05"><img src="img/conjunto/conjuntogrande.jpg" alt=""></div>
     <div class="laminas-stack" id="lam-grid-05" data-bg="lam-bg-05">
       <div class="lamina" onclick="lbOpen(this,'lam-grid-05')">
-        <img src="img/conjunto/conjuntogrande2.jpg" alt="" loading="lazy" decoding="async">
+        <img src="c_l0" alt="" loading="lazy" decoding="async">
       </div>
       <div class="lamina" onclick="lbOpen(this,'lam-grid-05')">
-        <img src="img/conjunto/conjunto1.jpg" alt="" loading="lazy" decoding="async">
+        <img src="c_l1" alt="" loading="lazy" decoding="async">
       </div>
       <div class="lamina" onclick="lbOpen(this,'lam-grid-05')">
-        <img src="img/conjunto/conjunto2.jpg" alt="" loading="lazy" decoding="async">
+        <img src="c_l2" alt="" loading="lazy" decoding="async">
       </div>
       <div class="lamina" onclick="lbOpen(this,'lam-grid-05')">
-        <img src="img/conjunto/conjunto3.jpg" alt="" loading="lazy" decoding="async">
+        <img src="c_l3" alt="" loading="lazy" decoding="async">
       </div>
       <div class="lamina" onclick="lbOpen(this,'lam-grid-05')">
-        <img src="img/conjunto/conjunto4.jpg" alt="" loading="lazy" decoding="async">
+        <img src="c_l4" alt="" loading="lazy" decoding="async">
       </div>
       <div class="lamina" onclick="lbOpen(this,'lam-grid-05')">
-        <img src="img/conjunto/conjunto5.jpg" alt="" loading="lazy" decoding="async">
+        <img src="c_l5" alt="" loading="lazy" decoding="async">
       </div>
     </div>
-        <div class="maqueta-section">
+    <div class="maqueta-section">
       <div class="sh"><div class="sh-row"><span class="sh-label" data-es="Maqueta" data-en="Model">Maqueta</span></div></div>
-      <div class="maqueta-grid" id="maq-grid-05" style="grid-template-columns:repeat(1,1fr)">
-        <div class="maqueta-img" onclick="lbOpen(this,'maq-grid-05')">
-          <img src="img/conjunto/maqueta-conjunto.jpg" alt="" loading="lazy" decoding="async">
-        </div>
+      <div class="maqueta-grid" id="maq-grid-05">
+        <div class="maqueta-img" onclick="lbOpenImg(this)"><img src="img/conjunto/conjuntogrande.jpg" alt="" loading="lazy" decoding="async"></div>
       </div>
     </div>
-    <div class="footer" style="margin-top:2px"><div class="footer-row">
-      <span class="ft-l">Facundo Luna</span>
-      <span class="ft-m">FADU UBA · Arquitectura + IA</span>
-      <span class="ft-r">© 2026</span>
+    <div class="footer" style="margin-top:4px"><div class="footer-row">
+      <span class="ft-l">Facundo Luna</span><span class="ft-m">FADU UBA · Arquitectura + IA</span><span class="ft-r">© 2026</span>
     </div></div>
   </div>
 </div>
 <div class="view" id="view-proj-06">
-  <div class="proj-hero" onclick="lbOpenImg(this)">
+  <div class="proj-hero">
     <img src="img/iglesia/iglesia.jpg" alt="" loading="eager" fetchpriority="high">
     <div class="proj-hero-fade"></div>
   </div>
@@ -1064,32 +1003,30 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
           </div>
         </div>
         <div class="proj-desc-col">
-          <p class="proj-desc-text" data-es="La luz natural como material estructural del proyecto. Las celosías paramétricas generadas en Grasshopper filtran y dirigen la luz según la orientación y la hora del día." data-en="Natural light as the structural material. Parametric lattices filter and direct light.">La luz natural como material estructural del proyecto. Las celosías paramétricas generadas en Grasshopper filtran y dirigen la luz según la orientación y la hora del día.</p>
+          <p class="proj-desc-text" data-es="La luz natural como material estructural. Las celosías paramétricas generadas en Grasshopper filtran y dirigen la luz según orientación y hora del día." data-en="Natural light as structural material. Parametric lattices filter and direct light.">La luz natural como material estructural. Las celosías paramétricas generadas en Grasshopper filtran y dirigen la luz según orientación y hora del día.</p>
           <div class="proj-tags"><span class="proj-tag">Croquis</span><span class="proj-tag">Diagrama</span><span class="proj-tag">Post IA</span></div>
         </div>
       </div>
     </div>
     <hr class="hr">
     <div class="sh"><div class="sh-row"><span class="sh-label" data-es="Láminas" data-en="Sheets">Láminas</span></div></div>
-            <div class="laminas-bg" id="lam-bg-06"><img src="img/iglesia/iglesia.jpg" alt=""></div>
+    <div class="laminas-bg" id="lam-bg-06"><img src="img/iglesia/iglesia.jpg" alt=""></div>
     <div class="laminas-stack" id="lam-grid-06" data-bg="lam-bg-06">
       <div class="lamina" onclick="lbOpen(this,'lam-grid-06')">
-        <img src="img/iglesia/iglesia1.jpg" alt="" loading="lazy" decoding="async">
+        <img src="s_l1" alt="" loading="lazy" decoding="async">
       </div>
       <div class="lamina" onclick="lbOpen(this,'lam-grid-06')">
-        <img src="img/iglesia/iglesia2.jpg" alt="" loading="lazy" decoding="async">
+        <img src="s_l2" alt="" loading="lazy" decoding="async">
       </div>
     </div>
 
-    <div class="footer" style="margin-top:2px"><div class="footer-row">
-      <span class="ft-l">Facundo Luna</span>
-      <span class="ft-m">FADU UBA · Arquitectura + IA</span>
-      <span class="ft-r">© 2026</span>
+    <div class="footer" style="margin-top:4px"><div class="footer-row">
+      <span class="ft-l">Facundo Luna</span><span class="ft-m">FADU UBA · Arquitectura + IA</span><span class="ft-r">© 2026</span>
     </div></div>
   </div>
 </div>
 <div class="view" id="view-proj-07">
-  <div class="proj-hero" onclick="lbOpenImg(this)">
+  <div class="proj-hero">
     <img src="img/parametrico/1.jpg" alt="" loading="eager" fetchpriority="high">
     <div class="proj-hero-fade"></div>
   </div>
@@ -1115,7 +1052,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
     </div>
     <hr class="hr">
     <div class="sh"><div class="sh-row"><span class="sh-label" data-es="Láminas" data-en="Sheets">Láminas</span></div></div>
-            <div class="laminas-bg" id="lam-bg-07"><img src="img/parametrico/1.jpg" alt=""></div>
+    <div class="laminas-bg" id="lam-bg-07"><img src="img/parametrico/1.jpg" alt=""></div>
     <div class="laminas-stack" id="lam-grid-07" data-bg="lam-bg-07">
       <div class="lamina" onclick="lbOpen(this,'lam-grid-07')">
         <img src="img/parametrico/2.jpg" alt="" loading="lazy" decoding="async">
@@ -1185,15 +1122,13 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
       </div>
     </div>
 
-    <div class="footer" style="margin-top:2px"><div class="footer-row">
-      <span class="ft-l">Facundo Luna</span>
-      <span class="ft-m">FADU UBA · Arquitectura + IA</span>
-      <span class="ft-r">© 2026</span>
+    <div class="footer" style="margin-top:4px"><div class="footer-row">
+      <span class="ft-l">Facundo Luna</span><span class="ft-m">FADU UBA · Arquitectura + IA</span><span class="ft-r">© 2026</span>
     </div></div>
   </div>
 </div>
 <div class="view" id="view-proj-08">
-  <div class="proj-hero" onclick="lbOpenImg(this)">
+  <div class="proj-hero">
     <img src="img/reversion/morfo1.jpg" alt="" loading="eager" fetchpriority="high">
     <div class="proj-hero-fade"></div>
   </div>
@@ -1219,7 +1154,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
     </div>
     <hr class="hr">
     <div class="sh"><div class="sh-row"><span class="sh-label" data-es="Láminas" data-en="Sheets">Láminas</span></div></div>
-            <div class="laminas-bg" id="lam-bg-08"><img src="img/reversion/morfo1.jpg" alt=""></div>
+    <div class="laminas-bg" id="lam-bg-08"><img src="img/reversion/morfo1.jpg" alt=""></div>
     <div class="laminas-stack" id="lam-grid-08" data-bg="lam-bg-08">
       <div class="lamina" onclick="lbOpen(this,'lam-grid-08')">
         <img src="img/reversion/morfo2.jpg" alt="" loading="lazy" decoding="async">
@@ -1274,10 +1209,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
       </div>
     </div>
 
-    <div class="footer" style="margin-top:2px"><div class="footer-row">
-      <span class="ft-l">Facundo Luna</span>
-      <span class="ft-m">FADU UBA · Arquitectura + IA</span>
-      <span class="ft-r">© 2026</span>
+    <div class="footer" style="margin-top:4px"><div class="footer-row">
+      <span class="ft-l">Facundo Luna</span><span class="ft-m">FADU UBA · Arquitectura + IA</span><span class="ft-r">© 2026</span>
     </div></div>
   </div>
 </div>
@@ -1288,12 +1221,12 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
       <span class="sh-right" data-es="Croquis · diagramas · modelos · algoritmos" data-en="Sketches · diagrams · models · algorithms">Croquis · diagramas · modelos · algoritmos</span>
     </div></div>
     <div class="proc-grid">
-      <div class="proc-card"><img src="img/proceso.jpg" alt="Proceso" loading="lazy" decoding="async"></div>
-      <div class="proc-card"><img src="img/proceso2.jpg" alt="Proceso" loading="lazy" decoding="async"></div>
-      <div class="proc-card"><img src="img/proceso3.jpg" alt="Proceso" loading="lazy" decoding="async"></div>
-      <div class="proc-card"><img src="img/proceso4.jpg" alt="Proceso" loading="lazy" decoding="async"></div>
-      <div class="proc-card"><img src="img/proceso5.jpg" alt="Proceso" loading="lazy" decoding="async"></div>
-      <div class="proc-card"><img src="img/proceso.jpg" alt="Proceso" loading="lazy" decoding="async"></div>
+      <div class="proc-card" onclick="lbOpenImg(this)"><img src="img/proceso.jpg" alt="" loading="lazy" decoding="async"></div>
+      <div class="proc-card" onclick="lbOpenImg(this)"><img src="img/proceso2.jpg" alt="" loading="lazy" decoding="async"></div>
+      <div class="proc-card" onclick="lbOpenImg(this)"><img src="img/proceso3.jpg" alt="" loading="lazy" decoding="async"></div>
+      <div class="proc-card" onclick="lbOpenImg(this)"><img src="img/proceso4.jpg" alt="" loading="lazy" decoding="async"></div>
+      <div class="proc-card" onclick="lbOpenImg(this)"><img src="img/proceso5.jpg" alt="" loading="lazy" decoding="async"></div>
+      <div class="proc-card" onclick="lbOpenImg(this)"><img src="img/proceso5.jpg" alt="" loading="lazy" decoding="async"></div>
     </div>
     <hr class="hr">
     <div class="ai-strip">
@@ -1310,11 +1243,12 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
       </div>
     </div>
     <hr class="hr">
-    <div class="footer"><div class="footer-row">
-      <span class="ft-l">Facundo Luna</span><span class="ft-m">FADU UBA · Arquitectura + IA</span><span class="ft-r">© 2026</span>
-    </div></div>
+    <div class="w"><div class="footer"><div class="footer-row">
+    <span class="ft-l">Facundo Luna</span><span class="ft-m">FADU UBA · Arquitectura + IA</span><span class="ft-r">© 2026</span>
+  </div></div></div>
   </div>
 </div>
+
 <div class="view" id="view-efele">
   <div class="w">
     <div class="sh"><div class="sh-row">
@@ -1323,63 +1257,58 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
     </div></div>
     <div class="efele-top">
       <div class="efele-l">
-        <img src="img/logo.jpg" alt="EFELE.ARQ" class="efele-logo-box">
+        <img src="img/logo.jpg" alt="EFELE.ARQ" style="max-width:380px;max-height:160px;width:100%;object-fit:contain">
         <div>
           <div class="efele-mark-row"><div class="efele-sq"></div><span class="efele-name-lbl">EFELE.ARQ</span></div>
           <div class="efele-tagline" data-es="Laboratorio de diseño e inteligencia artificial" data-en="Design and artificial intelligence laboratory">Laboratorio de diseño e inteligencia artificial</div>
         </div>
       </div>
       <div class="efele-r">
-        <p class="efele-desc"
-           data-es="<strong>EFELE.ARQ</strong> es un laboratorio personal de investigación en diseño e inteligencia artificial. Un espacio para explorar los límites entre <strong>algoritmo, imagen y arquitectura</strong> — fuera del programa académico, dentro de la práctica real.<br><br>Nació como extensión natural de un proceso de trabajo donde la IA no es un atajo sino una herramienta de pensamiento."
-           data-en="<strong>EFELE.ARQ</strong> is a personal research laboratory in design and artificial intelligence. A space to explore the boundaries between <strong>algorithm, image and architecture</strong> — outside the academic program, within real practice.<br><br>It emerged as a natural extension of a work process where AI is not a shortcut but a thinking tool.">
-          <strong>EFELE.ARQ</strong> es un laboratorio personal de investigación en diseño e inteligencia artificial. Un espacio para explorar los límites entre <strong>algoritmo, imagen y arquitectura</strong> — fuera del programa académico, dentro de la práctica real.<br><br>Nació como extensión natural de un proceso de trabajo donde la IA no es un atajo sino una herramienta de pensamiento.
-        </p>
-        <a class="efele-cta" href="https://instagram.com/efele.arq" target="_blank" rel="noopener"
-           data-es="Ver en Instagram →" data-en="See on Instagram →">Ver en Instagram →</a>
+        <p class="efele-desc" data-es="<strong>EFELE.ARQ</strong> es un laboratorio personal de investigación en diseño e inteligencia artificial. Un espacio para explorar los límites entre <strong>algoritmo, imagen y arquitectura</strong> — fuera del programa académico, dentro de la práctica real.<br><br>Nació como extensión natural de un proceso de trabajo donde la IA no es un atajo sino una herramienta de pensamiento." data-en="<strong>EFELE.ARQ</strong> is a personal research laboratory in design and artificial intelligence. A space to explore the boundaries between <strong>algorithm, image and architecture</strong> — outside the academic program, within real practice.<br><br>It emerged as a natural extension of a work process where AI is not a shortcut but a thinking tool."><strong>EFELE.ARQ</strong> es un laboratorio personal de investigación en diseño e inteligencia artificial. Un espacio para explorar los límites entre <strong>algoritmo, imagen y arquitectura</strong> — fuera del programa académico, dentro de la práctica real.<br><br>Nació como extensión natural de un proceso de trabajo donde la IA no es un atajo sino una herramienta de pensamiento.</p>
+        <a class="efele-cta" href="https://instagram.com/efele.arq" target="_blank" rel="noopener" data-es="Ver en Instagram →" data-en="See on Instagram →">Ver en Instagram →</a>
       </div>
     </div>
     <hr class="hr">
     <div class="efele-gal">
-      <div class="efele-img"><img src="img/efele1.jpg" alt="" loading="lazy" decoding="async"></div>
-      <div class="efele-img"><img src="img/efele2.jpg" alt="" loading="lazy" decoding="async"></div>
-      <div class="efele-img"><img src="img/efele3.jpg" alt="" loading="lazy" decoding="async"></div>
-      <div class="efele-img"><img src="img/efele4.jpg" alt="" loading="lazy" decoding="async"></div>
+      <div class="efele-img" onclick="lbOpenImg(this)"><img src="img/efele1.jpg" alt="" loading="lazy" decoding="async"></div>
+      <div class="efele-img" onclick="lbOpenImg(this)"><img src="img/efele2.jpg" alt="" loading="lazy" decoding="async"></div>
+      <div class="efele-img" onclick="lbOpenImg(this)"><img src="img/efele3.jpg" alt="" loading="lazy" decoding="async"></div>
+      <div class="efele-img" onclick="lbOpenImg(this)"><img src="img/efele4.jpg" alt="" loading="lazy" decoding="async"></div>
     </div>
     <hr class="hr">
-    <div class="footer"><div class="footer-row">
-      <span class="ft-l">Facundo Luna</span><span class="ft-m">FADU UBA · Arquitectura + IA</span><span class="ft-r">© 2026</span>
-    </div></div>
+    <div class="w"><div class="footer"><div class="footer-row">
+    <span class="ft-l">Facundo Luna</span><span class="ft-m">FADU UBA · Arquitectura + IA</span><span class="ft-r">© 2026</span>
+  </div></div></div>
   </div>
 </div>
+
 <div class="view" id="view-about">
   <div class="w">
     <div class="sh"><div class="sh-row">
       <span class="sh-label" data-es="About" data-en="About">About</span>
-      <span class="sh-right">Facundo Luna · Buenos Aires</span>
+      <span class="sh-right" data-es="Facundo Luna · Buenos Aires" data-en="Facundo Luna · Buenos Aires">Facundo Luna · Buenos Aires</span>
     </div></div>
     <div class="about-grid">
-      <div class="about-img-col"><img src="img/foto-facundo.jpg" alt="" loading="lazy" decoding="async"></div>
+      <div class="about-img-col" onclick="lbOpenImg(this)">
+        <img src="img/foto-facundo.jpg" alt="Facundo Luna" loading="lazy" decoding="async">
+      </div>
       <div class="about-txt">
         <div class="about-lbl" data-es="Facundo Luna — Arquitectura + IA" data-en="Facundo Luna — Architecture + AI">Facundo Luna — Arquitectura + IA</div>
-        <p class="about-body"
-           data-es="Soy <strong>Facundo Luna</strong>, estudiante de arquitectura en <strong>FADU UBA</strong>, Buenos Aires. Mi práctica combina el rigor de la documentación técnica con el diseño paramétrico y la inteligencia artificial — dos herramientas que no uso por moda, sino porque me permiten pensar proyectos que de otra forma no existirían.<br><br>Fundé <strong>EFELE.ARQ</strong> como espacio de investigación personal donde exploro los límites entre algoritmo, imagen y arquitectura."
-           data-en="I am <strong>Facundo Luna</strong>, architecture student at <strong>FADU UBA</strong>, Buenos Aires. My practice combines the rigor of technical documentation with parametric design and artificial intelligence — two tools I use because they allow me to think projects that otherwise wouldn't exist.<br><br>I founded <strong>EFELE.ARQ</strong> as a personal research space exploring the boundaries between algorithm, image and architecture.">
-          Soy <strong>Facundo Luna</strong>, estudiante de arquitectura en <strong>FADU UBA</strong>, Buenos Aires. Mi práctica combina el rigor de la documentación técnica con el diseño paramétrico y la inteligencia artificial — dos herramientas que no uso por moda, sino porque me permiten pensar proyectos que de otra forma no existirían.<br><br>Fundé <strong>EFELE.ARQ</strong> como espacio de investigación personal donde exploro los límites entre algoritmo, imagen y arquitectura.
-        </p>
+        <p class="about-body" data-es="Soy <strong>Facundo Luna</strong>, estudiante de arquitectura en <strong>FADU UBA</strong>, Buenos Aires. Mi práctica combina el rigor de la documentación técnica con el diseño paramétrico y la inteligencia artificial — dos herramientas que no uso por moda, sino porque me permiten pensar proyectos que de otra forma no existirían.<br><br>Fundé <strong>EFELE.ARQ</strong> como espacio de investigación personal donde exploro los límites entre algoritmo, imagen y arquitectura." data-en="I am <strong>Facundo Luna</strong>, architecture student at <strong>FADU UBA</strong>, Buenos Aires. My practice combines the rigor of technical documentation with parametric design and artificial intelligence — two tools I use because they allow me to think projects that otherwise wouldn't exist.<br><br>I founded <strong>EFELE.ARQ</strong> as a personal research space exploring the boundaries between algorithm, image and architecture.">Soy <strong>Facundo Luna</strong>, estudiante de arquitectura en <strong>FADU UBA</strong>, Buenos Aires. Mi práctica combina el rigor de la documentación técnica con el diseño paramétrico y la inteligencia artificial — dos herramientas que no uso por moda, sino porque me permiten pensar proyectos que de otra forma no existirían.<br><br>Fundé <strong>EFELE.ARQ</strong> como espacio de investigación personal donde exploro los límites entre algoritmo, imagen y arquitectura.</p>
         <div class="about-links">
-          <a class="about-link" href="/cdn-cgi/l/email-protection#c1a7a0a2b4afa5aeadb4afa0f0f9f381a6aca0a8adefa2aeac">Email</a>
+          <a class="about-link" href="mailto:facundoluna182@gmail.com">Email</a>
           <a class="about-link" href="https://instagram.com/efele.arq" target="_blank" rel="noopener">Instagram</a>
           <a class="about-link" href="https://www.behance.net/facundoluna182" target="_blank" rel="noopener">Behance</a>
         </div>
       </div>
     </div>
     <hr class="hr">
-    <div class="footer"><div class="footer-row">
-      <span class="ft-l">Facundo Luna</span><span class="ft-m">FADU UBA · Arquitectura + IA</span><span class="ft-r">© 2026</span>
-    </div></div>
+    <div class="w"><div class="footer"><div class="footer-row">
+    <span class="ft-l">Facundo Luna</span><span class="ft-m">FADU UBA · Arquitectura + IA</span><span class="ft-r">© 2026</span>
+  </div></div></div>
   </div>
 </div>
+
 <div class="view" id="view-contacto">
   <div class="w">
     <div class="sh"><div class="sh-row">
@@ -1390,7 +1319,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
       <div class="contact-l">
         <div class="contact-big" data-es="CONTACTAME" data-en="CONTACT ME">CONTACTAME</div>
         <div class="contact-items">
-          <div class="ci"><span class="ci-k">Email</span><a class="ci-v" href="/cdn-cgi/l/email-protection#fe989f9d8b909a91928b909fcfc6ccbe99939f9792d09d9193"><span class="__cf_email__" data-cfemail="81e7e0e2f4efe5eeedf4efe0b0b9b3c1e6ece0e8edafe2eeec">[email&#160;protected]</span></a></div>
+          <div class="ci"><span class="ci-k">Email</span><a class="ci-v" href="mailto:facundoluna182@gmail.com">facundoluna182@gmail.com</a></div>
           <div class="ci"><span class="ci-k">Instagram</span><a class="ci-v" href="https://instagram.com/efele.arq" target="_blank" rel="noopener">@efele.arq</a></div>
           <div class="ci"><span class="ci-k" data-es="Ubicación" data-en="Location">Ubicación</span><span class="ci-v">Buenos Aires, Argentina</span></div>
         </div>
@@ -1410,13 +1339,23 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
     </div>
     <hr class="hr">
     <div class="footer"><div class="footer-row">
-      <span class="ft-l">Facundo Luna</span>
-      <span class="ft-m">FADU UBA · Arquitectura + IA · Buenos Aires</span>
-      <span class="ft-r">© 2026</span>
+      <span class="ft-l">Facundo Luna</span><span class="ft-m">FADU UBA · Arquitectura + IA · Buenos Aires</span><span class="ft-r">© 2026</span>
     </div></div>
   </div>
 </div>
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+
+<script>
+/* Lightbox para imagen individual */
+function lbOpenImg(el){
+  const img = el.querySelector('img') || (el.tagName==='IMG'?el:null);
+  if(!img||!img.src) return;
+  lbImgs=[img]; lbIdx=0;
+  document.getElementById('lb-img').src=img.src;
+  document.getElementById('lb').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+
+
 
 
 'use strict';
@@ -1579,6 +1518,7 @@ function handleForm(e){
   btn.style.opacity='.5';
   btn.disabled=true;
 }
+
 </script>
 </body>
 </html>
