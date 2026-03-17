@@ -285,6 +285,15 @@ nav{
 .proj-tag{font-size:9px;font-weight:400;letter-spacing:.08em;color:var(--pale);border:0.5px solid var(--line);padding:4px 10px;background:var(--white)}
 
 /* Láminas — una por una, scroll vertical */
+/* Láminas — tamaños por columna */
+.laminas-stack{display:flex;flex-direction:column}
+.laminas-stack .lam-full{width:100%}
+.laminas-stack .lam-half,.laminas-stack .lam-third{display:inline-block;vertical-align:top}
+/* Rows de mitades y tercios */
+.lam-row{display:grid;gap:2px}
+.lam-row-2{grid-template-columns:1fr 1fr}
+.lam-row-4{grid-template-columns:1fr 1fr 1fr 1fr}
+.lam-row .lamina{width:100%}
 .laminas-section{position:relative}
 /* Fondo fijo: imagen del proyecto en b/n difuminado */
 .laminas-bg{
@@ -967,51 +976,22 @@ nav{
     <!-- Láminas -->
     <div class="sh"><div class="sh-row"><span class="sh-label" data-es="Láminas" data-en="Sheets">Láminas</span></div></div>
     <div class="laminas-section">
-      <div class="laminas-grid" id="lam-grid-01">
-        <!--
-          LÁMINAS VIVIENDA UNIFAMILIAR
-          Subí tus archivos a la carpeta img/vivienda/
-          Cambiá los src de cada <img>:
-          lam-01.jpg → planta baja
-          lam-02.jpg → planta alta o corte longitudinal
-          lam-03.jpg → fachadas
-          lam-04.jpg → render exterior o interior con post-prod IA
-          Podés agregar más <div class="lamina"> según cuántas láminas tengas
-        -->
-        <div class="lamina" onclick="lbOpen(this,'lam-grid-01')">
-          
-      <!-- ══ VIVIENDA — Lámina 1
-           Tamaño: Planta baja — A3 horizontal o vertical según cómo la tenés
-           Para activar: descomentá el <img> y borrá el div.placeholder -->
-      <!-- <img src="img/vivienda/lam-01.jpg" alt="VIVIENDA" loading="lazy"> -->
-      <div class="lamina-ph"><div class="lamina-ph-txt">img/vivienda/lam-01.jpg<br>Planta baja</div></div>
-        </div>
-        <div class="lamina" onclick="lbOpen(this,'lam-grid-01')">
-          
-      <!-- ══ VIVIENDA — Lámina 2
-           Tamaño: Corte o planta alta — mismo formato que lam-01
-           Para activar: descomentá el <img> y borrá el div.placeholder -->
-      <!-- <img src="img/vivienda/lam-02.jpg" alt="VIVIENDA" loading="lazy"> -->
-      <div class="lamina-ph"><div class="lamina-ph-txt">img/vivienda/lam-02.jpg<br>Corte / Planta alta</div></div>
-        </div>
-        <div class="lamina" onclick="lbOpen(this,'lam-grid-01')">
-          
-      <!-- ══ VIVIENDA — Lámina 3
-           Tamaño: Fachadas — mismo formato
-           Para activar: descomentá el <img> y borrá el div.placeholder -->
-      <!-- <img src="img/vivienda/lam-03.jpg" alt="VIVIENDA" loading="lazy"> -->
-      <div class="lamina-ph"><div class="lamina-ph-txt">img/vivienda/lam-03.jpg<br>Fachadas</div></div>
-        </div>
-        <div class="lamina" onclick="lbOpen(this,'lam-grid-01')">
-          
-      <!-- ══ VIVIENDA — Lámina 4
-           Tamaño: Render con post-producción IA — horizontal preferible
-           Para activar: descomentá el <img> y borrá el div.placeholder -->
-      <!-- <img src="img/vivienda/lam-04.jpg" alt="VIVIENDA" loading="lazy"> -->
-      <div class="lamina-ph"><div class="lamina-ph-txt">img/vivienda/lam-04.jpg<br>Render con post IA</div></div>
-        </div>
+              <div class="laminas-bg" id="lam-bg-01">
+      <img src="img/vivienda/hero.jpg" alt="">
+    </div>
+    <div class="laminas-stack" id="lam-grid-01" data-bg="lam-bg-01">
+      <!-- ══ Planta baja / Renders | 1920×1080px -->
+      <!-- <img src="img/vivienda/lam-01.jpg" alt="Planta baja / Renders" loading="lazy"> -->
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-01')">
+        <div class="lamina-ph"><div class="lamina-ph-txt">img/vivienda/lam-01.jpg<br>Planta baja / Renders</div></div>
+      </div>
+      <!-- ══ Cortes y fachadas | 1920×1080px -->
+      <!-- <img src="img/vivienda/lam-02.jpg" alt="Cortes y fachadas" loading="lazy"> -->
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-01')">
+        <div class="lamina-ph"><div class="lamina-ph-txt">img/vivienda/lam-02.jpg<br>Cortes y fachadas</div></div>
       </div>
     </div>
+
     <hr class="hr">
 
     <!-- Maqueta -->
@@ -1091,47 +1071,59 @@ nav{
     <hr class="hr">
     <div class="sh"><div class="sh-row"><span class="sh-label" data-es="Láminas" data-en="Sheets">Láminas</span></div></div>
     <div class="laminas-section">
-      <div class="laminas-grid" id="lam-grid-02">
-        <!--
-          LÁMINAS BIBLIOTECA COSTERA
-          img/biblioteca/lam-01.jpg → análisis de sitio / diagrama conceptual
-          img/biblioteca/lam-02.jpg → planta general / corte
-          img/biblioteca/lam-03.jpg → definición Grasshopper / piel paramétrica
-          img/biblioteca/lam-04.jpg → render exterior con post IA
-          img/biblioteca/lam-05.jpg → render interior / detalle piel
-        -->
-        <div class="lamina" onclick="lbOpen(this,'lam-grid-02')">
-      <!-- ══ BIBLIOTECA — Lámina 1
-           Tamaño: Análisis de sitio o diagrama conceptual
-           Para activar: descomentá el <img> y borrá el div.placeholder -->
-      <!-- <img src="img/biblioteca/lam-01.jpg" alt="BIBLIOTECA" loading="lazy"> -->
-      <div class="lamina-ph"><div class="lamina-ph-txt">img/biblioteca/lam-01.jpg<br>Análisis de sitio</div></div></div>
-        <div class="lamina" onclick="lbOpen(this,'lam-grid-02')">
-      <!-- ══ BIBLIOTECA — Lámina 2
-           Tamaño: Planta general o corte
-           Para activar: descomentá el <img> y borrá el div.placeholder -->
-      <!-- <img src="img/biblioteca/lam-02.jpg" alt="BIBLIOTECA" loading="lazy"> -->
-      <div class="lamina-ph"><div class="lamina-ph-txt">img/biblioteca/lam-02.jpg<br>Planta / Corte</div></div></div>
-        <div class="lamina" onclick="lbOpen(this,'lam-grid-02')">
-      <!-- ══ BIBLIOTECA — Lámina 3
-           Tamaño: Definición Grasshopper o piel paramétrica
-           Para activar: descomentá el <img> y borrá el div.placeholder -->
-      <!-- <img src="img/biblioteca/lam-03.jpg" alt="BIBLIOTECA" loading="lazy"> -->
-      <div class="lamina-ph"><div class="lamina-ph-txt">img/biblioteca/lam-03.jpg<br>Grasshopper / Piel</div></div></div>
-        <div class="lamina" onclick="lbOpen(this,'lam-grid-02')">
-      <!-- ══ BIBLIOTECA — Lámina 4
-           Tamaño: Render exterior con post IA
-           Para activar: descomentá el <img> y borrá el div.placeholder -->
-      <!-- <img src="img/biblioteca/lam-04.jpg" alt="BIBLIOTECA" loading="lazy"> -->
-      <div class="lamina-ph"><div class="lamina-ph-txt">img/biblioteca/lam-04.jpg<br>Render exterior</div></div></div>
-        <div class="lamina" onclick="lbOpen(this,'lam-grid-02')">
-      <!-- ══ BIBLIOTECA — Lámina 5
-           Tamaño: Render interior o detalle de piel
-           Para activar: descomentá el <img> y borrá el div.placeholder -->
-      <!-- <img src="img/biblioteca/lam-05.jpg" alt="BIBLIOTECA" loading="lazy"> -->
-      <div class="lamina-ph"><div class="lamina-ph-txt">img/biblioteca/lam-05.jpg<br>Render interior / Detalle</div></div></div>
+                  <div class="laminas-bg" id="lam-bg-02">
+      <img src="img/biblioteca/hero.jpg" alt="">
+    </div>
+    <div class="laminas-stack" id="lam-grid-02" data-bg="lam-bg-02">
+      <!-- ══ Vista principal | 1920×1080px -->
+      <!-- <img src="img/biblioteca/lam-01.jpg" alt="Vista principal" loading="lazy"> -->
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-02')">
+        <div class="lamina-ph"><div class="lamina-ph-txt">img/biblioteca/lam-01.jpg<br>Vista principal</div></div>
+      </div>
+      <div class="lam-row lam-row-2">
+      <!-- ══ Análisis de sitio | 960×720px -->
+      <!-- <img src="img/biblioteca/lam-02.jpg" alt="Análisis de sitio" loading="lazy"> -->
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-02')">
+        <div class="lamina-ph"><div class="lamina-ph-txt">img/biblioteca/lam-02.jpg<br>Análisis de sitio</div></div>
+      </div>
+      <!-- ══ Planta / Corte | 960×720px -->
+      <!-- <img src="img/biblioteca/lam-03.jpg" alt="Planta / Corte" loading="lazy"> -->
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-02')">
+        <div class="lamina-ph"><div class="lamina-ph-txt">img/biblioteca/lam-03.jpg<br>Planta / Corte</div></div>
+      </div>
+      </div>
+      <!-- ══ Grasshopper / Piel | 1920×1080px -->
+      <!-- <img src="img/biblioteca/lam-04.jpg" alt="Grasshopper / Piel" loading="lazy"> -->
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-02')">
+        <div class="lamina-ph"><div class="lamina-ph-txt">img/biblioteca/lam-04.jpg<br>Grasshopper / Piel</div></div>
+      </div>
+      <!-- ══ Render exterior 1 | 1920×1080px -->
+      <!-- <img src="img/biblioteca/lam-05.jpg" alt="Render exterior 1" loading="lazy"> -->
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-02')">
+        <div class="lamina-ph"><div class="lamina-ph-txt">img/biblioteca/lam-05.jpg<br>Render exterior 1</div></div>
+      </div>
+      <!-- ══ Render exterior 2 | 1920×1080px -->
+      <!-- <img src="img/biblioteca/lam-06.jpg" alt="Render exterior 2" loading="lazy"> -->
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-02')">
+        <div class="lamina-ph"><div class="lamina-ph-txt">img/biblioteca/lam-06.jpg<br>Render exterior 2</div></div>
+      </div>
+      <!-- ══ Render interior 1 | 1920×1080px -->
+      <!-- <img src="img/biblioteca/lam-07.jpg" alt="Render interior 1" loading="lazy"> -->
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-02')">
+        <div class="lamina-ph"><div class="lamina-ph-txt">img/biblioteca/lam-07.jpg<br>Render interior 1</div></div>
+      </div>
+      <!-- ══ Render interior 2 | 1920×1080px -->
+      <!-- <img src="img/biblioteca/lam-08.jpg" alt="Render interior 2" loading="lazy"> -->
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-02')">
+        <div class="lamina-ph"><div class="lamina-ph-txt">img/biblioteca/lam-08.jpg<br>Render interior 2</div></div>
+      </div>
+      <!-- ══ Detalle de piel | 1920×1080px -->
+      <!-- <img src="img/biblioteca/lam-09.jpg" alt="Detalle de piel" loading="lazy"> -->
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-02')">
+        <div class="lamina-ph"><div class="lamina-ph-txt">img/biblioteca/lam-09.jpg<br>Detalle de piel</div></div>
       </div>
     </div>
+
     <hr class="hr">
     <div class="maqueta-section">
       <div class="maqueta-label"><div class="sh-row"><span class="sh-label" data-es="Maqueta" data-en="Model">Maqueta</span></div></div>
@@ -1202,39 +1194,17 @@ nav{
            Tamaño: 1920×820px horizontal, plano o render del proyecto
            Para activar: descomentá el <img> y borrá el div.placeholder -->
       <!-- <img src="img/legajo/hero.jpg" alt="LEGAJO" loading="lazy"> -->
-      <div class="laminas-bg" id="lam-bg-03">
+              <div class="laminas-bg" id="lam-bg-03">
       <img src="img/legajo/hero.jpg" alt="">
     </div>
     <div class="laminas-stack" id="lam-grid-03" data-bg="lam-bg-03">
-      <!-- Planta: img/legajo/lam-01.jpg -->
+      <!-- ══ Documentación técnica completa | 1920×1080px -->
+      <!-- <img src="img/legajo/lam-01.jpg" alt="Documentación técnica completa" loading="lazy"> -->
       <div class="lamina" onclick="lbOpen(this,'lam-grid-03')">
-        
-      <!-- ══ LEGAJO — Lámina 1
-           Tamaño: Planta
-           Para activar: descomentá el <img> y borrá el div.placeholder -->
-      <!-- <img src="img/legajo/lam-01.jpg" alt="LEGAJO" loading="lazy"> -->
-      <div class="lamina-ph"><div class="lamina-ph-txt">img/legajo/lam-01.jpg<br>Planta</div></div>
-      </div>
-      <!-- Cortes / Fachadas: img/legajo/lam-02.jpg -->
-      <div class="lamina" onclick="lbOpen(this,'lam-grid-03')">
-        
-      <!-- ══ LEGAJO — Lámina 2
-           Tamaño: Cortes y fachadas
-           Para activar: descomentá el <img> y borrá el div.placeholder -->
-      <!-- <img src="img/legajo/lam-02.jpg" alt="LEGAJO" loading="lazy"> -->
-      <div class="lamina-ph"><div class="lamina-ph-txt">img/legajo/lam-02.jpg<br>Cortes / Fachadas</div></div>
-      </div>
-      <!-- Detalles: img/legajo/lam-03.jpg -->
-      <div class="lamina" onclick="lbOpen(this,'lam-grid-03')">
-        
-      <!-- ══ LEGAJO — Lámina 3
-           Tamaño: Detalles constructivos
-           Para activar: descomentá el <img> y borrá el div.placeholder -->
-      <!-- <img src="img/legajo/lam-03.jpg" alt="LEGAJO" loading="lazy"> -->
-      <div class="lamina-ph"><div class="lamina-ph-txt">img/legajo/lam-03.jpg<br>Detalles</div></div>
+        <div class="lamina-ph"><div class="lamina-ph-txt">img/legajo/lam-01.jpg<br>Documentación técnica completa</div></div>
       </div>
     </div>
-    </div>
+
     <div class="footer" style="margin-top:24px"><div class="footer-row"><span class="ft-l">Facundo Luna</span><span class="ft-m">FADU UBA · Arquitectura + IA</span><span class="ft-r">© 2026</span></div></div>
   </div>
 </div>
@@ -1281,39 +1251,71 @@ nav{
            Tamaño: 1920×820px horizontal, render o imagen más impactante
            Para activar: descomentá el <img> y borrá el div.placeholder -->
       <!-- <img src="img/urbana/hero.jpg" alt="URBANA" loading="lazy"> -->
-      <div class="laminas-bg" id="lam-bg-04">
+              <div class="laminas-bg" id="lam-bg-04">
       <img src="img/urbana/hero.jpg" alt="">
     </div>
     <div class="laminas-stack" id="lam-grid-04" data-bg="lam-bg-04">
-      <!-- Análisis urbano: img/urbana/lam-01.jpg -->
+      <!-- ══ Análisis urbano general | 1920×1080px -->
+      <!-- <img src="img/urbana/lam-01.jpg" alt="Análisis urbano general" loading="lazy"> -->
       <div class="lamina" onclick="lbOpen(this,'lam-grid-04')">
-        
-      <!-- ══ URBANA — Lámina 1
-           Tamaño: Análisis urbano
-           Para activar: descomentá el <img> y borrá el div.placeholder -->
-      <!-- <img src="img/urbana/lam-01.jpg" alt="URBANA" loading="lazy"> -->
-      <div class="lamina-ph"><div class="lamina-ph-txt">img/urbana/lam-01.jpg<br>Análisis urbano</div></div>
+        <div class="lamina-ph"><div class="lamina-ph-txt">img/urbana/lam-01.jpg<br>Análisis urbano general</div></div>
       </div>
-      <!-- Estrategia: img/urbana/lam-02.jpg -->
+      <div class="lam-row lam-row-4">
+      <!-- ══ Diagnóstico 1 | 960×720px -->
+      <!-- <img src="img/urbana/lam-02.jpg" alt="Diagnóstico 1" loading="lazy"> -->
       <div class="lamina" onclick="lbOpen(this,'lam-grid-04')">
-        
-      <!-- ══ URBANA — Lámina 2
-           Tamaño: Estrategia de intervención
-           Para activar: descomentá el <img> y borrá el div.placeholder -->
-      <!-- <img src="img/urbana/lam-02.jpg" alt="URBANA" loading="lazy"> -->
-      <div class="lamina-ph"><div class="lamina-ph-txt">img/urbana/lam-02.jpg<br>Estrategia</div></div>
+        <div class="lamina-ph"><div class="lamina-ph-txt">img/urbana/lam-02.jpg<br>Diagnóstico 1</div></div>
       </div>
-      <!-- Propuesta: img/urbana/lam-03.jpg -->
+      <!-- ══ Diagnóstico 2 | 960×720px -->
+      <!-- <img src="img/urbana/lam-03.jpg" alt="Diagnóstico 2" loading="lazy"> -->
       <div class="lamina" onclick="lbOpen(this,'lam-grid-04')">
-        
-      <!-- ══ URBANA — Lámina 3
-           Tamaño: Propuesta final
-           Para activar: descomentá el <img> y borrá el div.placeholder -->
-      <!-- <img src="img/urbana/lam-03.jpg" alt="URBANA" loading="lazy"> -->
-      <div class="lamina-ph"><div class="lamina-ph-txt">img/urbana/lam-03.jpg<br>Propuesta</div></div>
+        <div class="lamina-ph"><div class="lamina-ph-txt">img/urbana/lam-03.jpg<br>Diagnóstico 2</div></div>
+      </div>
+      <!-- ══ Diagnóstico 3 | 960×720px -->
+      <!-- <img src="img/urbana/lam-04.jpg" alt="Diagnóstico 3" loading="lazy"> -->
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-04')">
+        <div class="lamina-ph"><div class="lamina-ph-txt">img/urbana/lam-04.jpg<br>Diagnóstico 3</div></div>
+      </div>
+      <!-- ══ Diagnóstico 4 | 960×720px -->
+      <!-- <img src="img/urbana/lam-05.jpg" alt="Diagnóstico 4" loading="lazy"> -->
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-04')">
+        <div class="lamina-ph"><div class="lamina-ph-txt">img/urbana/lam-05.jpg<br>Diagnóstico 4</div></div>
+      </div>
+      </div>
+      <!-- ══ Estrategia A | 1920×1080px -->
+      <!-- <img src="img/urbana/lam-06.jpg" alt="Estrategia A" loading="lazy"> -->
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-04')">
+        <div class="lamina-ph"><div class="lamina-ph-txt">img/urbana/lam-06.jpg<br>Estrategia A</div></div>
+      </div>
+      <!-- ══ Estrategia B | 1920×1080px -->
+      <!-- <img src="img/urbana/lam-07.jpg" alt="Estrategia B" loading="lazy"> -->
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-04')">
+        <div class="lamina-ph"><div class="lamina-ph-txt">img/urbana/lam-07.jpg<br>Estrategia B</div></div>
+      </div>
+      <div class="lam-row lam-row-4">
+      <!-- ══ Propuesta 1 | 960×720px -->
+      <!-- <img src="img/urbana/lam-08.jpg" alt="Propuesta 1" loading="lazy"> -->
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-04')">
+        <div class="lamina-ph"><div class="lamina-ph-txt">img/urbana/lam-08.jpg<br>Propuesta 1</div></div>
+      </div>
+      <!-- ══ Propuesta 2 | 960×720px -->
+      <!-- <img src="img/urbana/lam-09.jpg" alt="Propuesta 2" loading="lazy"> -->
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-04')">
+        <div class="lamina-ph"><div class="lamina-ph-txt">img/urbana/lam-09.jpg<br>Propuesta 2</div></div>
+      </div>
+      <!-- ══ Propuesta 3 | 960×720px -->
+      <!-- <img src="img/urbana/lam-10.jpg" alt="Propuesta 3" loading="lazy"> -->
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-04')">
+        <div class="lamina-ph"><div class="lamina-ph-txt">img/urbana/lam-10.jpg<br>Propuesta 3</div></div>
+      </div>
+      <!-- ══ Propuesta 4 | 960×720px -->
+      <!-- <img src="img/urbana/lam-11.jpg" alt="Propuesta 4" loading="lazy"> -->
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-04')">
+        <div class="lamina-ph"><div class="lamina-ph-txt">img/urbana/lam-11.jpg<br>Propuesta 4</div></div>
+      </div>
       </div>
     </div>
-    </div>
+
     <div class="footer" style="margin-top:24px"><div class="footer-row"><span class="ft-l">Facundo Luna</span><span class="ft-m">FADU UBA · Arquitectura + IA</span><span class="ft-r">© 2026</span></div></div>
   </div>
 </div>
@@ -1360,39 +1362,54 @@ nav{
            Tamaño: 1920×820px horizontal, render más impactante
            Para activar: descomentá el <img> y borrá el div.placeholder -->
       <!-- <img src="img/conjunto/hero.jpg" alt="CONJUNTO" loading="lazy"> -->
-      <div class="laminas-bg" id="lam-bg-05">
+              <div class="laminas-bg" id="lam-bg-05">
       <img src="img/conjunto/hero.jpg" alt="">
     </div>
     <div class="laminas-stack" id="lam-grid-05" data-bg="lam-bg-05">
-      <!-- Planta libre: img/conjunto/lam-01.jpg -->
+      <!-- ══ Vista general / Render principal | 1920×1080px -->
+      <!-- <img src="img/conjunto/lam-01.jpg" alt="Vista general / Render principal" loading="lazy"> -->
       <div class="lamina" onclick="lbOpen(this,'lam-grid-05')">
-        
-      <!-- ══ CONJUNTO — Lámina 1
-           Tamaño: Planta libre
-           Para activar: descomentá el <img> y borrá el div.placeholder -->
-      <!-- <img src="img/conjunto/lam-01.jpg" alt="CONJUNTO" loading="lazy"> -->
-      <div class="lamina-ph"><div class="lamina-ph-txt">img/conjunto/lam-01.jpg<br>Planta libre</div></div>
+        <div class="lamina-ph"><div class="lamina-ph-txt">img/conjunto/lam-01.jpg<br>Vista general / Render principal</div></div>
       </div>
-      <!-- Corte / Fachada: img/conjunto/lam-02.jpg -->
+      <div class="lam-row lam-row-2">
+      <!-- ══ Planta libre | 960×720px -->
+      <!-- <img src="img/conjunto/lam-02.jpg" alt="Planta libre" loading="lazy"> -->
       <div class="lamina" onclick="lbOpen(this,'lam-grid-05')">
-        
-      <!-- ══ CONJUNTO — Lámina 2
-           Tamaño: Corte o fachada
-           Para activar: descomentá el <img> y borrá el div.placeholder -->
-      <!-- <img src="img/conjunto/lam-02.jpg" alt="CONJUNTO" loading="lazy"> -->
-      <div class="lamina-ph"><div class="lamina-ph-txt">img/conjunto/lam-02.jpg<br>Corte / Fachada</div></div>
+        <div class="lamina-ph"><div class="lamina-ph-txt">img/conjunto/lam-02.jpg<br>Planta libre</div></div>
       </div>
-      <!-- Render con post IA: img/conjunto/lam-03.jpg -->
+      <!-- ══ Corte longitudinal | 960×720px -->
+      <!-- <img src="img/conjunto/lam-03.jpg" alt="Corte longitudinal" loading="lazy"> -->
       <div class="lamina" onclick="lbOpen(this,'lam-grid-05')">
-        
-      <!-- ══ CONJUNTO — Lámina 3
-           Tamaño: Render con post IA
-           Para activar: descomentá el <img> y borrá el div.placeholder -->
-      <!-- <img src="img/conjunto/lam-03.jpg" alt="CONJUNTO" loading="lazy"> -->
-      <div class="lamina-ph"><div class="lamina-ph-txt">img/conjunto/lam-03.jpg<br>Render con post IA</div></div>
+        <div class="lamina-ph"><div class="lamina-ph-txt">img/conjunto/lam-03.jpg<br>Corte longitudinal</div></div>
+      </div>
+      </div>
+      <!-- ══ Render exterior 1 | 1920×1080px -->
+      <!-- <img src="img/conjunto/lam-04.jpg" alt="Render exterior 1" loading="lazy"> -->
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-05')">
+        <div class="lamina-ph"><div class="lamina-ph-txt">img/conjunto/lam-04.jpg<br>Render exterior 1</div></div>
+      </div>
+      <!-- ══ Render exterior 2 | 1920×1080px -->
+      <!-- <img src="img/conjunto/lam-05.jpg" alt="Render exterior 2" loading="lazy"> -->
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-05')">
+        <div class="lamina-ph"><div class="lamina-ph-txt">img/conjunto/lam-05.jpg<br>Render exterior 2</div></div>
+      </div>
+      <!-- ══ Render exterior 3 | 1920×1080px -->
+      <!-- <img src="img/conjunto/lam-06.jpg" alt="Render exterior 3" loading="lazy"> -->
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-05')">
+        <div class="lamina-ph"><div class="lamina-ph-txt">img/conjunto/lam-06.jpg<br>Render exterior 3</div></div>
+      </div>
+      <!-- ══ Render interior 1 | 1920×1080px -->
+      <!-- <img src="img/conjunto/lam-07.jpg" alt="Render interior 1" loading="lazy"> -->
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-05')">
+        <div class="lamina-ph"><div class="lamina-ph-txt">img/conjunto/lam-07.jpg<br>Render interior 1</div></div>
+      </div>
+      <!-- ══ Render interior 2 | 1920×1080px -->
+      <!-- <img src="img/conjunto/lam-08.jpg" alt="Render interior 2" loading="lazy"> -->
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-05')">
+        <div class="lamina-ph"><div class="lamina-ph-txt">img/conjunto/lam-08.jpg<br>Render interior 2</div></div>
       </div>
     </div>
-    </div>
+
     <hr class="hr">
     <div class="maqueta-section">
       <div class="maqueta-label"><div class="sh-row"><span class="sh-label">Maqueta</span></div></div>
@@ -1463,39 +1480,22 @@ nav{
            Tamaño: 1920×820px horizontal, render de luz más impactante
            Para activar: descomentá el <img> y borrá el div.placeholder -->
       <!-- <img src="img/sacro/hero.jpg" alt="SACRO" loading="lazy"> -->
-      <div class="laminas-bg" id="lam-bg-06">
+              <div class="laminas-bg" id="lam-bg-06">
       <img src="img/sacro/hero.jpg" alt="">
     </div>
     <div class="laminas-stack" id="lam-grid-06" data-bg="lam-bg-06">
-      <!-- Diagrama de luz: img/sacro/lam-01.jpg -->
+      <!-- ══ Diagrama de luz / Celosías | 1920×1080px -->
+      <!-- <img src="img/sacro/lam-01.jpg" alt="Diagrama de luz / Celosías" loading="lazy"> -->
       <div class="lamina" onclick="lbOpen(this,'lam-grid-06')">
-        
-      <!-- ══ SACRO — Lámina 1
-           Tamaño: Diagrama de luz o celosías
-           Para activar: descomentá el <img> y borrá el div.placeholder -->
-      <!-- <img src="img/sacro/lam-01.jpg" alt="SACRO" loading="lazy"> -->
-      <div class="lamina-ph"><div class="lamina-ph-txt">img/sacro/lam-01.jpg<br>Diagrama de luz</div></div>
+        <div class="lamina-ph"><div class="lamina-ph-txt">img/sacro/lam-01.jpg<br>Diagrama de luz / Celosías</div></div>
       </div>
-      <!-- Planta / Corte: img/sacro/lam-02.jpg -->
+      <!-- ══ Render con post IA | 1920×1080px -->
+      <!-- <img src="img/sacro/lam-02.jpg" alt="Render con post IA" loading="lazy"> -->
       <div class="lamina" onclick="lbOpen(this,'lam-grid-06')">
-        
-      <!-- ══ SACRO — Lámina 2
-           Tamaño: Planta o corte
-           Para activar: descomentá el <img> y borrá el div.placeholder -->
-      <!-- <img src="img/sacro/lam-02.jpg" alt="SACRO" loading="lazy"> -->
-      <div class="lamina-ph"><div class="lamina-ph-txt">img/sacro/lam-02.jpg<br>Planta / Corte</div></div>
-      </div>
-      <!-- Render con post IA: img/sacro/lam-03.jpg -->
-      <div class="lamina" onclick="lbOpen(this,'lam-grid-06')">
-        
-      <!-- ══ SACRO — Lámina 3
-           Tamaño: Render con post IA
-           Para activar: descomentá el <img> y borrá el div.placeholder -->
-      <!-- <img src="img/sacro/lam-03.jpg" alt="SACRO" loading="lazy"> -->
-      <div class="lamina-ph"><div class="lamina-ph-txt">img/sacro/lam-03.jpg<br>Render con post IA</div></div>
+        <div class="lamina-ph"><div class="lamina-ph-txt">img/sacro/lam-02.jpg<br>Render con post IA</div></div>
       </div>
     </div>
-    </div>
+
     <div class="footer" style="margin-top:24px"><div class="footer-row"><span class="ft-l">Facundo Luna</span><span class="ft-m">FADU UBA · Arquitectura + IA</span><span class="ft-r">© 2026</span></div></div>
   </div>
 </div>
