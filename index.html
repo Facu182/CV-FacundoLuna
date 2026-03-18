@@ -462,7 +462,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
   <a onclick="go('contacto');closeMob()"  data-vm="contacto">Contacto</a>
 </div>
 
-<!-- ════ INICIO ════ -->
 <div class="view active" id="view-inicio">
   <div class="w">
     <div class="hero">
@@ -541,7 +540,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
   </div>
 </div>
 
-<!-- ════ PROYECTOS ════ -->
 <div class="view" id="view-proyectos">
   <div class="w"><div class="sh"><div class="sh-row">
     <span class="sh-label" data-es="Proyectos seleccionados" data-en="Selected projects">Proyectos seleccionados</span>
@@ -772,16 +770,16 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
     <div class="sh"><div class="sh-row"><span class="sh-label" data-es="Láminas" data-en="Sheets">Láminas</span></div></div>
     <div class="laminas-bg" id="lam-bg-02"><img src="img/biblioteca/biblioteca.jpg" alt=""></div>
     <div class="laminas-stack" id="lam-grid-02" data-bg="lam-bg-02">
-      <div class="lam-row lam-row-2">
       <div class="lamina" onclick="lbOpen(this,'lam-grid-02')">
         <img src="img/biblioteca/biblioteca1.jpg" alt="" loading="lazy" decoding="async">
       </div>
+      <div class="lam-row lam-row-2">
       <div class="lamina" onclick="lbOpen(this,'lam-grid-02')">
         <img src="img/biblioteca/biblioteca2.jpg" alt="" loading="lazy" decoding="async">
       </div>
-      </div>
       <div class="lamina" onclick="lbOpen(this,'lam-grid-02')">
         <img src="img/biblioteca/biblioteca3.jpg" alt="" loading="lazy" decoding="async">
+      </div>
       </div>
       <div class="lamina" onclick="lbOpen(this,'lam-grid-02')">
         <img src="img/biblioteca/biblioteca4.jpg" alt="" loading="lazy" decoding="async">
@@ -1357,9 +1355,6 @@ function lbOpenImg(el){
   document.getElementById('lb').classList.add('open');
   document.body.style.overflow='hidden';
 }
-
-
-
 
 'use strict';
 
