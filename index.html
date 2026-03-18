@@ -771,13 +771,13 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
     <div class="laminas-bg" id="lam-bg-02"><img src="img/biblioteca/biblioteca.jpg" alt=""></div>
     <div class="laminas-stack" id="lam-grid-02" data-bg="lam-bg-02">
       
-      <div class="lam-row lam-row-2">
-      <div class="lamina" onclick="lbOpen(this,'lam-grid-02')">
-        <img src="img/biblioteca/biblioteca1.jpg" alt="" loading="lazy" decoding="async">
-      </div>
-      <div class="lamina" onclick="lbOpen(this,'lam-grid-02')">
-        <img src="img/biblioteca/biblioteca2.jpg" alt="" loading="lazy" decoding="async">
-      </div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:2px; background:var(--line);">
+        <div class="lamina" onclick="lbOpen(this,'lam-grid-02')">
+          <img src="img/biblioteca/biblioteca1.jpg" alt="" loading="lazy" decoding="async">
+        </div>
+        <div class="lamina" onclick="lbOpen(this,'lam-grid-02')">
+          <img src="img/biblioteca/biblioteca2.jpg" alt="" loading="lazy" decoding="async">
+        </div>
       </div>
       
       <div class="lamina" onclick="lbOpen(this,'lam-grid-02')">
@@ -1019,7 +1019,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
         <img src="img/iglesia/iglesia1.jpg" alt="" loading="lazy" decoding="async">
       </div>
       <div class="lamina" onclick="lbOpen(this,'lam-grid-06')">
-        <img src="img/iglesia/iglesia2.jpg" alt="" loading="lazy" decoding="async">
+        <img src="img/iglesia/iglesia2.jpg" alt="" loading="lazy decoding="async">
       </div>
     </div>
 
