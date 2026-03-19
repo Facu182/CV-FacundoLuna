@@ -253,7 +253,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
   border:0.5px solid var(--line);padding:4px 10px;background:var(--white)}
 
 /* Láminas — scroll vertical con fondo b/n */
-.laminas-bg{position:fixed;top:0;left:0;right:0;bottom:0;z-index:0;
+/* CORRECCIÓN: z-index a -1 para que no tape las imágenes principales */
+.laminas-bg{position:fixed;top:0;left:0;right:0;bottom:0;z-index:-1;
   pointer-events:none;opacity:0;transition:opacity .4s ease}
 .laminas-bg.visible{opacity:1}
 .laminas-bg img{width:100%;height:100%;object-fit:cover;
@@ -769,15 +770,16 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
     <hr class="hr">
     <div class="sh"><div class="sh-row"><span class="sh-label" data-es="Láminas" data-en="Sheets">Láminas</span></div></div>
     <div class="laminas-bg" id="lam-bg-02"><img src="img/biblioteca/biblioteca.jpg" alt=""></div>
+    
     <div class="laminas-stack" id="lam-grid-02" data-bg="lam-bg-02">
       
-      <div class="lam-row lam-row-2">
-      <div class="lamina" onclick="lbOpen(this,'lam-grid-02')" style="aspect-ratio: auto;">
-        <img src="img/biblioteca/biblioteca1.jpg" alt="" loading="lazy" decoding="async">
-      </div>
-      <div class="lamina" onclick="lbOpen(this,'lam-grid-02')" style="aspect-ratio: auto;">
-        <img src="img/biblioteca/biblioteca2.jpg" alt="" loading="lazy" decoding="async">
-      </div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:2px; background:var(--line);">
+        <div class="lamina" onclick="lbOpen(this,'lam-grid-02')">
+          <img src="img/biblioteca/biblioteca1.jpg" alt="" loading="lazy" decoding="async">
+        </div>
+        <div class="lamina" onclick="lbOpen(this,'lam-grid-02')">
+          <img src="img/biblioteca/biblioteca2.jpg" alt="" loading="lazy" decoding="async">
+        </div>
       </div>
       
       <div class="lamina" onclick="lbOpen(this,'lam-grid-02')">
@@ -799,6 +801,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
         <img src="img/biblioteca/biblioteca8.jpg" alt="" loading="lazy" decoding="async">
       </div>
     </div>
+    
     <div class="maqueta-section">
       <div class="sh"><div class="sh-row"><span class="sh-label" data-es="Maqueta" data-en="Model">Maqueta</span></div></div>
       <div class="maqueta-grid" id="maq-grid-02" style="grid-template-columns:repeat(4,1fr)">
