@@ -67,32 +67,27 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
   cursor:pointer;transition:background .15s}
 .nav-mob a:hover,.nav-mob a.active{color:var(--ink);background:var(--white)}
 
-/* VIEWS - ANIMACION CORREGIDA PARA NO ROMPER POSITION FIXED */
+/* VIEWS - Animación corregida para no romper los fondos fijos */
 .view{display:none;padding-top:var(--nav);min-height:100vh}
-.view.active{display:block;animation:vin .3s ease forwards}
+.view.active{display:block;animation:vin .2s ease forwards}
 @keyframes vin{from{opacity:0;}to{opacity:1;}}
 
-/* ═══ PARCHE DE CAPAS: PROTEGE TEXTOS DEL FONDO BORROSO ═══ */
-.proj-hero { position: relative; z-index: 3; }
-.proj-header { position: relative; z-index: 2; }
-.proj-header::before {
-  content: ''; position: absolute;
-  top: -120px; bottom: -60px; left: -50vw; right: -50vw;
-  background: var(--bg); z-index: -1;
+/* ══ CAPA PROTECTORA: Mantiene fondo sólido en cabecera con degradado inferior ══ */
+.top-content {
+  position: relative;
+  z-index: 2;
+  background: var(--bg);
 }
-.maqueta-section { position: relative; z-index: 2; }
-.maqueta-section::before {
-  content: ''; position: absolute;
-  top: -40px; bottom: -20px; left: -50vw; right: -50vw;
-  background: var(--bg); z-index: -1;
+.top-content::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  height: 140px;
+  background: linear-gradient(to bottom, var(--bg), transparent);
+  pointer-events: none;
 }
-.footer { position: relative; z-index: 2; }
-.footer::before {
-  content: ''; position: absolute;
-  top: -40px; bottom: -100px; left: -50vw; right: -50vw;
-  background: var(--bg); z-index: -1;
-}
-/* ═════════════════════════════════════════════════════════ */
 
 /* DIVIDERS & SECTION HEADERS */
 .hr{border:none;border-top:0.5px solid var(--line);margin:0}
@@ -722,32 +717,36 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
 </div>
 
 <div class="view" id="view-proj-01">
-  <div class="proj-hero">
-    <img src="img/vivienda/casa.jpg" alt="" loading="eager" fetchpriority="high">
-    <div class="proj-hero-fade"></div>
-  </div>
-  <div class="w">
-    <span class="back-btn" onclick="go('proyectos',true)">← <span data-es="Volver a proyectos" data-en="Back to projects">Volver a proyectos</span></span>
-    <div class="proj-header">
-      <div class="proj-header-grid">
-        <div>
-          <div class="proj-eyebrow">Residencial · Buenos Aires · 2024</div>
-          <div class="proj-title" data-es="Vivienda<br>Unifamiliar" data-en="Single Family<br>House">Vivienda<br>Unifamiliar</div>
-          <div class="proj-subtitle" data-es="Lote entre medianeras" data-en="Party-wall lot">Lote entre medianeras</div>
-          <div class="proj-meta">
-            <div class="proj-meta-row"><span class="pmk" data-es="Año" data-en="Year">Año</span><span class="pmv">2024</span></div>
-            <div class="proj-meta-row"><span class="pmk">Herramientas</span><span class="pmv">AutoCAD · SketchUp · Twinmotion · AI</span></div>
-            <div class="proj-meta-row"><span class="pmk">Cátedra</span><span class="pmv">FADU UBA</span></div>
+  <div class="top-content">
+    <div class="proj-hero">
+      <img src="img/vivienda/casa.jpg" alt="" loading="eager" fetchpriority="high">
+      <div class="proj-hero-fade"></div>
+    </div>
+    <div class="w">
+      <span class="back-btn" onclick="go('proyectos',true)">← <span data-es="Volver a proyectos" data-en="Back to projects">Volver a proyectos</span></span>
+      <div class="proj-header">
+        <div class="proj-header-grid">
+          <div>
+            <div class="proj-eyebrow">Residencial · Buenos Aires · 2024</div>
+            <div class="proj-title" data-es="Vivienda<br>Unifamiliar" data-en="Single Family<br>House">Vivienda<br>Unifamiliar</div>
+            <div class="proj-subtitle" data-es="Lote entre medianeras" data-en="Party-wall lot">Lote entre medianeras</div>
+            <div class="proj-meta">
+              <div class="proj-meta-row"><span class="pmk" data-es="Año" data-en="Year">Año</span><span class="pmv">2024</span></div>
+              <div class="proj-meta-row"><span class="pmk">Herramientas</span><span class="pmv">AutoCAD · SketchUp · Twinmotion · AI</span></div>
+              <div class="proj-meta-row"><span class="pmk">Cátedra</span><span class="pmv">FADU UBA</span></div>
+            </div>
+          </div>
+          <div class="proj-desc-col">
+            <p class="proj-desc-text" data-es="Partido volumétrico articulado por patios interiores de luz. El lote entre medianeras impone condicionantes de privacidad y asoleamiento que se convierten en los generadores principales del proyecto." data-en="Volumetric scheme articulated by interior light patios. The party-wall lot constraints become the main project generators.">Partido volumétrico articulado por patios interiores de luz. El lote entre medianeras impone condicionantes de privacidad y asoleamiento que se convierten en los generadores principales del proyecto.</p>
+            <div class="proj-tags"><span class="proj-tag">Croquis</span><span class="proj-tag">Plantas</span><span class="proj-tag">Cortes</span><span class="proj-tag">Render</span><span class="proj-tag">Post IA</span></div>
           </div>
         </div>
-        <div class="proj-desc-col">
-          <p class="proj-desc-text" data-es="Partido volumétrico articulado por patios interiores de luz. El lote entre medianeras impone condicionantes de privacidad y asoleamiento que se convierten en los generadores principales del proyecto." data-en="Volumetric scheme articulated by interior light patios. The party-wall lot constraints become the main project generators.">Partido volumétrico articulado por patios interiores de luz. El lote entre medianeras impone condicionantes de privacidad y asoleamiento que se convierten en los generadores principales del proyecto.</p>
-          <div class="proj-tags"><span class="proj-tag">Croquis</span><span class="proj-tag">Plantas</span><span class="proj-tag">Cortes</span><span class="proj-tag">Render</span><span class="proj-tag">Post IA</span></div>
-        </div>
       </div>
+      <hr class="hr">
+      <div class="sh"><div class="sh-row"><span class="sh-label" data-es="Láminas" data-en="Sheets">Láminas</span></div></div>
     </div>
-    <hr class="hr">
-    <div class="sh"><div class="sh-row"><span class="sh-label" data-es="Láminas" data-en="Sheets">Láminas</span></div></div>
+  </div>
+  <div class="w">
     <div class="laminas-bg" id="lam-bg-01"><img src="img/vivienda/casa.jpg" alt=""></div>
     <div class="laminas-stack" id="lam-grid-01" data-bg="lam-bg-01">
       <div class="lamina" onclick="lbOpen(this,'lam-grid-01')">
@@ -761,33 +760,38 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
     </div></div>
   </div>
 </div>
+
 <div class="view" id="view-proj-02">
-  <div class="proj-hero">
-    <img src="img/biblioteca/biblioteca.jpg" alt="" loading="eager" fetchpriority="high">
-    <div class="proj-hero-fade"></div>
-  </div>
-  <div class="w">
-    <span class="back-btn" onclick="go('proyectos',true)">← <span data-es="Volver a proyectos" data-en="Back to projects">Volver a proyectos</span></span>
-    <div class="proj-header">
-      <div class="proj-header-grid">
-        <div>
-          <div class="proj-eyebrow">Equipamiento · Frente costero · 2025</div>
-          <div class="proj-title" data-es="Biblioteca<br>Costera" data-en="Coastal<br>Library">Biblioteca<br>Costera</div>
-          <div class="proj-subtitle" data-es="Estructura paramétrica adaptable" data-en="Adaptive parametric structure">Estructura paramétrica adaptable</div>
-          <div class="proj-meta">
-            <div class="proj-meta-row"><span class="pmk" data-es="Año" data-en="Year">Año</span><span class="pmv">2025</span></div>
-            <div class="proj-meta-row"><span class="pmk">Herramientas</span><span class="pmv">Rhino · Grasshopper · Twinmotion · AI</span></div>
-            <div class="proj-meta-row"><span class="pmk">Cátedra</span><span class="pmv">FADU UBA</span></div>
+  <div class="top-content">
+    <div class="proj-hero">
+      <img src="img/biblioteca/biblioteca.jpg" alt="" loading="eager" fetchpriority="high">
+      <div class="proj-hero-fade"></div>
+    </div>
+    <div class="w">
+      <span class="back-btn" onclick="go('proyectos',true)">← <span data-es="Volver a proyectos" data-en="Back to projects">Volver a proyectos</span></span>
+      <div class="proj-header">
+        <div class="proj-header-grid">
+          <div>
+            <div class="proj-eyebrow">Equipamiento · Frente costero · 2025</div>
+            <div class="proj-title" data-es="Biblioteca<br>Costera" data-en="Coastal<br>Library">Biblioteca<br>Costera</div>
+            <div class="proj-subtitle" data-es="Estructura paramétrica adaptable" data-en="Adaptive parametric structure">Estructura paramétrica adaptable</div>
+            <div class="proj-meta">
+              <div class="proj-meta-row"><span class="pmk" data-es="Año" data-en="Year">Año</span><span class="pmv">2025</span></div>
+              <div class="proj-meta-row"><span class="pmk">Herramientas</span><span class="pmv">Rhino · Grasshopper · Twinmotion · AI</span></div>
+              <div class="proj-meta-row"><span class="pmk">Cátedra</span><span class="pmv">FADU UBA</span></div>
+            </div>
+          </div>
+          <div class="proj-desc-col">
+            <p class="proj-desc-text" data-es="Piel generada en Grasshopper que optimiza orientación solar y vistas simultáneamente. Cada panel responde de forma distinta según su posición en la fachada." data-en="Skin generated in Grasshopper simultaneously optimizing solar orientation and views.">Piel generada en Grasshopper que optimiza orientación solar y vistas simultáneamente. Cada panel responde de forma distinta según su posición en la fachada.</p>
+            <div class="proj-tags"><span class="proj-tag">Croquis</span><span class="proj-tag">Análisis sitio</span><span class="proj-tag">Maqueta</span><span class="proj-tag">Post IA</span></div>
           </div>
         </div>
-        <div class="proj-desc-col">
-          <p class="proj-desc-text" data-es="Piel generada en Grasshopper que optimiza orientación solar y vistas simultáneamente. Cada panel responde de forma distinta según su posición en la fachada." data-en="Skin generated in Grasshopper simultaneously optimizing solar orientation and views.">Piel generada en Grasshopper que optimiza orientación solar y vistas simultáneamente. Cada panel responde de forma distinta según su posición en la fachada.</p>
-          <div class="proj-tags"><span class="proj-tag">Croquis</span><span class="proj-tag">Análisis sitio</span><span class="proj-tag">Maqueta</span><span class="proj-tag">Post IA</span></div>
-        </div>
       </div>
+      <hr class="hr">
+      <div class="sh"><div class="sh-row"><span class="sh-label" data-es="Láminas" data-en="Sheets">Láminas</span></div></div>
     </div>
-    <hr class="hr">
-    <div class="sh"><div class="sh-row"><span class="sh-label" data-es="Láminas" data-en="Sheets">Láminas</span></div></div>
+  </div>
+  <div class="w">
     <div class="laminas-bg" id="lam-bg-02"><img src="img/biblioteca/biblioteca.jpg" alt=""></div>
     <div class="laminas-stack" id="lam-grid-02" data-bg="lam-bg-02">
       
@@ -833,72 +837,81 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
     </div></div>
   </div>
 </div>
+
 <div class="view" id="view-proj-03">
-  <div class="proj-hero">
-    <img src="img/plano/plano.jpg" alt="" loading="eager" fetchpriority="high">
-    <div class="proj-hero-fade"></div>
-  </div>
-  <div class="w">
-    <span class="back-btn" onclick="go('proyectos',true)">← <span data-es="Volver a proyectos" data-en="Back to projects">Volver a proyectos</span></span>
-    <div class="proj-header">
-      <div class="proj-header-grid">
-        <div>
-          <div class="proj-eyebrow">Técnico · Trabajo real · 2024</div>
-          <div class="proj-title" data-es="Legajo<br>Municipal" data-en="Municipal<br>File">Legajo<br>Municipal</div>
-          <div class="proj-subtitle" data-es="Documentación ejecutiva" data-en="Executive documentation">Documentación ejecutiva</div>
-          <div class="proj-meta">
-            <div class="proj-meta-row"><span class="pmk" data-es="Año" data-en="Year">Año</span><span class="pmv">2024</span></div>
-            <div class="proj-meta-row"><span class="pmk">Herramientas</span><span class="pmv">AutoCAD · Photoshop</span></div>
-            <div class="proj-meta-row"><span class="pmk">Cátedra</span><span class="pmv">FADU UBA</span></div>
+  <div class="top-content">
+    <div class="proj-hero">
+      <img src="img/plano/plano.jpg" alt="" loading="eager" fetchpriority="high">
+      <div class="proj-hero-fade"></div>
+    </div>
+    <div class="w">
+      <span class="back-btn" onclick="go('proyectos',true)">← <span data-es="Volver a proyectos" data-en="Back to projects">Volver a proyectos</span></span>
+      <div class="proj-header">
+        <div class="proj-header-grid">
+          <div>
+            <div class="proj-eyebrow">Técnico · Trabajo real · 2024</div>
+            <div class="proj-title" data-es="Legajo<br>Municipal" data-en="Municipal<br>File">Legajo<br>Municipal</div>
+            <div class="proj-subtitle" data-es="Documentación ejecutiva" data-en="Executive documentation">Documentación ejecutiva</div>
+            <div class="proj-meta">
+              <div class="proj-meta-row"><span class="pmk" data-es="Año" data-en="Year">Año</span><span class="pmv">2024</span></div>
+              <div class="proj-meta-row"><span class="pmk">Herramientas</span><span class="pmv">AutoCAD · Photoshop</span></div>
+              <div class="proj-meta-row"><span class="pmk">Cátedra</span><span class="pmv">FADU UBA</span></div>
+            </div>
+          </div>
+          <div class="proj-desc-col">
+            <p class="proj-desc-text" data-es="Documentación ejecutiva completa para gestión ante municipio. Plantas, cortes, fachadas, detalles constructivos y memoria descriptiva." data-en="Complete executive documentation for municipal management.">Documentación ejecutiva completa para gestión ante municipio. Plantas, cortes, fachadas, detalles constructivos y memoria descriptiva.</p>
+            <div class="proj-tags"><span class="proj-tag">Plantas</span><span class="proj-tag">Cortes</span><span class="proj-tag">Fachadas</span><span class="proj-tag">Detalles</span></div>
           </div>
         </div>
-        <div class="proj-desc-col">
-          <p class="proj-desc-text" data-es="Documentación ejecutiva completa para gestión ante municipio. Plantas, cortes, fachadas, detalles constructivos y memoria descriptiva." data-en="Complete executive documentation for municipal management.">Documentación ejecutiva completa para gestión ante municipio. Plantas, cortes, fachadas, detalles constructivos y memoria descriptiva.</p>
-          <div class="proj-tags"><span class="proj-tag">Plantas</span><span class="proj-tag">Cortes</span><span class="proj-tag">Fachadas</span><span class="proj-tag">Detalles</span></div>
-        </div>
       </div>
+      <hr class="hr">
+      <div class="sh"><div class="sh-row"><span class="sh-label" data-es="Láminas" data-en="Sheets">Láminas</span></div></div>
     </div>
-    <hr class="hr">
-    <div class="sh"><div class="sh-row"><span class="sh-label" data-es="Láminas" data-en="Sheets">Láminas</span></div></div>
+  </div>
+  <div class="w">
     <div class="laminas-bg" id="lam-bg-03"><img src="img/plano/plano.jpg" alt=""></div>
     <div class="laminas-stack" id="lam-grid-03" data-bg="lam-bg-03">
       <div class="lamina" onclick="lbOpen(this,'lam-grid-03')">
         <img src="img/plano/plano.jpg" alt="" loading="lazy" decoding="async">
       </div>
     </div>
-
     <div class="footer" style="margin-top:4px"><div class="footer-row">
       <span class="ft-l">Facundo Luna</span><span class="ft-m">FADU UBA · Arquitectura + IA</span><span class="ft-r">© 2026</span>
     </div></div>
   </div>
 </div>
+
 <div class="view" id="view-proj-04">
-  <div class="proj-hero">
-    <img src="img/intervencion/intervencion8.jpg" alt="" loading="eager" fetchpriority="high">
-    <div class="proj-hero-fade"></div>
-  </div>
-  <div class="w">
-    <span class="back-btn" onclick="go('proyectos',true)">← <span data-es="Volver a proyectos" data-en="Back to projects">Volver a proyectos</span></span>
-    <div class="proj-header">
-      <div class="proj-header-grid">
-        <div>
-          <div class="proj-eyebrow">Urbanismo · Buenos Aires · 2025</div>
-          <div class="proj-title" data-es="Intervención<br>Urbana" data-en="Urban<br>Intervention">Intervención<br>Urbana</div>
-          <div class="proj-subtitle" data-es="Reconversión de espacio público" data-en="Public space reconversion">Reconversión de espacio público</div>
-          <div class="proj-meta">
-            <div class="proj-meta-row"><span class="pmk" data-es="Año" data-en="Year">Año</span><span class="pmv">2025</span></div>
-            <div class="proj-meta-row"><span class="pmk">Herramientas</span><span class="pmv">AutoCAD · SketchUp · Photoshop · AI</span></div>
-            <div class="proj-meta-row"><span class="pmk">Cátedra</span><span class="pmv">FADU UBA</span></div>
+  <div class="top-content">
+    <div class="proj-hero">
+      <img src="img/intervencion/intervencion8.jpg" alt="" loading="eager" fetchpriority="high">
+      <div class="proj-hero-fade"></div>
+    </div>
+    <div class="w">
+      <span class="back-btn" onclick="go('proyectos',true)">← <span data-es="Volver a proyectos" data-en="Back to projects">Volver a proyectos</span></span>
+      <div class="proj-header">
+        <div class="proj-header-grid">
+          <div>
+            <div class="proj-eyebrow">Urbanismo · Buenos Aires · 2025</div>
+            <div class="proj-title" data-es="Intervención<br>Urbana" data-en="Urban<br>Intervention">Intervención<br>Urbana</div>
+            <div class="proj-subtitle" data-es="Reconversión de espacio público" data-en="Public space reconversion">Reconversión de espacio público</div>
+            <div class="proj-meta">
+              <div class="proj-meta-row"><span class="pmk" data-es="Año" data-en="Year">Año</span><span class="pmv">2025</span></div>
+              <div class="proj-meta-row"><span class="pmk">Herramientas</span><span class="pmv">AutoCAD · SketchUp · Photoshop · AI</span></div>
+              <div class="proj-meta-row"><span class="pmk">Cátedra</span><span class="pmv">FADU UBA</span></div>
+            </div>
+          </div>
+          <div class="proj-desc-col">
+            <p class="proj-desc-text" data-es="Reconversión de espacio público degradado. La estrategia parte de un análisis de capas para proponer una activación por etapas." data-en="Reconversion of degraded public space through layered analysis and phased activation.">Reconversión de espacio público degradado. La estrategia parte de un análisis de capas para proponer una activación por etapas.</p>
+            <div class="proj-tags"><span class="proj-tag">Análisis sitio</span><span class="proj-tag">Diagramas</span><span class="proj-tag">Plantas</span><span class="proj-tag">Render</span></div>
           </div>
         </div>
-        <div class="proj-desc-col">
-          <p class="proj-desc-text" data-es="Reconversión de espacio público degradado. La estrategia parte de un análisis de capas para proponer una activación por etapas." data-en="Reconversion of degraded public space through layered analysis and phased activation.">Reconversión de espacio público degradado. La estrategia parte de un análisis de capas para proponer una activación por etapas.</p>
-          <div class="proj-tags"><span class="proj-tag">Análisis sitio</span><span class="proj-tag">Diagramas</span><span class="proj-tag">Plantas</span><span class="proj-tag">Render</span></div>
-        </div>
       </div>
+      <hr class="hr">
+      <div class="sh"><div class="sh-row"><span class="sh-label" data-es="Láminas" data-en="Sheets">Láminas</span></div></div>
     </div>
-    <hr class="hr">
-    <div class="sh"><div class="sh-row"><span class="sh-label" data-es="Láminas" data-en="Sheets">Láminas</span></div></div>
+  </div>
+  <div class="w">
     <div class="laminas-bg" id="lam-bg-04"><img src="img/intervencion/intervencion8.jpg" alt=""></div>
     <div class="laminas-stack" id="lam-grid-04" data-bg="lam-bg-04">
       <div class="lamina" onclick="lbOpen(this,'lam-grid-04')">
@@ -941,39 +954,43 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
       </div>
       </div>
     </div>
-
     <div class="footer" style="margin-top:4px"><div class="footer-row">
       <span class="ft-l">Facundo Luna</span><span class="ft-m">FADU UBA · Arquitectura + IA</span><span class="ft-r">© 2026</span>
     </div></div>
   </div>
 </div>
+
 <div class="view" id="view-proj-05">
-  <div class="proj-hero">
-    <img src="img/conjunto/conjuntogrande.jpg" alt="" loading="eager" fetchpriority="high">
-    <div class="proj-hero-fade"></div>
-  </div>
-  <div class="w">
-    <span class="back-btn" onclick="go('proyectos',true)">← <span data-es="Volver a proyectos" data-en="Back to projects">Volver a proyectos</span></span>
-    <div class="proj-header">
-      <div class="proj-header-grid">
-        <div>
-          <div class="proj-eyebrow">Vivienda Colectiva · 2025</div>
-          <div class="proj-title" data-es="Conjunto<br>Habitacional" data-en="Housing<br>Complex">Conjunto<br>Habitacional</div>
-          <div class="proj-subtitle" data-es="Planta libre · Iluminación cenital" data-en="Open plan · Zenithal light">Planta libre · Iluminación cenital</div>
-          <div class="proj-meta">
-            <div class="proj-meta-row"><span class="pmk" data-es="Año" data-en="Year">Año</span><span class="pmv">2025</span></div>
-            <div class="proj-meta-row"><span class="pmk">Herramientas</span><span class="pmv">AutoCAD · SketchUp · Twinmotion · AI</span></div>
-            <div class="proj-meta-row"><span class="pmk">Cátedra</span><span class="pmv">FADU UBA</span></div>
+  <div class="top-content">
+    <div class="proj-hero">
+      <img src="img/conjunto/conjuntogrande.jpg" alt="" loading="eager" fetchpriority="high">
+      <div class="proj-hero-fade"></div>
+    </div>
+    <div class="w">
+      <span class="back-btn" onclick="go('proyectos',true)">← <span data-es="Volver a proyectos" data-en="Back to projects">Volver a proyectos</span></span>
+      <div class="proj-header">
+        <div class="proj-header-grid">
+          <div>
+            <div class="proj-eyebrow">Vivienda Colectiva · 2025</div>
+            <div class="proj-title" data-es="Conjunto<br>Habitacional" data-en="Housing<br>Complex">Conjunto<br>Habitacional</div>
+            <div class="proj-subtitle" data-es="Planta libre · Iluminación cenital" data-en="Open plan · Zenithal light">Planta libre · Iluminación cenital</div>
+            <div class="proj-meta">
+              <div class="proj-meta-row"><span class="pmk" data-es="Año" data-en="Year">Año</span><span class="pmv">2025</span></div>
+              <div class="proj-meta-row"><span class="pmk">Herramientas</span><span class="pmv">AutoCAD · SketchUp · Twinmotion · AI</span></div>
+              <div class="proj-meta-row"><span class="pmk">Cátedra</span><span class="pmv">FADU UBA</span></div>
+            </div>
+          </div>
+          <div class="proj-desc-col">
+            <p class="proj-desc-text" data-es="Planta libre como principio organizador. Las circulaciones se integran al paisaje urbano. La iluminación natural cenital actúa como organizador del espacio colectivo." data-en="Open plan as organizing principle. Zenithal natural light organizes collective space.">Planta libre como principio organizador. Las circulaciones se integran al paisaje urbano. La iluminación natural cenital actúa como organizador del espacio colectivo.</p>
+            <div class="proj-tags"><span class="proj-tag">Croquis</span><span class="proj-tag">Plantas</span><span class="proj-tag">Cortes</span><span class="proj-tag">Render</span><span class="proj-tag">Post IA</span></div>
           </div>
         </div>
-        <div class="proj-desc-col">
-          <p class="proj-desc-text" data-es="Planta libre como principio organizador. Las circulaciones se integran al paisaje urbano. La iluminación natural cenital actúa como organizador del espacio colectivo." data-en="Open plan as organizing principle. Zenithal natural light organizes collective space.">Planta libre como principio organizador. Las circulaciones se integran al paisaje urbano. La iluminación natural cenital actúa como organizador del espacio colectivo.</p>
-          <div class="proj-tags"><span class="proj-tag">Croquis</span><span class="proj-tag">Plantas</span><span class="proj-tag">Cortes</span><span class="proj-tag">Render</span><span class="proj-tag">Post IA</span></div>
-        </div>
       </div>
+      <hr class="hr">
+      <div class="sh"><div class="sh-row"><span class="sh-label" data-es="Láminas" data-en="Sheets">Láminas</span></div></div>
     </div>
-    <hr class="hr">
-    <div class="sh"><div class="sh-row"><span class="sh-label" data-es="Láminas" data-en="Sheets">Láminas</span></div></div>
+  </div>
+  <div class="w">
     <div class="laminas-bg" id="lam-bg-05"><img src="img/conjunto/conjuntogrande.jpg" alt=""></div>
     <div class="laminas-stack" id="lam-grid-05" data-bg="lam-bg-05">
       <div class="lamina" onclick="lbOpen(this,'lam-grid-05')">
@@ -1006,75 +1023,84 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
     </div></div>
   </div>
 </div>
+
 <div class="view" id="view-proj-06">
-  <div class="proj-hero">
-    <img src="img/iglesia/iglesia.jpg" alt="" loading="eager" fetchpriority="high">
-    <div class="proj-hero-fade"></div>
-  </div>
-  <div class="w">
-    <span class="back-btn" onclick="go('proyectos',true)">← <span data-es="Volver a proyectos" data-en="Back to projects">Volver a proyectos</span></span>
-    <div class="proj-header">
-      <div class="proj-header-grid">
-        <div>
-          <div class="proj-eyebrow">Religioso · Paramétrico · 2024</div>
-          <div class="proj-title" data-es="Espacio<br>Sacro" data-en="Sacred<br>Space">Espacio<br>Sacro</div>
-          <div class="proj-subtitle" data-es="Luz natural como material" data-en="Natural light as material">Luz natural como material</div>
-          <div class="proj-meta">
-            <div class="proj-meta-row"><span class="pmk" data-es="Año" data-en="Year">Año</span><span class="pmv">2024</span></div>
-            <div class="proj-meta-row"><span class="pmk">Herramientas</span><span class="pmv">Rhino · Grasshopper · Twinmotion · AI</span></div>
-            <div class="proj-meta-row"><span class="pmk">Cátedra</span><span class="pmv">FADU UBA</span></div>
+  <div class="top-content">
+    <div class="proj-hero">
+      <img src="img/iglesia/iglesia.jpg" alt="" loading="eager" fetchpriority="high">
+      <div class="proj-hero-fade"></div>
+    </div>
+    <div class="w">
+      <span class="back-btn" onclick="go('proyectos',true)">← <span data-es="Volver a proyectos" data-en="Back to projects">Volver a proyectos</span></span>
+      <div class="proj-header">
+        <div class="proj-header-grid">
+          <div>
+            <div class="proj-eyebrow">Religioso · Paramétrico · 2024</div>
+            <div class="proj-title" data-es="Espacio<br>Sacro" data-en="Sacred<br>Space">Espacio<br>Sacro</div>
+            <div class="proj-subtitle" data-es="Luz natural como material" data-en="Natural light as material">Luz natural como material</div>
+            <div class="proj-meta">
+              <div class="proj-meta-row"><span class="pmk" data-es="Año" data-en="Year">Año</span><span class="pmv">2024</span></div>
+              <div class="proj-meta-row"><span class="pmk">Herramientas</span><span class="pmv">Rhino · Grasshopper · Twinmotion · AI</span></div>
+              <div class="proj-meta-row"><span class="pmk">Cátedra</span><span class="pmv">FADU UBA</span></div>
+            </div>
+          </div>
+          <div class="proj-desc-col">
+            <p class="proj-desc-text" data-es="La luz natural como material estructural. Las celosías paramétricas generadas en Grasshopper filtran y dirigen la luz según orientación y hora del día." data-en="Natural light as structural material. Parametric lattices filter and direct light.">La luz natural como material estructural. Las celosías paramétricas generadas en Grasshopper filtran y dirigen la luz según orientación y hora del día.</p>
+            <div class="proj-tags"><span class="proj-tag">Croquis</span><span class="proj-tag">Diagrama</span><span class="proj-tag">Post IA</span></div>
           </div>
         </div>
-        <div class="proj-desc-col">
-          <p class="proj-desc-text" data-es="La luz natural como material estructural. Las celosías paramétricas generadas en Grasshopper filtran y dirigen la luz según orientación y hora del día." data-en="Natural light as structural material. Parametric lattices filter and direct light.">La luz natural como material estructural. Las celosías paramétricas generadas en Grasshopper filtran y dirigen la luz según orientación y hora del día.</p>
-          <div class="proj-tags"><span class="proj-tag">Croquis</span><span class="proj-tag">Diagrama</span><span class="proj-tag">Post IA</span></div>
-        </div>
       </div>
+      <hr class="hr">
+      <div class="sh"><div class="sh-row"><span class="sh-label" data-es="Láminas" data-en="Sheets">Láminas</span></div></div>
     </div>
-    <hr class="hr">
-    <div class="sh"><div class="sh-row"><span class="sh-label" data-es="Láminas" data-en="Sheets">Láminas</span></div></div>
+  </div>
+  <div class="w">
     <div class="laminas-bg" id="lam-bg-06"><img src="img/iglesia/iglesia.jpg" alt=""></div>
     <div class="laminas-stack" id="lam-grid-06" data-bg="lam-bg-06">
       <div class="lamina" onclick="lbOpen(this,'lam-grid-06')">
         <img src="img/iglesia/iglesia1.jpg" alt="" loading="lazy" decoding="async">
       </div>
       <div class="lamina" onclick="lbOpen(this,'lam-grid-06')">
-        <img src="img/iglesia/iglesia2.jpg" alt="" loading="lazy decoding="async">
+        <img src="img/iglesia/iglesia2.jpg" alt="" loading="lazy" decoding="async">
       </div>
     </div>
-
     <div class="footer" style="margin-top:4px"><div class="footer-row">
       <span class="ft-l">Facundo Luna</span><span class="ft-m">FADU UBA · Arquitectura + IA</span><span class="ft-r">© 2026</span>
     </div></div>
   </div>
 </div>
+
 <div class="view" id="view-proj-07">
-  <div class="proj-hero">
-    <img src="img/parametrico/1.jpg" alt="" loading="eager" fetchpriority="high">
-    <div class="proj-hero-fade"></div>
-  </div>
-  <div class="w">
-    <span class="back-btn" onclick="go('proyectos',true)">← <span data-es="Volver a proyectos" data-en="Back to projects">Volver a proyectos</span></span>
-    <div class="proj-header">
-      <div class="proj-header-grid">
-        <div>
-          <div class="proj-eyebrow">Paramétrico · Investigación · 2025</div>
-          <div class="proj-title" data-es="Análisis<br>Paramétrico" data-en="Parametric<br>Analysis">Análisis<br>Paramétrico</div>
-          <div class="proj-subtitle" data-es="Morfología generativa" data-en="Generative morphology">Morfología generativa</div>
-          <div class="proj-meta">
-            <div class="proj-meta-row"><span class="pmk" data-es="Año" data-en="Year">Año</span><span class="pmv">2025</span></div>
-            <div class="proj-meta-row"><span class="pmk">Herramientas</span><span class="pmv">Rhino · IA · Photoshop</span></div>
-            <div class="proj-meta-row"><span class="pmk">Cátedra</span><span class="pmv">FADU UBA</span></div>
+  <div class="top-content">
+    <div class="proj-hero">
+      <img src="img/parametrico/1.jpg" alt="" loading="eager" fetchpriority="high">
+      <div class="proj-hero-fade"></div>
+    </div>
+    <div class="w">
+      <span class="back-btn" onclick="go('proyectos',true)">← <span data-es="Volver a proyectos" data-en="Back to projects">Volver a proyectos</span></span>
+      <div class="proj-header">
+        <div class="proj-header-grid">
+          <div>
+            <div class="proj-eyebrow">Paramétrico · Investigación · 2025</div>
+            <div class="proj-title" data-es="Análisis<br>Paramétrico" data-en="Parametric<br>Analysis">Análisis<br>Paramétrico</div>
+            <div class="proj-subtitle" data-es="Morfología generativa" data-en="Generative morphology">Morfología generativa</div>
+            <div class="proj-meta">
+              <div class="proj-meta-row"><span class="pmk" data-es="Año" data-en="Year">Año</span><span class="pmv">2025</span></div>
+              <div class="proj-meta-row"><span class="pmk">Herramientas</span><span class="pmv">Rhino · IA · Photoshop</span></div>
+              <div class="proj-meta-row"><span class="pmk">Cátedra</span><span class="pmv">FADU UBA</span></div>
+            </div>
+          </div>
+          <div class="proj-desc-col">
+            <p class="proj-desc-text" data-es="Análisis morfológico generado en Rhino con post-producción en IA y Photoshop." data-en="Morphological analysis generated in Rhino with AI and Photoshop post-production.">Análisis morfológico generado en Rhino con post-producción en IA y Photoshop.</p>
+            <div class="proj-tags"><span class="proj-tag">Rhino</span><span class="proj-tag">IA</span><span class="proj-tag">Photoshop</span></div>
           </div>
         </div>
-        <div class="proj-desc-col">
-          <p class="proj-desc-text" data-es="Análisis morfológico generado en Rhino con post-producción en IA y Photoshop." data-en="Morphological analysis generated in Rhino with AI and Photoshop post-production.">Análisis morfológico generado en Rhino con post-producción en IA y Photoshop.</p>
-          <div class="proj-tags"><span class="proj-tag">Rhino</span><span class="proj-tag">IA</span><span class="proj-tag">Photoshop</span></div>
-        </div>
       </div>
+      <hr class="hr">
+      <div class="sh"><div class="sh-row"><span class="sh-label" data-es="Láminas" data-en="Sheets">Láminas</span></div></div>
     </div>
-    <hr class="hr">
-    <div class="sh"><div class="sh-row"><span class="sh-label" data-es="Láminas" data-en="Sheets">Láminas</span></div></div>
+  </div>
+  <div class="w">
     <div class="laminas-bg" id="lam-bg-07"><img src="img/parametrico/1.jpg" alt=""></div>
     <div class="laminas-stack" id="lam-grid-07" data-bg="lam-bg-07">
       <div class="lamina" onclick="lbOpen(this,'lam-grid-07')">
@@ -1144,39 +1170,43 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
         <img src="img/parametrico/23.jpg" alt="" loading="lazy" decoding="async">
       </div>
     </div>
-
     <div class="footer" style="margin-top:4px"><div class="footer-row">
       <span class="ft-l">Facundo Luna</span><span class="ft-m">FADU UBA · Arquitectura + IA</span><span class="ft-r">© 2026</span>
     </div></div>
   </div>
 </div>
+
 <div class="view" id="view-proj-08">
-  <div class="proj-hero">
-    <img src="img/reversion/morfo1.jpg" alt="" loading="eager" fetchpriority="high">
-    <div class="proj-hero-fade"></div>
-  </div>
-  <div class="w">
-    <span class="back-btn" onclick="go('proyectos',true)">← <span data-es="Volver a proyectos" data-en="Back to projects">Volver a proyectos</span></span>
-    <div class="proj-header">
-      <div class="proj-header-grid">
-        <div>
-          <div class="proj-eyebrow">Intervención · IA · 2025</div>
-          <div class="proj-title" data-es="RE*VERSION" data-en="RE*VERSION">RE*VERSION</div>
-          <div class="proj-subtitle" data-es="Reinterpretación de lo existente" data-en="Reinterpretation of the existing">Reinterpretación de lo existente</div>
-          <div class="proj-meta">
-            <div class="proj-meta-row"><span class="pmk" data-es="Año" data-en="Year">Año</span><span class="pmv">2025</span></div>
-            <div class="proj-meta-row"><span class="pmk">Herramientas</span><span class="pmv">Rhino · IA · Photoshop</span></div>
-            <div class="proj-meta-row"><span class="pmk">Cátedra</span><span class="pmv">FADU UBA</span></div>
+  <div class="top-content">
+    <div class="proj-hero">
+      <img src="img/reversion/morfo1.jpg" alt="" loading="eager" fetchpriority="high">
+      <div class="proj-hero-fade"></div>
+    </div>
+    <div class="w">
+      <span class="back-btn" onclick="go('proyectos',true)">← <span data-es="Volver a proyectos" data-en="Back to projects">Volver a proyectos</span></span>
+      <div class="proj-header">
+        <div class="proj-header-grid">
+          <div>
+            <div class="proj-eyebrow">Intervención · IA · 2025</div>
+            <div class="proj-title" data-es="RE*VERSION" data-en="RE*VERSION">RE*VERSION</div>
+            <div class="proj-subtitle" data-es="Reinterpretación de lo existente" data-en="Reinterpretation of the existing">Reinterpretación de lo existente</div>
+            <div class="proj-meta">
+              <div class="proj-meta-row"><span class="pmk" data-es="Año" data-en="Year">Año</span><span class="pmv">2025</span></div>
+              <div class="proj-meta-row"><span class="pmk">Herramientas</span><span class="pmv">Rhino · IA · Photoshop</span></div>
+              <div class="proj-meta-row"><span class="pmk">Cátedra</span><span class="pmv">FADU UBA</span></div>
+            </div>
+          </div>
+          <div class="proj-desc-col">
+            <p class="proj-desc-text" data-es="Reinterpretación de espacios existentes mediante Rhino, inteligencia artificial y Photoshop." data-en="Reinterpretation of existing spaces using Rhino, artificial intelligence and Photoshop.">Reinterpretación de espacios existentes mediante Rhino, inteligencia artificial y Photoshop.</p>
+            <div class="proj-tags"><span class="proj-tag">Rhino</span><span class="proj-tag">IA</span><span class="proj-tag">Photoshop</span></div>
           </div>
         </div>
-        <div class="proj-desc-col">
-          <p class="proj-desc-text" data-es="Reinterpretación de espacios existentes mediante Rhino, inteligencia artificial y Photoshop." data-en="Reinterpretation of existing spaces using Rhino, artificial intelligence and Photoshop.">Reinterpretación de espacios existentes mediante Rhino, inteligencia artificial y Photoshop.</p>
-          <div class="proj-tags"><span class="proj-tag">Rhino</span><span class="proj-tag">IA</span><span class="proj-tag">Photoshop</span></div>
-        </div>
       </div>
+      <hr class="hr">
+      <div class="sh"><div class="sh-row"><span class="sh-label" data-es="Láminas" data-en="Sheets">Láminas</span></div></div>
     </div>
-    <hr class="hr">
-    <div class="sh"><div class="sh-row"><span class="sh-label" data-es="Láminas" data-en="Sheets">Láminas</span></div></div>
+  </div>
+  <div class="w">
     <div class="laminas-bg" id="lam-bg-08"><img src="img/reversion/morfo1.jpg" alt=""></div>
     <div class="laminas-stack" id="lam-grid-08" data-bg="lam-bg-08">
       <div class="lamina" onclick="lbOpen(this,'lam-grid-08')">
@@ -1231,7 +1261,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
         <img src="img/reversion/morfo18.jpg" alt="" loading="lazy" decoding="async">
       </div>
     </div>
-
     <div class="footer" style="margin-top:4px"><div class="footer-row">
       <span class="ft-l">Facundo Luna</span><span class="ft-m">FADU UBA · Arquitectura + IA</span><span class="ft-r">© 2026</span>
     </div></div>
@@ -1320,7 +1349,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
         <div class="about-lbl" data-es="Facundo Luna — Arquitectura + IA" data-en="Facundo Luna — Architecture + AI">Facundo Luna — Arquitectura + IA</div>
         <p class="about-body" data-es="Soy <strong>Facundo Luna</strong>, estudiante de arquitectura en <strong>FADU UBA</strong>, Buenos Aires. Mi práctica combina el rigor de la documentación técnica con el diseño paramétrico y la inteligencia artificial — dos herramientas que no uso por moda, sino porque me permiten pensar proyectos que de otra forma no existirían.<br><br>Fundé <strong>EFELE.ARQ</strong> como espacio de investigación personal donde exploro los límites entre algoritmo, imagen y arquitectura." data-en="I am <strong>Facundo Luna</strong>, architecture student at <strong>FADU UBA</strong>, Buenos Aires. My practice combines the rigor of technical documentation with parametric design and artificial intelligence — two tools I use because they allow me to think projects that otherwise wouldn't exist.<br><br>I founded <strong>EFELE.ARQ</strong> as a personal research space exploring the boundaries between algorithm, image and architecture.">Soy <strong>Facundo Luna</strong>, estudiante de arquitectura en <strong>FADU UBA</strong>, Buenos Aires. Mi práctica combina el rigor de la documentación técnica con el diseño paramétrico y la inteligencia artificial — dos herramientas que no uso por moda, sino porque me permiten pensar proyectos que de otra forma no existirían.<br><br>Fundé <strong>EFELE.ARQ</strong> como espacio de investigación personal donde exploro los límites entre algoritmo, imagen y arquitectura.</p>
         <div class="about-links">
-          <a class="about-link" href="/cdn-cgi/l/email-protection#bfd9dedccad1dbd0d3cad1de8e878dffd8d2ded6d391dcd0d2">Email</a>
+          <a class="about-link" href="mailto:facundoluna182@hotmail.com">Email</a>
           <a class="about-link" href="https://instagram.com/efele.arq" target="_blank" rel="noopener">Instagram</a>
           <a class="about-link" href="https://www.behance.net/facundoluna182" target="_blank" rel="noopener">Behance</a>
         </div>
@@ -1343,7 +1372,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
       <div class="contact-l">
         <div class="contact-big" data-es="CONTACTAME" data-en="CONTACT ME">CONTACTAME</div>
         <div class="contact-items">
-          <div class="ci"><span class="ci-k">Email</span><a class="ci-v" href="/cdn-cgi/l/email-protection#6a0c0b091f040e05061f040b5b52582a0d070b030644090507"><span class="__cf_email__" data-cfemail="80e6e1e3f5eee4efecf5eee1b1b8b2c0e7ede1e9ecaee3efed">[email&#160;protected]</span></a></div>
+          <div class="ci"><span class="ci-k">Email</span><a class="ci-v" href="mailto:facundoluna182@hotmail.com">facundoluna182@hotmail.com</a></div>
           <div class="ci"><span class="ci-k">Instagram</span><a class="ci-v" href="https://instagram.com/efele.arq" target="_blank" rel="noopener">@efele.arq</a></div>
           <div class="ci"><span class="ci-k" data-es="Ubicación" data-en="Location">Ubicación</span><span class="ci-v">Buenos Aires, Argentina</span></div>
         </div>
