@@ -24,14 +24,17 @@ body{background:var(--bg);color:var(--ink);font-family:var(--ui);font-size:14px;
 img{display:block;max-width:100%}
 a{color:inherit;text-decoration:none}
 button{font-family:var(--ui);cursor:pointer;border:none;background:none}
+
 /* CONTAINER */
 .w{width:100%;max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
+
 /* CURSOR */
 @media(pointer:fine){
   #cur{width:8px;height:8px;border-radius:50%;background:var(--ink);position:fixed;
     pointer-events:none;z-index:9999;transform:translate(-50%,-50%);
     transition:width .18s,height .18s,background .18s,border .18s;mix-blend-mode:multiply}
 }
+
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
   background:rgba(245,245,245,.96);backdrop-filter:blur(10px);
@@ -63,11 +66,13 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
   color:var(--mid);padding:14px var(--pad);border-bottom:0.5px solid var(--line);
   cursor:pointer;transition:background .15s}
 .nav-mob a:hover,.nav-mob a.active{color:var(--ink);background:var(--white)}
-/* VIEWS */
+
+/* VIEWS - Animación corregida para no romper los fondos fijos */
 .view{display:none;padding-top:var(--nav);min-height:100vh}
 .view.active{display:block;animation:vin .2s ease forwards}
 @keyframes vin{from{opacity:0;}to{opacity:1;}}
-/* TOP CONTENT */
+
+/* ══ CAPA PROTECTORA: Mantiene fondo sólido en cabecera con degradado inferior ══ */
 .top-content {
   position: relative;
   z-index: 2;
@@ -83,6 +88,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
   background: linear-gradient(to bottom, var(--bg), transparent);
   pointer-events: none;
 }
+
 /* DIVIDERS & SECTION HEADERS */
 .hr{border:none;border-top:0.5px solid var(--line);margin:0}
 .sh{padding:13px 0 9px}
@@ -91,15 +97,18 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
 .sh-right{font-size:10px;font-weight:300;color:var(--pale)}
 .sh-link{font-size:10px;font-weight:400;color:var(--ink);cursor:pointer;letter-spacing:.04em;transition:color .2s}
 .sh-link:hover{color:var(--mid)}
+
 /* FOOTER */
 .footer{padding:16px 0;border-top:0.5px solid var(--line)}
 .footer-row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
 .ft-l{font-family:var(--f);font-size:12px;font-weight:700;color:var(--ink)}
 .ft-m{font-size:9px;font-weight:300;color:var(--pale);letter-spacing:.08em}
 .ft-r{font-size:9px;font-weight:300;color:var(--pale)}
+
 /* PLACEHOLDERS */
 .ph-txt{font-size:9px;font-weight:300;letter-spacing:.12em;text-transform:uppercase;
   color:var(--pale);text-align:center;padding:0 16px;line-height:1.6}
+
 /* ── INICIO ── */
 .hero{padding:52px 0 40px}
 .hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:end}
@@ -118,6 +127,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
   border:0.5px solid var(--line);padding:5px 11px;background:var(--white);
   transition:all .15s;cursor:default}
 .chip:hover{border-color:var(--muted);color:var(--ink)}
+
 /* Proyectos preview */
 .proj-prev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line)}
 .ppc{background:var(--bg);cursor:pointer;transition:background .18s;overflow:hidden}
@@ -131,6 +141,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
 .ppc-n{font-size:10px;font-weight:400;color:var(--pale);margin-bottom:3px}
 .ppc-t{font-family:var(--f);font-size:18px;font-weight:700;color:var(--ink);line-height:1;letter-spacing:-.02em;margin-bottom:3px}
 .ppc-c{font-size:10px;font-weight:300;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+
 /* Paramétrica */
 .param-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line)}
 .param-cell{position:relative;overflow:hidden;cursor:pointer;background:var(--white)}
@@ -145,6 +156,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
   letter-spacing:.1em;text-transform:uppercase;color:rgba(0,0,0,.4);
   background:rgba(255,255,255,.75);padding:3px 7px}
 .param-row3{grid-column:1/-1;display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line)}
+
 /* Proceso preview */
 .proc-prev-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line)}
 .proc-prev-cell{position:relative;overflow:hidden;cursor:pointer;background:var(--white);aspect-ratio:1}
@@ -152,6 +164,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
 .proc-prev-cell:hover img{transform:scale(1.05)}
 .proc-prev-ph{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
   background:var(--white);flex-direction:column;gap:6px}
+
 /* Slider */
 .slider-lbl-bar{display:flex;justify-content:space-between;align-items:center;padding:10px 0}
 .sl-title{font-size:9px;font-weight:400;letter-spacing:.14em;text-transform:uppercase;color:var(--mid)}
@@ -170,6 +183,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
 .sl-tag{position:absolute;bottom:12px;z-index:2;font-size:9px;font-weight:400;letter-spacing:.1em;
   text-transform:uppercase;color:rgba(255,255,255,.8);background:rgba(0,0,0,.22);padding:3px 9px;pointer-events:none}
 .sl-tag.l{left:14px}.sl-tag.r{right:14px}
+
 /* CTAs */
 .home-ctas{display:flex;gap:12px;align-items:center;flex-wrap:wrap;padding:28px 0 0}
 .cta-p{font-size:11px;font-weight:400;letter-spacing:.1em;text-transform:uppercase;
@@ -178,6 +192,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
 .cta-g{font-size:11px;font-weight:300;letter-spacing:.08em;text-transform:uppercase;
   color:var(--muted);transition:color .2s}
 .cta-g:hover{color:var(--ink)}
+
 /* ── LISTA PROYECTOS ── */
 .prow{display:grid;cursor:pointer;transition:background .18s;overflow:hidden;border-bottom:0.5px solid var(--line)}
 .prow:hover{background:var(--hover)}
@@ -204,6 +219,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
   border:0.5px solid var(--line);padding:3px 8px;background:var(--white)}
 .parr{margin-top:18px;font-size:11px;font-weight:300;color:var(--pale);align-self:flex-end;transition:all .18s}
 .prow:hover .parr{color:var(--ink);transform:translateX(5px)}
+
 /* Croquis */
 .croquis-wrap{background:var(--white);padding:40px 0;display:flex;justify-content:center;border-bottom:0.5px solid var(--line)}
 .croquis-box{max-width:520px;width:100%;aspect-ratio:4/3;position:relative;overflow:hidden;
@@ -212,6 +228,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
 .croquis-ph{position:absolute;inset:0;background:var(--white);
   display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px}
 .croquis-ph-icon{font-size:20px;opacity:.1}
+
 /* GH strip */
 .gh{position:relative;overflow:hidden;background:var(--dark);border-top:0.5px solid var(--line);border-bottom:0.5px solid var(--line)}
 .gh::before{content:'';display:block;padding-top:20%}
@@ -221,6 +238,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
 .gh:hover .gh-bg{transform:scale(1.015)}
 .gh-lbl{position:absolute;bottom:14px;left:var(--pad);z-index:2;font-size:9px;font-weight:300;
   letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.3)}
+
 /* ── PROYECTO INDIVIDUAL ── */
 .proj-hero{position:relative;width:100%;aspect-ratio:16/7;overflow:hidden;max-height:520px;background:var(--hover)}
 .proj-hero img{width:100%;height:100%;object-fit:cover;display:block}
@@ -248,7 +266,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
 .proj-tags{display:flex;flex-wrap:wrap;gap:5px}
 .proj-tag{font-size:9px;font-weight:400;letter-spacing:.08em;color:var(--pale);
   border:0.5px solid var(--line);padding:4px 10px;background:var(--white)}
-/* Láminas */
+
+/* Láminas — scroll vertical con fondo b/n */
 .laminas-bg{position:fixed;top:0;left:0;right:0;bottom:0;z-index:0;
   pointer-events:none;opacity:0;transition:opacity .4s ease}
 .laminas-bg.visible{opacity:1}
@@ -265,6 +284,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
 .lam-row-2{grid-template-columns:1fr 1fr}
 .lam-row-4{grid-template-columns:1fr 1fr 1fr 1fr}
 .lam-row .lamina{aspect-ratio:4/3}
+
 /* Maqueta */
 .maqueta-section{margin-top:2px}
 .maqueta-grid{display:grid;grid-template-columns:1fr;gap:1px;background:var(--line)}
@@ -273,6 +293,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
 .maqueta-img:hover img{transform:scale(1.04)}
 .maqueta-ph{position:absolute;inset:0;background:var(--hover);
   display:flex;align-items:center;justify-content:center}
+
 /* ── PROCESO ── */
 .proc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line)}
 .proc-card{position:relative;overflow:hidden;cursor:pointer;background:var(--white)}
@@ -281,6 +302,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
 .proc-card:hover img{transform:scale(1.05)}
 .proc-ph{display:flex;align-items:center;justify-content:center;background:var(--white);flex-direction:column;gap:10px}
 .proc-ph-icon{font-size:20px;opacity:.1}
+
 .ai-strip{display:grid;grid-template-columns:1fr 1fr}
 .ai-l{padding:32px 40px 32px 0;border-right:0.5px solid var(--line)}
 .ai-big{font-family:var(--f);font-size:32px;font-weight:800;line-height:.9;letter-spacing:-.04em;color:var(--ink);margin-bottom:3px}
@@ -294,6 +316,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
 .ai-n{font-size:9px;font-weight:400;color:var(--pale);margin-bottom:7px;letter-spacing:.06em}
 .ai-name{font-family:var(--f);font-size:13px;font-weight:700;color:var(--ink);margin-bottom:4px}
 .ai-desc{font-size:11px;font-weight:300;color:var(--mid);line-height:1.6}
+
 /* ── EFELE ── */
 .efele-top{display:grid;grid-template-columns:1fr 1fr;border-bottom:0.5px solid var(--line)}
 .efele-l{padding:40px 40px 40px 0;border-right:0.5px solid var(--line);display:flex;flex-direction:column;gap:24px}
@@ -315,6 +338,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
 .efele-img img{width:100%;height:100%;object-fit:cover;transition:transform .7s;display:block}
 .efele-img:hover img{transform:scale(1.06)}
 .efele-img-ph{position:absolute;inset:0;background:var(--hover);display:flex;align-items:center;justify-content:center}
+
 /* ── ABOUT ── */
 .about-grid{display:grid;grid-template-columns:1fr 1fr}
 .about-img-col{overflow:hidden;background:var(--hover);min-height:400px;
@@ -330,6 +354,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
 .about-link{font-size:11px;font-weight:400;letter-spacing:.08em;text-transform:uppercase;
   color:var(--muted);border-bottom:0.5px solid var(--line);padding-bottom:2px;transition:all .2s}
 .about-link:hover{color:var(--ink);border-color:var(--ink)}
+
 /* ── CONTACTO ── */
 .contact-grid{display:grid;grid-template-columns:1fr 1fr}
 .contact-l{padding:44px 44px 44px 0;border-right:0.5px solid var(--line);display:flex;flex-direction:column}
@@ -355,6 +380,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
   background:var(--ink);color:var(--white);border:none;padding:12px 24px;
   cursor:pointer;transition:opacity .2s;align-self:flex-start;margin-top:8px;font-family:var(--ui)}
 .fsub:hover{opacity:.8}
+
 /* ── LIGHTBOX ── */
 .lb{display:none;position:fixed;inset:0;background:rgba(0,0,0,.9);z-index:999;
   align-items:center;justify-content:center;padding:20px}
@@ -366,7 +392,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
   color:rgba(255,255,255,.45);cursor:pointer;padding:20px;transition:color .2s;user-select:none;z-index:2}
 .lb-prev:hover,.lb-next:hover{color:white}
 .lb-prev{left:0}.lb-next{right:0}
-/* RESPONSIVE */
+
+/* ── RESPONSIVE ── */
 @media(max-width:768px){
   :root{--pad:20px;--max:100%}
   .nav-links{display:none}
@@ -406,11 +433,15 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
   .hero-name{font-size:104px}
   .ptitle{font-size:34px}
 }
-/* FIN DEL CSS - borré el bloque duplicado de maqueta que estaba al final */
+
+/* maqueta multi-col */
+.maqueta-grid{display:grid;gap:1px;background:var(--line)}
+.maqueta-img{overflow:hidden;cursor:pointer;background:var(--hover);aspect-ratio:1}
+.maqueta-img img{width:100%;height:100%;object-fit:cover;transition:transform .7s;display:block}
+.maqueta-img:hover img{transform:scale(1.04)}
 </style>
 </head>
 <body>
-<!-- todo el body original intacto salvo el grid de proj-02 -->
 <div class="lb" id="lb">
   <span class="lb-close" onclick="lbClose()">✕</span>
   <span class="lb-prev" onclick="lbNav(-1)">‹</span>
@@ -418,17 +449,16 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
   <span class="lb-next" onclick="lbNav(1)">›</span>
 </div>
 <div id="cur"></div>
-<!-- nav completo igual -->
 <nav>
   <div class="nav-w">
     <span class="nav-logo" onclick="go('inicio')">Facundo Luna</span>
     <ul class="nav-links">
-      <li><a onclick="go('inicio')" data-v="inicio" class="active">Inicio</a></li>
+      <li><a onclick="go('inicio')"    data-v="inicio"    class="active">Inicio</a></li>
       <li><a onclick="go('proyectos')" data-v="proyectos">Proyectos</a></li>
-      <li><a onclick="go('proceso')" data-v="proceso">Proceso</a></li>
-      <li><a onclick="go('efele')" data-v="efele">EFELE</a></li>
-      <li><a onclick="go('about')" data-v="about">About</a></li>
-      <li><a onclick="go('contacto')" data-v="contacto">Contacto</a></li>
+      <li><a onclick="go('proceso')"   data-v="proceso">Proceso</a></li>
+      <li><a onclick="go('efele')"     data-v="efele">EFELE</a></li>
+      <li><a onclick="go('about')"     data-v="about">About</a></li>
+      <li><a onclick="go('contacto')"  data-v="contacto">Contacto</a></li>
     </ul>
     <div class="nav-right">
       <button class="lang-btn on" id="btn-es" onclick="setLang('es')">ES</button>
@@ -438,36 +468,934 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
     </div>
   </div>
 </nav>
-<!-- nav-mob igual -->
 <div class="nav-mob" id="nm">
-  <!-- igual que original -->
+  <a onclick="go('inicio');closeMob()"    data-vm="inicio"    class="active">Inicio</a>
+  <a onclick="go('proyectos');closeMob()" data-vm="proyectos">Proyectos</a>
+  <a onclick="go('proceso');closeMob()"   data-vm="proceso">Proceso</a>
+  <a onclick="go('efele');closeMob()"     data-vm="efele">EFELE</a>
+  <a onclick="go('about');closeMob()"     data-vm="about">About</a>
+  <a onclick="go('contacto');closeMob()"  data-vm="contacto">Contacto</a>
 </div>
-<!-- todas las views igual -->
-<!-- SOLO CAMBIO EN view-proj-02 (el grid roto) -->
+
+<div class="view active" id="view-inicio">
+  <div class="w">
+    <div class="hero">
+      <div class="hero-grid">
+        <div class="hero-name">FACUNDO<span>Luna.</span></div>
+        <div class="hero-right">
+          <p class="hero-stmt" data-es="Estudiante de arquitectura en <strong>FADU UBA</strong> que fusiona documentación técnica con <strong>diseño paramétrico</strong> e <strong>inteligencia artificial</strong>." data-en="Architecture student at <strong>FADU UBA</strong> fusing technical documentation with <strong>parametric design</strong> and <strong>artificial intelligence</strong>.">Estudiante de arquitectura en <strong>FADU UBA</strong> que fusiona documentación técnica con <strong>diseño paramétrico</strong> e <strong>inteligencia artificial</strong>.</p>
+          <div class="meta-block">
+            <div class="meta-row"><span class="mk">Base</span><span class="mv">Buenos Aires, AR</span></div>
+            <div class="meta-row"><span class="mk">Formación</span><span class="mv">FADU UBA</span></div>
+            <div class="meta-row"><span class="mk">Disciplina</span><span class="mv">Arquitectura + IA</span></div>
+          </div>
+          <div class="chips">
+            <span class="chip">Grasshopper</span><span class="chip">Rhino</span><span class="chip">Twinmotion</span>
+            <span class="chip">SketchUp</span><span class="chip">AutoCAD</span><span class="chip">Photoshop</span>
+            <span class="chip">AI Post-prod</span><span class="chip">Legajo Ejec.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr class="hr">
+    <div class="sh"><div class="sh-row">
+      <span class="sh-label" data-es="Proyectos seleccionados" data-en="Selected projects">Proyectos seleccionados</span>
+      <span class="sh-link" onclick="go('proyectos')" data-es="Ver todos →" data-en="See all →">Ver todos →</span>
+    </div></div>
+    <div class="proj-prev-grid">
+      <div class="ppc" onclick="go('proj-01')">
+        <div class="ppc-img"><div class="ppc-img-in" style="background-image:url('img/vivienda/casa.jpg')"></div><div class="ppc-ov"></div></div>
+        <div class="ppc-info"><div class="ppc-n">01</div><div class="ppc-t" data-es="Vivienda Unifamiliar" data-en="Single Family House">Vivienda Unifamiliar</div><div class="ppc-c">Residencial · 2024</div></div>
+      </div>
+      <div class="ppc" onclick="go('proj-05')">
+        <div class="ppc-img"><div class="ppc-img-in" style="background-image:url('img/conjunto/conjuntogrande.jpg')"></div><div class="ppc-ov"></div></div>
+        <div class="ppc-info"><div class="ppc-n">05</div><div class="ppc-t" data-es="Conjunto Habitacional" data-en="Housing Complex">Conjunto Habitacional</div><div class="ppc-c">Vivienda Colectiva · 2025</div></div>
+      </div>
+      <div class="ppc" onclick="go('proj-02')">
+        <div class="ppc-img"><div class="ppc-img-in" style="background-image:url('img/biblioteca/biblioteca.jpg')"></div><div class="ppc-ov"></div></div>
+        <div class="ppc-info"><div class="ppc-n">02</div><div class="ppc-t" data-es="Biblioteca Costera" data-en="Coastal Library">Biblioteca Costera</div><div class="ppc-c">Equipamiento · 2025</div></div>
+      </div>
+    </div>
+    <hr class="hr">
+    <div class="sh"><div class="sh-row">
+      <span class="sh-label" data-es="Diseño paramétrico" data-en="Parametric design">Diseño paramétrico</span>
+      <span class="sh-right">Rhino · Grasshopper</span>
+    </div></div>
+    <div class="param-grid">
+      <div class="param-cell big" onclick="lbOpenImg(this)"><img src="img/modeladocomplejo.jpg" alt="Modelo 3D" loading="lazy" decoding="async"><div class="param-lbl" data-es="Modelo 3D" data-en="3D Model">Modelo 3D</div></div>
+      <div class="param-cell big" onclick="lbOpenImg(this)"><img src="img/grass.jpg" alt="Grasshopper" loading="lazy" decoding="async"><div class="param-lbl">Grasshopper</div></div>
+      <div class="param-row3">
+        <div class="param-cell sm3" onclick="lbOpenImg(this)"><img src="img/proceso4.jpg" alt="Referencia" loading="lazy" decoding="async"><div class="param-lbl" data-es="Referencia" data-en="Reference">Referencia</div></div>
+        <div class="param-cell sm3" onclick="lbOpenImg(this)"><img src="img/proceso2.jpg" alt="Análisis" loading="lazy" decoding="async"><div class="param-lbl" data-es="Análisis" data-en="Analysis">Análisis</div></div>
+        <div class="param-cell sm3" onclick="lbOpenImg(this)"><img src="img/proceso3.jpg" alt="Proceso" loading="lazy" decoding="async"><div class="param-lbl" data-es="Proceso" data-en="Process">Proceso</div></div>
+      </div>
+    </div>
+    <hr class="hr">
+    <div class="slider-lbl-bar">
+      <span class="sl-title" data-es="Post-producción con IA" data-en="AI Post-production">Post-producción con IA</span>
+      <span class="sl-hint" data-es="← arrastrá para comparar →" data-en="← drag to compare →">← arrastrá para comparar →</span>
+    </div>
+    <div class="slider-outer" id="sw">
+      <div class="sl-after" style="background-image:url('img/despues.jpg');background-size:cover;background-position:center"></div>
+      <div class="sl-before" id="sl-b" style="background-image:url('img/antes.jpg');background-size:cover;background-position:center;clip-path:inset(0 50% 0 0)"></div>
+      <div class="sl-line" id="sl-l"><div class="sl-handle"></div></div>
+      <div class="sl-tag l" data-es="Render base" data-en="Base render">Render base</div>
+      <div class="sl-tag r" data-es="Post-producción IA" data-en="AI Post-production">Post-producción IA</div>
+    </div>
+    <hr class="hr">
+    <div class="home-ctas">
+      <button class="cta-p" onclick="go('proyectos')" data-es="Ver proyectos →" data-en="See projects →">Ver proyectos →</button>
+      <button class="cta-g" onclick="go('contacto')" data-es="Contacto" data-en="Contact">Contacto</button>
+      <button class="cta-g" onclick="go('efele')" data-es="EFELE.ARQ" data-en="EFELE.ARQ">EFELE.ARQ</button>
+    </div>
+    <div style="height:24px"></div>
+    <div class="footer"><div class="footer-row">
+      <span class="ft-l">Facundo Luna</span><span class="ft-m">FADU UBA · Arquitectura + IA · Buenos Aires</span><span class="ft-r">© 2026</span>
+    </div></div>
+  </div>
+</div>
+
+<div class="view" id="view-proyectos">
+  <div class="w"><div class="sh"><div class="sh-row">
+    <span class="sh-label" data-es="Proyectos seleccionados" data-en="Selected projects">Proyectos seleccionados</span>
+    <span class="sh-right">08 · 2024–2025</span>
+  </div></div></div>
+  <div class="w">
+    <div class="prow prow-n" onclick="go('proj-01')">
+      <div class="pi">
+        <div class="pi-in" style="background-image:url('img/vivienda/casa.jpg')"></div>
+        <div class="pi-ov"></div>
+      </div>
+      <div class="pinfo" style="">
+        <div>
+          <div class="ptop"><span class="pnum">01</span><span class="pyr">2024</span></div>
+          <div class="ptitle" data-es="Vivienda<br>Unifamiliar" data-en="Single<br>Family House">Vivienda<br>Unifamiliar</div>
+          <div class="pcat">Residencial</div>
+          <div class="pdesc" data-es="Partido volumétrico articulado por patios interiores de luz. Lote entre medianeras en Buenos Aires." data-en="Volumetric scheme articulated by interior light patios. Party-wall lot in Buenos Aires.">Partido volumétrico articulado por patios interiores de luz. Lote entre medianeras en Buenos Aires.</div>
+          <div class="ptags"><span class="ptag">Croquis</span><span class="ptag">Plantas</span><span class="ptag">Render</span><span class="ptag">Post IA</span></div>
+        </div>
+        <span class="parr" data-es="→ ver proyecto" data-en="→ view project">→ ver proyecto</span>
+      </div>
+    </div>
+  </div>
+  <div class="w">
+    <div class="croquis-wrap">
+      <div class="croquis-box">
+        <img src="img/vivienda/proceso5.jpg" alt="Croquis" loading="lazy" decoding="async" onclick="lbOpenImg(this)" style="cursor:pointer">
+      </div>
+    </div>
+  </div>  <div class="w">
+    <div class="prow prow-f" onclick="go('proj-02')">
+      <div class="pinfo" style="border-right:0.5px solid var(--line)">
+        <div>
+          <div class="ptop"><span class="pnum">02</span><span class="pyr">2025</span></div>
+          <div class="ptitle" data-es="Biblioteca<br>Costera" data-en="Coastal<br>Library">Biblioteca<br>Costera</div>
+          <div class="pcat">Equipamiento · Paramétrico</div>
+          <div class="pdesc" data-es="Piel generada en Grasshopper que optimiza orientación solar. Estructura adaptable al frente costero." data-en="Skin generated in Grasshopper optimizing solar orientation.">Piel generada en Grasshopper que optimiza orientación solar. Estructura adaptable al frente costero.</div>
+          <div class="ptags"><span class="ptag">Croquis</span><span class="ptag">Análisis sitio</span><span class="ptag">Maqueta</span><span class="ptag">Post IA</span></div>
+        </div>
+        <span class="parr" data-es="→ ver proyecto" data-en="→ view project">→ ver proyecto</span>
+      </div>
+      <div class="pi">
+        <div class="pi-in" style="background-image:url('img/biblioteca/biblioteca.jpg')"></div>
+        <div class="pi-ov"></div>
+      </div>
+    </div>
+  </div>  <div class="w">
+    <div class="prow prow-n" onclick="go('proj-03')">
+      <div class="pi">
+        <div class="pi-in" style="background-image:url('img/plano/plano.jpg')"></div>
+        <div class="pi-ov"></div>
+      </div>
+      <div class="pinfo" style="">
+        <div>
+          <div class="ptop"><span class="pnum">03</span><span class="pyr">2024</span></div>
+          <div class="ptitle" data-es="Legajo<br>Municipal" data-en="Municipal<br>File">Legajo<br>Municipal</div>
+          <div class="pcat">Técnico · Trabajo real</div>
+          <div class="pdesc" data-es="Documentación ejecutiva completa para gestión ante municipio. Primer proyecto profesional real." data-en="Complete executive documentation for municipal management.">Documentación ejecutiva completa para gestión ante municipio. Primer proyecto profesional real.</div>
+          <div class="ptags"><span class="ptag">Plantas</span><span class="ptag">Cortes</span><span class="ptag">Detalles</span></div>
+        </div>
+        <span class="parr" data-es="→ ver proyecto" data-en="→ view project">→ ver proyecto</span>
+      </div>
+    </div>
+  </div>
+  <div class="w">
+    <div class="croquis-wrap" style="background:#f9f9f9">
+      <div class="croquis-box">
+        <img src="img/proceso5.jpg" alt="Croquis" loading="lazy" decoding="async" onclick="lbOpenImg(this)" style="cursor:pointer">
+      </div>
+    </div>
+  </div>  <div class="w">
+    <div class="prow prow-f" onclick="go('proj-04')">
+      <div class="pinfo" style="border-right:0.5px solid var(--line)">
+        <div>
+          <div class="ptop"><span class="pnum">04</span><span class="pyr">2025</span></div>
+          <div class="ptitle" data-es="Intervención<br>Urbana" data-en="Urban<br>Intervention">Intervención<br>Urbana</div>
+          <div class="pcat">Urbanismo</div>
+          <div class="pdesc" data-es="Reconversión de espacio público degradado. Activación por capas temporales y permanentes." data-en="Reconversion of degraded public space through layered activation.">Reconversión de espacio público degradado. Activación por capas temporales y permanentes.</div>
+          <div class="ptags"><span class="ptag">Análisis sitio</span><span class="ptag">Diagramas</span><span class="ptag">Plantas</span></div>
+        </div>
+        <span class="parr" data-es="→ ver proyecto" data-en="→ view project">→ ver proyecto</span>
+      </div>
+      <div class="pi">
+        <div class="pi-in" style="background-image:url('img/intervencion/intervencion8.jpg')"></div>
+        <div class="pi-ov"></div>
+      </div>
+    </div>
+  </div>  <div class="w">
+    <div class="prow prow-n" onclick="go('proj-05')">
+      <div class="pi">
+        <div class="pi-in" style="background-image:url('img/conjunto/conjuntogrande.jpg')"></div>
+        <div class="pi-ov"></div>
+      </div>
+      <div class="pinfo" style="">
+        <div>
+          <div class="ptop"><span class="pnum">05</span><span class="pyr">2025</span></div>
+          <div class="ptitle" data-es="Conjunto<br>Habitacional" data-en="Housing<br>Complex">Conjunto<br>Habitacional</div>
+          <div class="pcat">Vivienda Colectiva</div>
+          <div class="pdesc" data-es="Planta libre. Circulaciones integradas al paisaje urbano. Iluminación natural cenital." data-en="Open plan. Circulations integrated into the urban landscape.">Planta libre. Circulaciones integradas al paisaje urbano. Iluminación natural cenital.</div>
+          <div class="ptags"><span class="ptag">Croquis</span><span class="ptag">Plantas</span><span class="ptag">Cortes</span><span class="ptag">Render</span></div>
+        </div>
+        <span class="parr" data-es="→ ver proyecto" data-en="→ view project">→ ver proyecto</span>
+      </div>
+    </div>
+  </div>  <div class="w">
+    <div class="prow prow-f" onclick="go('proj-06')">
+      <div class="pinfo" style="border-right:0.5px solid var(--line)">
+        <div>
+          <div class="ptop"><span class="pnum">06</span><span class="pyr">2024</span></div>
+          <div class="ptitle" data-es="Espacio<br>Sacro" data-en="Sacred<br>Space">Espacio<br>Sacro</div>
+          <div class="pcat">Religioso · Paramétrico</div>
+          <div class="pdesc" data-es="La luz natural como material estructural. Celosías paramétricas que filtran y dirigen." data-en="Natural light as structural material. Parametric lattices that filter and direct.">La luz natural como material estructural. Celosías paramétricas que filtran y dirigen.</div>
+          <div class="ptags"><span class="ptag">Croquis</span><span class="ptag">Diagrama</span><span class="ptag">Post IA</span></div>
+        </div>
+        <span class="parr" data-es="→ ver proyecto" data-en="→ view project">→ ver proyecto</span>
+      </div>
+      <div class="pi">
+        <div class="pi-in" style="background-image:url('img/iglesia/iglesia.jpg')"></div>
+        <div class="pi-ov"></div>
+      </div>
+    </div>
+  </div>  <div class="w">
+    <div class="prow prow-n" onclick="go('proj-07')">
+      <div class="pi">
+        <div class="pi-in" style="background-image:url('img/parametrico/1.jpg')"></div>
+        <div class="pi-ov"></div>
+      </div>
+      <div class="pinfo" style="">
+        <div>
+          <div class="ptop"><span class="pnum">07</span><span class="pyr">2025</span></div>
+          <div class="ptitle" data-es="Análisis<br>Paramétrico" data-en="Parametric<br>Analysis">Análisis<br>Paramétrico</div>
+          <div class="pcat">Paramétrico · Investigación</div>
+          <div class="pdesc" data-es="Análisis morfológico generado en Rhino con post-producción en IA y Photoshop." data-en="Morphological analysis generated in Rhino with AI and Photoshop post-production.">Análisis morfológico generado en Rhino con post-producción en IA y Photoshop.</div>
+          <div class="ptags"><span class="ptag">Rhino</span><span class="ptag">IA</span><span class="ptag">Photoshop</span></div>
+        </div>
+        <span class="parr" data-es="→ ver proyecto" data-en="→ view project">→ ver proyecto</span>
+      </div>
+    </div>
+  </div>  <div class="w">
+    <div class="prow prow-f" style="border-bottom:none" onclick="go('proj-08')">
+      <div class="pinfo" style="border-right:0.5px solid var(--line)">
+        <div>
+          <div class="ptop"><span class="pnum">08</span><span class="pyr">2025</span></div>
+          <div class="ptitle" data-es="RE*VERSION" data-en="RE*VERSION">RE*VERSION</div>
+          <div class="pcat">Intervención · IA</div>
+          <div class="pdesc" data-es="Reinterpretación de espacios existentes mediante Rhino, inteligencia artificial y Photoshop." data-en="Reinterpretation of existing spaces using Rhino, artificial intelligence and Photoshop.">Reinterpretación de espacios existentes mediante Rhino, inteligencia artificial y Photoshop.</div>
+          <div class="ptags"><span class="ptag">Rhino</span><span class="ptag">IA</span><span class="ptag">Photoshop</span></div>
+        </div>
+        <span class="parr" data-es="→ ver proyecto" data-en="→ view project">→ ver proyecto</span>
+      </div>
+      <div class="pi">
+        <div class="pi-in" style="background-image:url('img/reversion/morfo1.jpg')"></div>
+        <div class="pi-ov"></div>
+      </div>
+    </div>
+  </div>
+  <div class="w"><div class="footer"><div class="footer-row">
+    <span class="ft-l">Facundo Luna</span><span class="ft-m">FADU UBA · Arquitectura + IA</span><span class="ft-r">© 2026</span>
+  </div></div></div>
+</div>
+
+<div class="view" id="view-proj-01">
+  <div class="top-content">
+    <div class="proj-hero">
+      <img src="img/vivienda/casa.jpg" alt="" loading="eager" fetchpriority="high">
+      <div class="proj-hero-fade"></div>
+    </div>
+    <div class="w">
+      <span class="back-btn" onclick="go('proyectos',true)">← <span data-es="Volver a proyectos" data-en="Back to projects">Volver a proyectos</span></span>
+      <div class="proj-header">
+        <div class="proj-header-grid">
+          <div>
+            <div class="proj-eyebrow">Residencial · Buenos Aires · 2024</div>
+            <div class="proj-title" data-es="Vivienda<br>Unifamiliar" data-en="Single Family<br>House">Vivienda<br>Unifamiliar</div>
+            <div class="proj-subtitle" data-es="Lote entre medianeras" data-en="Party-wall lot">Lote entre medianeras</div>
+            <div class="proj-meta">
+              <div class="proj-meta-row"><span class="pmk" data-es="Año" data-en="Year">Año</span><span class="pmv">2024</span></div>
+              <div class="proj-meta-row"><span class="pmk">Herramientas</span><span class="pmv">AutoCAD · SketchUp · Twinmotion · AI</span></div>
+              <div class="proj-meta-row"><span class="pmk">Cátedra</span><span class="pmv">FADU UBA</span></div>
+            </div>
+          </div>
+          <div class="proj-desc-col">
+            <p class="proj-desc-text" data-es="Partido volumétrico articulado por patios interiores de luz. El lote entre medianeras impone condicionantes de privacidad y asoleamiento que se convierten en los generadores principales del proyecto." data-en="Volumetric scheme articulated by interior light patios. The party-wall lot constraints become the main project generators.">Partido volumétrico articulado por patios interiores de luz. El lote entre medianeras impone condicionantes de privacidad y asoleamiento que se convierten en los generadores principales del proyecto.</p>
+            <div class="proj-tags"><span class="proj-tag">Croquis</span><span class="proj-tag">Plantas</span><span class="proj-tag">Cortes</span><span class="proj-tag">Render</span><span class="proj-tag">Post IA</span></div>
+          </div>
+        </div>
+      </div>
+      <hr class="hr">
+      <div class="sh"><div class="sh-row"><span class="sh-label" data-es="Láminas" data-en="Sheets">Láminas</span></div></div>
+    </div>
+  </div>
+  <div class="w">
+    <div class="laminas-bg" id="lam-bg-01"><img src="img/vivienda/casa.jpg" alt=""></div>
+    <div class="laminas-stack" id="lam-grid-01" data-bg="lam-bg-01">
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-01')">
+        <img src="img/vivienda/casa1.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-01')">
+        <img src="img/vivienda/casa2.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+    </div><div class="footer" style="margin-top:4px"><div class="footer-row">
+      <span class="ft-l">Facundo Luna</span><span class="ft-m">FADU UBA · Arquitectura + IA</span><span class="ft-r">© 2026</span>
+    </div></div>
+  </div>
+</div>
+
 <div class="view" id="view-proj-02">
-  <!-- top-content y header igual -->
+  <div class="top-content">
+    <div class="proj-hero">
+      <img src="img/biblioteca/biblioteca.jpg" alt="" loading="eager" fetchpriority="high">
+      <div class="proj-hero-fade"></div>
+    </div>
+    <div class="w">
+      <span class="back-btn" onclick="go('proyectos',true)">← <span data-es="Volver a proyectos" data-en="Back to projects">Volver a proyectos</span></span>
+      <div class="proj-header">
+        <div class="proj-header-grid">
+          <div>
+            <div class="proj-eyebrow">Equipamiento · Frente costero · 2025</div>
+            <div class="proj-title" data-es="Biblioteca<br>Costera" data-en="Coastal<br>Library">Biblioteca<br>Costera</div>
+            <div class="proj-subtitle" data-es="Estructura paramétrica adaptable" data-en="Adaptive parametric structure">Estructura paramétrica adaptable</div>
+            <div class="proj-meta">
+              <div class="proj-meta-row"><span class="pmk" data-es="Año" data-en="Year">Año</span><span class="pmv">2025</span></div>
+              <div class="proj-meta-row"><span class="pmk">Herramientas</span><span class="pmv">Rhino · Grasshopper · Twinmotion · AI</span></div>
+              <div class="proj-meta-row"><span class="pmk">Cátedra</span><span class="pmv">FADU UBA</span></div>
+            </div>
+          </div>
+          <div class="proj-desc-col">
+            <p class="proj-desc-text" data-es="Piel generada en Grasshopper que optimiza orientación solar y vistas simultáneamente. Cada panel responde de forma distinta según su posición en la fachada." data-en="Skin generated in Grasshopper simultaneously optimizing solar orientation and views.">Piel generada en Grasshopper que optimiza orientación solar y vistas simultáneamente. Cada panel responde de forma distinta según su posición en la fachada.</p>
+            <div class="proj-tags"><span class="proj-tag">Croquis</span><span class="proj-tag">Análisis sitio</span><span class="proj-tag">Maqueta</span><span class="proj-tag">Post IA</span></div>
+          </div>
+        </div>
+      </div>
+      <hr class="hr">
+      <div class="sh"><div class="sh-row"><span class="sh-label" data-es="Láminas" data-en="Sheets">Láminas</span></div></div>
+    </div>
+  </div>
   <div class="w">
     <div class="laminas-bg" id="lam-bg-02"><img src="img/biblioteca/biblioteca.jpg" alt=""></div>
     <div class="laminas-stack" id="lam-grid-02" data-bg="lam-bg-02">
-      <!-- AQUÍ EL FIX -->
-      <div class="lam-row lam-row-2">
-        <div class="lamina" onclick="lbOpen(this,'lam-grid-02')">
-          <img src="img/biblioteca/biblioteca1.jpg" alt="" loading="lazy" decoding="async">
+      
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:2px; background:var(--line);">
+        <div class="lamina" onclick="lbOpen(this,'lam-grid-02')" style="aspect-ratio: 16/9; display: flex;">
+          <img src="img/biblioteca/biblioteca1.jpg" alt="" loading="lazy" decoding="async" style="width: 100%; height: 100%; object-fit: cover;">
         </div>
-        <div class="lamina" onclick="lbOpen(this,'lam-grid-02')">
-          <img src="img/biblioteca/biblioteca2.jpg" alt="" loading="lazy" decoding="async">
+        <div class="lamina" onclick="lbOpen(this,'lam-grid-02')" style="aspect-ratio: 16/9; display: flex;">
+          <img src="img/biblioteca/biblioteca2.jpg" alt="" loading="lazy" decoding="async" style="width: 100%; height: 100%; object-fit: cover;">
         </div>
       </div>
-      <!-- el resto de láminas igual que tenías -->
+      
       <div class="lamina" onclick="lbOpen(this,'lam-grid-02')">
         <img src="img/biblioteca/biblioteca3.jpg" alt="" loading="lazy" decoding="async">
       </div>
-      <!-- ... resto igual ... -->
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-02')">
+        <img src="img/biblioteca/biblioteca4.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-02')">
+        <img src="img/biblioteca/biblioteca5.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-02')">
+        <img src="img/biblioteca/biblioteca6.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-02')">
+        <img src="img/biblioteca/biblioteca7.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-02')">
+        <img src="img/biblioteca/biblioteca8.jpg" alt="" loading="lazy" decoding="async">
+      </div>
     </div>
-    <!-- maqueta y footer igual -->
+    <div class="maqueta-section">
+      <div class="sh"><div class="sh-row"><span class="sh-label" data-es="Maqueta" data-en="Model">Maqueta</span></div></div>
+      <div class="maqueta-grid" id="maq-grid-02" style="grid-template-columns:repeat(4,1fr)">
+        <div class="maqueta-img" onclick="lbOpenImg(this)"><img src="img/maquetabiblioteca1.jpg" alt="" loading="lazy" decoding="async"></div>
+        <div class="maqueta-img" onclick="lbOpenImg(this)"><img src="img/maquetabiblioteca2.jpg" alt="" loading="lazy" decoding="async"></div>
+        <div class="maqueta-img" onclick="lbOpenImg(this)"><img src="img/maquetabiblioteca3.jpg" alt="" loading="lazy" decoding="async"></div>
+        <div class="maqueta-img" onclick="lbOpenImg(this)"><img src="img/maquetabiblioteca4.jpg" alt="" loading="lazy" decoding="async"></div>
+      </div>
+    </div>
+    <div class="footer" style="margin-top:4px"><div class="footer-row">
+      <span class="ft-l">Facundo Luna</span><span class="ft-m">FADU UBA · Arquitectura + IA</span><span class="ft-r">© 2026</span>
+    </div></div>
   </div>
 </div>
-<!-- resto de views exactamente igual -->
+
+<div class="view" id="view-proj-03">
+  <div class="top-content">
+    <div class="proj-hero">
+      <img src="img/plano/plano.jpg" alt="" loading="eager" fetchpriority="high">
+      <div class="proj-hero-fade"></div>
+    </div>
+    <div class="w">
+      <span class="back-btn" onclick="go('proyectos',true)">← <span data-es="Volver a proyectos" data-en="Back to projects">Volver a proyectos</span></span>
+      <div class="proj-header">
+        <div class="proj-header-grid">
+          <div>
+            <div class="proj-eyebrow">Técnico · Trabajo real · 2024</div>
+            <div class="proj-title" data-es="Legajo<br>Municipal" data-en="Municipal<br>File">Legajo<br>Municipal</div>
+            <div class="proj-subtitle" data-es="Documentación ejecutiva" data-en="Executive documentation">Documentación ejecutiva</div>
+            <div class="proj-meta">
+              <div class="proj-meta-row"><span class="pmk" data-es="Año" data-en="Year">Año</span><span class="pmv">2024</span></div>
+              <div class="proj-meta-row"><span class="pmk">Herramientas</span><span class="pmv">AutoCAD · Photoshop</span></div>
+              <div class="proj-meta-row"><span class="pmk">Cátedra</span><span class="pmv">FADU UBA</span></div>
+            </div>
+          </div>
+          <div class="proj-desc-col">
+            <p class="proj-desc-text" data-es="Documentación ejecutiva completa para gestión ante municipio. Plantas, cortes, fachadas, detalles constructivos y memoria descriptiva." data-en="Complete executive documentation for municipal management.">Documentación ejecutiva completa para gestión ante municipio. Plantas, cortes, fachadas, detalles constructivos y memoria descriptiva.</p>
+            <div class="proj-tags"><span class="proj-tag">Plantas</span><span class="proj-tag">Cortes</span><span class="proj-tag">Fachadas</span><span class="proj-tag">Detalles</span></div>
+          </div>
+        </div>
+      </div>
+      <hr class="hr">
+      <div class="sh"><div class="sh-row"><span class="sh-label" data-es="Láminas" data-en="Sheets">Láminas</span></div></div>
+    </div>
+  </div>
+  <div class="w">
+    <div class="laminas-bg" id="lam-bg-03"><img src="img/plano/plano.jpg" alt=""></div>
+    <div class="laminas-stack" id="lam-grid-03" data-bg="lam-bg-03">
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-03')">
+        <img src="img/plano/plano.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+    </div>
+    <div class="footer" style="margin-top:4px"><div class="footer-row">
+      <span class="ft-l">Facundo Luna</span><span class="ft-m">FADU UBA · Arquitectura + IA</span><span class="ft-r">© 2026</span>
+    </div></div>
+  </div>
+</div>
+
+<div class="view" id="view-proj-04">
+  <div class="top-content">
+    <div class="proj-hero">
+      <img src="img/intervencion/intervencion8.jpg" alt="" loading="eager" fetchpriority="high">
+      <div class="proj-hero-fade"></div>
+    </div>
+    <div class="w">
+      <span class="back-btn" onclick="go('proyectos',true)">← <span data-es="Volver a proyectos" data-en="Back to projects">Volver a proyectos</span></span>
+      <div class="proj-header">
+        <div class="proj-header-grid">
+          <div>
+            <div class="proj-eyebrow">Urbanismo · Buenos Aires · 2025</div>
+            <div class="proj-title" data-es="Intervención<br>Urbana" data-en="Urban<br>Intervention">Intervención<br>Urbana</div>
+            <div class="proj-subtitle" data-es="Reconversión de espacio público" data-en="Public space reconversion">Reconversión de espacio público</div>
+            <div class="proj-meta">
+              <div class="proj-meta-row"><span class="pmk" data-es="Año" data-en="Year">Año</span><span class="pmv">2025</span></div>
+              <div class="proj-meta-row"><span class="pmk">Herramientas</span><span class="pmv">AutoCAD · SketchUp · Photoshop · AI</span></div>
+              <div class="proj-meta-row"><span class="pmk">Cátedra</span><span class="pmv">FADU UBA</span></div>
+            </div>
+          </div>
+          <div class="proj-desc-col">
+            <p class="proj-desc-text" data-es="Reconversión de espacio público degradado. La estrategia parte de un análisis de capas para proponer una activación por etapas." data-en="Reconversion of degraded public space through layered analysis and phased activation.">Reconversión de espacio público degradado. La estrategia parte de un análisis de capas para proponer una activación por etapas.</p>
+            <div class="proj-tags"><span class="proj-tag">Análisis sitio</span><span class="proj-tag">Diagramas</span><span class="proj-tag">Plantas</span><span class="proj-tag">Render</span></div>
+          </div>
+        </div>
+      </div>
+      <hr class="hr">
+      <div class="sh"><div class="sh-row"><span class="sh-label" data-es="Láminas" data-en="Sheets">Láminas</span></div></div>
+    </div>
+  </div>
+  <div class="w">
+    <div class="laminas-bg" id="lam-bg-04"><img src="img/intervencion/intervencion8.jpg" alt=""></div>
+    <div class="laminas-stack" id="lam-grid-04" data-bg="lam-bg-04">
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-04')">
+        <img src="img/intervencion/intervencion.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="lam-row lam-row-4">
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-04')">
+        <img src="img/intervencion/intervencion1.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-04')">
+        <img src="img/intervencion/intervencion2.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-04')">
+        <img src="img/intervencion/intervencion3.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-04')">
+        <img src="img/intervencion/intervencion4.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      </div>
+      <div class="lam-row lam-row-4">
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-04')">
+        <img src="img/intervencion/intervencion5.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-04')">
+        <img src="img/intervencion/intervencion6.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-04')">
+        <img src="img/intervencion/intervencion7.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-04')">
+        <img src="img/intervencion/intervencion8.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      </div>
+      <div class="lam-row lam-row-2">
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-04')">
+        <img src="img/intervencion/intervencion9.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-04')">
+        <img src="img/intervencion/intervencion10.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      </div>
+    </div>
+    <div class="footer" style="margin-top:4px"><div class="footer-row">
+      <span class="ft-l">Facundo Luna</span><span class="ft-m">FADU UBA · Arquitectura + IA</span><span class="ft-r">© 2026</span>
+    </div></div>
+  </div>
+</div>
+
+<div class="view" id="view-proj-05">
+  <div class="top-content">
+    <div class="proj-hero">
+      <img src="img/conjunto/conjuntogrande.jpg" alt="" loading="eager" fetchpriority="high">
+      <div class="proj-hero-fade"></div>
+    </div>
+    <div class="w">
+      <span class="back-btn" onclick="go('proyectos',true)">← <span data-es="Volver a proyectos" data-en="Back to projects">Volver a proyectos</span></span>
+      <div class="proj-header">
+        <div class="proj-header-grid">
+          <div>
+            <div class="proj-eyebrow">Vivienda Colectiva · 2025</div>
+            <div class="proj-title" data-es="Conjunto<br>Habitacional" data-en="Housing<br>Complex">Conjunto<br>Habitacional</div>
+            <div class="proj-subtitle" data-es="Planta libre · Iluminación cenital" data-en="Open plan · Zenithal light">Planta libre · Iluminación cenital</div>
+            <div class="proj-meta">
+              <div class="proj-meta-row"><span class="pmk" data-es="Año" data-en="Year">Año</span><span class="pmv">2025</span></div>
+              <div class="proj-meta-row"><span class="pmk">Herramientas</span><span class="pmv">AutoCAD · SketchUp · Twinmotion · AI</span></div>
+              <div class="proj-meta-row"><span class="pmk">Cátedra</span><span class="pmv">FADU UBA</span></div>
+            </div>
+          </div>
+          <div class="proj-desc-col">
+            <p class="proj-desc-text" data-es="Planta libre como principio organizador. Las circulaciones se integran al paisaje urbano. La iluminación natural cenital actúa como organizador del espacio colectivo." data-en="Open plan as organizing principle. Zenithal natural light organizes collective space.">Planta libre como principio organizador. Las circulaciones se integran al paisaje urbano. La iluminación natural cenital actúa como organizador del espacio colectivo.</p>
+            <div class="proj-tags"><span class="proj-tag">Croquis</span><span class="proj-tag">Plantas</span><span class="proj-tag">Cortes</span><span class="proj-tag">Render</span><span class="proj-tag">Post IA</span></div>
+          </div>
+        </div>
+      </div>
+      <hr class="hr">
+      <div class="sh"><div class="sh-row"><span class="sh-label" data-es="Láminas" data-en="Sheets">Láminas</span></div></div>
+    </div>
+  </div>
+  <div class="w">
+    <div class="laminas-bg" id="lam-bg-05"><img src="img/conjunto/conjuntogrande.jpg" alt=""></div>
+    <div class="laminas-stack" id="lam-grid-05" data-bg="lam-bg-05">
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-05')">
+        <img src="img/conjunto/conjuntogrande2.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-05')">
+        <img src="img/conjunto/conjunto1.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-05')">
+        <img src="img/conjunto/conjunto2.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-05')">
+        <img src="img/conjunto/conjunto3.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-05')">
+        <img src="img/conjunto/conjunto4.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-05')">
+        <img src="img/conjunto/conjunto5.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+    </div>
+    <div class="maqueta-section">
+      <div class="sh"><div class="sh-row"><span class="sh-label" data-es="Maqueta" data-en="Model">Maqueta</span></div></div>
+      <div class="maqueta-grid" id="maq-grid-05">
+        <div class="maqueta-img" onclick="lbOpenImg(this)"><img src="img/conjunto/conjuntogrande.jpg" alt="" loading="lazy" decoding="async"></div>
+      </div>
+    </div>
+    <div class="footer" style="margin-top:4px"><div class="footer-row">
+      <span class="ft-l">Facundo Luna</span><span class="ft-m">FADU UBA · Arquitectura + IA</span><span class="ft-r">© 2026</span>
+    </div></div>
+  </div>
+</div>
+
+<div class="view" id="view-proj-06">
+  <div class="top-content">
+    <div class="proj-hero">
+      <img src="img/iglesia/iglesia.jpg" alt="" loading="eager" fetchpriority="high">
+      <div class="proj-hero-fade"></div>
+    </div>
+    <div class="w">
+      <span class="back-btn" onclick="go('proyectos',true)">← <span data-es="Volver a proyectos" data-en="Back to projects">Volver a proyectos</span></span>
+      <div class="proj-header">
+        <div class="proj-header-grid">
+          <div>
+            <div class="proj-eyebrow">Religioso · Paramétrico · 2024</div>
+            <div class="proj-title" data-es="Espacio<br>Sacro" data-en="Sacred<br>Space">Espacio<br>Sacro</div>
+            <div class="proj-subtitle" data-es="Luz natural como material" data-en="Natural light as material">Luz natural como material</div>
+            <div class="proj-meta">
+              <div class="proj-meta-row"><span class="pmk" data-es="Año" data-en="Year">Año</span><span class="pmv">2024</span></div>
+              <div class="proj-meta-row"><span class="pmk">Herramientas</span><span class="pmv">Rhino · Grasshopper · Twinmotion · AI</span></div>
+              <div class="proj-meta-row"><span class="pmk">Cátedra</span><span class="pmv">FADU UBA</span></div>
+            </div>
+          </div>
+          <div class="proj-desc-col">
+            <p class="proj-desc-text" data-es="La luz natural como material estructural. Las celosías paramétricas generadas en Grasshopper filtran y dirigen la luz según orientación y hora del día." data-en="Natural light as structural material. Parametric lattices filter and direct light.">La luz natural como material estructural. Las celosías paramétricas generadas en Grasshopper filtran y dirigen la luz según orientación y hora del día.</p>
+            <div class="proj-tags"><span class="proj-tag">Croquis</span><span class="proj-tag">Diagrama</span><span class="proj-tag">Post IA</span></div>
+          </div>
+        </div>
+      </div>
+      <hr class="hr">
+      <div class="sh"><div class="sh-row"><span class="sh-label" data-es="Láminas" data-en="Sheets">Láminas</span></div></div>
+    </div>
+  </div>
+  <div class="w">
+    <div class="laminas-bg" id="lam-bg-06"><img src="img/iglesia/iglesia.jpg" alt=""></div>
+    <div class="laminas-stack" id="lam-grid-06" data-bg="lam-bg-06">
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-06')">
+        <img src="img/iglesia/iglesia1.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-06')">
+        <img src="img/iglesia/iglesia2.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+    </div>
+    <div class="footer" style="margin-top:4px"><div class="footer-row">
+      <span class="ft-l">Facundo Luna</span><span class="ft-m">FADU UBA · Arquitectura + IA</span><span class="ft-r">© 2026</span>
+    </div></div>
+  </div>
+</div>
+
+<div class="view" id="view-proj-07">
+  <div class="top-content">
+    <div class="proj-hero">
+      <img src="img/parametrico/1.jpg" alt="" loading="eager" fetchpriority="high">
+      <div class="proj-hero-fade"></div>
+    </div>
+    <div class="w">
+      <span class="back-btn" onclick="go('proyectos',true)">← <span data-es="Volver a proyectos" data-en="Back to projects">Volver a proyectos</span></span>
+      <div class="proj-header">
+        <div class="proj-header-grid">
+          <div>
+            <div class="proj-eyebrow">Paramétrico · Investigación · 2025</div>
+            <div class="proj-title" data-es="Análisis<br>Paramétrico" data-en="Parametric<br>Analysis">Análisis<br>Paramétrico</div>
+            <div class="proj-subtitle" data-es="Morfología generativa" data-en="Generative morphology">Morfología generativa</div>
+            <div class="proj-meta">
+              <div class="proj-meta-row"><span class="pmk" data-es="Año" data-en="Year">Año</span><span class="pmv">2025</span></div>
+              <div class="proj-meta-row"><span class="pmk">Herramientas</span><span class="pmv">Rhino · IA · Photoshop</span></div>
+              <div class="proj-meta-row"><span class="pmk">Cátedra</span><span class="pmv">FADU UBA</span></div>
+            </div>
+          </div>
+          <div class="proj-desc-col">
+            <p class="proj-desc-text" data-es="Análisis morfológico generado en Rhino con post-producción en IA y Photoshop." data-en="Morphological analysis generated in Rhino with AI and Photoshop post-production.">Análisis morfológico generado en Rhino con post-producción en IA y Photoshop.</p>
+            <div class="proj-tags"><span class="proj-tag">Rhino</span><span class="proj-tag">IA</span><span class="proj-tag">Photoshop</span></div>
+          </div>
+        </div>
+      </div>
+      <hr class="hr">
+      <div class="sh"><div class="sh-row"><span class="sh-label" data-es="Láminas" data-en="Sheets">Láminas</span></div></div>
+    </div>
+  </div>
+  <div class="w">
+    <div class="laminas-bg" id="lam-bg-07"><img src="img/parametrico/1.jpg" alt=""></div>
+    <div class="laminas-stack" id="lam-grid-07" data-bg="lam-bg-07">
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-07')">
+        <img src="img/parametrico/2.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-07')">
+        <img src="img/parametrico/3.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-07')">
+        <img src="img/parametrico/4.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-07')">
+        <img src="img/parametrico/5.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-07')">
+        <img src="img/parametrico/6.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-07')">
+        <img src="img/parametrico/7.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-07')">
+        <img src="img/parametrico/8.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-07')">
+        <img src="img/parametrico/9.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-07')">
+        <img src="img/parametrico/10.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-07')">
+        <img src="img/parametrico/11.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-07')">
+        <img src="img/parametrico/12.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-07')">
+        <img src="img/parametrico/13.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-07')">
+        <img src="img/parametrico/14.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-07')">
+        <img src="img/parametrico/15.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-07')">
+        <img src="img/parametrico/16.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-07')">
+        <img src="img/parametrico/17.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-07')">
+        <img src="img/parametrico/18.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-07')">
+        <img src="img/parametrico/19.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-07')">
+        <img src="img/parametrico/20.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-07')">
+        <img src="img/parametrico/21.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-07')">
+        <img src="img/parametrico/22.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-07')">
+        <img src="img/parametrico/23.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+    </div>
+    <div class="footer" style="margin-top:4px"><div class="footer-row">
+      <span class="ft-l">Facundo Luna</span><span class="ft-m">FADU UBA · Arquitectura + IA</span><span class="ft-r">© 2026</span>
+    </div></div>
+  </div>
+</div>
+
+<div class="view" id="view-proj-08">
+  <div class="top-content">
+    <div class="proj-hero">
+      <img src="img/reversion/morfo1.jpg" alt="" loading="eager" fetchpriority="high">
+      <div class="proj-hero-fade"></div>
+    </div>
+    <div class="w">
+      <span class="back-btn" onclick="go('proyectos',true)">← <span data-es="Volver a proyectos" data-en="Back to projects">Volver a proyectos</span></span>
+      <div class="proj-header">
+        <div class="proj-header-grid">
+          <div>
+            <div class="proj-eyebrow">Intervención · IA · 2025</div>
+            <div class="proj-title" data-es="RE*VERSION" data-en="RE*VERSION">RE*VERSION</div>
+            <div class="proj-subtitle" data-es="Reinterpretación de lo existente" data-en="Reinterpretation of the existing">Reinterpretación de lo existente</div>
+            <div class="proj-meta">
+              <div class="proj-meta-row"><span class="pmk" data-es="Año" data-en="Year">Año</span><span class="pmv">2025</span></div>
+              <div class="proj-meta-row"><span class="pmk">Herramientas</span><span class="pmv">Rhino · IA · Photoshop</span></div>
+              <div class="proj-meta-row"><span class="pmk">Cátedra</span><span class="pmv">FADU UBA</span></div>
+            </div>
+          </div>
+          <div class="proj-desc-col">
+            <p class="proj-desc-text" data-es="Reinterpretación de espacios existentes mediante Rhino, inteligencia artificial y Photoshop." data-en="Reinterpretation of existing spaces using Rhino, artificial intelligence and Photoshop.">Reinterpretación de espacios existentes mediante Rhino, inteligencia artificial y Photoshop.</p>
+            <div class="proj-tags"><span class="proj-tag">Rhino</span><span class="proj-tag">IA</span><span class="proj-tag">Photoshop</span></div>
+          </div>
+        </div>
+      </div>
+      <hr class="hr">
+      <div class="sh"><div class="sh-row"><span class="sh-label" data-es="Láminas" data-en="Sheets">Láminas</span></div></div>
+    </div>
+  </div>
+  <div class="w">
+    <div class="laminas-bg" id="lam-bg-08"><img src="img/reversion/morfo1.jpg" alt=""></div>
+    <div class="laminas-stack" id="lam-grid-08" data-bg="lam-bg-08">
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-08')">
+        <img src="img/reversion/morfo2.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-08')">
+        <img src="img/reversion/morfo3.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-08')">
+        <img src="img/reversion/morfo4.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-08')">
+        <img src="img/reversion/morfo5.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-08')">
+        <img src="img/reversion/morfo6.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-08')">
+        <img src="img/reversion/morfo7.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-08')">
+        <img src="img/reversion/morfo8.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-08')">
+        <img src="img/reversion/morfo9.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-08')">
+        <img src="img/reversion/morfo10.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-08')">
+        <img src="img/reversion/morfo11.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-08')">
+        <img src="img/reversion/morfo12.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-08')">
+        <img src="img/reversion/morfo13.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-08')">
+        <img src="img/reversion/morfo14.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-08')">
+        <img src="img/reversion/morfo15.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-08')">
+        <img src="img/reversion/morfo16.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-08')">
+        <img src="img/reversion/morfo17.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="lamina" onclick="lbOpen(this,'lam-grid-08')">
+        <img src="img/reversion/morfo18.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+    </div>
+    <div class="footer" style="margin-top:4px"><div class="footer-row">
+      <span class="ft-l">Facundo Luna</span><span class="ft-m">FADU UBA · Arquitectura + IA</span><span class="ft-r">© 2026</span>
+    </div></div>
+  </div>
+</div>
+
+<div class="view" id="view-proceso">
+  <div class="w">
+    <div class="sh"><div class="sh-row">
+      <span class="sh-label" data-es="Proceso" data-en="Process">Proceso</span>
+      <span class="sh-right" data-es="Croquis · diagramas · modelos · algoritmos" data-en="Sketches · diagrams · models · algorithms">Croquis · diagramas · modelos · algoritmos</span>
+    </div></div>
+    <div class="proc-grid">
+      <div class="proc-card" onclick="lbOpenImg(this)"><img src="img/proceso.jpg" alt="" loading="lazy" decoding="async"></div>
+      <div class="proc-card" onclick="lbOpenImg(this)"><img src="img/proceso2.jpg" alt="" loading="lazy" decoding="async"></div>
+      <div class="proc-card" onclick="lbOpenImg(this)"><img src="img/proceso3.jpg" alt="" loading="lazy" decoding="async"></div>
+      <div class="proc-card" onclick="lbOpenImg(this)"><img src="img/proceso4.jpg" alt="" loading="lazy" decoding="async"></div>
+      <div class="proc-card" onclick="lbOpenImg(this)"><img src="img/proceso5.jpg" alt="" loading="lazy" decoding="async"></div>
+      <div class="proc-card" onclick="lbOpenImg(this)"><img src="img/proceso.jpg" alt="" loading="lazy" decoding="async"></div>
+    </div>
+    <hr class="hr">
+    <div class="ai-strip">
+      <div class="ai-l">
+        <div class="ai-big" data-es="El render" data-en="The render">El render</div>
+        <div class="ai-light" data-es="es solo el inicio." data-en="is just the start.">es solo el inicio.</div>
+        <p class="ai-body" data-es="Post-producción con IA en cada proyecto. Atmósfera, luz y detalle final que ningún motor de render genera solo." data-en="AI post-production in every project. Atmosphere, light and final detail no render engine generates alone.">Post-producción con IA en cada proyecto. Atmósfera, luz y detalle final que ningún motor de render genera solo.</p>
+      </div>
+      <div class="ai-r">
+        <div class="ai-cell"><div class="ai-n">01 ——</div><div class="ai-name" data-es="Modelo paramétrico" data-en="Parametric model">Modelo paramétrico</div><div class="ai-desc">Rhino + Grasshopper.</div></div>
+        <div class="ai-cell"><div class="ai-n">02 ——</div><div class="ai-name" data-es="Render base" data-en="Base render">Render base</div><div class="ai-desc">Twinmotion. El lienzo, no el resultado.</div></div>
+        <div class="ai-cell"><div class="ai-n">03 ——</div><div class="ai-name" data-es="Post-prod IA" data-en="AI Post-prod">Post-prod IA</div><div class="ai-desc">Luz, atmósfera y materiales.</div></div>
+        <div class="ai-cell"><div class="ai-n">04 ——</div><div class="ai-name" data-es="Imagen final" data-en="Final image">Imagen final</div><div class="ai-desc">Arquitectura con presencia real.</div></div>
+      </div>
+    </div>
+    <hr class="hr">
+    <div class="w"><div class="footer"><div class="footer-row">
+    <span class="ft-l">Facundo Luna</span><span class="ft-m">FADU UBA · Arquitectura + IA</span><span class="ft-r">© 2026</span>
+  </div></div></div>
+  </div>
+</div>
+
+<div class="view" id="view-efele">
+  <div class="w">
+    <div class="sh"><div class="sh-row">
+      <span class="sh-label">EFELE.ARQ</span>
+      <span class="sh-right" data-es="Laboratorio de investigación en diseño e IA" data-en="Design and AI research laboratory">Laboratorio de investigación en diseño e IA</span>
+    </div></div>
+    <div class="efele-top">
+      <div class="efele-l">
+        <img src="img/logo.jpg" alt="EFELE.ARQ" style="max-width:100%;max-height:220px;width:100%;object-fit:contain;display:block">
+        <div>
+          <div class="efele-mark-row"><div class="efele-sq"></div><span class="efele-name-lbl">EFELE.ARQ</span></div>
+          <div class="efele-tagline" data-es="Laboratorio de diseño e inteligencia artificial" data-en="Design and artificial intelligence laboratory">Laboratorio de diseño e inteligencia artificial</div>
+        </div>
+      </div>
+      <div class="efele-r">
+        <p class="efele-desc" data-es="<strong>EFELE.ARQ</strong> es un laboratorio personal de investigación en diseño e inteligencia artificial. Un espacio para explorar los límites entre <strong>algoritmo, imagen y arquitectura</strong> — fuera del programa académico, dentro de la práctica real.<br><br>Nació como extensión natural de un proceso de trabajo donde la IA no es un atajo sino una herramienta de pensamiento." data-en="<strong>EFELE.ARQ</strong> is a personal research laboratory in design and artificial intelligence. A space to explore the boundaries between <strong>algorithm, image and architecture</strong> — outside the academic program, within real practice.<br><br>It emerged as a natural extension of a work process where AI is not a shortcut but a thinking tool."><strong>EFELE.ARQ</strong> es un laboratorio personal de investigación en diseño e inteligencia artificial. Un espacio para explorar los límites entre <strong>algoritmo, imagen y arquitectura</strong> — fuera del programa académico, dentro de la práctica real.<br><br>Nació como extensión natural de un proceso de trabajo donde la IA no es un atajo sino una herramienta de pensamiento.</p>
+        <a class="efele-cta" href="https://instagram.com/efele.arq" target="_blank" rel="noopener" data-es="Ver en Instagram →" data-en="See on Instagram →">Ver en Instagram →</a>
+      </div>
+    </div>
+    <hr class="hr">
+    <div class="efele-gal">
+      <div class="efele-img" onclick="lbOpenImg(this)"><img src="img/efele1.jpg" alt="" loading="lazy" decoding="async"></div>
+      <div class="efele-img" onclick="lbOpenImg(this)"><img src="img/efele2.jpg" alt="" loading="lazy" decoding="async"></div>
+      <div class="efele-img" onclick="lbOpenImg(this)"><img src="img/efele3.jpg" alt="" loading="lazy" decoding="async"></div>
+      <div class="efele-img" onclick="lbOpenImg(this)"><img src="img/efele4.jpg" alt="" loading="lazy" decoding="async"></div>
+    </div>
+    <hr class="hr">
+    <div class="w"><div class="footer"><div class="footer-row">
+    <span class="ft-l">Facundo Luna</span><span class="ft-m">FADU UBA · Arquitectura + IA</span><span class="ft-r">© 2026</span>
+  </div></div></div>
+  </div>
+</div>
+
+<div class="view" id="view-about">
+  <div class="w">
+    <div class="sh"><div class="sh-row">
+      <span class="sh-label" data-es="About" data-en="About">About</span>
+      <span class="sh-right" data-es="Facundo Luna · Buenos Aires" data-en="Facundo Luna · Buenos Aires">Facundo Luna · Buenos Aires</span>
+    </div></div>
+    <div class="about-grid">
+      <div class="about-img-col" onclick="lbOpenImg(this)">
+        <img src="img/foto-facundo.jpg" alt="Facundo Luna" loading="lazy" decoding="async">
+      </div>
+      <div class="about-txt">
+        <div class="about-lbl" data-es="Facundo Luna — Arquitectura + IA" data-en="Facundo Luna — Architecture + AI">Facundo Luna — Arquitectura + IA</div>
+        <p class="about-body" data-es="Soy <strong>Facundo Luna</strong>, estudiante de arquitectura en <strong>FADU UBA</strong>, Buenos Aires. Mi práctica combina el rigor de la documentación técnica con el diseño paramétrico y la inteligencia artificial — dos herramientas que no uso por moda, sino porque me permiten pensar proyectos que de otra forma no existirían.<br><br>Fundé <strong>EFELE.ARQ</strong> como espacio de investigación personal donde exploro los límites entre algoritmo, imagen y arquitectura." data-en="I am <strong>Facundo Luna</strong>, architecture student at <strong>FADU UBA</strong>, Buenos Aires. My practice combines the rigor of technical documentation with parametric design and artificial intelligence — two tools I use because they allow me to think projects that otherwise wouldn't exist.<br><br>I founded <strong>EFELE.ARQ</strong> as a personal research space exploring the boundaries between algorithm, image and architecture.">Soy <strong>Facundo Luna</strong>, estudiante de arquitectura en <strong>FADU UBA</strong>, Buenos Aires. Mi práctica combina el rigor de la documentación técnica con el diseño paramétrico y la inteligencia artificial — dos herramientas que no uso por moda, sino porque me permiten pensar proyectos que de otra forma no existirían.<br><br>Fundé <strong>EFELE.ARQ</strong> como espacio de investigación personal donde exploro los límites entre algoritmo, imagen y arquitectura.</p>
+        <div class="about-links">
+          <a class="about-link" href="mailto:facundoluna182@hotmail.com">Email</a>
+          <a class="about-link" href="https://instagram.com/efele.arq" target="_blank" rel="noopener">Instagram</a>
+          <a class="about-link" href="https://www.behance.net/facundoluna182" target="_blank" rel="noopener">Behance</a>
+        </div>
+      </div>
+    </div>
+    <hr class="hr">
+    <div class="w"><div class="footer"><div class="footer-row">
+    <span class="ft-l">Facundo Luna</span><span class="ft-m">FADU UBA · Arquitectura + IA</span><span class="ft-r">© 2026</span>
+  </div></div></div>
+  </div>
+</div>
+
+<div class="view" id="view-contacto">
+  <div class="w">
+    <div class="sh"><div class="sh-row">
+      <span class="sh-label" data-es="Contacto" data-en="Contact">Contacto</span>
+      <span class="sh-right" data-es="Buenos Aires · Argentina" data-en="Buenos Aires · Argentina">Buenos Aires · Argentina</span>
+    </div></div>
+    <div class="contact-grid">
+      <div class="contact-l">
+        <div class="contact-big" data-es="CONTACTAME" data-en="CONTACT ME">CONTACTAME</div>
+        <div class="contact-items">
+          <div class="ci"><span class="ci-k">Email</span><a class="ci-v" href="mailto:facundoluna182@hotmail.com">facundoluna182@hotmail.com</a></div>
+          <div class="ci"><span class="ci-k">Instagram</span><a class="ci-v" href="https://instagram.com/efele.arq" target="_blank" rel="noopener">@efele.arq</a></div>
+          <div class="ci"><span class="ci-k" data-es="Ubicación" data-en="Location">Ubicación</span><span class="ci-v">Buenos Aires, Argentina</span></div>
+        </div>
+      </div>
+      <div class="contact-r">
+        <div class="form-top-lbl" data-es="Escribime" data-en="Write to me">Escribime</div>
+        <form class="cform" onsubmit="handleForm(event)">
+          <div class="fg"><label class="fl" data-es="Nombre" data-en="Name">Nombre</label><input class="fi" type="text" name="nombre" placeholder="Tu nombre" required autocomplete="name"></div>
+          <div class="fg"><label class="fl">Email</label><input class="fi" type="email" name="email" placeholder="tu@email.com" required autocomplete="email"></div>
+          <div class="fg" style="flex:1;display:flex;flex-direction:column">
+            <label class="fl" data-es="Mensaje" data-en="Message">Mensaje</label>
+            <textarea class="ft" name="mensaje" placeholder="Contame sobre tu proyecto..." required style="flex:1"></textarea>
+          </div>
+          <button class="fsub" type="submit" data-es="Enviar →" data-en="Send →">Enviar →</button>
+        </form>
+      </div>
+    </div>
+    <hr class="hr">
+    <div class="footer"><div class="footer-row">
+      <span class="ft-l">Facundo Luna</span><span class="ft-m">FADU UBA · Arquitectura + IA · Buenos Aires</span><span class="ft-r">© 2026</span>
+    </div></div>
+  </div>
+</div>
 
 <script>
 /* Lightbox para imagen individual */
@@ -479,13 +1407,19 @@ function lbOpenImg(el){
   document.getElementById('lb').classList.add('open');
   document.body.style.overflow='hidden';
 }
+
 'use strict';
+
 const VIEWS = ['inicio','proyectos','proceso','efele','about','contacto',
   'proj-01','proj-02','proj-03','proj-04','proj-05','proj-06','proj-07','proj-08'];
+
+/* Guarda la posición de scroll de cada vista */
 const scrollPos = {};
 let currentView = 'inicio';
+
 function go(name, restoreScroll) {
   scrollPos[currentView] = window.scrollY || document.documentElement.scrollTop;
+
   document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
   const navKey = name.startsWith('proj-') ? 'proyectos' : name;
   document.querySelectorAll('[data-v],[data-vm]').forEach(a => {
@@ -498,18 +1432,25 @@ function go(name, restoreScroll) {
     const savedY = restoreScroll && scrollPos[name] != null ? scrollPos[name] : 0;
     document.documentElement.scrollTop = savedY;
     document.body.scrollTop = savedY;
+    /* fallback con timeout para browsers lentos */
+    if (savedY > 0) setTimeout(() => {
+      document.documentElement.scrollTop = savedY;
+      document.body.scrollTop = savedY;
+    }, 50);
   }
   currentView = name;
   history.pushState({v: name}, '', '#' + name);
   closeMob();
   setTimeout(setupLaminasBg, 80);
 }
-/* resto del JS original intacto (solo borré la segunda definición duplicada de lbOpenImg) */
+
 (function(){
   const h = location.hash.replace('#','');
   go(VIEWS.includes(h) ? h : 'inicio');
 })();
+
 window.addEventListener('popstate', e => { if (e.state && e.state.v) go(e.state.v, true); });
+
 function togMob(){
   document.getElementById('nm').classList.toggle('open');
   document.getElementById('nt').classList.toggle('open');
@@ -518,7 +1459,116 @@ function closeMob(){
   document.getElementById('nm').classList.remove('open');
   document.getElementById('nt').classList.remove('open');
 }
-/* CURSOR, SLIDER, LAMINAS BG, LIGHTBOX, IDIOMA, handleForm... exactamente igual que tenías */
+
+/* CURSOR */
+if (window.matchMedia('(pointer:fine)').matches) {
+  const cur = document.getElementById('cur');
+  if (cur) {
+    cur.style.cssText = 'width:8px;height:8px;border-radius:50%;background:#0d0d0d;position:fixed;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .18s,height .18s,background .18s,border .18s;mix-blend-mode:multiply';
+    let rx=0,ry=0,cx=0,cy=0;
+    document.addEventListener('mousemove', e=>{rx=e.clientX;ry=e.clientY},{passive:true});
+    (function loop(){cx+=(rx-cx)*.14;cy+=(ry-cy)*.14;cur.style.left=cx+'px';cur.style.top=cy+'px';requestAnimationFrame(loop)})();
+    const big=()=>{cur.style.width='18px';cur.style.height='18px';cur.style.background='transparent';cur.style.border='1px solid #0d0d0d';};
+    const sm =()=>{cur.style.width='8px';cur.style.height='8px';cur.style.background='#0d0d0d';cur.style.border='none';};
+    const xl =()=>{cur.style.width='36px';cur.style.height='36px';cur.style.background='transparent';cur.style.border='1.5px solid #0d0d0d';};
+    document.addEventListener('mouseover', e=>{if(e.target.closest('a,button,.prow,.ppc,.proc-card,.efele-img,.proc-prev-cell,.param-cell,.lamina,.maqueta-img,.back-btn'))big();});
+    document.addEventListener('mouseout',  e=>{if(e.target.closest('a,button,.prow,.ppc,.proc-card,.efele-img,.proc-prev-cell,.param-cell,.lamina,.maqueta-img,.back-btn'))sm();});
+    const sw = document.getElementById('sw');
+    if(sw){sw.addEventListener('mouseenter',xl);sw.addEventListener('mouseleave',sm);}
+  }
+}
+
+/* SLIDER */
+(function(){
+  const wrap = document.getElementById('sw');
+  if (!wrap) return;
+  const bef = document.getElementById('sl-b');
+  const line= document.getElementById('sl-l');
+  let drag = false;
+  function set(p){p=Math.max(2,Math.min(98,p));bef.style.clipPath='inset(0 '+(100-p)+'% 0 0)';line.style.left=p+'%';}
+  function getX(e){return e.touches?e.touches[0].clientX:e.clientX;}
+  function move(e){if(!drag)return;const r=wrap.getBoundingClientRect();set(((getX(e)-r.left)/r.width)*100);}
+  wrap.addEventListener('mousedown', e=>{drag=true;move(e);});
+  wrap.addEventListener('touchstart',e=>{drag=true;move(e);},{passive:true});
+  document.addEventListener('mouseup',  ()=>drag=false);
+  document.addEventListener('touchend', ()=>drag=false);
+  document.addEventListener('mousemove',move,{passive:true});
+  document.addEventListener('touchmove',move,{passive:true});
+  set(50);
+})();
+
+/* LÁMINAS BG */
+function setupLaminasBg(){
+  if(!('IntersectionObserver' in window))return;
+  document.querySelectorAll('.laminas-stack').forEach(stack=>{
+    if(stack._bgObs)return;
+    const bg=stack.dataset.bg?document.getElementById(stack.dataset.bg):null;
+    if(!bg)return;
+    const obs=new IntersectionObserver(entries=>{
+      entries.forEach(e=>bg.classList.toggle('visible',e.isIntersecting));
+    },{threshold:0.05});
+    obs.observe(stack);
+    stack._bgObs=obs;
+  });
+}
+setupLaminasBg();
+
+/* LIGHTBOX */
+let lbImgs=[],lbIdx=0;
+/* Lightbox para imagen individual (sin grid) */
+function lbOpenImg(el){
+  const img = el.querySelector('img') || el;
+  if(!img || !img.src) return;
+  lbImgs = [img];
+  lbIdx = 0;
+  document.getElementById('lb-img').src = img.src;
+  document.getElementById('lb').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function lbOpen(cell,gridId){
+  const img=cell.querySelector('img');
+  if(!img)return;
+  const grid=document.getElementById(gridId);
+  if(grid){
+    lbImgs=Array.from(grid.querySelectorAll('img')).filter(i=>i.src&&!i.src.endsWith('#'));
+    lbIdx=lbImgs.indexOf(img);if(lbIdx<0)lbIdx=0;
+  }else{lbImgs=[img];lbIdx=0;}
+  if(!lbImgs.length)return;
+  document.getElementById('lb-img').src=lbImgs[lbIdx].src;
+  document.getElementById('lb').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function lbClose(){document.getElementById('lb').classList.remove('open');document.body.style.overflow='';}
+function lbNav(d){if(!lbImgs.length)return;lbIdx=(lbIdx+d+lbImgs.length)%lbImgs.length;document.getElementById('lb-img').src=lbImgs[lbIdx].src;}
+document.getElementById('lb').addEventListener('click',function(e){if(e.target===this)lbClose();});
+document.addEventListener('keydown',e=>{
+  if(!document.getElementById('lb').classList.contains('open'))return;
+  if(e.key==='Escape')lbClose();
+  if(e.key==='ArrowLeft')lbNav(-1);
+  if(e.key==='ArrowRight')lbNav(1);
+});
+
+/* IDIOMA */
+let lang='es';
+function setLang(l){
+  lang=l;
+  document.getElementById('btn-es').classList.toggle('on',l==='es');
+  document.getElementById('btn-en').classList.toggle('on',l==='en');
+  document.querySelectorAll('[data-es]').forEach(el=>{
+     const val=l==='es'?el.dataset.es:el.dataset.en;
+    if(val!==undefined)el.innerHTML=val;
+  });
+}
+
+function handleForm(e){
+  e.preventDefault();
+  const btn=e.target.querySelector('.fsub');
+  btn.textContent='Enviado ✓';
+  btn.style.opacity='.5';
+  btn.disabled=true;
+}
+
 </script>
 </body>
 </html>
