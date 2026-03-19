@@ -67,10 +67,32 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
   cursor:pointer;transition:background .15s}
 .nav-mob a:hover,.nav-mob a.active{color:var(--ink);background:var(--white)}
 
-/* VIEWS */
+/* VIEWS - ANIMACION CORREGIDA PARA NO ROMPER POSITION FIXED */
 .view{display:none;padding-top:var(--nav);min-height:100vh}
-.view.active{display:block;animation:vin .2s ease forwards}
-@keyframes vin{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:translateY(0)}}
+.view.active{display:block;animation:vin .3s ease forwards}
+@keyframes vin{from{opacity:0;}to{opacity:1;}}
+
+/* ═══ PARCHE DE CAPAS: PROTEGE TEXTOS DEL FONDO BORROSO ═══ */
+.proj-hero { position: relative; z-index: 3; }
+.proj-header { position: relative; z-index: 2; }
+.proj-header::before {
+  content: ''; position: absolute;
+  top: -120px; bottom: -60px; left: -50vw; right: -50vw;
+  background: var(--bg); z-index: -1;
+}
+.maqueta-section { position: relative; z-index: 2; }
+.maqueta-section::before {
+  content: ''; position: absolute;
+  top: -40px; bottom: -20px; left: -50vw; right: -50vw;
+  background: var(--bg); z-index: -1;
+}
+.footer { position: relative; z-index: 2; }
+.footer::before {
+  content: ''; position: absolute;
+  top: -40px; bottom: -100px; left: -50vw; right: -50vw;
+  background: var(--bg); z-index: -1;
+}
+/* ═════════════════════════════════════════════════════════ */
 
 /* DIVIDERS & SECTION HEADERS */
 .hr{border:none;border-top:0.5px solid var(--line);margin:0}
@@ -154,8 +176,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
 .sl-hint{font-size:10px;font-weight:300;color:var(--pale)}
 .slider-outer{position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;
   cursor:col-resize;user-select:none;max-height:540px}
-/* ══ SLIDER ANTES: img/render-antes.jpg | 1920×720px, render Twinmotion sin editar */
-/* ══ SLIDER DESPUÉS: img/render-despues.jpg | 1920×720px, post-prod IA, mismo ángulo */
 .sl-after{position:absolute;inset:0;background:url('img/despues.jpg') center/cover no-repeat}
 .sl-before{position:absolute;inset:0;background:url('img/antes.jpg') center/cover no-repeat;clip-path:inset(0 50% 0 0)}
 .sl-line{position:absolute;top:0;bottom:0;left:50%;width:2px;background:rgba(255,255,255,.92);
@@ -1019,7 +1039,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
         <img src="img/iglesia/iglesia1.jpg" alt="" loading="lazy" decoding="async">
       </div>
       <div class="lamina" onclick="lbOpen(this,'lam-grid-06')">
-        <img src="img/iglesia/iglesia2.jpg" alt="" loading="lazy" decoding="async">
+        <img src="img/iglesia/iglesia2.jpg" alt="" loading="lazy decoding="async">
       </div>
     </div>
 
@@ -1300,7 +1320,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
         <div class="about-lbl" data-es="Facundo Luna — Arquitectura + IA" data-en="Facundo Luna — Architecture + AI">Facundo Luna — Arquitectura + IA</div>
         <p class="about-body" data-es="Soy <strong>Facundo Luna</strong>, estudiante de arquitectura en <strong>FADU UBA</strong>, Buenos Aires. Mi práctica combina el rigor de la documentación técnica con el diseño paramétrico y la inteligencia artificial — dos herramientas que no uso por moda, sino porque me permiten pensar proyectos que de otra forma no existirían.<br><br>Fundé <strong>EFELE.ARQ</strong> como espacio de investigación personal donde exploro los límites entre algoritmo, imagen y arquitectura." data-en="I am <strong>Facundo Luna</strong>, architecture student at <strong>FADU UBA</strong>, Buenos Aires. My practice combines the rigor of technical documentation with parametric design and artificial intelligence — two tools I use because they allow me to think projects that otherwise wouldn't exist.<br><br>I founded <strong>EFELE.ARQ</strong> as a personal research space exploring the boundaries between algorithm, image and architecture.">Soy <strong>Facundo Luna</strong>, estudiante de arquitectura en <strong>FADU UBA</strong>, Buenos Aires. Mi práctica combina el rigor de la documentación técnica con el diseño paramétrico y la inteligencia artificial — dos herramientas que no uso por moda, sino porque me permiten pensar proyectos que de otra forma no existirían.<br><br>Fundé <strong>EFELE.ARQ</strong> como espacio de investigación personal donde exploro los límites entre algoritmo, imagen y arquitectura.</p>
         <div class="about-links">
-          <a class="about-link" href="mailto:facundoluna182@hotmail.com">Email</a>
+          <a class="about-link" href="/cdn-cgi/l/email-protection#bfd9dedccad1dbd0d3cad1de8e878dffd8d2ded6d391dcd0d2">Email</a>
           <a class="about-link" href="https://instagram.com/efele.arq" target="_blank" rel="noopener">Instagram</a>
           <a class="about-link" href="https://www.behance.net/facundoluna182" target="_blank" rel="noopener">Behance</a>
         </div>
@@ -1323,7 +1343,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
       <div class="contact-l">
         <div class="contact-big" data-es="CONTACTAME" data-en="CONTACT ME">CONTACTAME</div>
         <div class="contact-items">
-          <div class="ci"><span class="ci-k">Email</span><a class="ci-v" href="mailto:facundoluna182@hotmail.com">facundoluna182@hotmail.com</a></div>
+          <div class="ci"><span class="ci-k">Email</span><a class="ci-v" href="/cdn-cgi/l/email-protection#6a0c0b091f040e05061f040b5b52582a0d070b030644090507"><span class="__cf_email__" data-cfemail="80e6e1e3f5eee4efecf5eee1b1b8b2c0e7ede1e9ecaee3efed">[email&#160;protected]</span></a></div>
           <div class="ci"><span class="ci-k">Instagram</span><a class="ci-v" href="https://instagram.com/efele.arq" target="_blank" rel="noopener">@efele.arq</a></div>
           <div class="ci"><span class="ci-k" data-es="Ubicación" data-en="Location">Ubicación</span><span class="ci-v">Buenos Aires, Argentina</span></div>
         </div>
