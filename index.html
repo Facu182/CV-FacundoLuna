@@ -770,14 +770,16 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
     <div class="sh"><div class="sh-row"><span class="sh-label" data-es="Láminas" data-en="Sheets">Láminas</span></div></div>
     <div class="laminas-bg" id="lam-bg-02"><img src="img/biblioteca/biblioteca.jpg" alt=""></div>
     <div class="laminas-stack" id="lam-grid-02" data-bg="lam-bg-02">
-      <div class="lam-row lam-row-2">
-      <div class="lamina" onclick="lbOpen(this,'lam-grid-02')">
-        <img src="img/biblioteca/biblioteca1.jpg" alt="" loading="lazy" decoding="async">
+      
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:2px; background:var(--line);">
+        <div class="lamina" onclick="lbOpen(this,'lam-grid-02')" style="aspect-ratio: 16/9; display: flex;">
+          <img src="img/biblioteca/biblioteca1.jpg" alt="" loading="lazy" decoding="async" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <div class="lamina" onclick="lbOpen(this,'lam-grid-02')" style="aspect-ratio: 16/9; display: flex;">
+          <img src="img/biblioteca/biblioteca2.jpg" alt="" loading="lazy" decoding="async" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
       </div>
-      <div class="lamina" onclick="lbOpen(this,'lam-grid-02')">
-        <img src="img/biblioteca/biblioteca2.jpg" alt="" loading="lazy" decoding="async">
-      </div>
-      </div>
+      
       <div class="lamina" onclick="lbOpen(this,'lam-grid-02')">
         <img src="img/biblioteca/biblioteca3.jpg" alt="" loading="lazy" decoding="async">
       </div>
@@ -1347,12 +1349,28 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
 </div>
 
 <script>
+/* Lightbox para imagen individual */
+function lbOpenImg(el){
+  const img = el.querySelector('img') || (el.tagName==='IMG'?el:null);
+  if(!img||!img.src) return;
+  lbImgs=[img]; lbIdx=0;
+  document.getElementById('lb-img').src=img.src;
+  document.getElementById('lb').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+
 'use strict';
 
 const VIEWS = ['inicio','proyectos','proceso','efele','about','contacto',
   'proj-01','proj-02','proj-03','proj-04','proj-05','proj-06','proj-07','proj-08'];
 
-function go(name) {
+/* Guarda la posición de scroll de cada vista */
+const scrollPos = {};
+let currentView = 'inicio';
+
+function go(name, restoreScroll) {
+  scrollPos[currentView] = window.scrollY || document.documentElement.scrollTop;
+
   document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
   const navKey = name.startsWith('proj-') ? 'proyectos' : name;
   document.querySelectorAll('[data-v],[data-vm]').forEach(a => {
@@ -1360,8 +1378,21 @@ function go(name) {
     a.classList.toggle('active', k === navKey);
   });
   const t = document.getElementById('view-' + name);
-  if (t) { t.classList.add('active'); window.scrollTo(0, 0); }
+  if (t) {
+    t.classList.add('active');
+    const savedY = restoreScroll && scrollPos[name] != null ? scrollPos[name] : 0;
+    document.documentElement.scrollTop = savedY;
+    document.body.scrollTop = savedY;
+    /* fallback con timeout para browsers lentos */
+    if (savedY > 0) setTimeout(() => {
+      document.documentElement.scrollTop = savedY;
+      document.body.scrollTop = savedY;
+    }, 50);
+  }
+  currentView = name;
+  history.pushState({v: name}, '', '#' + name);
   closeMob();
+  setTimeout(setupLaminasBg, 80);
 }
 
 (function(){
@@ -1369,10 +1400,7 @@ function go(name) {
   go(VIEWS.includes(h) ? h : 'inicio');
 })();
 
-window.addEventListener('popstate', () => {
-  const h = location.hash.replace('#','');
-  if (VIEWS.includes(h)) go(h);
-});
+window.addEventListener('popstate', e => { if (e.state && e.state.v) go(e.state.v, true); });
 
 function togMob(){
   document.getElementById('nm').classList.toggle('open');
@@ -1420,16 +1448,33 @@ if (window.matchMedia('(pointer:fine)').matches) {
   set(50);
 })();
 
+/* LÁMINAS BG */
+function setupLaminasBg(){
+  if(!('IntersectionObserver' in window))return;
+  document.querySelectorAll('.laminas-stack').forEach(stack=>{
+    if(stack._bgObs)return;
+    const bg=stack.dataset.bg?document.getElementById(stack.dataset.bg):null;
+    if(!bg)return;
+    const obs=new IntersectionObserver(entries=>{
+      entries.forEach(e=>bg.classList.toggle('visible',e.isIntersecting));
+    },{threshold:0.05});
+    obs.observe(stack);
+    stack._bgObs=obs;
+  });
+}
+setupLaminasBg();
+
 /* LIGHTBOX */
 let lbImgs=[],lbIdx=0;
-/* Lightbox para imagen individual */
+/* Lightbox para imagen individual (sin grid) */
 function lbOpenImg(el){
-  const img = el.querySelector('img') || (el.tagName==='IMG'?el:null);
-  if(!img||!img.src) return;
-  lbImgs=[img]; lbIdx=0;
-  document.getElementById('lb-img').src=img.src;
+  const img = el.querySelector('img') || el;
+  if(!img || !img.src) return;
+  lbImgs = [img];
+  lbIdx = 0;
+  document.getElementById('lb-img').src = img.src;
   document.getElementById('lb').classList.add('open');
-  document.body.style.overflow='hidden';
+  document.body.style.overflow = 'hidden';
 }
 
 function lbOpen(cell,gridId){
