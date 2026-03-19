@@ -73,8 +73,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
 @keyframes vin{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:translateY(0)}}
 
 /* DIVIDERS & SECTION HEADERS */
-.hr{border:none;border-top:0.5px solid var(--line);margin:0}
-.sh{padding:13px 0 9px}
+.hr{border:none;border-top:0.5px solid var(--line);margin:0; position: relative; z-index: 2;}
+.sh{padding:13px 0 9px; position: relative; z-index: 2;}
 .sh-row{display:flex;justify-content:space-between;align-items:center}
 .sh-label{font-size:9px;font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:var(--pale)}
 .sh-right{font-size:10px;font-weight:300;color:var(--pale)}
@@ -82,7 +82,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
 .sh-link:hover{color:var(--mid)}
 
 /* FOOTER */
-.footer{padding:16px 0;border-top:0.5px solid var(--line)}
+.footer{padding:16px 0;border-top:0.5px solid var(--line); position: relative; z-index: 2;}
 .footer-row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
 .ft-l{font-family:var(--f);font-size:12px;font-weight:700;color:var(--ink)}
 .ft-m{font-size:9px;font-weight:300;color:var(--pale);letter-spacing:.08em}
@@ -225,7 +225,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
   letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.3)}
 
 /* ── PROYECTO INDIVIDUAL ── */
-.proj-hero{position:relative;width:100%;aspect-ratio:16/7;overflow:hidden;max-height:520px;background:var(--hover)}
+.proj-hero{position:relative;width:100%;aspect-ratio:16/7;overflow:hidden;max-height:520px;background:var(--hover); z-index: 2;}
 .proj-hero img{width:100%;height:100%;object-fit:cover;display:block}
 .proj-hero-ph{position:absolute;inset:0;background:var(--hover);
   display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px}
@@ -233,9 +233,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
   background:linear-gradient(to bottom,transparent,var(--bg));pointer-events:none}
 .back-btn{display:inline-flex;align-items:center;gap:8px;font-size:10px;font-weight:400;
   letter-spacing:.1em;text-transform:uppercase;color:var(--muted);transition:color .2s;
-  cursor:pointer;padding:16px 0}
+  cursor:pointer;padding:16px 0; position: relative; z-index: 2;}
 .back-btn:hover{color:var(--ink)}
-.proj-header{padding:20px 0 28px}
+.proj-header{padding:20px 0 28px; position: relative; z-index: 2;}
 .proj-header-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
 .proj-eyebrow{font-size:9px;font-weight:400;letter-spacing:.16em;text-transform:uppercase;color:var(--pale);margin-bottom:10px}
 .proj-title{font-family:var(--f);font-size:clamp(36px,5vw,54px);font-weight:800;
@@ -253,8 +253,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
   border:0.5px solid var(--line);padding:4px 10px;background:var(--white)}
 
 /* Láminas — scroll vertical con fondo b/n */
-/* CORRECCIÓN: z-index a -1 para que no tape las imágenes principales */
-.laminas-bg{position:fixed;top:0;left:0;right:0;bottom:0;z-index:-1;
+.laminas-bg{position:fixed;top:0;left:0;right:0;bottom:0;z-index:0;
   pointer-events:none;opacity:0;transition:opacity .4s ease}
 .laminas-bg.visible{opacity:1}
 .laminas-bg img{width:100%;height:100%;object-fit:cover;
@@ -272,7 +271,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
 .lam-row .lamina{aspect-ratio:4/3}
 
 /* Maqueta */
-.maqueta-section{margin-top:2px}
+.maqueta-section{margin-top:2px; position: relative; z-index: 2;}
 .maqueta-grid{display:grid;grid-template-columns:1fr;gap:1px;background:var(--line)}
 .maqueta-img{position:relative;overflow:hidden;cursor:pointer;background:var(--hover);aspect-ratio:16/9}
 .maqueta-img img{width:100%;height:100%;object-fit:cover;transition:transform .7s;display:block}
@@ -885,7 +884,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
     <div class="laminas-bg" id="lam-bg-04"><img src="img/intervencion/intervencion8.jpg" alt=""></div>
     <div class="laminas-stack" id="lam-grid-04" data-bg="lam-bg-04">
       <div class="lamina" onclick="lbOpen(this,'lam-grid-04')">
-        <img src="img/intervencion/intervencion.jpg" alt="" loading="lazy" decoding="async">
+        <img src="img/intervencion/intervencion.jpg" alt="" loading="lazy decoding="async">
       </div>
       <div class="lam-row lam-row-4">
       <div class="lamina" onclick="lbOpen(this,'lam-grid-04')">
