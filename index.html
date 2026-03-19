@@ -67,10 +67,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
   cursor:pointer;transition:background .15s}
 .nav-mob a:hover,.nav-mob a.active{color:var(--ink);background:var(--white)}
 
-/* VIEWS - ANIMACIÓN CORREGIDA (sin transform para no romper los fixed childs) */
+/* VIEWS */
 .view{display:none;padding-top:var(--nav);min-height:100vh}
 .view.active{display:block;animation:vin .3s ease forwards}
-@keyframes vin{from{opacity:0;}to{opacity:1;}}
+@keyframes vin{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:translateY(0)}}
 
 /* DIVIDERS & SECTION HEADERS */
 .hr{border:none;border-top:0.5px solid var(--line);margin:0}
@@ -82,7 +82,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
 .sh-link:hover{color:var(--mid)}
 
 /* FOOTER */
-.footer{padding:16px 0;border-top:0.5px solid var(--line)}
+.footer{padding:166px 0 16px;border-top:0.5px solid var(--line)}
 .footer-row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
 .ft-l{font-family:var(--f);font-size:12px;font-weight:700;color:var(--ink)}
 .ft-m{font-size:9px;font-weight:300;color:var(--pale);letter-spacing:.08em}
@@ -154,10 +154,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
 .sl-hint{font-size:10px;font-weight:300;color:var(--pale)}
 .slider-outer{position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;
   cursor:col-resize;user-select:none;max-height:540px}
-/* ══ SLIDER ANTES: img/render-antes.jpg | 1920×720px, render Twinmotion sin editar */
-/* ══ SLIDER DESPUÉS: img/render-despues.jpg | 1920×720px, post-prod IA, mismo ángulo */
+/* ══ SLIDER ANTES: img/despues.jpg | 1920×720px, post-prod IA, mismo ángulo */
+/* ══ SLIDER DESPUÉS: img/despues.jpg | 1920×720px, post-prod IA, mismo ángulo */
 .sl-after{position:absolute;inset:0;background:url('img/despues.jpg') center/cover no-repeat}
-.sl-before{position:absolute;inset:0;background:url('img/antes.jpg') center/cover no-repeat;clip-path:inset(0 50% 0 0)}
+.sl-before{position:absolute;inset:0;background:url('img/despues.jpg') center/cover no-repeat;clip-path:inset(0 50% 0 0)}
 .sl-line{position:absolute;top:0;bottom:0;left:50%;width:2px;background:rgba(255,255,255,.92);
   transform:translateX(-50%);pointer-events:none;box-shadow:0 0 14px rgba(0,0,0,.22)}
 .sl-handle{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
@@ -252,17 +252,24 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
 .proj-tag{font-size:9px;font-weight:400;letter-spacing:.08em;color:var(--pale);
   border:0.5px solid var(--line);padding:4px 10px;background:var(--white)}
 
-/* Láminas — scroll vertical con fondo b/n - ARREGLADO Z-INDEX */
-.laminas-bg{position:fixed;top:0;left:0;right:0;bottom:0;z-index:-1;
-  pointer-events:none;opacity:0;transition:opacity .4s ease}
-.laminas-bg.visible{opacity:1}
-.laminas-bg img{width:100%;height:100%;object-fit:cover;
-  filter:grayscale(100%) blur(8px) brightness(.5)}
-.laminas-stack{position:relative;z-index:1;display:flex;flex-direction:column;gap:2px}
-.lamina{position:relative;width:100%;cursor:pointer;background:var(--white);overflow:hidden}
-.lamina img{width:100%;height:auto;display:block;transition:transform .5s ease}
+/* Láminas */
+.proj-laminas{padding-top:10px;background:var(--white);position:relative}
+.laminas-header {
+  position: absolute;
+  top: -100px; /* Ajustar posición para que cubra la transición */
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: linear-gradient(to top, var(--white), transparent); /* Degradado suave a blanco */
+  z-index: 10;
+  pointer-events: none; /* Dejar pasar eventos de ratón */
+}
+.laminas-grid{display:grid;grid-template-columns:1fr;gap:1px;background:var(--line);margin-top:1px;position:relative;z-index:1}
+.laminas-stack{display:flex;flex-direction:column;gap:2px}
+.lamina{position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;cursor:pointer;background:var(--hover)}
+.lamina img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease;display:block}
 .lamina:hover img{transform:scale(1.01)}
-.lamina-ph{width:100%;aspect-ratio:16/9;display:flex;align-items:center;
+.lamina-ph{position:absolute;inset:0;display:flex;align-items:center;
   justify-content:center;background:var(--white);flex-direction:column;gap:8px}
 /* Filas de láminas */
 .lam-row{display:grid;gap:2px;background:var(--line)}
@@ -489,15 +496,15 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
     </div></div>
     <div class="proj-prev-grid">
       <div class="ppc" onclick="go('proj-01')">
-        <div class="ppc-img"><div class="ppc-img-in" style="background-image:url('img/vivienda/casa.jpg')"></div><div class="ppc-ov"></div></div>
+        <div class="ppc-img"><div class="ppc-img-in" style="background-image:url('img/casa.jpg')"></div><div class="ppc-ov"></div></div>
         <div class="ppc-info"><div class="ppc-n">01</div><div class="ppc-t" data-es="Vivienda Unifamiliar" data-en="Single Family House">Vivienda Unifamiliar</div><div class="ppc-c">Residencial · 2024</div></div>
       </div>
       <div class="ppc" onclick="go('proj-05')">
-        <div class="ppc-img"><div class="ppc-img-in" style="background-image:url('img/conjunto/conjuntogrande.jpg')"></div><div class="ppc-ov"></div></div>
+        <div class="ppc-img"><div class="ppc-img-in" style="background-image:url('img/conjuntogrande.jpg')"></div><div class="ppc-ov"></div></div>
         <div class="ppc-info"><div class="ppc-n">05</div><div class="ppc-t" data-es="Conjunto Habitacional" data-en="Housing Complex">Conjunto Habitacional</div><div class="ppc-c">Vivienda Colectiva · 2025</div></div>
       </div>
       <div class="ppc" onclick="go('proj-02')">
-        <div class="ppc-img"><div class="ppc-img-in" style="background-image:url('img/biblioteca/biblioteca.jpg')"></div><div class="ppc-ov"></div></div>
+        <div class="ppc-img"><div class="ppc-img-in" style="background-image:url('img/biblioteca.jpg')"></div><div class="ppc-ov"></div></div>
         <div class="ppc-info"><div class="ppc-n">02</div><div class="ppc-t" data-es="Biblioteca Costera" data-en="Coastal Library">Biblioteca Costera</div><div class="ppc-c">Equipamiento · 2025</div></div>
       </div>
     </div>
@@ -522,7 +529,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
     </div>
     <div class="slider-outer" id="sw">
       <div class="sl-after" style="background-image:url('img/despues.jpg');background-size:cover;background-position:center"></div>
-      <div class="sl-before" id="sl-b" style="background-image:url('img/antes.jpg');background-size:cover;background-position:center;clip-path:inset(0 50% 0 0)"></div>
+      <div class="sl-before" id="sl-b" style="background-image:url('img/despues.jpg');background-size:cover;background-position:center;clip-path:inset(0 50% 0 0)"></div>
       <div class="sl-line" id="sl-l"><div class="sl-handle"></div></div>
       <div class="sl-tag l" data-es="Render base" data-en="Base render">Render base</div>
       <div class="sl-tag r" data-es="Post-producción IA" data-en="AI Post-production">Post-producción IA</div>
@@ -548,10 +555,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
   <div class="w">
     <div class="prow prow-n" onclick="go('proj-01')">
       <div class="pi">
-        <div class="pi-in" style="background-image:url('img/vivienda/casa.jpg')"></div>
+        <div class="pi-in" style="background-image:url('img/casa.jpg')"></div>
         <div class="pi-ov"></div>
       </div>
-      <div class="pinfo" style="">
+      <div class="pinfo">
         <div>
           <div class="ptop"><span class="pnum">01</span><span class="pyr">2024</span></div>
           <div class="ptitle" data-es="Vivienda<br>Unifamiliar" data-en="Single<br>Family House">Vivienda<br>Unifamiliar</div>
@@ -564,14 +571,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
     </div>
   </div>
   <div class="w">
-    <div class="croquis-wrap">
-      <div class="croquis-box">
-        <img src="img/vivienda/proceso5.jpg" alt="Croquis" loading="lazy" decoding="async" onclick="lbOpenImg(this)" style="cursor:pointer">
-      </div>
-    </div>
-  </div>  <div class="w">
     <div class="prow prow-f" onclick="go('proj-02')">
-      <div class="pinfo" style="border-right:0.5px solid var(--line)">
+      <div class="pinfo">
         <div>
           <div class="ptop"><span class="pnum">02</span><span class="pyr">2025</span></div>
           <div class="ptitle" data-es="Biblioteca<br>Costera" data-en="Coastal<br>Library">Biblioteca<br>Costera</div>
@@ -582,17 +583,18 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
         <span class="parr" data-es="→ ver proyecto" data-en="→ view project">→ ver proyecto</span>
       </div>
       <div class="pi">
-        <div class="pi-in" style="background-image:url('img/biblioteca/biblioteca.jpg')"></div>
+        <div class="pi-in" style="background-image:url('img/biblioteca.jpg')"></div>
         <div class="pi-ov"></div>
       </div>
     </div>
-  </div>  <div class="w">
+  </div>
+  <div class="w">
     <div class="prow prow-n" onclick="go('proj-03')">
       <div class="pi">
-        <div class="pi-in" style="background-image:url('img/plano/plano.jpg')"></div>
+        <div class="pi-in" style="background-image:url('img/casa.jpg')"></div>
         <div class="pi-ov"></div>
       </div>
-      <div class="pinfo" style="">
+      <div class="pinfo">
         <div>
           <div class="ptop"><span class="pnum">03</span><span class="pyr">2024</span></div>
           <div class="ptitle" data-es="Legajo<br>Municipal" data-en="Municipal<br>File">Legajo<br>Municipal</div>
@@ -605,14 +607,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
     </div>
   </div>
   <div class="w">
-    <div class="croquis-wrap" style="background:#f9f9f9">
-      <div class="croquis-box">
-        <img src="img/proceso5.jpg" alt="Croquis" loading="lazy" decoding="async" onclick="lbOpenImg(this)" style="cursor:pointer">
-      </div>
-    </div>
-  </div>  <div class="w">
     <div class="prow prow-f" onclick="go('proj-04')">
-      <div class="pinfo" style="border-right:0.5px solid var(--line)">
+      <div class="pinfo">
         <div>
           <div class="ptop"><span class="pnum">04</span><span class="pyr">2025</span></div>
           <div class="ptitle" data-es="Intervención<br>Urbana" data-en="Urban<br>Intervention">Intervención<br>Urbana</div>
@@ -623,17 +619,18 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
         <span class="parr" data-es="→ ver proyecto" data-en="→ view project">→ ver proyecto</span>
       </div>
       <div class="pi">
-        <div class="pi-in" style="background-image:url('img/intervencion/intervencion8.jpg')"></div>
+        <div class="pi-in" style="background-image:url('img/casa.jpg')"></div>
         <div class="pi-ov"></div>
       </div>
     </div>
-  </div>  <div class="w">
+  </div>
+  <div class="w">
     <div class="prow prow-n" onclick="go('proj-05')">
       <div class="pi">
-        <div class="pi-in" style="background-image:url('img/conjunto/conjuntogrande.jpg')"></div>
+        <div class="pi-in" style="background-image:url('img/conjuntogrande.jpg')"></div>
         <div class="pi-ov"></div>
       </div>
-      <div class="pinfo" style="">
+      <div class="pinfo">
         <div>
           <div class="ptop"><span class="pnum">05</span><span class="pyr">2025</span></div>
           <div class="ptitle" data-es="Conjunto<br>Habitacional" data-en="Housing<br>Complex">Conjunto<br>Habitacional</div>
@@ -644,9 +641,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
         <span class="parr" data-es="→ ver proyecto" data-en="→ view project">→ ver proyecto</span>
       </div>
     </div>
-  </div>  <div class="w">
+  </div>
+  <div class="w">
     <div class="prow prow-f" onclick="go('proj-06')">
-      <div class="pinfo" style="border-right:0.5px solid var(--line)">
+      <div class="pinfo">
         <div>
           <div class="ptop"><span class="pnum">06</span><span class="pyr">2024</span></div>
           <div class="ptitle" data-es="Espacio<br>Sacro" data-en="Sacred<br>Space">Espacio<br>Sacro</div>
@@ -657,17 +655,18 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
         <span class="parr" data-es="→ ver proyecto" data-en="→ view project">→ ver proyecto</span>
       </div>
       <div class="pi">
-        <div class="pi-in" style="background-image:url('img/iglesia/iglesia.jpg')"></div>
+        <div class="pi-in" style="background-image:url('img/casa.jpg')"></div>
         <div class="pi-ov"></div>
       </div>
     </div>
-  </div>  <div class="w">
+  </div>
+  <div class="w">
     <div class="prow prow-n" onclick="go('proj-07')">
       <div class="pi">
-        <div class="pi-in" style="background-image:url('img/parametrico/1.jpg')"></div>
+        <div class="pi-in" style="background-image:url('img/casa.jpg')"></div>
         <div class="pi-ov"></div>
       </div>
-      <div class="pinfo" style="">
+      <div class="pinfo">
         <div>
           <div class="ptop"><span class="pnum">07</span><span class="pyr">2025</span></div>
           <div class="ptitle" data-es="Análisis<br>Paramétrico" data-en="Parametric<br>Analysis">Análisis<br>Paramétrico</div>
@@ -678,9 +677,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
         <span class="parr" data-es="→ ver proyecto" data-en="→ view project">→ ver proyecto</span>
       </div>
     </div>
-  </div>  <div class="w">
-    <div class="prow prow-f" style="border-bottom:none" onclick="go('proj-08')">
-      <div class="pinfo" style="border-right:0.5px solid var(--line)">
+  </div>
+  <div class="w">
+    <div class="prow prow-f" onclick="go('proj-08')">
+      <div class="pinfo">
         <div>
           <div class="ptop"><span class="pnum">08</span><span class="pyr">2025</span></div>
           <div class="ptitle" data-es="RE*VERSION" data-en="RE*VERSION">RE*VERSION</div>
@@ -691,7 +691,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
         <span class="parr" data-es="→ ver proyecto" data-en="→ view project">→ ver proyecto</span>
       </div>
       <div class="pi">
-        <div class="pi-in" style="background-image:url('img/reversion/morfo1.jpg')"></div>
+        <div class="pi-in" style="background-image:url('img/casa.jpg')"></div>
         <div class="pi-ov"></div>
       </div>
     </div>
@@ -703,11 +703,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
 
 <div class="view" id="view-proj-01">
   <div class="proj-hero">
-    <img src="img/vivienda/casa.jpg" alt="" loading="eager" fetchpriority="high">
+    <img src="img/casa.jpg" alt="" loading="eager" fetchpriority="high">
     <div class="proj-hero-fade"></div>
   </div>
   <div class="w">
-    <span class="back-btn" onclick="go('proyectos',true)">← <span data-es="Volver a proyectos" data-en="Back to projects">Volver a proyectos</span></span>
+    <span class="back-btn" onclick="go('proyectos')">← <span data-es="Volver a proyectos" data-en="Back to projects">Volver a proyectos</span></span>
     <div class="proj-header">
       <div class="proj-header-grid">
         <div>
@@ -728,26 +728,28 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
     </div>
     <hr class="hr">
     <div class="sh"><div class="sh-row"><span class="sh-label" data-es="Láminas" data-en="Sheets">Láminas</span></div></div>
-    <div class="laminas-bg" id="lam-bg-01"><img src="img/vivienda/casa.jpg" alt=""></div>
-    <div class="laminas-stack" id="lam-grid-01" data-bg="lam-bg-01">
+    <div class="laminas-grid" id="lam-grid-01">
       <div class="lamina" onclick="lbOpen(this,'lam-grid-01')">
-        <img src="img/vivienda/casa1.jpg" alt="" loading="lazy" decoding="async">
+        <img src="img/proceso.jpg" alt="" loading="lazy" decoding="async">
+        <div class="lamina-ph"><span class="ph-txt">Lámina #1</span></div>
       </div>
       <div class="lamina" onclick="lbOpen(this,'lam-grid-01')">
-        <img src="img/vivienda/casa2.jpg" alt="" loading="lazy" decoding="async">
+        <img src="img/proceso2.jpg" alt="" loading="lazy" decoding="async">
+        <div class="lamina-ph"><span class="ph-txt">Lámina #2</span></div>
       </div>
-    </div><div class="footer" style="margin-top:4px"><div class="footer-row">
+    </div>
+    <div class="footer"><div class="footer-row">
       <span class="ft-l">Facundo Luna</span><span class="ft-m">FADU UBA · Arquitectura + IA</span><span class="ft-r">© 2026</span>
     </div></div>
   </div>
 </div>
 <div class="view" id="view-proj-02">
   <div class="proj-hero">
-    <img src="img/biblioteca/biblioteca.jpg" alt="" loading="eager" fetchpriority="high">
+    <img src="img/biblioteca.jpg" alt="" loading="eager" fetchpriority="high">
     <div class="proj-hero-fade"></div>
   </div>
   <div class="w">
-    <span class="back-btn" onclick="go('proyectos',true)">← <span data-es="Volver a proyectos" data-en="Back to projects">Volver a proyectos</span></span>
+    <span class="back-btn" onclick="go('proyectos')">← <span data-es="Volver a proyectos" data-en="Back to projects">Volver a proyectos</span></span>
     <div class="proj-header">
       <div class="proj-header-grid">
         <div>
@@ -768,60 +770,58 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
     </div>
     <hr class="hr">
     <div class="sh"><div class="sh-row"><span class="sh-label" data-es="Láminas" data-en="Sheets">Láminas</span></div></div>
-    <div class="laminas-bg" id="lam-bg-02"><img src="img/biblioteca/biblioteca.jpg" alt=""></div>
     
-    <div class="laminas-stack" id="lam-grid-02" data-bg="lam-bg-02">
-      
+    <div class="laminas-grid" id="lam-grid-02">
       <div style="display:grid; grid-template-columns:1fr 1fr; gap:2px; background:var(--line);">
         <div class="lamina" onclick="lbOpen(this,'lam-grid-02')">
-          <img src="img/biblioteca/biblioteca1.jpg" alt="" loading="lazy" decoding="async">
+          <img src="img/biblioteca/proceso.jpg" alt="" loading="lazy" decoding="async">
         </div>
         <div class="lamina" onclick="lbOpen(this,'lam-grid-02')">
-          <img src="img/biblioteca/biblioteca2.jpg" alt="" loading="lazy" decoding="async">
+          <img src="img/biblioteca/proceso2.jpg" alt="" loading="lazy" decoding="async">
         </div>
       </div>
       
       <div class="lamina" onclick="lbOpen(this,'lam-grid-02')">
-        <img src="img/biblioteca/biblioteca3.jpg" alt="" loading="lazy" decoding="async">
+        <img src="img/biblioteca/proceso3.jpg" alt="" loading="lazy" decoding="async">
       </div>
       <div class="lamina" onclick="lbOpen(this,'lam-grid-02')">
-        <img src="img/biblioteca/biblioteca4.jpg" alt="" loading="lazy" decoding="async">
+        <img src="img/biblioteca/proceso4.jpg" alt="" loading="lazy" decoding="async">
       </div>
       <div class="lamina" onclick="lbOpen(this,'lam-grid-02')">
-        <img src="img/biblioteca/biblioteca5.jpg" alt="" loading="lazy" decoding="async">
+        <img src="img/biblioteca/proceso5.jpg" alt="" loading="lazy" decoding="async">
       </div>
       <div class="lamina" onclick="lbOpen(this,'lam-grid-02')">
-        <img src="img/biblioteca/biblioteca6.jpg" alt="" loading="lazy" decoding="async">
+        <img src="img/biblioteca/proceso6.jpg" alt="" loading="lazy" decoding="async">
       </div>
       <div class="lamina" onclick="lbOpen(this,'lam-grid-02')">
-        <img src="img/biblioteca/biblioteca7.jpg" alt="" loading="lazy" decoding="async">
+        <img src="img/biblioteca/proceso7.jpg" alt="" loading="lazy" decoding="async">
       </div>
       <div class="lamina" onclick="lbOpen(this,'lam-grid-02')">
-        <img src="img/biblioteca/biblioteca8.jpg" alt="" loading="lazy" decoding="async">
+        <img src="img/biblioteca/proceso8.jpg" alt="" loading="lazy" decoding="async">
       </div>
     </div>
     
     <div class="maqueta-section">
       <div class="sh"><div class="sh-row"><span class="sh-label" data-es="Maqueta" data-en="Model">Maqueta</span></div></div>
       <div class="maqueta-grid" id="maq-grid-02" style="grid-template-columns:repeat(4,1fr)">
-        <div class="maqueta-img" onclick="lbOpenImg(this)"><img src="img/maquetabiblioteca1.jpg" alt="" loading="lazy" decoding="async"></div>
-        <div class="maqueta-img" onclick="lbOpenImg(this)"><img src="img/maquetabiblioteca2.jpg" alt="" loading="lazy" decoding="async"></div>
-        <div class="maqueta-img" onclick="lbOpenImg(this)"><img src="img/maquetabiblioteca3.jpg" alt="" loading="lazy" decoding="async"></div>
-        <div class="maqueta-img" onclick="lbOpenImg(this)"><img src="img/maquetabiblioteca4.jpg" alt="" loading="lazy" decoding="async"></div>
+        <div class="maqueta-img" onclick="lbOpenImg(this)"><img src="img/maqueta1.jpg" alt="" loading="lazy" decoding="async"></div>
+        <div class="maqueta-img" onclick="lbOpenImg(this)"><img src="img/maqueta2.jpg" alt="" loading="lazy" decoding="async"></div>
+        <div class="maqueta-img" onclick="lbOpenImg(this)"><img src="img/maqueta3.jpg" alt="" loading="lazy" decoding="async"></div>
+        <div class="maqueta-img" onclick="lbOpenImg(this)"><img src="img/maqueta4.jpg" alt="" loading="lazy" decoding="async"></div>
       </div>
     </div>
-    <div class="footer" style="margin-top:4px"><div class="footer-row">
+    <div class="footer"><div class="footer-row">
       <span class="ft-l">Facundo Luna</span><span class="ft-m">FADU UBA · Arquitectura + IA</span><span class="ft-r">© 2026</span>
     </div></div>
   </div>
 </div>
 <div class="view" id="view-proj-03">
   <div class="proj-hero">
-    <img src="img/plano/plano.jpg" alt="" loading="eager" fetchpriority="high">
+    <img src="img/casa.jpg" alt="" loading="eager" fetchpriority="high">
     <div class="proj-hero-fade"></div>
   </div>
   <div class="w">
-    <span class="back-btn" onclick="go('proyectos',true)">← <span data-es="Volver a proyectos" data-en="Back to projects">Volver a proyectos</span></span>
+    <span class="back-btn" onclick="go('proyectos')">← <span data-es="Volver a proyectos" data-en="Back to projects">Volver a proyectos</span></span>
     <div class="proj-header">
       <div class="proj-header-grid">
         <div>
@@ -842,25 +842,25 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
     </div>
     <hr class="hr">
     <div class="sh"><div class="sh-row"><span class="sh-label" data-es="Láminas" data-en="Sheets">Láminas</span></div></div>
-    <div class="laminas-bg" id="lam-bg-03"><img src="img/plano/plano.jpg" alt=""></div>
-    <div class="laminas-stack" id="lam-grid-03" data-bg="lam-bg-03">
+    <div class="laminas-grid" id="lam-grid-03">
       <div class="lamina" onclick="lbOpen(this,'lam-grid-03')">
-        <img src="img/plano/plano.jpg" alt="" loading="lazy" decoding="async">
+        <img src="img/casa.jpg" alt="" loading="lazy" decoding="async">
+        <div class="lamina-ph"><span class="ph-txt">Lámina Técnica #1</span></div>
       </div>
     </div>
 
-    <div class="footer" style="margin-top:4px"><div class="footer-row">
+    <div class="footer"><div class="footer-row">
       <span class="ft-l">Facundo Luna</span><span class="ft-m">FADU UBA · Arquitectura + IA</span><span class="ft-r">© 2026</span>
     </div></div>
   </div>
 </div>
 <div class="view" id="view-proj-04">
   <div class="proj-hero">
-    <img src="img/intervencion/intervencion8.jpg" alt="" loading="eager" fetchpriority="high">
+    <img src="img/casa.jpg" alt="" loading="eager" fetchpriority="high">
     <div class="proj-hero-fade"></div>
   </div>
   <div class="w">
-    <span class="back-btn" onclick="go('proyectos',true)">← <span data-es="Volver a proyectos" data-en="Back to projects">Volver a proyectos</span></span>
+    <span class="back-btn" onclick="go('proyectos')">← <span data-es="Volver a proyectos" data-en="Back to projects">Volver a proyectos</span></span>
     <div class="proj-header">
       <div class="proj-header-grid">
         <div>
@@ -881,61 +881,25 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
     </div>
     <hr class="hr">
     <div class="sh"><div class="sh-row"><span class="sh-label" data-es="Láminas" data-en="Sheets">Láminas</span></div></div>
-    <div class="laminas-bg" id="lam-bg-04"><img src="img/intervencion/intervencion8.jpg" alt=""></div>
-    <div class="laminas-stack" id="lam-grid-04" data-bg="lam-bg-04">
+    <div class="laminas-grid" id="lam-grid-04">
       <div class="lamina" onclick="lbOpen(this,'lam-grid-04')">
-        <img src="img/intervencion/intervencion.jpg" alt="" loading="lazy" decoding="async">
-      </div>
-      <div class="lam-row lam-row-4">
-      <div class="lamina" onclick="lbOpen(this,'lam-grid-04')">
-        <img src="img/intervencion/intervencion1.jpg" alt="" loading="lazy" decoding="async">
-      </div>
-      <div class="lamina" onclick="lbOpen(this,'lam-grid-04')">
-        <img src="img/intervencion/intervencion2.jpg" alt="" loading="lazy" decoding="async">
-      </div>
-      <div class="lamina" onclick="lbOpen(this,'lam-grid-04')">
-        <img src="img/intervencion/intervencion3.jpg" alt="" loading="lazy" decoding="async">
-      </div>
-      <div class="lamina" onclick="lbOpen(this,'lam-grid-04')">
-        <img src="img/intervencion/intervencion4.jpg" alt="" loading="lazy" decoding="async">
-      </div>
-      </div>
-      <div class="lam-row lam-row-4">
-      <div class="lamina" onclick="lbOpen(this,'lam-grid-04')">
-        <img src="img/intervencion/intervencion5.jpg" alt="" loading="lazy" decoding="async">
-      </div>
-      <div class="lamina" onclick="lbOpen(this,'lam-grid-04')">
-        <img src="img/intervencion/intervencion6.jpg" alt="" loading="lazy" decoding="async">
-      </div>
-      <div class="lamina" onclick="lbOpen(this,'lam-grid-04')">
-        <img src="img/intervencion/intervencion7.jpg" alt="" loading="lazy" decoding="async">
-      </div>
-      <div class="lamina" onclick="lbOpen(this,'lam-grid-04')">
-        <img src="img/intervencion/intervencion8.jpg" alt="" loading="lazy" decoding="async">
-      </div>
-      </div>
-      <div class="lam-row lam-row-2">
-      <div class="lamina" onclick="lbOpen(this,'lam-grid-04')">
-        <img src="img/intervencion/intervencion9.jpg" alt="" loading="lazy" decoding="async">
-      </div>
-      <div class="lamina" onclick="lbOpen(this,'lam-grid-04')">
-        <img src="img/intervencion/intervencion10.jpg" alt="" loading="lazy" decoding="async">
-      </div>
+        <img src="img/proceso.jpg" alt="" loading="lazy" decoding="async">
+        <div class="lamina-ph"><span class="ph-txt">Análisis Urbano #1</span></div>
       </div>
     </div>
 
-    <div class="footer" style="margin-top:4px"><div class="footer-row">
+    <div class="footer"><div class="footer-row">
       <span class="ft-l">Facundo Luna</span><span class="ft-m">FADU UBA · Arquitectura + IA</span><span class="ft-r">© 2026</span>
     </div></div>
   </div>
 </div>
 <div class="view" id="view-proj-05">
   <div class="proj-hero">
-    <img src="img/conjunto/conjuntogrande.jpg" alt="" loading="eager" fetchpriority="high">
+    <img src="img/conjuntogrande.jpg" alt="" loading="eager" fetchpriority="high">
     <div class="proj-hero-fade"></div>
   </div>
   <div class="w">
-    <span class="back-btn" onclick="go('proyectos',true)">← <span data-es="Volver a proyectos" data-en="Back to projects">Volver a proyectos</span></span>
+    <span class="back-btn" onclick="go('proyectos')">← <span data-es="Volver a proyectos" data-en="Back to projects">Volver a proyectos</span></span>
     <div class="proj-header">
       <div class="proj-header-grid">
         <div>
@@ -956,45 +920,34 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
     </div>
     <hr class="hr">
     <div class="sh"><div class="sh-row"><span class="sh-label" data-es="Láminas" data-en="Sheets">Láminas</span></div></div>
-    <div class="laminas-bg" id="lam-bg-05"><img src="img/conjunto/conjuntogrande.jpg" alt=""></div>
-    <div class="laminas-stack" id="lam-grid-05" data-bg="lam-bg-05">
+    <div class="laminas-grid" id="lam-grid-05">
       <div class="lamina" onclick="lbOpen(this,'lam-grid-05')">
-        <img src="img/conjunto/conjuntogrande2.jpg" alt="" loading="lazy" decoding="async">
+        <img src="img/proceso.jpg" alt="" loading="lazy" decoding="async">
+        <div class="lamina-ph"><span class="ph-txt">Lámina #1</span></div>
       </div>
       <div class="lamina" onclick="lbOpen(this,'lam-grid-05')">
-        <img src="img/conjunto/conjunto1.jpg" alt="" loading="lazy" decoding="async">
-      </div>
-      <div class="lamina" onclick="lbOpen(this,'lam-grid-05')">
-        <img src="img/conjunto/conjunto2.jpg" alt="" loading="lazy" decoding="async">
-      </div>
-      <div class="lamina" onclick="lbOpen(this,'lam-grid-05')">
-        <img src="img/conjunto/conjunto3.jpg" alt="" loading="lazy" decoding="async">
-      </div>
-      <div class="lamina" onclick="lbOpen(this,'lam-grid-05')">
-        <img src="img/conjunto/conjunto4.jpg" alt="" loading="lazy" decoding="async">
-      </div>
-      <div class="lamina" onclick="lbOpen(this,'lam-grid-05')">
-        <img src="img/conjunto/conjunto5.jpg" alt="" loading="lazy" decoding="async">
+        <img src="img/proceso2.jpg" alt="" loading="lazy" decoding="async">
+        <div class="lamina-ph"><span class="ph-txt">Lámina #2</span></div>
       </div>
     </div>
     <div class="maqueta-section">
       <div class="sh"><div class="sh-row"><span class="sh-label" data-es="Maqueta" data-en="Model">Maqueta</span></div></div>
       <div class="maqueta-grid" id="maq-grid-05">
-        <div class="maqueta-img" onclick="lbOpenImg(this)"><img src="img/conjunto/conjuntogrande.jpg" alt="" loading="lazy" decoding="async"></div>
+        <div class="maqueta-img" onclick="lbOpenImg(this)"><img src="img/maqueta1.jpg" alt="" loading="lazy" decoding="async"></div>
       </div>
     </div>
-    <div class="footer" style="margin-top:4px"><div class="footer-row">
+    <div class="footer"><div class="footer-row">
       <span class="ft-l">Facundo Luna</span><span class="ft-m">FADU UBA · Arquitectura + IA</span><span class="ft-r">© 2026</span>
     </div></div>
   </div>
 </div>
 <div class="view" id="view-proj-06">
   <div class="proj-hero">
-    <img src="img/iglesia/iglesia.jpg" alt="" loading="eager" fetchpriority="high">
+    <img src="img/casa.jpg" alt="" loading="eager" fetchpriority="high">
     <div class="proj-hero-fade"></div>
   </div>
   <div class="w">
-    <span class="back-btn" onclick="go('proyectos',true)">← <span data-es="Volver a proyectos" data-en="Back to projects">Volver a proyectos</span></span>
+    <span class="back-btn" onclick="go('proyectos')">← <span data-es="Volver a proyectos" data-en="Back to projects">Volver a proyectos</span></span>
     <div class="proj-header">
       <div class="proj-header-grid">
         <div>
@@ -1015,28 +968,25 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
     </div>
     <hr class="hr">
     <div class="sh"><div class="sh-row"><span class="sh-label" data-es="Láminas" data-en="Sheets">Láminas</span></div></div>
-    <div class="laminas-bg" id="lam-bg-06"><img src="img/iglesia/iglesia.jpg" alt=""></div>
-    <div class="laminas-stack" id="lam-grid-06" data-bg="lam-bg-06">
+    <div class="laminas-grid" id="lam-grid-06">
       <div class="lamina" onclick="lbOpen(this,'lam-grid-06')">
-        <img src="img/iglesia/iglesia1.jpg" alt="" loading="lazy" decoding="async">
-      </div>
-      <div class="lamina" onclick="lbOpen(this,'lam-grid-06')">
-        <img src="img/iglesia/iglesia2.jpg" alt="" loading="lazy" decoding="async">
+        <img src="img/proceso.jpg" alt="" loading="lazy" decoding="async">
+        <div class="lamina-ph"><span class="ph-txt">Lámina #1</span></div>
       </div>
     </div>
 
-    <div class="footer" style="margin-top:4px"><div class="footer-row">
+    <div class="footer"><div class="footer-row">
       <span class="ft-l">Facundo Luna</span><span class="ft-m">FADU UBA · Arquitectura + IA</span><span class="ft-r">© 2026</span>
     </div></div>
   </div>
 </div>
 <div class="view" id="view-proj-07">
   <div class="proj-hero">
-    <img src="img/parametrico/1.jpg" alt="" loading="eager" fetchpriority="high">
+    <img src="img/casa.jpg" alt="" loading="eager" fetchpriority="high">
     <div class="proj-hero-fade"></div>
   </div>
   <div class="w">
-    <span class="back-btn" onclick="go('proyectos',true)">← <span data-es="Volver a proyectos" data-en="Back to projects">Volver a proyectos</span></span>
+    <span class="back-btn" onclick="go('proyectos')">← <span data-es="Volver a proyectos" data-en="Back to projects">Volver a proyectos</span></span>
     <div class="proj-header">
       <div class="proj-header-grid">
         <div>
@@ -1057,88 +1007,25 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
     </div>
     <hr class="hr">
     <div class="sh"><div class="sh-row"><span class="sh-label" data-es="Láminas" data-en="Sheets">Láminas</span></div></div>
-    <div class="laminas-bg" id="lam-bg-07"><img src="img/parametrico/1.jpg" alt=""></div>
-    <div class="laminas-stack" id="lam-grid-07" data-bg="lam-bg-07">
+    <div class="laminas-grid" id="lam-grid-07">
       <div class="lamina" onclick="lbOpen(this,'lam-grid-07')">
-        <img src="img/parametrico/2.jpg" alt="" loading="lazy" decoding="async">
-      </div>
-      <div class="lamina" onclick="lbOpen(this,'lam-grid-07')">
-        <img src="img/parametrico/3.jpg" alt="" loading="lazy" decoding="async">
-      </div>
-      <div class="lamina" onclick="lbOpen(this,'lam-grid-07')">
-        <img src="img/parametrico/4.jpg" alt="" loading="lazy" decoding="async">
-      </div>
-      <div class="lamina" onclick="lbOpen(this,'lam-grid-07')">
-        <img src="img/parametrico/5.jpg" alt="" loading="lazy" decoding="async">
-      </div>
-      <div class="lamina" onclick="lbOpen(this,'lam-grid-07')">
-        <img src="img/parametrico/6.jpg" alt="" loading="lazy" decoding="async">
-      </div>
-      <div class="lamina" onclick="lbOpen(this,'lam-grid-07')">
-        <img src="img/parametrico/7.jpg" alt="" loading="lazy" decoding="async">
-      </div>
-      <div class="lamina" onclick="lbOpen(this,'lam-grid-07')">
-        <img src="img/parametrico/8.jpg" alt="" loading="lazy" decoding="async">
-      </div>
-      <div class="lamina" onclick="lbOpen(this,'lam-grid-07')">
-        <img src="img/parametrico/9.jpg" alt="" loading="lazy" decoding="async">
-      </div>
-      <div class="lamina" onclick="lbOpen(this,'lam-grid-07')">
-        <img src="img/parametrico/10.jpg" alt="" loading="lazy" decoding="async">
-      </div>
-      <div class="lamina" onclick="lbOpen(this,'lam-grid-07')">
-        <img src="img/parametrico/11.jpg" alt="" loading="lazy" decoding="async">
-      </div>
-      <div class="lamina" onclick="lbOpen(this,'lam-grid-07')">
-        <img src="img/parametrico/12.jpg" alt="" loading="lazy" decoding="async">
-      </div>
-      <div class="lamina" onclick="lbOpen(this,'lam-grid-07')">
-        <img src="img/parametrico/13.jpg" alt="" loading="lazy" decoding="async">
-      </div>
-      <div class="lamina" onclick="lbOpen(this,'lam-grid-07')">
-        <img src="img/parametrico/14.jpg" alt="" loading="lazy" decoding="async">
-      </div>
-      <div class="lamina" onclick="lbOpen(this,'lam-grid-07')">
-        <img src="img/parametrico/15.jpg" alt="" loading="lazy" decoding="async">
-      </div>
-      <div class="lamina" onclick="lbOpen(this,'lam-grid-07')">
-        <img src="img/parametrico/16.jpg" alt="" loading="lazy" decoding="async">
-      </div>
-      <div class="lamina" onclick="lbOpen(this,'lam-grid-07')">
-        <img src="img/parametrico/17.jpg" alt="" loading="lazy" decoding="async">
-      </div>
-      <div class="lamina" onclick="lbOpen(this,'lam-grid-07')">
-        <img src="img/parametrico/18.jpg" alt="" loading="lazy" decoding="async">
-      </div>
-      <div class="lamina" onclick="lbOpen(this,'lam-grid-07')">
-        <img src="img/parametrico/19.jpg" alt="" loading="lazy" decoding="async">
-      </div>
-      <div class="lamina" onclick="lbOpen(this,'lam-grid-07')">
-        <img src="img/parametrico/20.jpg" alt="" loading="lazy" decoding="async">
-      </div>
-      <div class="lamina" onclick="lbOpen(this,'lam-grid-07')">
-        <img src="img/parametrico/21.jpg" alt="" loading="lazy" decoding="async">
-      </div>
-      <div class="lamina" onclick="lbOpen(this,'lam-grid-07')">
-        <img src="img/parametrico/22.jpg" alt="" loading="lazy" decoding="async">
-      </div>
-      <div class="lamina" onclick="lbOpen(this,'lam-grid-07')">
-        <img src="img/parametrico/23.jpg" alt="" loading="lazy" decoding="async">
+        <img src="img/proceso.jpg" alt="" loading="lazy" decoding="async">
+        <div class="lamina-ph"><span class="ph-txt">Lámina #1</span></div>
       </div>
     </div>
 
-    <div class="footer" style="margin-top:4px"><div class="footer-row">
+    <div class="footer"><div class="footer-row">
       <span class="ft-l">Facundo Luna</span><span class="ft-m">FADU UBA · Arquitectura + IA</span><span class="ft-r">© 2026</span>
     </div></div>
   </div>
 </div>
 <div class="view" id="view-proj-08">
   <div class="proj-hero">
-    <img src="img/reversion/morfo1.jpg" alt="" loading="eager" fetchpriority="high">
+    <img src="img/casa.jpg" alt="" loading="eager" fetchpriority="high">
     <div class="proj-hero-fade"></div>
   </div>
   <div class="w">
-    <span class="back-btn" onclick="go('proyectos',true)">← <span data-es="Volver a proyectos" data-en="Back to projects">Volver a proyectos</span></span>
+    <span class="back-btn" onclick="go('proyectos')">← <span data-es="Volver a proyectos" data-en="Back to projects">Volver a proyectos</span></span>
     <div class="proj-header">
       <div class="proj-header-grid">
         <div>
@@ -1159,66 +1046,19 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
     </div>
     <hr class="hr">
     <div class="sh"><div class="sh-row"><span class="sh-label" data-es="Láminas" data-en="Sheets">Láminas</span></div></div>
-    <div class="laminas-bg" id="lam-bg-08"><img src="img/reversion/morfo1.jpg" alt=""></div>
-    <div class="laminas-stack" id="lam-grid-08" data-bg="lam-bg-08">
+    <div class="laminas-grid" id="lam-grid-08">
       <div class="lamina" onclick="lbOpen(this,'lam-grid-08')">
-        <img src="img/reversion/morfo2.jpg" alt="" loading="lazy" decoding="async">
-      </div>
-      <div class="lamina" onclick="lbOpen(this,'lam-grid-08')">
-        <img src="img/reversion/morfo3.jpg" alt="" loading="lazy" decoding="async">
-      </div>
-      <div class="lamina" onclick="lbOpen(this,'lam-grid-08')">
-        <img src="img/reversion/morfo4.jpg" alt="" loading="lazy" decoding="async">
-      </div>
-      <div class="lamina" onclick="lbOpen(this,'lam-grid-08')">
-        <img src="img/reversion/morfo5.jpg" alt="" loading="lazy" decoding="async">
-      </div>
-      <div class="lamina" onclick="lbOpen(this,'lam-grid-08')">
-        <img src="img/reversion/morfo6.jpg" alt="" loading="lazy" decoding="async">
-      </div>
-      <div class="lamina" onclick="lbOpen(this,'lam-grid-08')">
-        <img src="img/reversion/morfo7.jpg" alt="" loading="lazy" decoding="async">
-      </div>
-      <div class="lamina" onclick="lbOpen(this,'lam-grid-08')">
-        <img src="img/reversion/morfo8.jpg" alt="" loading="lazy" decoding="async">
-      </div>
-      <div class="lamina" onclick="lbOpen(this,'lam-grid-08')">
-        <img src="img/reversion/morfo9.jpg" alt="" loading="lazy" decoding="async">
-      </div>
-      <div class="lamina" onclick="lbOpen(this,'lam-grid-08')">
-        <img src="img/reversion/morfo10.jpg" alt="" loading="lazy" decoding="async">
-      </div>
-      <div class="lamina" onclick="lbOpen(this,'lam-grid-08')">
-        <img src="img/reversion/morfo11.jpg" alt="" loading="lazy" decoding="async">
-      </div>
-      <div class="lamina" onclick="lbOpen(this,'lam-grid-08')">
-        <img src="img/reversion/morfo12.jpg" alt="" loading="lazy" decoding="async">
-      </div>
-      <div class="lamina" onclick="lbOpen(this,'lam-grid-08')">
-        <img src="img/reversion/morfo13.jpg" alt="" loading="lazy" decoding="async">
-      </div>
-      <div class="lamina" onclick="lbOpen(this,'lam-grid-08')">
-        <img src="img/reversion/morfo14.jpg" alt="" loading="lazy" decoding="async">
-      </div>
-      <div class="lamina" onclick="lbOpen(this,'lam-grid-08')">
-        <img src="img/reversion/morfo15.jpg" alt="" loading="lazy" decoding="async">
-      </div>
-      <div class="lamina" onclick="lbOpen(this,'lam-grid-08')">
-        <img src="img/reversion/morfo16.jpg" alt="" loading="lazy" decoding="async">
-      </div>
-      <div class="lamina" onclick="lbOpen(this,'lam-grid-08')">
-        <img src="img/reversion/morfo17.jpg" alt="" loading="lazy" decoding="async">
-      </div>
-      <div class="lamina" onclick="lbOpen(this,'lam-grid-08')">
-        <img src="img/reversion/morfo18.jpg" alt="" loading="lazy" decoding="async">
+        <img src="img/proceso.jpg" alt="" loading="lazy" decoding="async">
+        <div class="lamina-ph"><span class="ph-txt">Lámina #1</span></div>
       </div>
     </div>
 
-    <div class="footer" style="margin-top:4px"><div class="footer-row">
+    <div class="footer"><div class="footer-row">
       <span class="ft-l">Facundo Luna</span><span class="ft-m">FADU UBA · Arquitectura + IA</span><span class="ft-r">© 2026</span>
     </div></div>
   </div>
 </div>
+
 <div class="view" id="view-proceso">
   <div class="w">
     <div class="sh"><div class="sh-row">
@@ -1301,7 +1141,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
         <div class="about-lbl" data-es="Facundo Luna — Arquitectura + IA" data-en="Facundo Luna — Architecture + AI">Facundo Luna — Arquitectura + IA</div>
         <p class="about-body" data-es="Soy <strong>Facundo Luna</strong>, estudiante de arquitectura en <strong>FADU UBA</strong>, Buenos Aires. Mi práctica combina el rigor de la documentación técnica con el diseño paramétrico y la inteligencia artificial — dos herramientas que no uso por moda, sino porque me permiten pensar proyectos que de otra forma no existirían.<br><br>Fundé <strong>EFELE.ARQ</strong> como espacio de investigación personal donde exploro los límites entre algoritmo, imagen y arquitectura." data-en="I am <strong>Facundo Luna</strong>, architecture student at <strong>FADU UBA</strong>, Buenos Aires. My practice combines the rigor of technical documentation with parametric design and artificial intelligence — two tools I use because they allow me to think projects that otherwise wouldn't exist.<br><br>I founded <strong>EFELE.ARQ</strong> as a personal research space exploring the boundaries between algorithm, image and architecture.">Soy <strong>Facundo Luna</strong>, estudiante de arquitectura en <strong>FADU UBA</strong>, Buenos Aires. Mi práctica combina el rigor de la documentación técnica con el diseño paramétrico y la inteligencia artificial — dos herramientas que no uso por moda, sino porque me permiten pensar proyectos que de otra forma no existirían.<br><br>Fundé <strong>EFELE.ARQ</strong> como espacio de investigación personal donde exploro los límites entre algoritmo, imagen y arquitectura.</p>
         <div class="about-links">
-          <a class="about-link" href="/cdn-cgi/l/email-protection#bfd9dedccad1dbd0d3cad1de8e878dffd8d2ded6d391dcd0d2">Email</a>
+          <a class="about-link" href="mailto:facundoluna182@hotmail.com">Email</a>
           <a class="about-link" href="https://instagram.com/efele.arq" target="_blank" rel="noopener">Instagram</a>
           <a class="about-link" href="https://www.behance.net/facundoluna182" target="_blank" rel="noopener">Behance</a>
         </div>
@@ -1324,7 +1164,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
       <div class="contact-l">
         <div class="contact-big" data-es="CONTACTAME" data-en="CONTACT ME">CONTACTAME</div>
         <div class="contact-items">
-          <div class="ci"><span class="ci-k">Email</span><a class="ci-v" href="/cdn-cgi/l/email-protection#6a0c0b091f040e05061f040b5b52582a0d070b030644090507"><span class="__cf_email__" data-cfemail="80e6e1e3f5eee4efecf5eee1b1b8b2c0e7ede1e9ecaee3efed">[email&#160;protected]</span></a></div>
+          <div class="ci"><span class="ci-k">Email</span><a class="ci-v" href="mailto:facundoluna182@hotmail.com">facundoluna182@hotmail.com</a></div>
           <div class="ci"><span class="ci-k">Instagram</span><a class="ci-v" href="https://instagram.com/efele.arq" target="_blank" rel="noopener">@efele.arq</a></div>
           <div class="ci"><span class="ci-k" data-es="Ubicación" data-en="Location">Ubicación</span><span class="ci-v">Buenos Aires, Argentina</span></div>
         </div>
@@ -1350,28 +1190,12 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
 </div>
 
 <script>
-/* Lightbox para imagen individual */
-function lbOpenImg(el){
-  const img = el.querySelector('img') || (el.tagName==='IMG'?el:null);
-  if(!img||!img.src) return;
-  lbImgs=[img]; lbIdx=0;
-  document.getElementById('lb-img').src=img.src;
-  document.getElementById('lb').classList.add('open');
-  document.body.style.overflow='hidden';
-}
-
 'use strict';
 
 const VIEWS = ['inicio','proyectos','proceso','efele','about','contacto',
   'proj-01','proj-02','proj-03','proj-04','proj-05','proj-06','proj-07','proj-08'];
 
-/* Guarda la posición de scroll de cada vista */
-const scrollPos = {};
-let currentView = 'inicio';
-
-function go(name, restoreScroll) {
-  scrollPos[currentView] = window.scrollY || document.documentElement.scrollTop;
-
+function go(name) {
   document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
   const navKey = name.startsWith('proj-') ? 'proyectos' : name;
   document.querySelectorAll('[data-v],[data-vm]').forEach(a => {
@@ -1379,21 +1203,8 @@ function go(name, restoreScroll) {
     a.classList.toggle('active', k === navKey);
   });
   const t = document.getElementById('view-' + name);
-  if (t) {
-    t.classList.add('active');
-    const savedY = restoreScroll && scrollPos[name] != null ? scrollPos[name] : 0;
-    document.documentElement.scrollTop = savedY;
-    document.body.scrollTop = savedY;
-    /* fallback con timeout para browsers lentos */
-    if (savedY > 0) setTimeout(() => {
-      document.documentElement.scrollTop = savedY;
-      document.body.scrollTop = savedY;
-    }, 50);
-  }
-  currentView = name;
-  history.pushState({v: name}, '', '#' + name);
+  if (t) { t.classList.add('active'); window.scrollTo(0, 0); }
   closeMob();
-  setTimeout(setupLaminasBg, 80);
 }
 
 (function(){
@@ -1401,7 +1212,10 @@ function go(name, restoreScroll) {
   go(VIEWS.includes(h) ? h : 'inicio');
 })();
 
-window.addEventListener('popstate', e => { if (e.state && e.state.v) go(e.state.v, true); });
+window.addEventListener('popstate', () => {
+  const h = location.hash.replace('#','');
+  if (VIEWS.includes(h)) go(h);
+});
 
 function togMob(){
   document.getElementById('nm').classList.toggle('open');
@@ -1449,33 +1263,16 @@ if (window.matchMedia('(pointer:fine)').matches) {
   set(50);
 })();
 
-/* LÁMINAS BG */
-function setupLaminasBg(){
-  if(!('IntersectionObserver' in window))return;
-  document.querySelectorAll('.laminas-stack').forEach(stack=>{
-    if(stack._bgObs)return;
-    const bg=stack.dataset.bg?document.getElementById(stack.dataset.bg):null;
-    if(!bg)return;
-    const obs=new IntersectionObserver(entries=>{
-      entries.forEach(e=>bg.classList.toggle('visible',e.isIntersecting));
-    },{threshold:0.05});
-    obs.observe(stack);
-    stack._bgObs=obs;
-  });
-}
-setupLaminasBg();
-
 /* LIGHTBOX */
 let lbImgs=[],lbIdx=0;
-/* Lightbox para imagen individual (sin grid) */
+/* Lightbox para imagen individual */
 function lbOpenImg(el){
-  const img = el.querySelector('img') || el;
-  if(!img || !img.src) return;
-  lbImgs = [img];
-  lbIdx = 0;
-  document.getElementById('lb-img').src = img.src;
+  const img = el.querySelector('img') || (el.tagName==='IMG'?el:null);
+  if(!img||!img.src) return;
+  lbImgs=[img]; lbIdx=0;
+  document.getElementById('lb-img').src=img.src;
   document.getElementById('lb').classList.add('open');
-  document.body.style.overflow = 'hidden';
+  document.body.style.overflow='hidden';
 }
 
 function lbOpen(cell,gridId){
