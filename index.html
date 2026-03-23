@@ -135,7 +135,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
 .ppc:hover .ppc-img-in{transform:scale(1.04)}
 .ppc-img{position:relative;overflow:hidden}
 .ppc-img::before{content:'';display:block;padding-top:68%}
-.ppc-img-in{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .6s ease}
+/* MODIFICADO: Transformado para soportar imgs en lugar de fondos CSS */
+.ppc-img-in{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
 .ppc-ov{position:absolute;inset:0;background:rgba(0,0,0,.04)}
 .ppc-info{padding:14px 18px}
 .ppc-n{font-size:10px;font-weight:400;color:var(--pale);margin-bottom:3px}
@@ -200,7 +201,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
 .prow-f{grid-template-columns:1fr 55%}
 .pi{position:relative;overflow:hidden}
 .pi::before{content:'';display:block;padding-top:62%}
-.pi-in{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .7s ease}
+/* MODIFICADO: Transformado para soportar imgs en lugar de fondos CSS */
+.pi-in{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .7s ease}
 .prow:hover .pi-in{transform:scale(1.04)}
 .pi-ov{position:absolute;inset:0;background:rgba(0,0,0,.04)}
 .pi-tag{position:absolute;bottom:12px;left:14px;z-index:2;font-size:9px;font-weight:400;
@@ -504,15 +506,15 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
     </div></div>
     <div class="proj-prev-grid">
       <div class="ppc" onclick="go('proj-01')">
-        <div class="ppc-img"><div class="ppc-img-in" style="background-image:url('img/vivienda/casa.jpg')"></div><div class="ppc-ov"></div></div>
+        <div class="ppc-img"><img class="ppc-img-in" src="img/vivienda/casa.jpg" alt="Vivienda Unifamiliar" loading="lazy" decoding="async"><div class="ppc-ov"></div></div>
         <div class="ppc-info"><div class="ppc-n">01</div><div class="ppc-t" data-es="Vivienda Unifamiliar" data-en="Single Family House">Vivienda Unifamiliar</div><div class="ppc-c">Residencial · 2024</div></div>
       </div>
       <div class="ppc" onclick="go('proj-05')">
-        <div class="ppc-img"><div class="ppc-img-in" style="background-image:url('img/conjunto/conjuntogrande.jpg')"></div><div class="ppc-ov"></div></div>
+        <div class="ppc-img"><img class="ppc-img-in" src="img/conjunto/conjuntogrande.jpg" alt="Conjunto Habitacional" loading="lazy" decoding="async"><div class="ppc-ov"></div></div>
         <div class="ppc-info"><div class="ppc-n">05</div><div class="ppc-t" data-es="Conjunto Habitacional" data-en="Housing Complex">Conjunto Habitacional</div><div class="ppc-c">Vivienda Colectiva · 2025</div></div>
       </div>
       <div class="ppc" onclick="go('proj-02')">
-        <div class="ppc-img"><div class="ppc-img-in" style="background-image:url('img/biblioteca/biblioteca.jpg')"></div><div class="ppc-ov"></div></div>
+        <div class="ppc-img"><img class="ppc-img-in" src="img/biblioteca/biblioteca.jpg" alt="Biblioteca Costera" loading="lazy" decoding="async"><div class="ppc-ov"></div></div>
         <div class="ppc-info"><div class="ppc-n">02</div><div class="ppc-t" data-es="Biblioteca Costera" data-en="Coastal Library">Biblioteca Costera</div><div class="ppc-c">Equipamiento · 2025</div></div>
       </div>
     </div>
@@ -563,7 +565,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
   <div class="w">
     <div class="prow prow-n" onclick="go('proj-01')">
       <div class="pi">
-        <div class="pi-in" style="background-image:url('img/vivienda/casa.jpg')"></div>
+        <img class="pi-in" src="img/vivienda/casa.jpg" alt="Vivienda Unifamiliar" loading="lazy" decoding="async">
         <div class="pi-ov"></div>
       </div>
       <div class="pinfo" style="">
@@ -597,14 +599,14 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
         <span class="parr" data-es="→ ver proyecto" data-en="→ view project">→ ver proyecto</span>
       </div>
       <div class="pi">
-        <div class="pi-in" style="background-image:url('img/biblioteca/biblioteca.jpg')"></div>
+        <img class="pi-in" src="img/biblioteca/biblioteca.jpg" alt="Biblioteca Costera" loading="lazy" decoding="async">
         <div class="pi-ov"></div>
       </div>
     </div>
   </div>  <div class="w">
     <div class="prow prow-n" onclick="go('proj-03')">
       <div class="pi">
-        <div class="pi-in" style="background-image:url('img/plano/plano.jpg')"></div>
+        <img class="pi-in" src="img/plano/plano.jpg" alt="Legajo Municipal" loading="lazy" decoding="async">
         <div class="pi-ov"></div>
       </div>
       <div class="pinfo" style="">
@@ -638,14 +640,14 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
         <span class="parr" data-es="→ ver proyecto" data-en="→ view project">→ ver proyecto</span>
       </div>
       <div class="pi">
-        <div class="pi-in" style="background-image:url('img/intervencion/intervencion8.jpg')"></div>
+        <img class="pi-in" src="img/intervencion/intervencion8.jpg" alt="Intervención Urbana" loading="lazy" decoding="async">
         <div class="pi-ov"></div>
       </div>
     </div>
   </div>  <div class="w">
     <div class="prow prow-n" onclick="go('proj-05')">
       <div class="pi">
-        <div class="pi-in" style="background-image:url('img/conjunto/conjuntogrande.jpg')"></div>
+        <img class="pi-in" src="img/conjunto/conjuntogrande.jpg" alt="Conjunto Habitacional" loading="lazy" decoding="async">
         <div class="pi-ov"></div>
       </div>
       <div class="pinfo" style="">
@@ -672,14 +674,14 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
         <span class="parr" data-es="→ ver proyecto" data-en="→ view project">→ ver proyecto</span>
       </div>
       <div class="pi">
-        <div class="pi-in" style="background-image:url('img/iglesia/iglesia.jpg')"></div>
+        <img class="pi-in" src="img/iglesia/iglesia.jpg" alt="Espacio Sacro" loading="lazy" decoding="async">
         <div class="pi-ov"></div>
       </div>
     </div>
   </div>  <div class="w">
     <div class="prow prow-n" onclick="go('proj-07')">
       <div class="pi">
-        <div class="pi-in" style="background-image:url('img/parametrico/1.jpg')"></div>
+        <img class="pi-in" src="img/parametrico/1.jpg" alt="Análisis Paramétrico" loading="lazy" decoding="async">
         <div class="pi-ov"></div>
       </div>
       <div class="pinfo" style="">
@@ -706,7 +708,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
         <span class="parr" data-es="→ ver proyecto" data-en="→ view project">→ ver proyecto</span>
       </div>
       <div class="pi">
-        <div class="pi-in" style="background-image:url('img/reversion/morfo1.jpg')"></div>
+        <img class="pi-in" src="img/reversion/morfo1.jpg" alt="Reversion" loading="lazy" decoding="async">
         <div class="pi-ov"></div>
       </div>
     </div>
@@ -747,7 +749,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
     </div>
   </div>
   <div class="w">
-    <div class="laminas-bg" id="lam-bg-01"><img src="img/vivienda/casa.jpg" alt=""></div>
+    <div class="laminas-bg" id="lam-bg-01"><img src="img/vivienda/casa.jpg" alt="" loading="lazy" decoding="async"></div>
     <div class="laminas-stack" id="lam-grid-01" data-bg="lam-bg-01">
       <div class="lamina" onclick="lbOpen(this,'lam-grid-01')">
         <img src="img/vivienda/casa1.jpg" alt="" loading="lazy" decoding="async">
@@ -792,7 +794,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
     </div>
   </div>
   <div class="w">
-    <div class="laminas-bg" id="lam-bg-02"><img src="img/biblioteca/biblioteca.jpg" alt=""></div>
+    <div class="laminas-bg" id="lam-bg-02"><img src="img/biblioteca/biblioteca.jpg" alt="" loading="lazy" decoding="async"></div>
     <div class="laminas-stack" id="lam-grid-02" data-bg="lam-bg-02">
       
       <div style="display:grid; grid-template-columns:1fr 1fr; gap:2px; background:var(--line);">
@@ -869,7 +871,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
     </div>
   </div>
   <div class="w">
-    <div class="laminas-bg" id="lam-bg-03"><img src="img/plano/plano.jpg" alt=""></div>
+    <div class="laminas-bg" id="lam-bg-03"><img src="img/plano/plano.jpg" alt="" loading="lazy" decoding="async"></div>
     <div class="laminas-stack" id="lam-grid-03" data-bg="lam-bg-03">
       <div class="lamina" onclick="lbOpen(this,'lam-grid-03')">
         <img src="img/plano/plano.jpg" alt="" loading="lazy" decoding="async">
@@ -912,7 +914,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
     </div>
   </div>
   <div class="w">
-    <div class="laminas-bg" id="lam-bg-04"><img src="img/intervencion/intervencion8.jpg" alt=""></div>
+    <div class="laminas-bg" id="lam-bg-04"><img src="img/intervencion/intervencion8.jpg" alt="" loading="lazy" decoding="async"></div>
     <div class="laminas-stack" id="lam-grid-04" data-bg="lam-bg-04">
       <div class="lamina" onclick="lbOpen(this,'lam-grid-04')">
         <img src="img/intervencion/intervencion.jpg" alt="" loading="lazy" decoding="async">
@@ -991,7 +993,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
     </div>
   </div>
   <div class="w">
-    <div class="laminas-bg" id="lam-bg-05"><img src="img/conjunto/conjuntogrande.jpg" alt=""></div>
+    <div class="laminas-bg" id="lam-bg-05"><img src="img/conjunto/conjuntogrande.jpg" alt="" loading="lazy" decoding="async"></div>
     <div class="laminas-stack" id="lam-grid-05" data-bg="lam-bg-05">
       <div class="lamina" onclick="lbOpen(this,'lam-grid-05')">
         <img src="img/conjunto/conjuntogrande2.jpg" alt="" loading="lazy" decoding="async">
@@ -1055,7 +1057,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
     </div>
   </div>
   <div class="w">
-    <div class="laminas-bg" id="lam-bg-06"><img src="img/iglesia/iglesia.jpg" alt=""></div>
+    <div class="laminas-bg" id="lam-bg-06"><img src="img/iglesia/iglesia.jpg" alt="" loading="lazy" decoding="async"></div>
     <div class="laminas-stack" id="lam-grid-06" data-bg="lam-bg-06">
       <div class="lamina" onclick="lbOpen(this,'lam-grid-06')">
         <img src="img/iglesia/iglesia1.jpg" alt="" loading="lazy" decoding="async">
@@ -1101,7 +1103,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
     </div>
   </div>
   <div class="w">
-    <div class="laminas-bg" id="lam-bg-07"><img src="img/parametrico/1.jpg" alt=""></div>
+    <div class="laminas-bg" id="lam-bg-07"><img src="img/parametrico/1.jpg" alt="" loading="lazy" decoding="async"></div>
     <div class="laminas-stack" id="lam-grid-07" data-bg="lam-bg-07">
       <div class="lamina" onclick="lbOpen(this,'lam-grid-07')">
         <img src="img/parametrico/2.jpg" alt="" loading="lazy" decoding="async">
@@ -1207,7 +1209,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
     </div>
   </div>
   <div class="w">
-    <div class="laminas-bg" id="lam-bg-08"><img src="img/reversion/morfo1.jpg" alt=""></div>
+    <div class="laminas-bg" id="lam-bg-08"><img src="img/reversion/morfo1.jpg" alt="" loading="lazy" decoding="async"></div>
     <div class="laminas-stack" id="lam-grid-08" data-bg="lam-bg-08">
       <div class="lamina" onclick="lbOpen(this,'lam-grid-08')">
         <img src="img/reversion/morfo2.jpg" alt="" loading="lazy" decoding="async">
@@ -1323,7 +1325,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
     </div></div>
     <div class="efele-top">
       <div class="efele-l">
-        <img src="img/logo.jpg" alt="EFELE.ARQ" style="max-width:100%;max-height:440px;width:100%;object-fit:contain;display:block">
+        <img src="img/logo.jpg" alt="EFELE.ARQ" loading="lazy" decoding="async" style="max-width:100%;max-height:440px;width:100%;object-fit:contain;display:block">
         <div>
           <div class="efele-mark-row"><div class="efele-sq"></div><span class="efele-name-lbl">EFELE.ARQ</span></div>
           <div class="efele-tagline" data-es="Laboratorio de diseño e inteligencia artificial" data-en="Design and artificial intelligence laboratory">Laboratorio de diseño e inteligencia artificial</div>
