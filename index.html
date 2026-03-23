@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta name="description" content="Facundo Luna — Arquitectura, Diseño Paramétrico e IA. FADU UBA, Buenos Aires.">
 <title>Facundo Luna — Arquitectura + IA</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,7 +22,7 @@ html{-webkit-tap-highlight-color:transparent}
 body{background:var(--bg);color:var(--ink);font-family:var(--ui);font-size:14px;
   line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
   
-/* MODIFICADO: Bloqueo de arrastre y selección en las imágenes */
+/* Bloqueo de arrastre y selección en las imágenes */
 img{display:block;max-width:100%;-webkit-user-drag:none;-khtml-user-drag:none;-moz-user-drag:none;-o-user-drag:none;user-select:none;pointer-events:auto}
 
 a{color:inherit;text-decoration:none}
@@ -396,52 +396,93 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
 .lb-prev:hover,.lb-next:hover{color:white}
 .lb-prev{left:0}.lb-next{right:0}
 
-/* ── RESPONSIVE ── */
-@media(max-width:768px){
-  :root{--pad:20px;--max:100%}
-  .nav-links{display:none}
-  .nav-tog{display:flex}
-  .hero-grid,.about-grid,.contact-grid,.efele-top,.ai-strip,.proj-header-grid{grid-template-columns:1fr}
-  .hero-name{font-size:clamp(48px,12vw,72px)}
-  .proj-prev-grid{grid-template-columns:1fr 1fr}
-  .param-grid{grid-template-columns:1fr 1fr}
-  .param-row3{grid-template-columns:1fr 1fr}
-  .proc-prev-grid,.proc-grid{grid-template-columns:1fr 1fr}
-  .efele-gal{grid-template-columns:1fr 1fr}
-  .prow-n,.prow-f{grid-template-columns:1fr}
-  .pinfo{border-left:none!important;border-right:none!important}
-  .about-img-col{border-right:none;border-bottom:0.5px solid var(--line);min-height:220px}
-  .about-txt{padding:28px 0}
-  .contact-l{border-right:none;border-bottom:0.5px solid var(--line);padding:28px 0}
-  .contact-r{padding:28px 0}
-  .contact-big{font-size:32px}
-  .efele-l{border-right:none;border-bottom:0.5px solid var(--line);padding:28px 0}
-  .efele-r{padding:28px 0}
-  .ai-l{border-right:none;border-bottom:0.5px solid var(--line);padding:28px 0}
-  .ai-r{padding:0;grid-template-columns:1fr 1fr}
-  .lam-row-4{grid-template-columns:1fr 1fr}
-  .proj-hero{aspect-ratio:4/3;max-height:320px}
-}
-@media(max-width:480px){
-  :root{--pad:16px}
-  .proj-prev-grid,.param-row3,.proc-grid,.efele-gal{grid-template-columns:1fr 1fr}
-  .param-grid{grid-template-columns:1fr}
-  .ai-r{grid-template-columns:1fr}
-  .ai-cell{border-right:none!important}
-  .home-ctas{flex-direction:column;align-items:flex-start}
-  .lam-row-2,.lam-row-4{grid-template-columns:1fr}
-}
-@media(min-width:1400px){
-  :root{--max:1240px}
-  .hero-name{font-size:104px}
-  .ptitle{font-size:34px}
-}
-
 /* maqueta multi-col */
 .maqueta-grid{display:grid;gap:1px;background:var(--line)}
 .maqueta-img{overflow:hidden;cursor:pointer;background:var(--hover);aspect-ratio:1}
 .maqueta-img img{width:100%;height:100%;object-fit:cover;transition:transform .7s;display:block}
 .maqueta-img:hover img{transform:scale(1.04)}
+
+/* ═════════════════════════════════════════════════════════ */
+/* ── RESPONSIVE MEJORADO Y PULIDO (Móvil, Tablet, PC) ── */
+/* ═════════════════════════════════════════════════════════ */
+
+@media(max-width:1024px) {
+  /* Ajustes para Tablets grandes (iPad en horizontal) */
+  .hero-grid, .about-grid, .contact-grid, .efele-top, .ai-strip, .proj-header-grid { gap: 32px; }
+  .pinfo { padding: 24px 28px; }
+  .hero-name{font-size:clamp(60px,10vw,80px)}
+}
+
+@media(max-width:768px){
+  /* Ajustes para Tablets chicas y Celulares en horizontal */
+  :root{--pad:24px;--max:100%}
+  .nav-links{display:none}
+  .nav-tog{display:flex}
+  
+  .hero-grid,.about-grid,.contact-grid,.efele-top,.ai-strip,.proj-header-grid{grid-template-columns:1fr; gap: 24px;}
+  .hero{padding: 32px 0 20px;}
+  .hero-name{font-size:clamp(48px,12vw,72px)}
+  
+  .proj-prev-grid{grid-template-columns:1fr 1fr}
+  .param-grid{grid-template-columns:1fr}
+  .param-row3{grid-template-columns:1fr 1fr 1fr}
+  .proc-prev-grid,.proc-grid{grid-template-columns:1fr 1fr}
+  .efele-gal{grid-template-columns:1fr 1fr}
+  
+  .prow-n,.prow-f{grid-template-columns:1fr}
+  .pinfo{border-left:none!important;border-right:none!important; padding: 24px 20px;}
+  
+  .about-img-col{border-right:none;border-bottom:0.5px solid var(--line);min-height:260px}
+  .about-txt{padding:28px 0}
+  
+  .contact-l{border-right:none;border-bottom:0.5px solid var(--line);padding:28px 0}
+  .contact-r{padding:28px 0}
+  .contact-big{font-size:36px; margin-bottom: 24px;}
+  
+  .efele-l{border-right:none;border-bottom:0.5px solid var(--line);padding:28px 0; gap: 16px;}
+  .efele-r{padding:28px 0}
+  
+  .ai-l{border-right:none;border-bottom:0.5px solid var(--line);padding:28px 0}
+  .ai-r{padding:0;grid-template-columns:1fr 1fr}
+  
+  .lam-row-4{grid-template-columns:1fr 1fr}
+  .proj-hero{aspect-ratio:4/3;max-height:360px}
+  
+  .sl-handle{width:32px; height:32px;}
+  .sl-handle::before, .sl-handle::after { font-size: 12px; }
+}
+
+@media(max-width:480px){
+  /* Ajustes específicos para Celulares en vertical */
+  :root{--pad:16px}
+  
+  .proj-prev-grid{grid-template-columns:1fr}
+  .param-row3{grid-template-columns:1fr}
+  .proc-grid,.efele-gal{grid-template-columns:1fr 1fr}
+  
+  .ai-r{grid-template-columns:1fr}
+  .ai-cell{border-right:none!important}
+  
+  .home-ctas{flex-direction:column;align-items:flex-start; width: 100%; gap: 16px; padding: 20px 0 0;}
+  .home-ctas button { width: 100%; text-align: center; }
+  
+  .lam-row-2,.lam-row-4{grid-template-columns:1fr}
+  
+  .contact-big{font-size:32px}
+  .ptitle{font-size: 26px;}
+  
+  .proj-hero{aspect-ratio:1/1; max-height: 300px;}
+  .lb-prev, .lb-next { padding: 10px; font-size: 24px; }
+}
+
+@media(min-width:1400px){
+  /* Ajustes para Monitores Ultra Wide */
+  :root{--max:1240px}
+  .hero-name{font-size:104px}
+  .ptitle{font-size:34px}
+  .proj-title{font-size: 64px;}
+}
+
 </style>
 </head>
 <body>
@@ -1610,7 +1651,7 @@ function handleForm(e){
   btn.disabled=true;
 }
 
-/* MODIFICADO: Bloquear clic derecho solo en las imágenes */
+/* Bloquear clic derecho solo en las imágenes */
 document.addEventListener('contextmenu', function(e) {
   if (e.target.tagName === 'IMG') {
     e.preventDefault();
