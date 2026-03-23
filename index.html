@@ -5,10 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta name="description" content="Facundo Luna — Arquitectura, Diseño Paramétrico e IA. FADU UBA, Buenos Aires.">
 <title>Facundo Luna — Arquitectura + IA</title>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,700;12..96,800&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,700;12..96,800&family=Inter:wght@300;400&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,700;12..96,800&family=Inter:wght@300;400&display=swap" media="print" onload="this.media='all'">
+
 <script defer src="https://cloud.umami.is/script.js" data-website-id="TU-ID-AQUI"></script>
+
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -23,7 +27,15 @@ body{background:var(--bg);color:var(--ink);font-family:var(--ui);font-size:14px;
   line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
   
 /* Bloqueo de arrastre y selección en las imágenes */
-img{display:block;max-width:100%;-webkit-user-drag:none;-khtml-user-drag:none;-moz-user-drag:none;-o-user-drag:none;user-select:none;pointer-events:auto}
+img{display:block;max-width:100%;-webkit-user-drag:none;-khtml-user-drag:none;-moz-user-drag:none;-o-user-drag:none;user-select:none;pointer-events:auto;
+  /* El color de fondo ayuda si la imagen tarda en cargar */
+  background-color: var(--line);}
+
+/* Optimización de renderizado para elementos pesados fuera de pantalla */
+.ppc, .param-cell, .prow, .lamina, .maqueta-img, .proc-card, .efele-img {
+  content-visibility: auto;
+  contain-intrinsic-size: 300px;
+}
 
 a{color:inherit;text-decoration:none}
 button{font-family:var(--ui);cursor:pointer;border:none;background:none}
@@ -546,28 +558,60 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
       <span class="sh-label" data-es="Proyectos seleccionados" data-en="Selected projects">Proyectos seleccionados</span>
       <span class="sh-link" onclick="go('proyectos')" data-es="Ver todos →" data-en="See all →">Ver todos →</span>
     </div></div>
+    
     <div class="proj-prev-grid">
       <div class="ppc" onclick="go('proj-01')">
-        <div class="ppc-img"><img class="ppc-img-in" src="img/vivienda/casa.jpg" alt="Vivienda Unifamiliar" loading="lazy" decoding="async"><div class="ppc-ov"></div></div>
+        <div class="ppc-img">
+          <picture>
+            <source srcset="img/vivienda/casa.webp" type="image/webp">
+            <img class="ppc-img-in" src="img/vivienda/casa.jpg" alt="Vivienda Unifamiliar" loading="lazy" decoding="async" width="400" height="270">
+          </picture>
+          <div class="ppc-ov"></div>
+        </div>
         <div class="ppc-info"><div class="ppc-n">01</div><div class="ppc-t" data-es="Vivienda Unifamiliar" data-en="Single Family House">Vivienda Unifamiliar</div><div class="ppc-c">Residencial · 2024</div></div>
       </div>
       <div class="ppc" onclick="go('proj-05')">
-        <div class="ppc-img"><img class="ppc-img-in" src="img/conjunto/conjuntogrande.jpg" alt="Conjunto Habitacional" loading="lazy" decoding="async"><div class="ppc-ov"></div></div>
+        <div class="ppc-img">
+          <picture>
+            <source srcset="img/conjunto/conjuntogrande.webp" type="image/webp">
+            <img class="ppc-img-in" src="img/conjunto/conjuntogrande.jpg" alt="Conjunto Habitacional" loading="lazy" decoding="async" width="400" height="270">
+          </picture>
+          <div class="ppc-ov"></div>
+        </div>
         <div class="ppc-info"><div class="ppc-n">05</div><div class="ppc-t" data-es="Conjunto Habitacional" data-en="Housing Complex">Conjunto Habitacional</div><div class="ppc-c">Vivienda Colectiva · 2025</div></div>
       </div>
       <div class="ppc" onclick="go('proj-02')">
-        <div class="ppc-img"><img class="ppc-img-in" src="img/biblioteca/biblioteca.jpg" alt="Biblioteca Costera" loading="lazy" decoding="async"><div class="ppc-ov"></div></div>
+        <div class="ppc-img">
+          <picture>
+            <source srcset="img/biblioteca/biblioteca.webp" type="image/webp">
+            <img class="ppc-img-in" src="img/biblioteca/biblioteca.jpg" alt="Biblioteca Costera" loading="lazy" decoding="async" width="400" height="270">
+          </picture>
+          <div class="ppc-ov"></div>
+        </div>
         <div class="ppc-info"><div class="ppc-n">02</div><div class="ppc-t" data-es="Biblioteca Costera" data-en="Coastal Library">Biblioteca Costera</div><div class="ppc-c">Equipamiento · 2025</div></div>
       </div>
     </div>
+    
     <hr class="hr">
     <div class="sh"><div class="sh-row">
       <span class="sh-label" data-es="Diseño paramétrico" data-en="Parametric design">Diseño paramétrico</span>
       <span class="sh-right">Rhino · Grasshopper</span>
     </div></div>
     <div class="param-grid">
-      <div class="param-cell big" onclick="lbOpenImg(this)"><img src="img/modeladocomplejo.jpg" alt="Modelo 3D" loading="lazy" decoding="async"><div class="param-lbl" data-es="Modelo 3D" data-en="3D Model">Modelo 3D</div></div>
-      <div class="param-cell big" onclick="lbOpenImg(this)"><img src="img/grass.jpg" alt="Grasshopper" loading="lazy" decoding="async"><div class="param-lbl">Grasshopper</div></div>
+      <div class="param-cell big" onclick="lbOpenImg(this)">
+        <picture>
+          <source srcset="img/modeladocomplejo.webp" type="image/webp">
+          <img src="img/modeladocomplejo.jpg" alt="Modelo 3D" loading="lazy" decoding="async">
+        </picture>
+        <div class="param-lbl" data-es="Modelo 3D" data-en="3D Model">Modelo 3D</div>
+      </div>
+      <div class="param-cell big" onclick="lbOpenImg(this)">
+        <picture>
+          <source srcset="img/grass.webp" type="image/webp">
+          <img src="img/grass.jpg" alt="Grasshopper" loading="lazy" decoding="async">
+        </picture>
+        <div class="param-lbl">Grasshopper</div>
+      </div>
       <div class="param-row3">
         <div class="param-cell sm3" onclick="lbOpenImg(this)"><img src="img/proceso/proceso4.jpg" alt="Referencia" loading="lazy" decoding="async"><div class="param-lbl" data-es="Referencia" data-en="Reference">Proceso</div></div>
         <div class="param-cell sm3" onclick="lbOpenImg(this)"><img src="img/proceso/proceso2.jpg" alt="Análisis" loading="lazy" decoding="async"><div class="param-lbl" data-es="Análisis" data-en="Analysis">Proceso</div></div>
@@ -604,10 +648,14 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
     <span class="sh-label" data-es="Proyectos seleccionados" data-en="Selected projects">Proyectos seleccionados</span>
     <span class="sh-right">08 · 2024–2025</span>
   </div></div></div>
+  
   <div class="w">
     <div class="prow prow-n" onclick="go('proj-01')">
       <div class="pi">
-        <img class="pi-in" src="img/vivienda/casa.jpg" alt="Vivienda Unifamiliar" loading="lazy" decoding="async">
+        <picture>
+          <source srcset="img/vivienda/casa.webp" type="image/webp">
+          <img class="pi-in" src="img/vivienda/casa.jpg" alt="Vivienda Unifamiliar" loading="lazy" decoding="async">
+        </picture>
         <div class="pi-ov"></div>
       </div>
       <div class="pinfo" style="">
@@ -622,6 +670,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
       </div>
     </div>
   </div>
+  
   <div class="w">
     <div class="croquis-wrap">
       <div class="croquis-box">
@@ -917,6 +966,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav);
     <div class="laminas-stack" id="lam-grid-03" data-bg="lam-bg-03">
       <div class="lamina" onclick="lbOpen(this,'lam-grid-03')">
         <img src="img/plano/plano2.jpg" alt="" loading="lazy" decoding="async">
+  
       </div>
     </div>
     <div class="footer" style="margin-top:4px"><div class="footer-row">
